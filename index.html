@@ -454,18 +454,16 @@ function getGameStatus(gameId) {
 
 const APIS = [
   {
-    name: 'worldcup26.ir',
-    // Use allorigins CORS proxy to bypass browser CORS restriction
-    url: 'https://api.allorigins.win/get?url=' + encodeURIComponent('https://worldcup26.ir/get/games'),
+    name: 'Cloudflare Worker',
+    url: 'https://bolao2026-api.aaxsilva.workers.dev/',
     parse: async (resp) => {
-      const wrapper = await resp.json();
-      const data = JSON.parse(wrapper.contents);
+      const data = await resp.json();
       const list = Array.isArray(data) ? data : (data.games || data.data || data.matches || []);
       parseWorldcup26(list);
     }
   },
   {
-    name: 'openfootball',
+    name: 'openfootball (fallback)',
     url: 'https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json',
     parse: async (resp) => {
       const data = await resp.json();
