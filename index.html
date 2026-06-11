@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bolão Copa do Mundo 2026</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@400;500;600&display=swap');
+
+  :root {
+    --bg: #080d1a;
+    --surface: #111827;
+    --surface2: #1a2438;
+    --border: #1e2d47;
+    --gold: #f5c842;
+    --gold-dim: #c9a030;
+    --green: #22c55e;
+    --amber: #f59e0b;
+    --red: #ef4444;
+    --blue: #3b82f6;
+    --text: #e8edf5;
+    --muted: #6b7a99;
+    --live: #ef4444;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Barlow', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+
+  /* HEADER */
+  .header {
+    background: linear-gradient(135deg, #0d1b38 0%, #162040 50%, #0d1b38 100%);
+    border-bottom: 2px solid var(--gold);
+    padding: 0 24px;
+    position: sticky; top: 0; z-index: 200;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 60px; gap: 16px;
+  }
+  .brand {
+    display: flex; align-items: center; gap: 10px;
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 800;
+    font-size: 1.3rem; color: var(--gold); white-space: nowrap;
+  }
+  .brand span { color: var(--text); font-weight: 400; }
+  .api-status {
+    display: flex; align-items: center; gap: 6px;
+    font-size: 0.72rem; color: var(--muted);
+    font-family: 'Barlow Condensed', sans-serif; letter-spacing: 0.05em;
+  }
+  .status-dot {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--muted); flex-shrink: 0;
+  }
+  .status-dot.live { background: var(--live); animation: pulse 1.5s infinite; }
+  .status-dot.ok { background: var(--green); }
+  .status-dot.error { background: var(--red); }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
+
+  .nav { display: flex; gap: 2px; }
+  .nav-btn {
+    background: transparent; border: none;
+    color: var(--muted); font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.95rem; font-weight: 600; letter-spacing: 0.05em;
+    text-transform: uppercase; padding: 8px 14px;
+    border-radius: 6px; cursor: pointer; transition: all .15s;
+    white-space: nowrap;
+  }
+  .nav-btn:hover { color: var(--text); background: rgba(255,255,255,.05); }
+  .nav-btn.active { color: var(--gold); background: rgba(245,200,66,.1); }
+
+  /* PAGES */
+  .page { display: none; padding: 24px; max-width: 1400px; margin: 0 auto; }
+  .page.active { display: block; }
+
+  /* LOADING OVERLAY */
+  .api-loading {
+    position: fixed; inset: 0; background: rgba(8,13,26,.85);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    z-index: 300; gap: 16px;
+  }
+  .spinner {
+    width: 48px; height: 48px; border: 4px solid var(--border);
+    border-top-color: var(--gold); border-radius: 50%;
+    animation: spin .8s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .loading-text { color: var(--muted); font-size: .9rem; letter-spacing: .05em; }
+
+  /* TOAST */
+  .toast {
+    position: fixed; bottom: 24px; right: 24px;
+    background: var(--surface2); border: 1px solid var(--border);
+    border-radius: 10px; padding: 12px 20px;
+    font-size: .85rem; z-index: 400; opacity: 0;
+    transform: translateY(10px); transition: all .3s;
+    max-width: 320px;
+  }
+  .toast.show { opacity: 1; transform: translateY(0); }
+  .toast.success { border-color: var(--green); color: var(--green); }
+  .toast.error { border-color: var(--red); color: var(--red); }
+  .toast.info { border-color: var(--blue); color: #93c5fd; }
+
+  /* HOME */
+  .home-hero { text-align: center; padding: 56px 0 32px; }
+  .home-title {
+    font-family: 'Barlow Condensed', sans-serif; font-size: clamp(2.2rem,5vw,4.5rem);
+    font-weight: 800; text-transform: uppercase; letter-spacing: .02em; line-height: 1;
+  }
+  .home-title .hl { color: var(--gold); display: block; }
+  .home-sub { color: var(--muted); margin-top: 10px; font-size: 1rem; }
+  .home-stats { display: grid; grid-template-columns: repeat(auto-fit,minmax(160px,1fr)); gap: 14px; margin: 36px 0; }
+  .stat-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 22px; text-align: center; }
+  .stat-num { font-family: 'Barlow Condensed', sans-serif; font-size: 2.6rem; font-weight: 800; color: var(--gold); line-height: 1; }
+  .stat-lbl { color: var(--muted); font-size: .8rem; margin-top: 4px; text-transform: uppercase; letter-spacing: .05em; }
+  .home-cards { display: grid; grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); gap: 18px; margin-top: 36px; }
+  .menu-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 14px; padding: 28px; cursor: pointer; transition: all .2s;
+    position: relative; overflow: hidden;
+  }
+  .menu-card::after { content:''; position:absolute; top:0;left:0;right:0;height:3px; }
+  .menu-card.c1::after { background:var(--blue); }
+  .menu-card.c2::after { background:var(--green); }
+  .menu-card.c3::after { background:var(--gold); }
+  .menu-card:hover { transform:translateY(-3px); border-color:var(--gold); box-shadow:0 12px 40px rgba(245,200,66,.1); }
+  .mc-icon { font-size: 2.2rem; margin-bottom: 14px; }
+  .mc-title { font-family:'Barlow Condensed',sans-serif; font-size:1.4rem; font-weight:700; text-transform:uppercase; letter-spacing:.04em; margin-bottom:6px; }
+  .menu-card.c1 .mc-title { color:var(--blue); }
+  .menu-card.c2 .mc-title { color:var(--green); }
+  .menu-card.c3 .mc-title { color:var(--gold); }
+  .mc-desc { color:var(--muted); font-size:.88rem; line-height:1.5; }
+
+  /* SCORE RULE BOX */
+  .rule-box { background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:20px 24px; margin-top:32px; }
+  .rule-title { color:var(--muted); font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; margin-bottom:10px; }
+  .rule-row { display:flex; align-items:center; gap:12px; margin-top:8px; }
+  .pts-badge { font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:.9rem; padding:3px 10px; border-radius:4px; white-space:nowrap; }
+  .pts-badge.exact { background:#14532d; color:#86efac; }
+  .pts-badge.result { background:#92400e; color:#fcd34d; }
+  .rule-txt { color:var(--text); font-size:.88rem; }
+
+  /* SECTION HEADER */
+  .sec-hdr { display:flex; align-items:center; justify-content:space-between; margin-bottom:20px; flex-wrap:wrap; gap:10px; }
+  .sec-title { font-family:'Barlow Condensed',sans-serif; font-size:1.6rem; font-weight:700; text-transform:uppercase; letter-spacing:.04em; color:var(--gold); }
+
+  /* CONSULTAR */
+  .ctrl-bar { background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:16px 20px; margin-bottom:20px; display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
+  .ctrl-lbl { color:var(--muted); font-size:.78rem; text-transform:uppercase; letter-spacing:.07em; white-space:nowrap; }
+  .ctrl-select { background:var(--surface2); border:1px solid var(--border); color:var(--text); font-family:'Barlow',sans-serif; font-size:.95rem; padding:7px 14px; border-radius:8px; outline:none; cursor:pointer; min-width:180px; }
+  .ctrl-select:focus { border-color:var(--gold); }
+  .ctrl-input { background:var(--surface2); border:1px solid var(--border); color:var(--text); font-family:'Barlow',sans-serif; font-size:.9rem; padding:7px 14px; border-radius:8px; outline:none; width:180px; }
+  .ctrl-input:focus { border-color:var(--blue); }
+  .ctrl-input::placeholder { color:var(--muted); }
+  .player-stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(130px,1fr)); gap:12px; margin-bottom:20px; }
+  .pstat { background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:14px 16px; text-align:center; }
+  .pstat-val { font-family:'Barlow Condensed',sans-serif; font-size:2rem; font-weight:800; line-height:1; }
+  .pstat-lbl { color:var(--muted); font-size:.72rem; margin-top:3px; text-transform:uppercase; letter-spacing:.05em; }
+  .games-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(290px,1fr)); gap:12px; }
+  .gcard { background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:15px; transition:border-color .15s; }
+  .gcard.exact { border-color:#22c55e; background:rgba(34,197,94,.04); }
+  .gcard.result { border-color:#f59e0b; background:rgba(245,158,11,.04); }
+  .gcard.pending { border-color:var(--border); opacity:.7; }
+  .gcard-hdr { display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; }
+  .gnum { font-family:'Barlow Condensed',sans-serif; font-size:.72rem; font-weight:600; color:var(--muted); letter-spacing:.07em; }
+  .gbadge { font-size:.68rem; font-weight:700; padding:2px 8px; border-radius:4px; text-transform:uppercase; letter-spacing:.05em; }
+  .gbadge.exact { background:#14532d; color:#86efac; }
+  .gbadge.result { background:#92400e; color:#fcd34d; }
+  .gbadge.miss { background:rgba(255,255,255,.07); color:var(--muted); }
+  .gbadge.pending { background:#1e3a5f; color:#93c5fd; }
+  .gbadge.live { background:rgba(239,68,68,.2); color:#fca5a5; animation:pulse 1.5s infinite; }
+  .match-row { display:flex; align-items:center; gap:6px; }
+  .tname { font-weight:500; font-size:.88rem; flex:1; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .tname.left { text-align:left; }
+  .tname.right { text-align:right; }
+  .score-real { font-family:'Barlow Condensed',sans-serif; font-size:1.25rem; font-weight:700; white-space:nowrap; color:var(--text); }
+  .bet-row { display:flex; align-items:center; justify-content:center; gap:10px; margin-top:6px; }
+  .bet-label { color:var(--muted); font-size:.72rem; }
+  .bet-val { font-family:'Barlow Condensed',sans-serif; font-size:.95rem; font-weight:700; }
+  .bet-val.exact-c { color:var(--green); }
+  .bet-val.result-c { color:var(--amber); }
+  .bet-val.miss-c { color:var(--muted); }
+  .bet-val.pending-c { color:#93c5fd; }
+  .gpts { font-family:'Barlow Condensed',sans-serif; font-size:.88rem; font-weight:700; }
+  .gmeta { color:var(--muted); font-size:.72rem; margin-top:10px; line-height:1.4; }
+
+  /* VENCEDORES */
+  .filter-row { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:18px; align-items:center; }
+  .fbtn { background:var(--surface); border:1px solid var(--border); color:var(--muted); font-family:'Barlow Condensed',sans-serif; font-size:.82rem; font-weight:600; letter-spacing:.05em; text-transform:uppercase; padding:5px 13px; border-radius:6px; cursor:pointer; transition:all .15s; }
+  .fbtn:hover { color:var(--text); border-color:var(--text); }
+  .fbtn.active { background:var(--gold); color:#080d1a; border-color:var(--gold); }
+  .detail-card { background:var(--surface); border:1px solid var(--border); border-radius:12px; margin-bottom:14px; overflow:hidden; }
+  .dc-hdr { background:var(--surface2); padding:11px 18px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid var(--border); }
+  .dc-title { font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:.95rem; letter-spacing:.04em; text-transform:uppercase; }
+  .dc-result { font-family:'Barlow Condensed',sans-serif; font-size:1.3rem; font-weight:800; color:var(--gold); }
+  .dc-teams { display:flex; align-items:center; gap:10px; padding:14px 18px; border-bottom:1px solid var(--border); }
+  .tdisp { flex:1; display:flex; align-items:center; gap:8px; }
+  .tdisp.right { justify-content:flex-end; flex-direction:row-reverse; }
+  .tflag { font-size:1.4rem; }
+  .tdn { font-weight:600; font-size:.95rem; }
+  .vs-box { text-align:center; min-width:80px; }
+  .vs-score { font-family:'Barlow Condensed',sans-serif; font-size:1.9rem; font-weight:800; color:var(--gold); line-height:1; }
+  .vs-lbl { color:var(--muted); font-size:.68rem; text-transform:uppercase; margin-top:2px; }
+  .vs-pending { font-size:.8rem; color:#93c5fd; margin-top:4px; }
+  .bets-tbl { width:100%; border-collapse:collapse; }
+  .bets-tbl th { background:var(--surface2); color:var(--muted); font-size:.68rem; font-weight:600; text-transform:uppercase; letter-spacing:.07em; padding:7px 16px; text-align:left; }
+  .bets-tbl td { padding:8px 16px; border-top:1px solid var(--border); font-size:.88rem; }
+  .bets-tbl tr:hover td { background:rgba(255,255,255,.02); }
+  .bs { font-family:'Barlow Condensed',sans-serif; font-size:.95rem; font-weight:700; }
+  .bs.exact { color:var(--green); }
+  .bs.result { color:var(--amber); }
+  .no-hits { text-align:center; color:var(--muted); padding:16px; font-size:.85rem; }
+
+  /* PONTUAÇÃO */
+  .ranking-wrap { background:var(--surface); border:1px solid var(--border); border-radius:14px; overflow:hidden; }
+  .ranking-zero { text-align:center; padding:60px 20px; color:var(--muted); }
+  .ranking-zero .big-icon { font-size:3rem; margin-bottom:12px; }
+  .ranking-zero p { font-size:.95rem; line-height:1.6; }
+  .rank-tbl { width:100%; border-collapse:collapse; }
+  .rank-tbl thead th { background:var(--surface2); color:var(--muted); font-size:.72rem; font-weight:600; text-transform:uppercase; letter-spacing:.07em; padding:11px 14px; text-align:left; white-space:nowrap; position:sticky; top:0; }
+  .rank-tbl tbody tr { border-top:1px solid var(--border); transition:background .1s; }
+  .rank-tbl tbody tr:hover td { background:rgba(245,200,66,.04); }
+  .rank-tbl td { padding:11px 14px; font-size:.88rem; white-space:nowrap; }
+  .rpos { font-family:'Barlow Condensed',sans-serif; font-size:1.05rem; font-weight:700; color:var(--muted); text-align:center; }
+  .r1 .rpos { color:#ffd700; font-size:1.2rem; }
+  .r2 .rpos { color:#c0c0c0; font-size:1.1rem; }
+  .r3 .rpos { color:#cd7f32; font-size:1.1rem; }
+  .rname { font-weight:600; font-size:.9rem; }
+  .rpts { font-family:'Barlow Condensed',sans-serif; font-size:1.4rem; font-weight:800; color:var(--gold); }
+  .rexact { color:var(--green); font-size:.82rem; font-weight:600; }
+  .rresult { color:var(--amber); font-size:.82rem; font-weight:600; }
+  .rmiss { color:var(--muted); font-size:.82rem; }
+  .rbar-cell { width:180px; }
+  .rbar { height:5px; background:var(--surface2); border-radius:3px; overflow:hidden; }
+  .rbar-fill { height:100%; background:linear-gradient(90deg,var(--gold-dim),var(--gold)); border-radius:3px; }
+  .hrow td { background:rgba(245,200,66,.06) !important; }
+  .pending-notice { background:rgba(59,130,246,.08); border:1px solid rgba(59,130,246,.2); border-radius:8px; padding:10px 16px; margin-bottom:18px; font-size:.83rem; color:#93c5fd; display:flex; align-items:center; gap:8px; }
+
+  /* REFRESH BUTTON */
+  .refresh-btn { background:rgba(245,200,66,.1); border:1px solid rgba(245,200,66,.3); color:var(--gold); font-family:'Barlow Condensed',sans-serif; font-size:.82rem; font-weight:600; letter-spacing:.05em; text-transform:uppercase; padding:6px 14px; border-radius:6px; cursor:pointer; transition:all .15s; display:flex; align-items:center; gap:6px; }
+  .refresh-btn:hover { background:rgba(245,200,66,.2); }
+  .refresh-btn:disabled { opacity:.5; cursor:not-allowed; }
+  .spin-icon { display:inline-block; }
+  .spin-icon.spinning { animation:spin .7s linear infinite; }
+
+  /* LIVE TAG */
+  .live-tag { background:rgba(239,68,68,.15); color:#fca5a5; border:1px solid rgba(239,68,68,.3); font-size:.65rem; font-weight:700; padding:2px 6px; border-radius:4px; text-transform:uppercase; letter-spacing:.06em; animation:pulse 1.5s infinite; }
+
+  /* PARTICIPANTS PAGE */
+  .page-participants { display:none; padding:24px; max-width:1400px; margin:0 auto; }
+  .page-participants.active { display:block; }
+  .back-btn { display:inline-flex; align-items:center; gap:6px; background:rgba(255,255,255,.06); border:1px solid var(--border); color:var(--muted); font-family:'Barlow Condensed',sans-serif; font-size:.85rem; font-weight:600; letter-spacing:.05em; text-transform:uppercase; padding:6px 14px; border-radius:6px; cursor:pointer; transition:all .15s; margin-bottom:20px; }
+  .back-btn:hover { color:var(--text); border-color:var(--text); }
+  .alpha-index { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:20px; }
+  .alpha-btn { background:var(--surface); border:1px solid var(--border); color:var(--muted); font-family:'Barlow Condensed',sans-serif; font-size:.88rem; font-weight:700; width:34px; height:34px; border-radius:6px; cursor:pointer; transition:all .15s; display:flex; align-items:center; justify-content:center; }
+  .alpha-btn:hover { color:var(--text); border-color:var(--text); }
+  .alpha-btn.has-players { color:var(--text); }
+  .alpha-btn.active-alpha { background:var(--gold); color:#080d1a; border-color:var(--gold); }
+  .players-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:12px; }
+  .player-card { background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:18px 20px; cursor:pointer; transition:all .2s; display:flex; align-items:center; gap:12px; }
+  .player-card:hover { border-color:var(--gold); background:rgba(245,200,66,.05); transform:translateY(-2px); }
+  .player-avatar { width:40px; height:40px; border-radius:50%; background:var(--surface2); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:1rem; color:var(--gold); flex-shrink:0; }
+  .player-card-name { font-weight:600; font-size:.92rem; color:var(--text); line-height:1.2; }
+  .player-card-pts { color:var(--muted); font-size:.75rem; margin-top:2px; }
+  .alpha-section { margin-bottom:24px; }
+  .alpha-section-title { font-family:'Barlow Condensed',sans-serif; font-size:1.1rem; font-weight:700; color:var(--gold); letter-spacing:.08em; text-transform:uppercase; margin-bottom:10px; padding-left:4px; border-left:3px solid var(--gold); padding-left:10px; }
+  .participants-count-btn { background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:22px; text-align:center; cursor:pointer; transition:all .2s; display:block; text-decoration:none; }
+  .participants-count-btn:hover { border-color:var(--gold); background:rgba(245,200,66,.05); transform:translateY(-2px); box-shadow:0 8px 24px rgba(245,200,66,.08); }
+  .participants-count-btn .stat-num { font-family:'Barlow Condensed',sans-serif; font-size:2.6rem; font-weight:800; color:var(--gold); line-height:1; }
+  .participants-count-btn .stat-lbl { color:var(--muted); font-size:.8rem; margin-top:4px; text-transform:uppercase; letter-spacing:.05em; }
+  .participants-count-btn .stat-arrow { color:var(--muted); font-size:.75rem; margin-top:6px; }
+
+  /* PLAYER DETAIL PAGE */
+  .player-detail-hdr { background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:20px 24px; margin-bottom:20px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+  .player-detail-name { font-family:'Barlow Condensed',sans-serif; font-size:2rem; font-weight:800; color:var(--gold); text-transform:uppercase; letter-spacing:.04em; }
+  .player-detail-stats { display:flex; gap:20px; flex-wrap:wrap; }
+  .pds { text-align:center; }
+  .pds-val { font-family:'Barlow Condensed',sans-serif; font-size:1.5rem; font-weight:800; line-height:1; }
+  .pds-lbl { color:var(--muted); font-size:.7rem; text-transform:uppercase; letter-spacing:.05em; }
+
+  @media(max-width:640px) {
+    .header { padding:0 12px; }
+    .nav-btn { padding:6px 10px; font-size:.8rem; }
+    .page { padding:14px; }
+    .brand span { display:none; }
+    .games-grid { grid-template-columns:1fr; }
+    .rbar-cell, .rank-tbl th:nth-child(5), .rank-tbl td:nth-child(5), 
+    .rank-tbl th:nth-child(6), .rank-tbl td:nth-child(6) { display:none; }
+  }
+</style>
+</head>
+<body>
+
+<div id="api-loading" class="api-loading">
+  <div class="spinner"></div>
+  <div class="loading-text">Carregando resultados da Copa 2026…</div>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<header class="header">
+  <div class="brand">⚽ Bolão <span>Copa 2026</span></div>
+  <div class="api-status">
+    <div id="status-dot" class="status-dot"></div>
+    <span id="status-text">Conectando…</span>
+  </div>
+  <nav class="nav">
+    <button class="nav-btn active" onclick="nav('home')">Início</button>
+    <button class="nav-btn" onclick="nav('consultar')">Consultar</button>
+    <button class="nav-btn" onclick="nav('vencedores')">Vencedores</button>
+    <button class="nav-btn" onclick="nav('pontuacao')">Pontuação</button>
+  </nav>
+</header>
+
+<!-- HOME -->
+<div id="page-home" class="page active">
+  <div class="home-hero">
+    <h1 class="home-title">Bolão <span class="hl">Copa do Mundo 2026</span></h1>
+    <p class="home-sub" id="home-sub">Carregando dados…</p>
+  </div>
+  <div class="home-stats" id="home-stats"></div>
+  <div class="home-cards">
+    <div class="menu-card c1" onclick="nav('consultar')">
+      <div class="mc-icon">🔍</div>
+      <div class="mc-title">Consultar</div>
+      <p class="mc-desc">Veja os palpites de cada participante jogo a jogo, com destaque para acertos e erros em tempo real.</p>
+    </div>
+    <div class="menu-card c2" onclick="nav('vencedores')">
+      <div class="mc-icon">🏆</div>
+      <div class="mc-title">Vencedores</div>
+      <p class="mc-desc">Quem acertou o placar exato ou o resultado de cada partida. Atualizado com os resultados oficiais.</p>
+    </div>
+    <div class="menu-card c3" onclick="nav('pontuacao')">
+      <div class="mc-icon">📊</div>
+      <div class="mc-title">Pontuação</div>
+      <p class="mc-desc">Ranking completo. Pontuação calculada automaticamente conforme os jogos são encerrados.</p>
+    </div>
+  </div>
+  <div class="rule-box">
+    <div class="rule-title">Regra de Pontuação</div>
+    <div class="rule-row"><span class="pts-badge exact">+5 pts</span><span class="rule-txt">Placar exato — acertou o placar preciso da partida</span></div>
+    <div class="rule-row"><span class="pts-badge result">+3 pts</span><span class="rule-txt">Resultado correto — acertou quem venceu ou que empatou (placar errado)</span></div>
+  </div>
+</div>
+
+<!-- CONSULTAR -->
+<div id="page-consultar" class="page">
+  <div class="sec-hdr">
+    <div class="sec-title">🔍 Consultar Palpites</div>
+    <button class="refresh-btn" onclick="refreshAPI()" id="refresh-btn">
+      <span class="spin-icon" id="refresh-icon">↻</span> Atualizar
+    </button>
+  </div>
+  <div class="ctrl-bar">
+    <span class="ctrl-lbl">Participante</span>
+    <select class="ctrl-select" id="cp-player" onchange="renderConsultar()"></select>
+    <span class="ctrl-lbl" style="margin-left:8px">Filtro</span>
+    <select class="ctrl-select" id="cp-filter" onchange="renderConsultar()" style="min-width:160px;">
+      <option value="all">Todos os jogos</option>
+      <option value="exact">🎯 Na mosca</option>
+      <option value="result">✓ Resultado certo</option>
+      <option value="miss">✗ Errou</option>
+      <option value="pending">⏳ Aguardando</option>
+    </select>
+    <input class="ctrl-input" id="cp-search" type="text" placeholder="Buscar time…" oninput="renderConsultar()" />
+  </div>
+  <div class="player-stats" id="cp-stats"></div>
+  <div id="cp-games" class="games-grid"></div>
+</div>
+
+<!-- VENCEDORES -->
+<div id="page-vencedores" class="page">
+  <div class="sec-hdr">
+    <div class="sec-title">🏆 Vencedores por Jogo</div>
+    <button class="refresh-btn" onclick="refreshAPI()">↻ Atualizar</button>
+  </div>
+  <div class="filter-row">
+    <button class="fbtn active" onclick="setVF('all',this)">Todos os jogos</button>
+    <button class="fbtn" onclick="setVF('played',this)">Jogos encerrados</button>
+    <button class="fbtn" onclick="setVF('exact',this)">🎯 Placares exatos</button>
+    <button class="fbtn" onclick="setVF('result',this)">✓ Resultado correto</button>
+    <input class="ctrl-input" id="vw-search" type="text" placeholder="Buscar…" oninput="renderVencedores()" style="margin-left:auto;width:180px" />
+  </div>
+  <div id="vw-games"></div>
+</div>
+
+<!-- PONTUAÇÃO -->
+<div id="page-pontuacao" class="page">
+  <div class="sec-hdr">
+    <div class="sec-title">📊 Ranking — Pontuação</div>
+    <button class="refresh-btn" onclick="refreshAPI()">↻ Atualizar</button>
+  </div>
+  <div class="pending-notice" id="pts-notice" style="display:none">
+    ℹ️ A pontuação reflete apenas os jogos encerrados. Jogos sem resultado oficial ainda não somam pontos.
+  </div>
+  <div class="ranking-wrap" id="ranking-wrap"></div>
+</div>
+
+<script>
+// ===== EMBEDDED DATA =====
+const BOLAO = {"games":[{"id":1,"teamA":"México","teamB":"África do Sul","time":"16:00","date":"11/06/2026","stadium":"Estádio Azteca - Mexico City"},{"id":2,"teamA":"Coreia do Sul","teamB":"República Tcheca","time":"23:00","date":"11/06/2026","stadium":"Estádio Akron - Guadalajara"},{"id":3,"teamA":"Canadá","teamB":"Bósnia e Herzegovina","time":"16:00","date":"12/06/2026","stadium":"BMO Field - Toronto"},{"id":4,"teamA":"Estados Unidos","teamB":"Paraguai","time":"22:00","date":"12/06/2026","stadium":"Sofi Stadium - Los Angeles"},{"id":5,"teamA":"Catar","teamB":"Suíça","time":"16:00","date":"13/06/2026","stadium":"Levi's Stadium - São Francisco"},{"id":6,"teamA":"Brasil","teamB":"Marrocos","time":"19:00","date":"13/06/2026","stadium":"MetLife Stadium - Nova Jérsey"},{"id":7,"teamA":"Haiti","teamB":"Escócia","time":"22:00","date":"13/06/2026","stadium":"Estádio Gillette - Boston"},{"id":8,"teamA":"Austrália","teamB":"Turquia","time":"01:00","date":"14/06/2026","stadium":"BC Place stadium - Vancouver"},{"id":9,"teamA":"Alemanha","teamB":"Curação","time":"14:00","date":"14/06/2026","stadium":"NRG Stadium - Houston"},{"id":10,"teamA":"Holanda","teamB":"Japão","time":"17:00","date":"14/06/2026","stadium":"AT&T Stadium - Dallas"},{"id":11,"teamA":"Costa do Marfim","teamB":"Equador","time":"20:00","date":"14/06/2026","stadium":"Lincoln Financial Field - Filadélfia"},{"id":12,"teamA":"Suécia","teamB":"Tunísia","time":"23:00","date":"14/06/2026","stadium":"Estádio BBVA - Monterrey"},{"id":13,"teamA":"Espanha","teamB":"Cabo Verde","time":"13:00","date":"15/06/2026","stadium":"Mercedes-Benz Stadium - Atlanta"},{"id":14,"teamA":"Bélgica","teamB":"Egito","time":"16:00","date":"15/06/2026","stadium":"Lumen Field - Seattle"},{"id":15,"teamA":"Arábia Saudita","teamB":"Uruguai","time":"19:00","date":"15/06/2026","stadium":"Hard Rock Stadium - Miami"},{"id":16,"teamA":"Irã","teamB":"Nova Zelândia","time":"22:00","date":"15/06/2026","stadium":"Sofi Stadium - Los Angeles"},{"id":17,"teamA":"França","teamB":"Senegal","time":"16:00","date":"16/06/2026","stadium":"MetLife Stadium - Nova Jérsey"},{"id":18,"teamA":"Iraque","teamB":"Noruega","time":"19:00","date":"16/06/2026","stadium":"Estádio Gillette - Boston"},{"id":19,"teamA":"Argentina","teamB":"Argélia","time":"22:00","date":"16/06/2026","stadium":"GEHA Field - Kansas City"},{"id":20,"teamA":"Áustria","teamB":"Jordânia","time":"01:00","date":"17/06/2026","stadium":"Levi's Stadium - São Francisco"},{"id":21,"teamA":"Portugal","teamB":"RD Congo","time":"14:00","date":"17/06/2026","stadium":"NRG Stadium - Houston"},{"id":22,"teamA":"Inglaterra","teamB":"Croácia","time":"17:00","date":"17/06/2026","stadium":"AT&T Stadium - Dallas"},{"id":23,"teamA":"Gana","teamB":"Panamá","time":"20:00","date":"17/06/2026","stadium":"BMO Field - Toronto"},{"id":24,"teamA":"Uzbequistão","teamB":"Colômbia","time":"23:00","date":"17/06/2026","stadium":"Estádio Azteca - Mexico City"},{"id":25,"teamA":"República Tcheca","teamB":"África do Sul","time":"13:00","date":"18/06/2026","stadium":"Mercedes-Benz Stadium - Atlanta"},{"id":26,"teamA":"Suíça","teamB":"Bósnia e Herzegovina","time":"16:00","date":"18/06/2026","stadium":"Sofi Stadium - Los Angeles"},{"id":27,"teamA":"Canadá","teamB":"Catar","time":"19:00","date":"18/06/2026","stadium":"BC Place stadium - Vancouver"},{"id":28,"teamA":"México","teamB":"Coreia do Sul","time":"22:00","date":"18/06/2026","stadium":"Estádio Akron - Guadalajara"},{"id":29,"teamA":"Estados Unidos","teamB":"Austrália","time":"16:00","date":"19/06/2026","stadium":"Lumen Field - Seattle"},{"id":30,"teamA":"Escócia","teamB":"Marrocos","time":"19:00","date":"19/06/2026","stadium":"Estádio Gillette - Boston"},{"id":31,"teamA":"Brasil","teamB":"Haiti","time":"21:30","date":"19/06/2026","stadium":"Lincoln Financial Field - Filadélfia"},{"id":32,"teamA":"Turquia","teamB":"Paraguai","time":"00:00","date":"20/06/2026","stadium":"Levi's Stadium - São Francisco"},{"id":33,"teamA":"Holanda","teamB":"Suécia","time":"14:00","date":"20/06/2026","stadium":"NRG Stadium - Houston"},{"id":34,"teamA":"Alemanha","teamB":"Costa do Marfim","time":"17:00","date":"20/06/2026","stadium":"BMO Field - Toronto"},{"id":35,"teamA":"Equador","teamB":"Curação","time":"21:00","date":"20/06/2026","stadium":"GEHA Field - Kansas City"},{"id":36,"teamA":"Tunísia","teamB":"Japão","time":"01:00","date":"21/06/2026","stadium":"Estádio BBVA - Monterrey"},{"id":37,"teamA":"Espanha","teamB":"Arábia Saudita","time":"13:00","date":"21/06/2026","stadium":"Mercedes-Benz Stadium - Atlanta"},{"id":38,"teamA":"Bélgica","teamB":"Irã","time":"16:00","date":"21/06/2026","stadium":"Sofi Stadium - Los Angeles"},{"id":39,"teamA":"Uruguai","teamB":"Cabo Verde","time":"19:00","date":"21/06/2026","stadium":"Hard Rock Stadium - Miami"},{"id":40,"teamA":"Nova Zelândia","teamB":"Egito","time":"22:00","date":"21/06/2026","stadium":"BC Place stadium - Vancouver"},{"id":41,"teamA":"Argentina","teamB":"Áustria","time":"14:00","date":"22/06/2026","stadium":"AT&T Stadium - Dallas"},{"id":42,"teamA":"França","teamB":"Iraque","time":"18:00","date":"22/06/2026","stadium":"Lincoln Financial Field - Filadélfia"},{"id":43,"teamA":"Noruega","teamB":"Senegal","time":"21:00","date":"22/06/2026","stadium":"MetLife Stadium - Nova Jérsey"},{"id":44,"teamA":"Jordânia","teamB":"Argélia","time":"00:00","date":"23/06/2026","stadium":"Levi's Stadium - São Francisco"},{"id":45,"teamA":"Portugal","teamB":"Uzbequistão","time":"14:00","date":"23/06/2026","stadium":"NRG Stadium - Houston"},{"id":46,"teamA":"Inglaterra","teamB":"Gana","time":"17:00","date":"23/06/2026","stadium":"Estádio Gillette - Boston"},{"id":47,"teamA":"Panamá","teamB":"Croácia","time":"20:00","date":"23/06/2026","stadium":"BMO Field - Toronto"},{"id":48,"teamA":"Colômbia","teamB":"RD Congo","time":"23:00","date":"23/06/2026","stadium":"Estádio Akron - Guadalajara"},{"id":49,"teamA":"Suíça","teamB":"Canadá","time":"16:00","date":"24/06/2026","stadium":"BC Place stadium - Vancouver"},{"id":50,"teamA":"Bósnia e Herzegovina","teamB":"Catar","time":"16:00","date":"24/06/2026","stadium":"Lumen Field - Seattle"},{"id":51,"teamA":"Escócia","teamB":"Brasil","time":"19:00","date":"24/06/2026","stadium":"Hard Rock Stadium - Miami"},{"id":52,"teamA":"Marrocos","teamB":"Haiti","time":"19:00","date":"24/06/2026","stadium":"Mercedes-Benz Stadium - Atlanta"},{"id":53,"teamA":"República Tcheca","teamB":"México","time":"22:00","date":"24/06/2026","stadium":"Estádio Azteca - Mexico City"},{"id":54,"teamA":"África do Sul","teamB":"Coreia do Sul","time":"22:00","date":"24/06/2026","stadium":"Estádio BBVA - Monterrey"},{"id":55,"teamA":"Equador","teamB":"Alemanha","time":"17:00","date":"25/06/2026","stadium":"MetLife Stadium - Nova Jérsey"},{"id":56,"teamA":"Curação","teamB":"Costa do Marfim","time":"17:00","date":"25/06/2026","stadium":"Lincoln Financial Field - Filadélfia"},{"id":57,"teamA":"Japão","teamB":"Suécia","time":"20:00","date":"25/06/2026","stadium":"AT&T Stadium - Dallas"},{"id":58,"teamA":"Tunísia","teamB":"Holanda","time":"20:00","date":"25/06/2026","stadium":"GEHA Field - Kansas City"},{"id":59,"teamA":"Turquia","teamB":"Estados Unidos","time":"23:00","date":"25/06/2026","stadium":"Sofi Stadium - Los Angeles"},{"id":60,"teamA":"Paraguai","teamB":"Austrália","time":"23:00","date":"25/06/2026","stadium":"Levi's Stadium - São Francisco"},{"id":61,"teamA":"Noruega","teamB":"França","time":"16:00","date":"26/06/2026","stadium":"Estádio Gillette - Boston"},{"id":62,"teamA":"Senegal","teamB":"Iraque","time":"16:00","date":"26/06/2026","stadium":"BMO Field - Toronto"},{"id":63,"teamA":"Cabo Verde","teamB":"Arábia Saudita","time":"21:00","date":"26/06/2026","stadium":"NRG Stadium - Houston"},{"id":64,"teamA":"Uruguai","teamB":"Espanha","time":"21:00","date":"26/06/2026","stadium":"Estádio Akron - Guadalajara"},{"id":65,"teamA":"Egito","teamB":"Irã","time":"00:00","date":"27/06/2026","stadium":"Lumen Field - Seattle"},{"id":66,"teamA":"Nova Zelândia","teamB":"Bélgica","time":"00:00","date":"27/06/2026","stadium":"BC Place stadium - Vancouver"},{"id":67,"teamA":"Panamá","teamB":"Inglaterra","time":"18:00","date":"27/06/2026","stadium":"MetLife Stadium - Nova Jérsey"},{"id":68,"teamA":"Croácia","teamB":"Gana","time":"18:00","date":"27/06/2026","stadium":"Lincoln Financial Field - Filadélfia"},{"id":69,"teamA":"Colômbia","teamB":"Portugal","time":"20:30","date":"27/06/2026","stadium":"Hard Rock Stadium - Miami"},{"id":70,"teamA":"RD Congo","teamB":"Uzbequistão","time":"20:30","date":"27/06/2026","stadium":"Mercedes-Benz Stadium - Atlanta"},{"id":71,"teamA":"Argélia","teamB":"Áustria","time":"23:00","date":"27/06/2026","stadium":"GEHA Field - Kansas City"},{"id":72,"teamA":"Jordânia","teamB":"Argentina","time":"23:00","date":"27/06/2026","stadium":"AT&T Stadium - Dallas"}],"bets":{"MANUELA":{"1":[3,0],"2":[1,0],"3":[2,1],"4":[1,1],"5":[0,1],"6":[2,0],"7":[0,1],"8":[1,2],"9":[4,0],"10":[3,1],"11":[1,0],"12":[1,0],"13":[1,0],"14":[1,0],"15":[0,1],"16":[2,0],"17":[2,1],"18":[0,1],"19":[2,0],"20":[3,0],"21":[1,0],"22":[0,0],"23":[2,0],"24":[0,1],"25":[1,0],"26":[2,1],"27":[2,1],"28":[2,1],"29":[0,0],"30":[0,1],"31":[2,0],"32":[1,0],"33":[1,0],"34":[3,0],"35":[3,0],"36":[0,1],"37":[2,0],"38":[2,0],"39":[1,0],"40":[1,2],"41":[1,0],"42":[3,0],"43":[2,1],"44":[0,1],"45":[1,0],"46":[2,1],"47":[0,1],"48":[1,0],"49":[1,1],"50":[2,0],"51":[1,2],"52":[1,0],"53":[0,1],"54":[0,1],"55":[0,1],"56":[0,2],"57":[2,0],"58":[0,1],"59":[0,1],"60":[1,0],"61":[0,3],"62":[2,0],"63":[1,1],"64":[0,1],"65":[1,1],"66":[0,3],"67":[0,2],"68":[1,0],"69":[0,2],"70":[0,0],"71":[0,0],"72":[0,1]},"NINA":{"1":[1,0],"2":[2,1],"3":[1,0],"4":[2,0],"5":[0,2],"6":[2,0],"7":[0,1],"8":[1,2],"9":[3,0],"10":[1,0],"11":[2,1],"12":[2,0],"13":[3,0],"14":[3,1],"15":[1,2],"16":[2,1],"17":[1,0],"18":[1,3],"19":[3,0],"20":[2,0],"21":[3,0],"22":[2,1],"23":[2,0],"24":[0,1],"25":[2,1],"26":[1,0],"27":[1,0],"28":[1,0],"29":[1,0],"30":[0,1],"31":[3,0],"32":[1,0],"33":[2,1],"34":[1,0],"35":[2,0],"36":[0,1],"37":[3,0],"38":[1,0],"39":[2,0],"40":[0,2],"41":[1,0],"42":[2,0],"43":[2,0],"44":[0,1],"45":[1,0],"46":[1,0],"47":[0,1],"48":[2,0],"49":[0,0],"50":[1,0],"51":[0,1],"52":[2,0],"53":[0,2],"54":[0,2],"55":[0,1],"56":[0,2],"57":[1,0],"58":[0,1],"59":[0,2],"60":[1,0],"61":[0,2],"62":[1,0],"63":[0,0],"64":[0,2],"65":[0,1],"66":[0,2],"67":[0,2],"68":[1,0],"69":[1,1],"70":[1,2],"71":[1,0],"72":[0,3]},"DUDINHA":{"1":[2,0],"2":[1,0],"3":[2,0],"4":[1,0],"5":[0,1],"6":[2,1],"7":[0,3],"8":[0,2],"9":[4,0],"10":[1,0],"11":[1,0],"12":[2,0],"13":[2,0],"14":[2,0],"15":[0,1],"16":[2,0],"17":[2,0],"18":[0,2],"19":[2,0],"20":[1,0],"21":[2,0],"22":[1,0],"23":[1,0],"24":[0,1],"25":[1,0],"26":[2,0],"27":[2,0],"28":[2,1],"29":[2,0],"30":[0,2],"31":[3,0],"32":[1,0],"33":[2,0],"34":[2,0],"35":[1,0],"36":[1,2],"37":[3,0],"38":[1,0],"39":[2,0],"40":[1,2],"41":[2,0],"42":[1,0],"43":[1,0],"44":[0,1],"45":[2,0],"46":[2,0],"47":[0,1],"48":[1,0],"49":[1,0],"50":[2,1],"51":[0,2],"52":[1,0],"53":[0,2],"54":[0,1],"55":[0,2],"56":[0,2],"57":[1,0],"58":[0,2],"59":[0,1],"60":[1,0],"61":[0,2],"62":[1,0],"63":[0,1],"64":[0,1],"65":[0,1],"66":[0,3],"67":[0,3],"68":[2,0],"69":[0,1],"70":[0,1],"71":[0,1],"72":[0,3]},"ELVIS":{"1":[3,1],"2":[2,1],"3":[2,1],"4":[2,1],"5":[0,1],"6":[1,0],"7":[0,2],"8":[1,1],"9":[2,0],"10":[2,0],"11":[1,0],"12":[1,0],"13":[4,0],"14":[1,0],"15":[0,2],"16":[1,0],"17":[1,0],"18":[0,2],"19":[2,0],"20":[1,0],"21":[1,0],"22":[1,0],"23":[0,0],"24":[1,2],"25":[1,0],"26":[2,0],"27":[2,0],"28":[2,0],"29":[1,0],"30":[0,1],"31":[2,0],"32":[0,0],"33":[2,0],"34":[2,0],"35":[2,0],"36":[0,2],"37":[2,0],"38":[2,0],"39":[3,0],"40":[0,0],"41":[1,0],"42":[3,0],"43":[1,0],"44":[0,1],"45":[2,0],"46":[2,0],"47":[0,2],"48":[1,0],"49":[1,0],"50":[1,0],"51":[1,2],"52":[2,0],"53":[0,1],"54":[0,1],"55":[0,1],"56":[0,2],"57":[1,1],"58":[1,2],"59":[0,1],"60":[1,0],"61":[0,2],"62":[2,0],"63":[0,1],"64":[0,1],"65":[2,1],"66":[0,1],"67":[0,1],"68":[2,0],"69":[1,2],"70":[0,0],"71":[0,1],"72":[0,2]},"GARGAMEL":{"1":[2,0],"2":[1,0],"3":[2,1],"4":[1,0],"5":[0,2],"6":[0,0],"7":[0,3],"8":[0,1],"9":[3,1],"10":[2,1],"11":[2,1],"12":[1,0],"13":[2,0],"14":[2,0],"15":[0,2],"16":[1,0],"17":[2,0],"18":[0,1],"19":[3,0],"20":[2,1],"21":[2,1],"22":[1,0],"23":[1,0],"24":[1,2],"25":[2,1],"26":[3,0],"27":[1,0],"28":[2,0],"29":[1,0],"30":[0,1],"31":[1,0],"32":[0,0],"33":[2,0],"34":[2,0],"35":[2,0],"36":[0,0],"37":[3,0],"38":[1,0],"39":[2,0],"40":[0,1],"41":[2,0],"42":[2,0],"43":[0,0],"44":[0,2],"45":[3,0],"46":[2,0],"47":[0,2],"48":[2,0],"49":[1,0],"50":[1,0],"51":[0,1],"52":[2,0],"53":[0,1],"54":[0,1],"55":[0,2],"56":[0,1],"57":[1,0],"58":[0,2],"59":[0,2],"60":[2,0],"61":[0,2],"62":[1,0],"63":[0,1],"64":[0,1],"65":[0,1],"66":[0,2],"67":[0,1],"68":[2,0],"69":[1,2],"70":[0,1],"71":[0,2],"72":[0,2]},"FERNANDA":{"1":[1,0],"2":[1,1],"3":[2,0],"4":[2,0],"5":[0,1],"6":[2,1],"7":[0,2],"8":[1,0],"9":[2,0],"10":[1,0],"11":[0,1],"12":[2,0],"13":[2,0],"14":[1,0],"15":[0,1],"16":[2,1],"17":[1,0],"18":[0,2],"19":[2,1],"20":[1,0],"21":[2,0],"22":[2,1],"23":[1,1],"24":[0,3],"25":[2,0],"26":[2,0],"27":[3,0],"28":[1,0],"29":[2,1],"30":[0,2],"31":[2,0],"32":[1,1],"33":[2,0],"34":[1,0],"35":[1,0],"36":[1,2],"37":[2,0],"38":[2,0],"39":[2,0],"40":[0,0],"41":[1,0],"42":[2,0],"43":[1,0],"44":[0,2],"45":[3,0],"46":[2,0],"47":[0,1],"48":[2,0],"49":[0,0],"50":[2,1],"51":[0,1],"52":[2,0],"53":[1,2],"54":[0,0],"55":[0,1],"56":[0,2],"57":[2,2],"58":[0,1],"59":[0,1],"60":[0,0],"61":[0,1],"62":[2,0],"63":[0,1],"64":[0,2],"65":[2,1],"66":[0,3],"67":[0,1],"68":[2,1],"69":[0,1],"70":[1,1],"71":[2,0],"72":[0,1]},"FRANCISCO":{"1":[2,0],"2":[1,0],"3":[1,0],"4":[2,1],"5":[0,2],"6":[2,0],"7":[0,1],"8":[0,0],"9":[1,0],"10":[2,0],"11":[2,0],"12":[0,0],"13":[3,0],"14":[3,0],"15":[0,2],"16":[1,0],"17":[1,0],"18":[0,3],"19":[1,0],"20":[2,0],"21":[2,0],"22":[1,0],"23":[1,0],"24":[1,3],"25":[0,0],"26":[1,0],"27":[2,0],"28":[1,0],"29":[1,0],"30":[0,1],"31":[3,1],"32":[2,1],"33":[2,1],"34":[2,0],"35":[2,0],"36":[0,1],"37":[1,0],"38":[3,1],"39":[1,0],"40":[0,2],"41":[2,0],"42":[3,0],"43":[2,1],"44":[1,2],"45":[2,0],"46":[1,0],"47":[0,2],"48":[2,0],"49":[1,0],"50":[0,0],"51":[0,2],"52":[3,0],"53":[0,2],"54":[0,2],"55":[0,2],"56":[0,1],"57":[2,1],"58":[0,2],"59":[1,1],"60":[1,0],"61":[0,2],"62":[1,0],"63":[0,0],"64":[0,2],"65":[0,0],"66":[0,2],"67":[0,3],"68":[1,0],"69":[1,2],"70":[0,1],"71":[1,0],"72":[0,1]},"FÁTIMA":{"1":[2,1],"2":[2,0],"3":[1,0],"4":[2,0],"5":[1,2],"6":[1,0],"7":[1,2],"8":[0,1],"9":[3,0],"10":[2,1],"11":[0,0],"12":[2,1],"13":[3,1],"14":[1,0],"15":[0,2],"16":[1,0],"17":[2,1],"18":[0,1],"19":[1,0],"20":[2,0],"21":[2,0],"22":[2,0],"23":[2,1],"24":[0,2],"25":[0,0],"26":[2,0],"27":[1,0],"28":[1,0],"29":[2,1],"30":[0,2],"31":[2,0],"32":[2,0],"33":[1,0],"34":[2,1],"35":[3,0],"36":[0,1],"37":[2,0],"38":[2,0],"39":[1,0],"40":[0,1],"41":[2,0],"42":[2,0],"43":[1,0],"44":[0,2],"45":[3,0],"46":[1,0],"47":[0,2],"48":[2,0],"49":[1,2],"50":[2,0],"51":[0,2],"52":[1,0],"53":[0,1],"54":[0,2],"55":[0,2],"56":[0,1],"57":[2,1],"58":[0,2],"59":[0,0],"60":[2,0],"61":[0,1],"62":[2,1],"63":[0,2],"64":[0,1],"65":[0,0],"66":[0,2],"67":[0,2],"68":[1,0],"69":[1,2],"70":[0,2],"71":[0,0],"72":[0,2]},"MARIA 1":{"1":[0,1],"2":[2,0],"3":[3,1],"4":[1,0],"5":[2,3],"6":[2,1],"7":[1,3],"8":[3,1],"9":[1,0],"10":[3,2],"11":[1,2],"12":[0,1],"13":[1,2],"14":[1,2],"15":[2,3],"16":[2,3],"17":[3,2],"18":[2,1],"19":[2,1],"20":[3,2],"21":[3,1],"22":[4,0],"23":[1,2],"24":[0,2],"25":[2,1],"26":[2,1],"27":[0,1],"28":[3,1],"29":[3,2],"30":[2,2],"31":[1,0],"32":[1,2],"33":[1,0],"34":[3,2],"35":[0,1],"36":[1,0],"37":[2,1],"38":[3,1],"39":[3,1],"40":[0,1],"41":[2,1],"42":[0,0],"43":[4,2],"44":[2,3],"45":[3,2],"46":[3,2],"47":[0,1],"48":[3,1],"49":[1,2],"50":[0,1],"51":[0,1],"52":[3,2],"53":[1,2],"54":[0,1],"55":[1,0],"56":[1,2],"57":[2,1],"58":[1,0],"59":[0,1],"60":[0,1],"61":[0,3],"62":[0,3],"63":[2,4],"64":[1,2],"65":[3,2],"66":[0,1],"67":[2,3],"68":[0,1],"69":[2,4],"70":[1,0],"71":[0,1],"72":[1,2]},"MARIA 2":{"1":[1,0],"2":[1,1],"3":[1,0],"4":[2,1],"5":[0,1],"6":[2,1],"7":[0,1],"8":[1,0],"9":[5,0],"10":[1,0],"11":[1,2],"12":[1,2],"13":[4,1],"14":[2,0],"15":[0,2],"16":[1,2],"17":[2,0],"18":[1,1],"19":[3,1],"20":[2,0],"21":[4,0],"22":[1,0],"23":[1,0],"24":[0,3],"25":[1,1],"26":[1,0],"27":[2,0],"28":[1,1],"29":[2,0],"30":[1,1],"31":[3,0],"32":[0,1],"33":[1,1],"34":[3,0],"35":[1,0],"36":[0,1],"37":[2,0],"38":[2,0],"39":[2,0],"40":[1,0],"41":[2,1],"42":[2,0],"43":[0,0],"44":[0,1],"45":[3,0],"46":[2,0],"47":[1,0],"48":[3,0],"49":[1,1],"50":[0,1],"51":[0,2],"52":[3,0],"53":[1,1],"54":[1,1],"55":[1,2],"56":[0,1],"57":[2,1],"58":[1,2],"59":[0,2],"60":[1,1],"61":[0,1],"62":[1,0],"63":[0,2],"64":[0,2],"65":[1,1],"66":[0,2],"67":[1,2],"68":[1,0],"69":[2,2],"70":[0,1],"71":[0,1],"72":[0,2]},"JOSÉ 1":{"1":[2,1],"2":[1,0],"3":[3,1],"4":[2,0],"5":[1,2],"6":[1,0],"7":[0,1],"8":[1,2],"9":[3,1],"10":[2,0],"11":[0,1],"12":[1,0],"13":[4,1],"14":[2,1],"15":[0,2],"16":[1,2],"17":[3,0],"18":[0,0],"19":[3,0],"20":[2,0],"21":[3,1],"22":[2,0],"23":[0,1],"24":[0,2],"25":[0,0],"26":[2,0],"27":[3,1],"28":[2,0],"29":[0,1],"30":[1,2],"31":[3,1],"32":[0,1],"33":[0,0],"34":[4,1],"35":[3,1],"36":[0,1],"37":[2,1],"38":[3,1],"39":[4,0],"40":[1,0],"41":[2,0],"42":[2,1],"43":[1,1],"44":[0,1],"45":[3,1],"46":[3,0],"47":[0,1],"48":[2,0],"49":[1,0],"50":[0,2],"51":[0,2],"52":[2,1],"53":[1,2],"54":[1,1],"55":[2,2],"56":[0,2],"57":[1,1],"58":[0,1],"59":[1,1],"60":[1,0],"61":[1,3],"62":[1,0],"63":[1,2],"64":[0,2],"65":[1,0],"66":[1,2],"67":[1,2],"68":[1,0],"69":[1,0],"70":[0,0],"71":[0,2],"72":[0,3]},"JOSÉ 2":{"1":[1,1],"2":[0,1],"3":[2,1],"4":[1,0],"5":[1,1],"6":[2,1],"7":[0,2],"8":[0,0],"9":[2,0],"10":[0,1],"11":[0,3],"12":[2,0],"13":[4,0],"14":[1,1],"15":[0,2],"16":[0,2],"17":[3,1],"18":[1,0],"19":[3,0],"20":[2,1],"21":[2,0],"22":[2,0],"23":[0,1],"24":[0,2],"25":[0,1],"26":[1,0],"27":[2,0],"28":[1,0],"29":[1,1],"30":[0,1],"31":[3,0],"32":[1,1],"33":[0,1],"34":[5,0],"35":[3,0],"36":[0,1],"37":[1,0],"38":[1,2],"39":[2,0],"40":[1,0],"41":[2,1],"42":[2,1],"43":[2,1],"44":[0,1],"45":[3,1],"46":[2,1],"47":[0,2],"48":[3,0],"49":[0,1],"50":[1,0],"51":[1,1],"52":[2,0],"53":[1,2],"54":[2,1],"55":[1,1],"56":[0,0],"57":[0,1],"58":[1,2],"59":[0,1],"60":[1,1],"61":[0,2],"62":[0,1],"63":[0,1],"64":[1,1],"65":[1,0],"66":[1,2],"67":[0,2],"68":[1,0],"69":[2,2],"70":[0,1],"71":[0,1],"72":[0,3]},"JOSÉ 3":{"1":[2,0],"2":[0,1],"3":[2,0],"4":[2,1],"5":[0,2],"6":[1,3],"7":[1,2],"8":[1,2],"9":[3,0],"10":[2,1],"11":[0,2],"12":[1,0],"13":[4,0],"14":[2,0],"15":[0,1],"16":[0,1],"17":[2,1],"18":[1,2],"19":[2,0],"20":[1,0],"21":[2,0],"22":[2,1],"23":[1,0],"24":[0,3],"25":[1,1],"26":[3,1],"27":[2,0],"28":[1,0],"29":[1,1],"30":[0,2],"31":[2,0],"32":[1,0],"33":[0,0],"34":[3,0],"35":[1,0],"36":[1,2],"37":[3,1],"38":[2,1],"39":[3,0],"40":[1,1],"41":[2,1],"42":[3,1],"43":[0,0],"44":[1,0],"45":[4,0],"46":[3,1],"47":[0,2],"48":[2,1],"49":[1,1],"50":[0,1],"51":[0,1],"52":[2,0],"53":[0,1],"54":[1,0],"55":[1,2],"56":[0,1],"57":[0,1],"58":[0,2],"59":[0,2],"60":[1,1],"61":[0,2],"62":[1,1],"63":[0,1],"64":[1,2],"65":[1,1],"66":[1,2],"67":[1,3],"68":[1,0],"69":[0,1],"70":[0,1],"71":[0,1],"72":[0,3]},"JOSÉ 4":{"1":[2,1],"2":[0,1],"3":[2,0],"4":[1,1],"5":[0,2],"6":[2,1],"7":[0,1],"8":[0,1],"9":[2,0],"10":[1,0],"11":[0,1],"12":[1,0],"13":[4,0],"14":[2,0],"15":[0,1],"16":[0,1],"17":[2,0],"18":[0,1],"19":[2,0],"20":[1,0],"21":[1,0],"22":[2,1],"23":[1,0],"24":[0,2],"25":[1,2],"26":[1,0],"27":[2,0],"28":[1,0],"29":[1,0],"30":[0,2],"31":[2,0],"32":[1,1],"33":[1,1],"34":[3,0],"35":[2,0],"36":[0,1],"37":[3,0],"38":[2,1],"39":[2,0],"40":[0,0],"41":[2,0],"42":[3,1],"43":[0,0],"44":[0,1],"45":[3,0],"46":[2,0],"47":[0,1],"48":[2,0],"49":[1,1],"50":[1,1],"51":[0,1],"52":[1,0],"53":[0,1],"54":[0,0],"55":[0,1],"56":[0,1],"57":[0,1],"58":[0,2],"59":[0,1],"60":[0,1],"61":[0,2],"62":[0,0],"63":[0,1],"64":[1,2],"65":[1,1],"66":[0,2],"67":[0,3],"68":[1,1],"69":[0,1],"70":[0,0],"71":[0,1],"72":[0,3]},"LIGIA":{"1":[2,0],"2":[0,1],"3":[2,1],"4":[0,1],"5":[0,2],"6":[2,0],"7":[0,2],"8":[0,1],"9":[3,0],"10":[1,1],"11":[1,1],"12":[2,1],"13":[4,0],"14":[2,0],"15":[0,2],"16":[1,0],"17":[2,0],"18":[0,2],"19":[2,0],"20":[2,0],"21":[4,0],"22":[1,1],"23":[2,0],"24":[0,2],"25":[2,0],"26":[2,0],"27":[2,0],"28":[1,0],"29":[1,0],"30":[1,1],"31":[3,0],"32":[1,1],"33":[2,0],"34":[2,1],"35":[2,0],"36":[1,2],"37":[2,0],"38":[2,0],"39":[3,0],"40":[0,2],"41":[2,0],"42":[3,0],"43":[2,0],"44":[0,2],"45":[3,0],"46":[2,0],"47":[0,3],"48":[2,0],"49":[1,0],"50":[2,0],"51":[0,2],"52":[2,0],"53":[2,1],"54":[0,2],"55":[0,2],"56":[0,2],"57":[2,1],"58":[1,2],"59":[1,0],"60":[2,0],"61":[1,2],"62":[2,0],"63":[1,2],"64":[0,1],"65":[2,0],"66":[0,3],"67":[0,3],"68":[2,0],"69":[1,3],"70":[1,1],"71":[0,2],"72":[0,3]},"SOFIA":{"1":[1,0],"2":[0,2],"3":[2,0],"4":[2,1],"5":[1,2],"6":[2,0],"7":[0,0],"8":[2,1],"9":[2,0],"10":[2,1],"11":[0,0],"12":[1,0],"13":[3,0],"14":[2,1],"15":[0,1],"16":[1,0],"17":[2,0],"18":[0,0],"19":[3,0],"20":[3,0],"21":[2,0],"22":[1,0],"23":[0,0],"24":[1,0],"25":[0,0],"26":[2,0],"27":[1,0],"28":[2,0],"29":[2,0],"30":[1,0],"31":[2,0],"32":[0,0],"33":[1,0],"34":[1,0],"35":[1,0],"36":[0,1],"37":[3,0],"38":[2,1],"39":[2,0],"40":[1,0],"41":[2,1],"42":[3,0],"43":[0,0],"44":[0,0],"45":[2,0],"46":[1,0],"47":[0,2],"48":[1,0],"49":[0,0],"50":[1,0],"51":[0,1],"52":[2,1],"53":[0,2],"54":[0,0],"55":[0,3],"56":[0,2],"57":[2,1],"58":[0,1],"59":[1,2],"60":[1,1],"61":[1,2],"62":[1,0],"63":[0,0],"64":[1,2],"65":[2,1],"66":[0,2],"67":[0,2],"68":[0,0],"69":[1,1],"70":[0,0],"71":[1,1],"72":[0,3]},"THOR":{"1":[2,1],"2":[0,0],"3":[1,0],"4":[1,0],"5":[0,1],"6":[1,0],"7":[0,1],"8":[1,0],"9":[2,0],"10":[1,0],"11":[0,1],"12":[2,0],"13":[2,0],"14":[1,0],"15":[0,2],"16":[2,1],"17":[2,1],"18":[0,1],"19":[3,0],"20":[1,0],"21":[3,0],"22":[2,0],"23":[1,0],"24":[0,1],"25":[1,0],"26":[1,0],"27":[1,0],"28":[1,0],"29":[1,0],"30":[2,0],"31":[1,0],"32":[0,1],"33":[1,0],"34":[2,0],"35":[2,0],"36":[0,2],"37":[3,0],"38":[1,0],"39":[1,0],"40":[0,1],"41":[2,0],"42":[3,0],"43":[1,0],"44":[0,1],"45":[2,0],"46":[1,0],"47":[0,1],"48":[1,0],"49":[1,0],"50":[2,1],"51":[0,1],"52":[1,0],"53":[0,1],"54":[0,1],"55":[1,3],"56":[0,1],"57":[1,0],"58":[0,2],"59":[0,1],"60":[1,0],"61":[0,2],"62":[1,0],"63":[0,1],"64":[0,3],"65":[1,0],"66":[0,1],"67":[0,2],"68":[1,0],"69":[0,2],"70":[0,1],"71":[0,1],"72":[0,2]},"ADRIANO":{"1":[2,1],"2":[1,2],"3":[2,1],"4":[1,0],"5":[2,3],"6":[1,0],"7":[1,2],"8":[2,2],"9":[3,0],"10":[1,1],"11":[1,1],"12":[1,0],"13":[3,1],"14":[2,0],"15":[2,3],"16":[2,0],"17":[2,0],"18":[0,2],"19":[4,1],"20":[2,2],"21":[2,1],"22":[2,1],"23":[4,3],"24":[0,2],"25":[2,0],"26":[1,3],"27":[0,1],"28":[1,3],"29":[2,0],"30":[3,1],"31":[4,0],"32":[2,0],"33":[2,1],"34":[2,1],"35":[3,0],"36":[0,4],"37":[3,1],"38":[2,1],"39":[1,0],"40":[2,1],"41":[1,1],"42":[3,0],"43":[2,1],"44":[0,1],"45":[2,0],"46":[2,0],"47":[1,3],"48":[1,1],"49":[2,0],"50":[3,0],"51":[0,2],"52":[3,2],"53":[1,2],"54":[1,2],"55":[1,1],"56":[1,0],"57":[1,1],"58":[0,3],"59":[0,1],"60":[2,1],"61":[0,1],"62":[0,0],"63":[0,3],"64":[2,2],"65":[2,2],"66":[1,0],"67":[1,4],"68":[3,1],"69":[1,3],"70":[1,0],"71":[2,3],"72":[0,1]},"GANDALF":{"1":[2,0],"2":[1,0],"3":[3,0],"4":[2,1],"5":[0,1],"6":[2,1],"7":[0,0],"8":[1,0],"9":[4,1],"10":[2,0],"11":[1,1],"12":[3,0],"13":[1,0],"14":[2,2],"15":[1,2],"16":[3,3],"17":[1,1],"18":[2,0],"19":[1,0],"20":[1,2],"21":[1,0],"22":[1,0],"23":[0,3],"24":[3,1],"25":[1,0],"26":[3,1],"27":[2,2],"28":[1,0],"29":[1,0],"30":[1,1],"31":[3,0],"32":[0,1],"33":[2,0],"34":[2,2],"35":[2,1],"36":[2,0],"37":[0,2],"38":[2,2],"39":[0,0],"40":[3,0],"41":[2,0],"42":[2,0],"43":[1,4],"44":[2,1],"45":[1,3],"46":[4,2],"47":[3,2],"48":[1,4],"49":[0,1],"50":[1,0],"51":[3,0],"52":[3,0],"53":[0,1],"54":[1,1],"55":[1,1],"56":[0,2],"57":[0,2],"58":[1,1],"59":[0,4],"60":[1,1],"61":[2,2],"62":[0,1],"63":[3,2],"64":[0,2],"65":[3,0],"66":[1,3],"67":[2,1],"68":[1,4],"69":[2,0],"70":[1,1],"71":[1,2],"72":[0,3]},"BUMBLEBEE":{"1":[1,2],"2":[3,1],"3":[3,2],"4":[1,0],"5":[1,0],"6":[1,0],"7":[0,1],"8":[2,0],"9":[1,0],"10":[2,1],"11":[2,0],"12":[1,2],"13":[1,1],"14":[3,0],"15":[1,4],"16":[1,2],"17":[3,1],"18":[1,1],"19":[1,0],"20":[2,1],"21":[1,0],"22":[0,2],"23":[1,0],"24":[0,4],"25":[1,1],"26":[2,0],"27":[2,0],"28":[1,0],"29":[1,4],"30":[0,2],"31":[2,0],"32":[1,0],"33":[0,2],"34":[2,0],"35":[1,0],"36":[2,2],"37":[2,1],"38":[1,0],"39":[1,1],"40":[0,1],"41":[3,0],"42":[1,0],"43":[1,1],"44":[0,3],"45":[3,0],"46":[1,2],"47":[0,2],"48":[2,0],"49":[0,1],"50":[0,1],"51":[1,3],"52":[0,2],"53":[2,2],"54":[1,2],"55":[2,0],"56":[0,1],"57":[1,2],"58":[1,0],"59":[1,1],"60":[3,0],"61":[2,2],"62":[1,1],"63":[1,2],"64":[2,3],"65":[0,2],"66":[2,0],"67":[1,2],"68":[1,0],"69":[2,0],"70":[1,1],"71":[0,3],"72":[2,3]},"GREGÓRIO":{"1":[2,1],"2":[3,2],"3":[1,1],"4":[1,4],"5":[2,0],"6":[2,0],"7":[0,1],"8":[3,1],"9":[3,2],"10":[0,0],"11":[1,0],"12":[1,0],"13":[2,1],"14":[4,1],"15":[0,3],"16":[1,2],"17":[2,1],"18":[0,1],"19":[1,0],"20":[1,1],"21":[1,0],"22":[2,0],"23":[3,0],"24":[1,0],"25":[1,0],"26":[3,1],"27":[1,2],"28":[0,1],"29":[3,1],"30":[0,2],"31":[3,0],"32":[0,1],"33":[1,1],"34":[1,2],"35":[1,3],"36":[0,2],"37":[3,2],"38":[0,2],"39":[2,1],"40":[4,0],"41":[2,1],"42":[1,2],"43":[1,3],"44":[1,0],"45":[2,1],"46":[1,1],"47":[0,3],"48":[0,1],"49":[0,1],"50":[1,0],"51":[3,1],"52":[2,0],"53":[1,1],"54":[0,4],"55":[2,1],"56":[1,3],"57":[2,0],"58":[0,4],"59":[2,2],"60":[1,2],"61":[2,1],"62":[3,0],"63":[1,3],"64":[0,0],"65":[1,1],"66":[1,0],"67":[0,1],"68":[1,0],"69":[2,1],"70":[2,0],"71":[0,2],"72":[0,2]},"ANGELO":{"1":[2,0],"2":[1,0],"3":[2,0],"4":[2,0],"5":[0,1],"6":[3,0],"7":[0,2],"8":[2,0],"9":[4,0],"10":[2,2],"11":[1,1],"12":[1,0],"13":[3,0],"14":[1,1],"15":[1,2],"16":[2,1],"17":[4,0],"18":[1,3],"19":[3,0],"20":[1,0],"21":[3,0],"22":[3,0],"23":[0,1],"24":[0,2],"25":[1,2],"26":[2,0],"27":[2,0],"28":[2,2],"29":[2,2],"30":[1,0],"31":[3,0],"32":[0,1],"33":[3,2],"34":[3,0],"35":[1,0],"36":[1,2],"37":[2,0],"38":[1,1],"39":[1,0],"40":[1,0],"41":[4,0],"42":[3,0],"43":[2,0],"44":[2,0],"45":[3,0],"46":[3,0],"47":[1,2],"48":[3,0],"49":[1,1],"50":[1,0],"51":[1,2],"52":[2,1],"53":[0,3],"54":[1,1],"55":[1,4],"56":[1,1],"57":[1,2],"58":[1,3],"59":[0,2],"60":[0,1],"61":[0,3],"62":[1,1],"63":[0,1],"64":[0,3],"65":[1,1],"66":[0,1],"67":[0,2],"68":[1,0],"69":[1,2],"70":[0,0],"71":[0,1],"72":[0,3]},"CÉSAR":{"1":[1,1],"2":[2,0],"3":[1,1],"4":[0,2],"5":[0,2],"6":[3,1],"7":[1,2],"8":[1,2],"9":[6,0],"10":[2,2],"11":[2,3],"12":[1,1],"13":[4,0],"14":[3,0],"15":[1,2],"16":[2,2],"17":[2,0],"18":[1,3],"19":[2,0],"20":[1,0],"21":[3,1],"22":[2,1],"23":[2,1],"24":[0,3],"25":[2,2],"26":[2,0],"27":[3,0],"28":[1,2],"29":[1,1],"30":[0,3],"31":[4,0],"32":[0,1],"33":[2,1],"34":[3,0],"35":[3,0],"36":[1,2],"37":[2,0],"38":[2,1],"39":[3,0],"40":[4,0],"41":[3,1],"42":[5,0],"43":[2,2],"44":[0,2],"45":[4,0],"46":[3,1],"47":[0,2],"48":[3,0],"49":[2,1],"50":[2,0],"51":[0,2],"52":[2,1],"53":[1,3],"54":[2,3],"55":[2,3],"56":[0,4],"57":[2,2],"58":[2,1],"59":[0,2],"60":[1,0],"61":[1,3],"62":[0,0],"63":[0,3],"64":[2,3],"65":[1,1],"66":[0,2],"67":[0,3],"68":[2,1],"69":[2,3],"70":[2,1],"71":[1,1],"72":[0,4]},"JANAÍNA":{"1":[1,1],"2":[2,1],"3":[3,0],"4":[3,1],"5":[1,2],"6":[1,1],"7":[0,1],"8":[3,0],"9":[5,0],"10":[1,3],"11":[3,2],"12":[1,1],"13":[2,1],"14":[3,2],"15":[1,1],"16":[3,1],"17":[4,2],"18":[1,2],"19":[2,1],"20":[3,1],"21":[3,2],"22":[2,2],"23":[1,1],"24":[1,3],"25":[1,1],"26":[2,2],"27":[3,2],"28":[2,1],"29":[1,1],"30":[0,1],"31":[2,1],"32":[0,0],"33":[2,1],"34":[5,2],"35":[2,1],"36":[1,2],"37":[2,1],"38":[2,1],"39":[1,1],"40":[1,1],"41":[1,2],"42":[4,3],"43":[2,1],"44":[0,0],"45":[3,1],"46":[2,1],"47":[2,1],"48":[1,1],"49":[2,2],"50":[0,0],"51":[2,2],"52":[2,2],"53":[1,2],"54":[1,2],"55":[2,5],"56":[2,2],"57":[2,1],"58":[1,1],"59":[0,1],"60":[1,2],"61":[2,3],"62":[1,2],"63":[1,1],"64":[2,3],"65":[2,1],"66":[1,3],"67":[1,2],"68":[2,1],"69":[1,3],"70":[0,0],"71":[1,2],"72":[0,1]},"VAGNER PORTO":{"1":[3,1],"2":[2,2],"3":[1,1],"4":[1,1],"5":[0,4],"6":[3,1],"7":[0,2],"8":[1,3],"9":[8,0],"10":[1,2],"11":[3,3],"12":[1,1],"13":[4,1],"14":[4,2],"15":[1,1],"16":[3,1],"17":[2,2],"18":[0,7],"19":[2,1],"20":[3,1],"21":[5,0],"22":[2,1],"23":[3,1],"24":[1,3],"25":[3,0],"26":[1,1],"27":[3,0],"28":[2,2],"29":[2,1],"30":[2,3],"31":[6,0],"32":[3,2],"33":[2,1],"34":[3,1],"35":[4,0],"36":[1,3],"37":[3,0],"38":[2,0],"39":[2,1],"40":[1,3],"41":[4,1],"42":[3,0],"43":[3,1],"44":[0,2],"45":[3,1],"46":[4,1],"47":[1,3],"48":[3,0],"49":[3,2],"50":[3,1],"51":[0,3],"52":[5,1],"53":[0,3],"54":[2,4],"55":[2,4],"56":[1,5],"57":[1,1],"58":[2,4],"59":[0,0],"60":[1,0],"61":[2,3],"62":[3,0],"63":[1,3],"64":[1,2],"65":[2,2],"66":[1,4],"67":[0,6],"68":[1,0],"69":[2,2],"70":[1,1],"71":[2,1],"72":[1,5]},"VICTOR":{"1":[1,2],"2":[1,0],"3":[2,0],"4":[1,0],"5":[0,1],"6":[1,1],"7":[0,1],"8":[1,2],"9":[3,0],"10":[2,1],"11":[1,0],"12":[1,0],"13":[4,0],"14":[0,1],"15":[0,3],"16":[0,1],"17":[3,1],"18":[0,1],"19":[3,0],"20":[1,1],"21":[3,0],"22":[2,1],"23":[1,1],"24":[0,2],"25":[0,1],"26":[2,0],"27":[2,1],"28":[2,1],"29":[1,1],"30":[1,3],"31":[4,1],"32":[0,2],"33":[1,0],"34":[3,1],"35":[3,1],"36":[0,2],"37":[3,1],"38":[2,1],"39":[3,0],"40":[1,1],"41":[4,1],"42":[3,1],"43":[1,2],"44":[0,1],"45":[3,0],"46":[2,1],"47":[0,1],"48":[2,0],"49":[1,1],"50":[0,2],"51":[1,2],"52":[3,1],"53":[1,2],"54":[0,1],"55":[1,2],"56":[0,2],"57":[1,1],"58":[0,2],"59":[1,1],"60":[1,1],"61":[1,3],"62":[2,0],"63":[1,2],"64":[2,2],"65":[1,0],"66":[1,3],"67":[1,2],"68":[1,1],"69":[1,2],"70":[0,0],"71":[1,1],"72":[1,3]},"VITU":{"1":[2,0],"2":[1,1],"3":[2,0],"4":[2,1],"5":[0,3],"6":[2,1],"7":[0,3],"8":[0,1],"9":[3,0],"10":[3,0],"11":[1,1],"12":[1,1],"13":[3,0],"14":[1,1],"15":[1,1],"16":[1,1],"17":[3,0],"18":[1,1],"19":[3,0],"20":[1,1],"21":[3,0],"22":[3,0],"23":[1,1],"24":[1,1],"25":[1,0],"26":[3,0],"27":[2,0],"28":[2,1],"29":[2,1],"30":[0,2],"31":[3,0],"32":[1,0],"33":[3,0],"34":[3,0],"35":[1,1],"36":[1,1],"37":[3,0],"38":[1,1],"39":[1,1],"40":[1,1],"41":[3,0],"42":[3,0],"43":[1,1],"44":[1,1],"45":[3,0],"46":[3,0],"47":[1,1],"48":[1,1],"49":[2,1],"50":[1,1],"51":[0,3],"52":[3,0],"53":[1,2],"54":[1,2],"55":[0,3],"56":[1,1],"57":[1,1],"58":[0,3],"59":[1,2],"60":[1,0],"61":[0,3],"62":[1,1],"63":[1,1],"64":[0,3],"65":[1,1],"66":[1,1],"67":[0,3],"68":[1,1],"69":[0,3],"70":[1,1],"71":[1,1],"72":[0,3]},"MARTA 1":{"1":[0,0],"2":[2,1],"3":[1,0],"4":[1,0],"5":[0,1],"6":[3,0],"7":[0,1],"8":[1,1],"9":[4,0],"10":[1,0],"11":[2,2],"12":[2,0],"13":[3,0],"14":[3,0],"15":[0,2],"16":[2,1],"17":[2,1],"18":[0,1],"19":[2,1],"20":[2,1],"21":[1,0],"22":[1,0],"23":[2,1],"24":[0,2],"25":[2,1],"26":[2,0],"27":[1,0],"28":[1,0],"29":[2,1],"30":[0,1],"31":[4,0],"32":[1,0],"33":[1,1],"34":[2,0],"35":[1,0],"36":[1,3],"37":[2,0],"38":[1,0],"39":[2,0],"40":[0,1],"41":[4,0],"42":[4,1],"43":[1,0],"44":[1,1],"45":[4,0],"46":[1,0],"47":[0,2],"48":[2,0],"49":[2,1],"50":[1,1],"51":[0,1],"52":[2,0],"53":[1,1],"54":[0,1],"55":[0,1],"56":[0,1],"57":[0,1],"58":[0,2],"59":[0,1],"60":[2,1],"61":[1,2],"62":[2,0],"63":[0,2],"64":[0,2],"65":[1,0],"66":[0,1],"67":[0,1],"68":[2,0],"69":[0,1],"70":[1,1],"71":[0,2],"72":[0,3]},"MARTA 2":{"1":[3,1],"2":[1,0],"3":[2,1],"4":[1,1],"5":[0,0],"6":[2,0],"7":[1,2],"8":[0,1],"9":[3,0],"10":[2,0],"11":[2,1],"12":[2,1],"13":[4,0],"14":[2,1],"15":[0,1],"16":[3,1],"17":[1,0],"18":[1,2],"19":[3,1],"20":[1,0],"21":[3,0],"22":[2,0],"23":[3,0],"24":[1,2],"25":[0,0],"26":[1,0],"27":[2,1],"28":[1,1],"29":[1,0],"30":[1,2],"31":[3,0],"32":[2,1],"33":[2,1],"34":[2,1],"35":[2,1],"36":[1,2],"37":[1,0],"38":[3,0],"39":[1,0],"40":[0,0],"41":[3,1],"42":[1,0],"43":[2,0],"44":[0,2],"45":[3,1],"46":[2,1],"47":[0,3],"48":[2,0],"49":[1,0],"50":[0,1],"51":[1,2],"52":[2,1],"53":[0,2],"54":[0,2],"55":[1,3],"56":[1,1],"57":[1,1],"58":[0,1],"59":[1,1],"60":[1,0],"61":[0,2],"62":[3,1],"63":[0,1],"64":[0,3],"65":[2,1],"66":[1,2],"67":[0,3],"68":[1,0],"69":[1,3],"70":[1,2],"71":[0,1],"72":[1,3]},"MARTA 3":{"1":[1,0],"2":[1,1],"3":[1,0],"4":[2,1],"5":[1,2],"6":[2,1],"7":[0,2],"8":[1,2],"9":[3,1],"10":[2,1],"11":[1,0],"12":[1,0],"13":[3,1],"14":[2,0],"15":[1,2],"16":[1,0],"17":[3,0],"18":[0,0],"19":[3,0],"20":[2,0],"21":[4,0],"22":[2,1],"23":[2,0],"24":[0,2],"25":[1,0],"26":[3,1],"27":[0,0],"28":[0,1],"29":[2,0],"30":[1,1],"31":[3,1],"32":[1,1],"33":[1,0],"34":[3,0],"35":[2,0],"36":[0,1],"37":[3,0],"38":[2,1],"39":[0,0],"40":[0,2],"41":[2,1],"42":[2,0],"43":[2,1],"44":[0,1],"45":[4,0],"46":[1,0],"47":[0,1],"48":[2,1],"49":[1,0],"50":[0,0],"51":[0,2],"52":[2,0],"53":[0,2],"54":[1,2],"55":[0,3],"56":[0,2],"57":[1,2],"58":[1,3],"59":[1,2],"60":[2,2],"61":[0,2],"62":[2,0],"63":[0,2],"64":[1,2],"65":[2,0],"66":[0,3],"67":[0,1],"68":[3,2],"69":[0,1],"70":[0,0],"71":[1,2],"72":[0,4]},"MARTA 4":{"1":[1,1],"2":[2,0],"3":[2,1],"4":[2,0],"5":[0,1],"6":[1,0],"7":[0,2],"8":[0,0],"9":[5,0],"10":[1,0],"11":[2,0],"12":[1,1],"13":[2,0],"14":[1,0],"15":[0,0],"16":[2,1],"17":[3,1],"18":[0,1],"19":[1,0],"20":[0,0],"21":[2,0],"22":[2,0],"23":[2,0],"24":[1,2],"25":[1,0],"26":[2,1],"27":[2,0],"28":[2,0],"29":[1,0],"30":[0,2],"31":[3,0],"32":[0,1],"33":[2,0],"34":[3,1],"35":[1,0],"36":[0,2],"37":[2,1],"38":[2,0],"39":[2,1],"40":[1,1],"41":[2,0],"42":[3,0],"43":[1,0],"44":[0,2],"45":[2,0],"46":[2,0],"47":[1,2],"48":[1,0],"49":[1,1],"50":[0,2],"51":[1,2],"52":[1,0],"53":[0,1],"54":[0,0],"55":[0,2],"56":[1,2],"57":[1,0],"58":[1,2],"59":[0,0],"60":[2,0],"61":[0,1],"62":[2,1],"63":[0,1],"64":[1,3],"65":[1,1],"66":[0,2],"67":[0,3],"68":[2,0],"69":[1,2],"70":[1,0],"71":[0,1],"72":[0,2]},"MARTA 5":{"1":[2,1],"2":[1,2],"3":[0,0],"4":[1,0],"5":[0,2],"6":[2,0],"7":[0,3],"8":[0,1],"9":[2,0],"10":[3,0],"11":[1,1],"12":[1,0],"13":[3,0],"14":[0,0],"15":[0,1],"16":[0,0],"17":[2,0],"18":[1,2],"19":[2,0],"20":[2,1],"21":[3,0],"22":[1,0],"23":[1,0],"24":[0,1],"25":[1,1],"26":[1,0],"27":[1,0],"28":[2,1],"29":[2,0],"30":[0,1],"31":[2,0],"32":[1,0],"33":[2,1],"34":[1,0],"35":[2,0],"36":[1,1],"37":[2,0],"38":[1,0],"39":[1,0],"40":[0,1],"41":[1,0],"42":[3,1],"43":[2,0],"44":[1,2],"45":[3,0],"46":[3,1],"47":[1,2],"48":[3,1],"49":[1,2],"50":[1,2],"51":[0,1],"52":[2,1],"53":[1,2],"54":[0,1],"55":[1,2],"56":[0,1],"57":[2,0],"58":[0,3],"59":[0,2],"60":[1,0],"61":[0,3],"62":[1,0],"63":[1,1],"64":[0,1],"65":[2,0],"66":[1,2],"67":[0,2],"68":[1,0],"69":[0,2],"70":[0,1],"71":[0,1],"72":[0,2]},"LUCAS":{"1":[1,0],"2":[1,0],"3":[3,1],"4":[2,0],"5":[0,2],"6":[2,1],"7":[1,3],"8":[1,1],"9":[3,0],"10":[1,0],"11":[0,1],"12":[2,0],"13":[1,1],"14":[2,1],"15":[1,2],"16":[1,1],"17":[1,1],"18":[0,1],"19":[2,1],"20":[1,0],"21":[3,1],"22":[2,3],"23":[0,0],"24":[0,1],"25":[1,1],"26":[2,2],"27":[2,1],"28":[2,1],"29":[2,1],"30":[1,2],"31":[2,0],"32":[1,1],"33":[1,2],"34":[2,1],"35":[2,0],"36":[2,1],"37":[2,0],"38":[2,0],"39":[2,1],"40":[1,1],"41":[3,1],"42":[3,0],"43":[1,1],"44":[1,1],"45":[2,0],"46":[1,0],"47":[0,2],"48":[2,1],"49":[2,3],"50":[1,2],"51":[0,2],"52":[1,0],"53":[0,2],"54":[1,2],"55":[2,3],"56":[0,1],"57":[1,2],"58":[3,1],"59":[2,2],"60":[1,1],"61":[1,3],"62":[1,2],"63":[1,1],"64":[1,3],"65":[1,0],"66":[0,3],"67":[0,1],"68":[2,0],"69":[1,1],"70":[0,1],"71":[1,0],"72":[1,2]},"LUCIANO":{"1":[2,0],"2":[1,1],"3":[2,1],"4":[2,1],"5":[0,2],"6":[2,1],"7":[0,2],"8":[1,1],"9":[4,0],"10":[2,1],"11":[1,1],"12":[2,1],"13":[3,0],"14":[2,1],"15":[0,2],"16":[2,0],"17":[2,1],"18":[0,3],"19":[2,0],"20":[2,0],"21":[3,0],"22":[2,1],"23":[1,0],"24":[0,2],"25":[2,0],"26":[2,0],"27":[2,0],"28":[1,0],"29":[2,1],"30":[0,2],"31":[3,0],"32":[1,0],"33":[2,1],"34":[2,0],"35":[3,0],"36":[0,1],"37":[3,0],"38":[2,0],"39":[2,0],"40":[0,2],"41":[2,0],"42":[3,0],"43":[1,1],"44":[0,1],"45":[3,0],"46":[3,0],"47":[0,2],"48":[2,1],"49":[1,1],"50":[1,1],"51":[0,2],"52":[3,0],"53":[1,2],"54":[0,2],"55":[1,2],"56":[0,2],"57":[1,1],"58":[0,3],"59":[1,2],"60":[1,1],"61":[1,2],"62":[2,0],"63":[1,1],"64":[1,2],"65":[1,1],"66":[0,3],"67":[0,3],"68":[2,1],"69":[1,2],"70":[1,1],"71":[1,1],"72":[0,3]},"EDNEY 1":{"1":[2,0],"2":[1,1],"3":[2,1],"4":[2,0],"5":[0,2],"6":[0,1],"7":[1,2],"8":[1,1],"9":[5,0],"10":[1,2],"11":[0,1],"12":[2,1],"13":[5,0],"14":[2,1],"15":[0,2],"16":[1,1],"17":[2,1],"18":[0,2],"19":[1,0],"20":[3,1],"21":[1,2],"22":[1,1],"23":[1,2],"24":[1,2],"25":[1,0],"26":[2,1],"27":[1,0],"28":[1,1],"29":[1,1],"30":[0,0],"31":[3,0],"32":[1,2],"33":[2,0],"34":[3,1],"35":[2,0],"36":[0,1],"37":[3,0],"38":[1,1],"39":[3,0],"40":[2,1],"41":[2,2],"42":[3,1],"43":[1,1],"44":[1,1],"45":[2,1],"46":[3,0],"47":[1,2],"48":[1,0],"49":[1,1],"50":[0,1],"51":[0,1],"52":[2,0],"53":[1,2],"54":[1,2],"55":[1,1],"56":[1,3],"57":[1,1],"58":[0,3],"59":[2,1],"60":[1,1],"61":[1,1],"62":[3,1],"63":[2,1],"64":[1,2],"65":[0,0],"66":[1,2],"67":[0,2],"68":[2,0],"69":[2,0],"70":[1,2],"71":[1,1],"72":[0,3]},"EDNEY 2":{"1":[2,1],"2":[2,2],"3":[2,0],"4":[1,1],"5":[1,1],"6":[1,0],"7":[0,1],"8":[0,0],"9":[3,0],"10":[3,1],"11":[0,1],"12":[2,1],"13":[4,0],"14":[2,0],"15":[1,2],"16":[1,1],"17":[2,1],"18":[1,2],"19":[3,0],"20":[2,1],"21":[2,0],"22":[2,2],"23":[0,1],"24":[1,3],"25":[1,1],"26":[1,0],"27":[2,1],"28":[2,1],"29":[1,0],"30":[1,1],"31":[2,0],"32":[0,2],"33":[3,2],"34":[2,0],"35":[2,0],"36":[0,1],"37":[3,1],"38":[3,0],"39":[2,0],"40":[1,1],"41":[3,1],"42":[2,1],"43":[1,1],"44":[0,0],"45":[2,0],"46":[3,1],"47":[1,2],"48":[2,0],"49":[1,0],"50":[0,0],"51":[1,2],"52":[1,0],"53":[2,2],"54":[0,1],"55":[1,3],"56":[1,1],"57":[1,1],"58":[1,2],"59":[1,1],"60":[2,0],"61":[1,3],"62":[1,0],"63":[0,0],"64":[2,2],"65":[1,0],"66":[2,3],"67":[2,2],"68":[3,1],"69":[2,2],"70":[1,1],"71":[0,1],"72":[1,4]},"NONO 1":{"1":[1,1],"2":[0,1],"3":[1,0],"4":[0,1],"5":[0,2],"6":[1,0],"7":[0,2],"8":[0,1],"9":[4,0],"10":[1,0],"11":[1,1],"12":[2,0],"13":[2,0],"14":[2,0],"15":[0,1],"16":[1,0],"17":[1,0],"18":[0,1],"19":[1,0],"20":[2,0],"21":[2,0],"22":[0,1],"23":[1,1],"24":[0,3],"25":[1,1],"26":[1,0],"27":[1,0],"28":[2,0],"29":[2,0],"30":[2,1],"31":[3,0],"32":[1,2],"33":[2,0],"34":[1,0],"35":[1,0],"36":[0,3],"37":[1,0],"38":[2,1],"39":[1,0],"40":[0,2],"41":[2,0],"42":[2,0],"43":[1,0],"44":[0,3],"45":[2,0],"46":[2,0],"47":[0,2],"48":[2,0],"49":[1,1],"50":[1,1],"51":[0,1],"52":[2,0],"53":[1,3],"54":[2,0],"55":[1,1],"56":[0,3],"57":[1,0],"58":[0,3],"59":[0,2],"60":[2,0],"61":[1,1],"62":[1,0],"63":[0,1],"64":[0,2],"65":[1,0],"66":[0,2],"67":[0,1],"68":[1,1],"69":[1,0],"70":[1,0],"71":[1,0],"72":[0,2]},"NONO 2":{"1":[2,0],"2":[1,1],"3":[2,0],"4":[1,1],"5":[0,1],"6":[2,0],"7":[0,3],"8":[1,1],"9":[3,0],"10":[1,1],"11":[2,1],"12":[2,0],"13":[3,0],"14":[1,0],"15":[1,1],"16":[2,0],"17":[1,0],"18":[0,2],"19":[1,1],"20":[2,1],"21":[3,0],"22":[0,0],"23":[1,0],"24":[0,2],"25":[1,0],"26":[2,0],"27":[1,0],"28":[2,1],"29":[1,0],"30":[1,2],"31":[3,0],"32":[0,1],"33":[2,0],"34":[1,1],"35":[2,0],"36":[0,2],"37":[2,1],"38":[2,0],"39":[2,0],"40":[0,1],"41":[1,0],"42":[3,0],"43":[0,0],"44":[0,2],"45":[3,0],"46":[1,0],"47":[1,2],"48":[2,0],"49":[2,1],"50":[1,0],"51":[0,2],"52":[1,0],"53":[1,2],"54":[1,1],"55":[0,1],"56":[0,3],"57":[2,1],"58":[0,2],"59":[1,2],"60":[1,0],"61":[0,1],"62":[1,0],"63":[0,2],"64":[1,1],"65":[1,1],"66":[0,3],"67":[0,1],"68":[2,1],"69":[1,1],"70":[1,0],"71":[1,1],"72":[0,3]},"NONO 3":{"1":[1,0],"2":[0,2],"3":[1,1],"4":[1,0],"5":[1,1],"6":[1,0],"7":[0,1],"8":[1,2],"9":[2,0],"10":[0,1],"11":[0,1],"12":[1,0],"13":[2,0],"14":[1,0],"15":[0,2],"16":[2,1],"17":[1,1],"18":[0,1],"19":[2,0],"20":[1,0],"21":[2,0],"22":[1,0],"23":[2,1],"24":[0,2],"25":[1,0],"26":[1,1],"27":[1,0],"28":[3,1],"29":[2,0],"30":[1,1],"31":[4,0],"32":[0,2],"33":[1,0],"34":[2,0],"35":[2,0],"36":[0,3],"37":[3,0],"38":[1,0],"39":[3,0],"40":[0,2],"41":[3,1],"42":[2,0],"43":[1,1],"44":[0,2],"45":[3,0],"46":[3,1],"47":[0,2],"48":[3,0],"49":[0,1],"50":[2,0],"51":[1,2],"52":[1,0],"53":[0,1],"54":[1,2],"55":[1,0],"56":[0,2],"57":[2,0],"58":[0,3],"59":[0,1],"60":[2,0],"61":[0,1],"62":[2,0],"63":[0,2],"64":[1,0],"65":[0,2],"66":[0,2],"67":[0,2],"68":[2,0],"69":[0,1],"70":[0,1],"71":[1,1],"72":[0,2]},"ZILDA 1":{"1":[2,0],"2":[1,0],"3":[0,1],"4":[1,2],"5":[0,2],"6":[2,0],"7":[0,2],"8":[1,0],"9":[2,0],"10":[1,1],"11":[1,0],"12":[2,0],"13":[2,0],"14":[2,0],"15":[1,1],"16":[2,0],"17":[2,1],"18":[0,2],"19":[0,1],"20":[1,0],"21":[3,0],"22":[1,0],"23":[1,1],"24":[0,2],"25":[1,1],"26":[1,0],"27":[2,0],"28":[1,0],"29":[2,0],"30":[0,1],"31":[3,0],"32":[0,1],"33":[2,0],"34":[1,1],"35":[2,0],"36":[0,2],"37":[1,0],"38":[3,0],"39":[2,0],"40":[0,2],"41":[2,0],"42":[3,0],"43":[2,1],"44":[0,2],"45":[3,0],"46":[2,1],"47":[1,2],"48":[2,0],"49":[1,1],"50":[1,0],"51":[0,1],"52":[1,0],"53":[0,1],"54":[0,1],"55":[0,1],"56":[0,2],"57":[1,0],"58":[0,3],"59":[0,1],"60":[2,0],"61":[1,0],"62":[2,0],"63":[1,2],"64":[0,1],"65":[0,2],"66":[0,3],"67":[0,2],"68":[2,1],"69":[1,1],"70":[1,0],"71":[1,0],"72":[0,2]},"ZILDA 2":{"1":[1,1],"2":[0,1],"3":[1,0],"4":[1,1],"5":[1,2],"6":[2,1],"7":[1,2],"8":[0,1],"9":[4,0],"10":[1,1],"11":[1,0],"12":[2,0],"13":[2,0],"14":[1,1],"15":[0,1],"16":[2,0],"17":[1,0],"18":[0,1],"19":[0,1],"20":[1,0],"21":[2,0],"22":[1,1],"23":[1,0],"24":[0,2],"25":[1,1],"26":[1,1],"27":[1,0],"28":[2,0],"29":[2,1],"30":[1,2],"31":[5,0],"32":[0,1],"33":[2,0],"34":[1,1],"35":[2,0],"36":[0,2],"37":[1,0],"38":[2,0],"39":[2,0],"40":[0,1],"41":[2,0],"42":[2,0],"43":[1,1],"44":[0,1],"45":[3,0],"46":[1,0],"47":[0,1],"48":[2,0],"49":[1,1],"50":[1,0],"51":[1,3],"52":[2,0],"53":[0,2],"54":[1,2],"55":[0,2],"56":[0,2],"57":[1,0],"58":[0,2],"59":[0,1],"60":[1,0],"61":[0,1],"62":[1,0],"63":[0,1],"64":[1,1],"65":[1,0],"66":[0,3],"67":[0,1],"68":[1,0],"69":[1,0],"70":[0,1],"71":[1,1],"72":[0,3]},"LOUISE":{"1":[2,0],"2":[1,2],"3":[1,2],"4":[2,3],"5":[0,3],"6":[2,1],"7":[0,2],"8":[2,3],"9":[5,0],"10":[4,3],"11":[2,2],"12":[4,2],"13":[3,0],"14":[3,2],"15":[1,2],"16":[2,1],"17":[4,2],"18":[1,4],"19":[3,2],"20":[4,1],"21":[5,1],"22":[3,2],"23":[3,1],"24":[1,3],"25":[2,0],"26":[2,1],"27":[2,0],"28":[2,2],"29":[3,1],"30":[2,2],"31":[4,0],"32":[3,1],"33":[3,2],"34":[4,3],"35":[3,1],"36":[2,4],"37":[3,1],"38":[2,1],"39":[3,1],"40":[2,2],"41":[3,2],"42":[4,0],"43":[3,3],"44":[0,3],"45":[5,1],"46":[2,1],"47":[0,2],"48":[3,0],"49":[2,1],"50":[2,0],"51":[1,2],"52":[3,0],"53":[2,1],"54":[0,1],"55":[2,3],"56":[1,2],"57":[2,2],"58":[2,4],"59":[3,2],"60":[2,2],"61":[2,3],"62":[3,0],"63":[0,2],"64":[2,3],"65":[3,2],"66":[0,4],"67":[0,5],"68":[3,2],"69":[2,4],"70":[1,1],"71":[2,2],"72":[0,4]},"TONINHO":{"1":[2,0],"2":[1,1],"3":[2,0],"4":[2,1],"5":[0,2],"6":[2,0],"7":[0,2],"8":[1,2],"9":[3,0],"10":[2,0],"11":[1,1],"12":[1,1],"13":[3,0],"14":[2,0],"15":[1,2],"16":[1,1],"17":[2,0],"18":[0,2],"19":[3,0],"20":[2,0],"21":[2,0],"22":[2,1],"23":[2,1],"24":[1,2],"25":[1,0],"26":[1,1],"27":[2,0],"28":[2,1],"29":[2,0],"30":[1,1],"31":[3,0],"32":[1,1],"33":[2,1],"34":[2,1],"35":[0,0],"36":[1,1],"37":[2,0],"38":[2,0],"39":[2,0],"40":[1,1],"41":[2,1],"42":[3,0],"43":[1,1],"44":[1,1],"45":[2,0],"46":[2,0],"47":[1,1],"48":[2,0],"49":[1,1],"50":[1,0],"51":[1,2],"52":[2,0],"53":[1,1],"54":[1,1],"55":[1,2],"56":[0,2],"57":[1,1],"58":[0,2],"59":[1,1],"60":[2,1],"61":[1,2],"62":[2,0],"63":[1,1],"64":[1,1],"65":[1,1],"66":[0,2],"67":[0,2],"68":[2,1],"69":[1,1],"70":[1,1],"71":[1,2],"72":[0,2]},"EDILAINE 1":{"1":[1,0],"2":[2,0],"3":[1,0],"4":[0,1],"5":[0,2],"6":[2,0],"7":[1,1],"8":[2,1],"9":[3,0],"10":[2,1],"11":[1,1],"12":[1,0],"13":[2,0],"14":[3,2],"15":[1,1],"16":[1,1],"17":[2,1],"18":[1,2],"19":[3,0],"20":[1,0],"21":[2,0],"22":[1,1],"23":[0,0],"24":[1,3],"25":[0,1],"26":[1,0],"27":[1,0],"28":[3,2],"29":[1,1],"30":[0,1],"31":[2,0],"32":[0,1],"33":[0,0],"34":[2,0],"35":[1,1],"36":[0,2],"37":[2,0],"38":[3,0],"39":[3,1],"40":[2,1],"41":[2,0],"42":[1,0],"43":[0,0],"44":[1,1],"45":[3,0],"46":[3,0],"47":[0,2],"48":[2,1],"49":[2,2],"50":[0,0],"51":[1,2],"52":[3,2],"53":[1,1],"54":[0,0],"55":[1,2],"56":[0,1],"57":[2,1],"58":[1,2],"59":[2,1],"60":[3,1],"61":[1,2],"62":[0,0],"63":[1,1],"64":[1,2],"65":[0,0],"66":[1,1],"67":[0,2],"68":[2,1],"69":[1,2],"70":[0,0],"71":[0,0],"72":[0,2]},"EDILAINE 2":{"1":[2,0],"2":[1,1],"3":[2,1],"4":[2,1],"5":[0,2],"6":[2,1],"7":[1,2],"8":[1,2],"9":[3,0],"10":[2,1],"11":[0,1],"12":[2,0],"13":[4,0],"14":[2,1],"15":[0,2],"16":[2,0],"17":[3,1],"18":[0,2],"19":[2,1],"20":[2,0],"21":[2,0],"22":[2,1],"23":[3,1],"24":[1,3],"25":[0,1],"26":[2,1],"27":[3,1],"28":[2,1],"29":[2,0],"30":[1,2],"31":[4,0],"32":[1,1],"33":[1,1],"34":[2,1],"35":[2,0],"36":[0,2],"37":[2,0],"38":[1,1],"39":[2,1],"40":[0,2],"41":[2,0],"42":[3,0],"43":[2,1],"44":[1,2],"45":[3,null],"46":[1,0],"47":[0,2],"48":[1,0],"49":[1,1],"50":[2,0],"51":[1,2],"52":[3,0],"53":[1,1],"54":[1,2],"55":[1,2],"56":[0,2],"57":[1,1],"58":[0,3],"59":[1,1],"60":[2,1],"61":[1,3],"62":[2,1],"63":[1,2],"64":[1,3],"65":[1,1],"66":[0,3],"67":[1,4],"68":[1,1],"69":[1,1],"70":[1,1],"71":[2,1],"72":[0,2]},"EMILIA":{"1":[1,2],"2":[3,2],"3":[3,0],"4":[1,1],"5":[1,1],"6":[3,3],"7":[1,2],"8":[1,0],"9":[3,1],"10":[2,1],"11":[1,2],"12":[4,3],"13":[3,2],"14":[2,3],"15":[1,3],"16":[2,4],"17":[2,1],"18":[3,4],"19":[4,4],"20":[2,3],"21":[5,3],"22":[2,3],"23":[3,2],"24":[2,3],"25":[1,2],"26":[2,1],"27":[4,2],"28":[0,1],"29":[2,2],"30":[2,3],"31":[4,2],"32":[0,3],"33":[0,0],"34":[2,2],"35":[5,3],"36":[2,3],"37":[4,2],"38":[3,1],"39":[2,3],"40":[2,2],"41":[3,2],"42":[1,2],"43":[1,3],"44":[1,4],"45":[1,1],"46":[3,1],"47":[4,4],"48":[2,4],"49":[2,3],"50":[2,1],"51":[3,2],"52":[4,3],"53":[1,0],"54":[1,2],"55":[4,3],"56":[1,2],"57":[2,2],"58":[1,3],"59":[2,4],"60":[1,3],"61":[3,1],"62":[2,1],"63":[1,1],"64":[2,3],"65":[1,0],"66":[3,1],"67":[1,3],"68":[3,2],"69":[3,4],"70":[1,1],"71":[2,1],"72":[2,1]},"GABRIEL":{"1":[2,0],"2":[1,1],"3":[1,1],"4":[2,1],"5":[0,2],"6":[2,1],"7":[0,2],"8":[1,1],"9":[4,0],"10":[2,1],"11":[1,1],"12":[1,0],"13":[3,0],"14":[2,0],"15":[1,2],"16":[2,1],"17":[2,0],"18":[1,2],"19":[3,0],"20":[2,0],"21":[2,0],"22":[2,1],"23":[2,1],"24":[1,2],"25":[2,1],"26":[2,1],"27":[2,0],"28":[2,1],"29":[2,0],"30":[1,1],"31":[3,0],"32":[2,1],"33":[1,1],"34":[2,1],"35":[2,0],"36":[1,1],"37":[2,0],"38":[2,1],"39":[2,1],"40":[1,1],"41":[2,1],"42":[3,0],"43":[1,1],"44":[1,1],"45":[2,1],"46":[3,1],"47":[1,2],"48":[2,0],"49":[1,1],"50":[2,1],"51":[1,2],"52":[2,2],"53":[1,1],"54":[1,1],"55":[1,2],"56":[1,1],"57":[2,2],"58":[0,2],"59":[1,1],"60":[2,1],"61":[1,2],"62":[2,0],"63":[1,1],"64":[2,2],"65":[1,1],"66":[0,3],"67":[1,3],"68":[2,1],"69":[1,1],"70":[1,1],"71":[1,2],"72":[0,3]},"MATEO":{"1":[2,1],"2":[1,0],"3":[1,0],"4":[2,1],"5":[1,2],"6":[3,2],"7":[1,2],"8":[1,2],"9":[1,2],"10":[1,1],"11":[2,1],"12":[1,0],"13":[2,0],"14":[1,2],"15":[2,0],"16":[2,2],"17":[2,1],"18":[1,0],"19":[2,1],"20":[2,1],"21":[1,2],"22":[1,2],"23":[2,0],"24":[2,0],"25":[1,2],"26":[2,2],"27":[1,2],"28":[2,1],"29":[1,2],"30":[1,1],"31":[2,1],"32":[2,2],"33":[2,0],"34":[1,1],"35":[1,2],"36":[0,2],"37":[1,2],"38":[1,0],"39":[2,2],"40":[0,1],"41":[1,0],"42":[0,1],"43":[1,2],"44":[1,1],"45":[2,1],"46":[1,0],"47":[1,0],"48":[3,1],"49":[3,1],"50":[2,1],"51":[1,2],"52":[1,2],"53":[0,1],"54":[1,1],"55":[1,2],"56":[2,1],"57":[1,1],"58":[1,1],"59":[1,2],"60":[2,1],"61":[2,1],"62":[2,0],"63":[1,0],"64":[0,2],"65":[2,1],"66":[2,0],"67":[0,2],"68":[1,2],"69":[1,3],"70":[2,2],"71":[2,0],"72":[2,2]},"MICHA":{"1":[1,0],"2":[1,0],"3":[1,0],"4":[2,1],"5":[1,2],"6":[2,0],"7":[0,1],"8":[1,1],"9":[3,0],"10":[2,1],"11":[2,1],"12":[1,1],"13":[3,0],"14":[3,0],"15":[1,2],"16":[1,1],"17":[3,1],"18":[0,2],"19":[3,0],"20":[2,0],"21":[3,0],"22":[2,1],"23":[2,1],"24":[1,2],"25":[2,1],"26":[1,0],"27":[1,2],"28":[2,1],"29":[2,0],"30":[0,1],"31":[2,1],"32":[2,1],"33":[2,1],"34":[2,1],"35":[2,0],"36":[1,2],"37":[2,0],"38":[2,0],"39":[2,0],"40":[1,1],"41":[2,1],"42":[3,0],"43":[2,1],"44":[1,2],"45":[2,0],"46":[3,1],"47":[1,2],"48":[2,1],"49":[1,1],"50":[0,1],"51":[1,2],"52":[2,0],"53":[1,2],"54":[0,2],"55":[1,2],"56":[1,2],"57":[1,1],"58":[0,2],"59":[1,1],"60":[1,2],"61":[1,2],"62":[2,1],"63":[1,1],"64":[1,2],"65":[1,1],"66":[0,2],"67":[0,3],"68":[2,1],"69":[1,1],"70":[1,2],"71":[1,1],"72":[0,3]},"NACHO":{"1":[2,1],"2":[1,1],"3":[2,1],"4":[2,2],"5":[1,3],"6":[2,2],"7":[1,2],"8":[2,2],"9":[3,1],"10":[2,2],"11":[1,2],"12":[3,1],"13":[2,1],"14":[2,1],"15":[2,3],"16":[1,2],"17":[3,1],"18":[1,2],"19":[2,1],"20":[2,1],"21":[3,1],"22":[3,2],"23":[2,1],"24":[1,2],"25":[1,2],"26":[2,1],"27":[2,2],"28":[1,2],"29":[2,1],"30":[2,1],"31":[2,1],"32":[1,2],"33":[2,2],"34":[3,2],"35":[1,2],"36":[1,2],"37":[2,1],"38":[2,2],"39":[2,1],"40":[3,2],"41":[3,2],"42":[3,1],"43":[2,1],"44":[1,1],"45":[2,1],"46":[3,1],"47":[1,3],"48":[3,1],"49":[1,2],"50":[1,1],"51":[1,2],"52":[2,1],"53":[1,2],"54":[1,3],"55":[2,2],"56":[1,2],"57":[2,3],"58":[2,3],"59":[1,2],"60":[1,1],"61":[1,2],"62":[1,2],"63":[1,2],"64":[2,3],"65":[2,1],"66":[2,1],"67":[1,3],"68":[1,1],"69":[2,3],"70":[1,1],"71":[2,1],"72":[2,3]},"PABLO 1":{"1":[2,1],"2":[0,1],"3":[1,0],"4":[1,2],"5":[0,2],"6":[2,1],"7":[0,2],"8":[3,1],"9":[3,1],"10":[3,1],"11":[1,2],"12":[2,1],"13":[3,1],"14":[2,1],"15":[1,3],"16":[2,1],"17":[3,1],"18":[0,1],"19":[3,1],"20":[2,1],"21":[3,1],"22":[2,3],"23":[0,1],"24":[1,2],"25":[1,0],"26":[2,1],"27":[2,1],"28":[3,0],"29":[2,2],"30":[3,1],"31":[3,0],"32":[1,2],"33":[2,3],"34":[2,1],"35":[1,0],"36":[1,2],"37":[1,2],"38":[2,3],"39":[2,0],"40":[2,1],"41":[2,1],"42":[2,0],"43":[2,2],"44":[1,3],"45":[2,0],"46":[4,1],"47":[1,3],"48":[1,0],"49":[3,1],"50":[0,2],"51":[0,2],"52":[3,1],"53":[1,2],"54":[1,0],"55":[0,2],"56":[1,2],"57":[0,2],"58":[0,3],"59":[2,1],"60":[3,2],"61":[1,3],"62":[2,1],"63":[1,2],"64":[2,3],"65":[1,3],"66":[1,2],"67":[1,2],"68":[3,1],"69":[2,3],"70":[1,0],"71":[2,3],"72":[1,3]},"PABLO 2":{"1":[2,1],"2":[1,1],"3":[2,0],"4":[1,2],"5":[2,1],"6":[3,1],"7":[1,1],"8":[2,0],"9":[2,1],"10":[2,0],"11":[1,1],"12":[1,1],"13":[3,0],"14":[2,1],"15":[1,2],"16":[1,0],"17":[3,1],"18":[1,2],"19":[3,0],"20":[2,1],"21":[2,1],"22":[2,1],"23":[0,0],"24":[0,1],"25":[1,1],"26":[1,1],"27":[2,0],"28":[1,1],"29":[2,2],"30":[1,1],"31":[3,1],"32":[1,2],"33":[2,1],"34":[2,1],"35":[1,1],"36":[0,0],"37":[2,0],"38":[3,0],"39":[3,0],"40":[1,1],"41":[2,0],"42":[3,0],"43":[1,0],"44":[1,2],"45":[2,0],"46":[2,0],"47":[0,3],"48":[1,0],"49":[1,2],"50":[0,0],"51":[1,3],"52":[1,1],"53":[1,2],"54":[1,2],"55":[1,2],"56":[1,1],"57":[1,1],"58":[1,2],"59":[1,1],"60":[2,1],"61":[1,3],"62":[1,1],"63":[1,1],"64":[1,2],"65":[0,0],"66":[1,2],"67":[1,3],"68":[2,0],"69":[1,2],"70":[1,1],"71":[1,1],"72":[0,3]},"PAPUCHITO":{"1":[2,0],"2":[1,1],"3":[2,1],"4":[2,1],"5":[0,2],"6":[2,0],"7":[0,2],"8":[1,1],"9":[3,0],"10":[2,1],"11":[1,1],"12":[1,0],"13":[3,0],"14":[2,0],"15":[2,1],"16":[1,1],"17":[2,0],"18":[2,1],"19":[2,0],"20":[1,1],"21":[2,0],"22":[2,1],"23":[0,2],"24":[1,1],"25":[1,1],"26":[1,0],"27":[1,1],"28":[0,2],"29":[2,0],"30":[3,0],"31":[1,1],"32":[1,0],"33":[2,0],"34":[2,1],"35":[2,0],"36":[2,0],"37":[2,1],"38":[2,1],"39":[1,0],"40":[2,0],"41":[2,1],"42":[2,1],"43":[2,0],"44":[1,0],"45":[2,1],"46":[1,1],"47":[2,0],"48":[1,0],"49":[2,1],"50":[1,1],"51":[2,1],"52":[2,0],"53":[2,1],"54":[2,0],"55":[2,0],"56":[2,0],"57":[1,1],"58":[1,1],"59":[1,1],"60":[2,1],"61":[3,0],"62":[1,1],"63":[2,0],"64":[2,0],"65":[1,0],"66":[1,1],"67":[2,0],"68":[1,1],"69":[1,3],"70":[2,1],"71":[3,0],"72":[2,1]},"RENATA":{"1":[4,1],"2":[3,0],"3":[2,1],"4":[2,0],"5":[1,2],"6":[2,1],"7":[1,1],"8":[3,1],"9":[4,0],"10":[1,3],"11":[3,2],"12":[3,0],"13":[4,1],"14":[4,2],"15":[0,4],"16":[3,1],"17":[4,1],"18":[2,1],"19":[5,1],"20":[1,1],"21":[3,1],"22":[6,2],"23":[1,4],"24":[1,4],"25":[1,2],"26":[3,1],"27":[2,1],"28":[3,2],"29":[1,3],"30":[1,2],"31":[4,2],"32":[1,4],"33":[1,3],"34":[3,1],"35":[3,1],"36":[0,2],"37":[2,0],"38":[2,2],"39":[4,0],"40":[3,1],"41":[4,2],"42":[3,0],"43":[2,1],"44":[1,2],"45":[3,1],"46":[4,0],"47":[1,3],"48":[4,1],"49":[3,2],"50":[1,1],"51":[1,5],"52":[2,1],"53":[2,4],"54":[1,2],"55":[1,4],"56":[1,1],"57":[2,1],"58":[1,1],"59":[1,4],"60":[2,1],"61":[1,3],"62":[1,2],"63":[1,1],"64":[3,2],"65":[2,1],"66":[2,3],"67":[3,2],"68":[4,1],"69":[2,2],"70":[2,1],"71":[2,1],"72":[0,6]},"EXTRA 1":{"1":[1,2],"2":[3,4],"3":[5,6],"4":[7,8],"5":[9,10],"6":[11,12],"7":[13,14],"8":[15,16],"9":[17,18],"10":[19,20],"11":[21,22],"12":[23,24],"13":[25,26],"14":[27,28],"15":[29,30],"16":[31,32],"17":[33,34],"18":[35,36],"19":[37,38],"20":[39,40],"21":[41,42],"22":[43,44],"23":[45,46],"24":[47,48],"25":[49,50],"26":[51,52],"27":[53,54],"28":[55,56],"29":[57,58],"30":[59,60],"31":[61,62],"32":[63,64],"33":[65,66],"34":[67,68],"35":[69,70],"36":[71,72],"37":[73,74],"38":[75,76],"39":[77,78],"40":[79,80],"41":[81,82],"42":[83,84],"43":[85,86],"44":[87,88],"45":[89,90],"46":[91,92],"47":[93,94],"48":[95,96],"49":[97,98],"50":[99,100],"51":[101,102],"52":[103,104],"53":[105,106],"54":[107,108],"55":[109,110],"56":[111,112],"57":[113,114],"58":[115,116],"59":[117,118],"60":[119,120],"61":[121,122],"62":[123,124],"63":[125,126],"64":[127,128],"65":[129,130],"66":[131,132],"67":[133,134],"68":[135,136],"69":[137,138],"70":[139,140],"71":[141,142],"72":[143,144]},"EXTRA 2":{"1":[1,2],"2":[3,4],"3":[5,6],"4":[7,8],"5":[9,10],"6":[11,12],"7":[13,14],"8":[15,16],"9":[17,18],"10":[19,20],"11":[21,22],"12":[23,24],"13":[25,26],"14":[27,28],"15":[29,30],"16":[31,32],"17":[33,34],"18":[35,36],"19":[37,38],"20":[39,40],"21":[41,42],"22":[43,44],"23":[45,46],"24":[47,48],"25":[49,50],"26":[51,52],"27":[53,54],"28":[55,56],"29":[57,58],"30":[59,60],"31":[61,62],"32":[63,64],"33":[65,66],"34":[67,68],"35":[69,70],"36":[71,72],"37":[73,74],"38":[75,76],"39":[77,78],"40":[79,80],"41":[81,82],"42":[83,84],"43":[85,86],"44":[87,88],"45":[89,90],"46":[91,92],"47":[93,94],"48":[95,96],"49":[97,98],"50":[99,100],"51":[101,102],"52":[103,104],"53":[105,106],"54":[107,108],"55":[109,110],"56":[111,112],"57":[113,114],"58":[115,116],"59":[117,118],"60":[119,120],"61":[121,122],"62":[123,124],"63":[125,126],"64":[127,128],"65":[129,130],"66":[131,132],"67":[133,134],"68":[135,136],"69":[137,138],"70":[139,140],"71":[141,142],"72":[143,144]},"EXTRA 3":{"1":[1,2],"2":[3,4],"3":[5,6],"4":[7,8],"5":[9,10],"6":[11,12],"7":[13,14],"8":[15,16],"9":[17,18],"10":[19,20],"11":[21,22],"12":[23,24],"13":[25,26],"14":[27,28],"15":[29,30],"16":[31,32],"17":[33,34],"18":[35,36],"19":[37,38],"20":[39,40],"21":[41,42],"22":[43,44],"23":[45,46],"24":[47,48],"25":[49,50],"26":[51,52],"27":[53,54],"28":[55,56],"29":[57,58],"30":[59,60],"31":[61,62],"32":[63,64],"33":[65,66],"34":[67,68],"35":[69,70],"36":[71,72],"37":[73,74],"38":[75,76],"39":[77,78],"40":[79,80],"41":[81,82],"42":[83,84],"43":[85,86],"44":[87,88],"45":[89,90],"46":[91,92],"47":[93,94],"48":[95,96],"49":[97,98],"50":[99,100],"51":[101,102],"52":[103,104],"53":[105,106],"54":[107,108],"55":[109,110],"56":[111,112],"57":[113,114],"58":[115,116],"59":[117,118],"60":[119,120],"61":[121,122],"62":[123,124],"63":[125,126],"64":[127,128],"65":[129,130],"66":[131,132],"67":[133,134],"68":[135,136],"69":[137,138],"70":[139,140],"71":[141,142],"72":[143,144]}},"players":["MANUELA","NINA","DUDINHA","ELVIS","GARGAMEL","FERNANDA","FRANCISCO","FÁTIMA","MARIA 1","MARIA 2","JOSÉ 1","JOSÉ 2","JOSÉ 3","JOSÉ 4","LIGIA","SOFIA","THOR","ADRIANO","GANDALF","BUMBLEBEE","GREGÓRIO","ANGELO","CÉSAR","JANAÍNA","VAGNER PORTO","VICTOR","VITU","MARTA 1","MARTA 2","MARTA 3","MARTA 4","MARTA 5","LUCAS","LUCIANO","EDNEY 1","EDNEY 2","NONO 1","NONO 2","NONO 3","ZILDA 1","ZILDA 2","LOUISE","TONINHO","EDILAINE 1","EDILAINE 2","EMILIA","GABRIEL","MATEO","MICHA","NACHO","PABLO 1","PABLO 2","PAPUCHITO","RENATA","EXTRA 1","EXTRA 2","EXTRA 3"],"ptToEn":{"México":"Mexico","África do Sul":"South Africa","Canadá":"Canada","Bósnia e Herzegovina":"Bosnia & Herzegovina","Coreia do Sul":"South Korea","República Tcheca":"Czech Republic","Catar":"Qatar","Suíça":"Switzerland","Brasil":"Brazil","Marrocos":"Morocco","Estados Unidos":"USA","Paraguai":"Paraguay","Haiti":"Haiti","Escócia":"Scotland","Austrália":"Australia","Turquia":"Turkey","Alemanha":"Germany","Curação":"Curaçao","Holanda":"Netherlands","Japão":"Japan","Costa do Marfim":"Ivory Coast","Equador":"Ecuador","Suécia":"Sweden","Tunísia":"Tunisia","Espanha":"Spain","Cabo Verde":"Cape Verde","Bélgica":"Belgium","Egito":"Egypt","Irã":"Iran","Nova Zelândia":"New Zealand","Arábia Saudita":"Saudi Arabia","Uruguai":"Uruguay","França":"France","Senegal":"Senegal","Iraque":"Iraq","Noruega":"Norway","Argentina":"Argentina","Argélia":"Algeria","Áustria":"Austria","Jordânia":"Jordan","Portugal":"Portugal","RD Congo":"DR Congo","Inglaterra":"England","Croácia":"Croatia","Uzbequistão":"Uzbekistan","Colômbia":"Colombia","Gana":"Ghana","Panamá":"Panama"},"enToPt":{"Mexico":"México","South Africa":"África do Sul","Canada":"Canadá","Bosnia & Herzegovina":"Bósnia e Herzegovina","South Korea":"Coreia do Sul","Czech Republic":"República Tcheca","Qatar":"Catar","Switzerland":"Suíça","Brazil":"Brasil","Morocco":"Marrocos","USA":"Estados Unidos","Paraguay":"Paraguai","Haiti":"Haiti","Scotland":"Escócia","Australia":"Austrália","Turkey":"Turquia","Germany":"Alemanha","Curaçao":"Curação","Netherlands":"Holanda","Japan":"Japão","Ivory Coast":"Costa do Marfim","Ecuador":"Equador","Sweden":"Suécia","Tunisia":"Tunísia","Spain":"Espanha","Cape Verde":"Cabo Verde","Belgium":"Bélgica","Egypt":"Egito","Iran":"Irã","New Zealand":"Nova Zelândia","Saudi Arabia":"Arábia Saudita","Uruguay":"Uruguai","France":"França","Senegal":"Senegal","Iraq":"Iraque","Norway":"Noruega","Argentina":"Argentina","Algeria":"Argélia","Austria":"Áustria","Jordan":"Jordânia","Portugal":"Portugal","DR Congo":"RD Congo","England":"Inglaterra","Croatia":"Croácia","Uzbekistan":"Uzbequistão","Colombia":"Colômbia","Ghana":"Gana","Panama":"Panamá"}};
+
+const { games, bets, players, ptToEn, enToPt } = BOLAO;
+
+const FLAGS = {
+  "México":"🇲🇽","África do Sul":"🇿🇦","Canadá":"🇨🇦","Bósnia e Herzegovina":"🇧🇦",
+  "Coreia do Sul":"🇰🇷","República Tcheca":"🇨🇿","Catar":"🇶🇦","Suíça":"🇨🇭",
+  "Brasil":"🇧🇷","Marrocos":"🇲🇦","Estados Unidos":"🇺🇸","Paraguai":"🇵🇾",
+  "Haiti":"🇭🇹","Escócia":"🏴󠁧󠁢󠁳󠁣󠁴󠁿","Austrália":"🇦🇺","Turquia":"🇹🇷",
+  "Alemanha":"🇩🇪","Curação":"🇨🇼","Holanda":"🇳🇱","Japão":"🇯🇵",
+  "Costa do Marfim":"🇨🇮","Equador":"🇪🇨","Suécia":"🇸🇪","Tunísia":"🇹🇳",
+  "Espanha":"🇪🇸","Cabo Verde":"🇨🇻","Bélgica":"🇧🇪","Egito":"🇪🇬",
+  "Irã":"🇮🇷","Nova Zelândia":"🇳🇿","Arábia Saudita":"🇸🇦","Uruguai":"🇺🇾",
+  "França":"🇫🇷","Senegal":"🇸🇳","Iraque":"🇮🇶","Noruega":"🇳🇴",
+  "Argentina":"🇦🇷","Argélia":"🇩🇿","Áustria":"🇦🇹","Jordânia":"🇯🇴",
+  "Portugal":"🇵🇹","RD Congo":"🇨🇩","Inglaterra":"🏴󠁧󠁢󠁥󠁮󠁧󠁿","Croácia":"🇭🇷",
+  "Uzbequistão":"🇺🇿","Colômbia":"🇨🇴","Gana":"🇬🇭","Panamá":"🇵🇦"
+};
+const flag = t => FLAGS[t] || '🏳️';
+
+// ===== REAL RESULTS (populated from API) =====
+// realResults[gameId] = {scoreA, scoreB, status} 
+// status: 'finished' | 'live' | 'scheduled' | null
+let realResults = {};
+let lastUpdated = null;
+let apiOk = false;
+let vFilter = 'all';
+
+// ===== HELPERS =====
+function getResult(s) {
+  if (!s || s[0] == null) return null;
+  return s[0] > s[1] ? 1 : s[0] < s[1] ? -1 : 0;
+}
+
+function getPoints(gameId) {
+  const r = realResults[String(gameId)];
+  if (!r || r.scoreA == null || r.scoreB == null) return null;
+  return (p, b) => {
+    if (!b || b[0] == null) return null;
+    if (r.scoreA === b[0] && r.scoreB === b[1]) return 5;
+    if (getResult([r.scoreA, r.scoreB]) === getResult(b)) return 3;
+    return 0;
+  };
+}
+
+function getGameStatus(gameId) {
+  const r = realResults[String(gameId)];
+  return r ? r.status : null;
+}
+
+// ===== API FETCH =====
+// worldcup26.ir: primary (real-time, updates ~1 min during matches)
+// openfootball: fallback (manual updates ~1x/day)
+// Both are free, no API key needed
+
+const APIS = [
+  {
+    name: 'worldcup26.ir',
+    // Use allorigins CORS proxy to bypass browser CORS restriction
+    url: 'https://api.allorigins.win/get?url=' + encodeURIComponent('https://worldcup26.ir/get/games'),
+    parse: async (resp) => {
+      const wrapper = await resp.json();
+      const data = JSON.parse(wrapper.contents);
+      const list = Array.isArray(data) ? data : (data.games || data.data || data.matches || []);
+      parseWorldcup26(list);
+    }
+  },
+  {
+    name: 'openfootball',
+    url: 'https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json',
+    parse: async (resp) => {
+      const data = await resp.json();
+      parseOpenFootball(data);
+    }
+  }
+];
+
+async function fetchResults() {
+  setStatusLoading();
+  for (const api of APIS) {
+    try {
+      const resp = await fetch(api.url, { cache: 'no-store' });
+      if (!resp.ok) throw new Error('HTTP ' + resp.status);
+      await api.parse(resp);
+      apiOk = true;
+      lastUpdated = new Date();
+      setStatusOK(api.name);
+      scheduleNextRefresh();
+      return true;
+    } catch(e) {
+      console.warn(api.name + ' failed:', e.message);
+    }
+  }
+  setStatusError();
+  apiOk = false;
+  return false;
+}
+
+// Parse worldcup26.ir format
+// Fields: home_team, away_team, home_score, away_score, status, match_number, etc.
+function parseWorldcup26(list) {
+  realResults = {};
+  list.forEach(m => {
+    // team names can be in English — map to PT
+    const t1En = m.home_team_en || m.home_team || m.homeTeam || m.team1 || '';
+    const t2En = m.away_team_en || m.away_team || m.awayTeam || m.team2 || '';
+    const t1Pt = enToPt[t1En] || enToPt[t1En.trim()] || t1En;
+    const t2Pt = enToPt[t2En] || enToPt[t2En.trim()] || t2En;
+
+    const gameId = findGameId(t1Pt, t2Pt);
+    if (!gameId) return;
+
+    // score fields vary: home_score / away_score, score_home / score_away
+    const rawA = m.home_score ?? m.score_home ?? m.homeScore ?? m.home_goals ?? null;
+    const rawB = m.away_score ?? m.score_away ?? m.awayScore ?? m.away_goals ?? null;
+    const sA = (rawA !== null && rawA !== '' && rawA !== undefined) ? parseInt(rawA) : null;
+    const sB = (rawB !== null && rawB !== '' && rawB !== undefined) ? parseInt(rawB) : null;
+
+    // status: 'finished'|'completed'|'FT' = done; 'inprogress'|'live'|'1H'|'2H'|'HT' = live
+    const st = (m.status || m.match_status || '').toLowerCase();
+    let status = 'scheduled';
+    if (['ft','finished','completed','full time','fulltime','ended'].includes(st)) status = 'finished';
+    else if (['1h','2h','ht','live','inprogress','in_progress','in progress','ongoing'].includes(st)) status = 'live';
+
+    realResults[String(gameId)] = {
+      scoreA: (status === 'finished' || status === 'live') ? sA : null,
+      scoreB: (status === 'finished' || status === 'live') ? sB : null,
+      status
+    };
+  });
+}
+
+// Parse openfootball format
+function parseOpenFootball(data) {
+  realResults = {};
+  const matches = data.matches || [];
+  matches.forEach(m => {
+    const t1Pt = enToPt[m.team1] || m.team1;
+    const t2Pt = enToPt[m.team2] || m.team2;
+    const gameId = findGameId(t1Pt, t2Pt);
+    if (!gameId) return;
+    let sA = null, sB = null, status = 'scheduled';
+    if (m.score && m.score.ft) {
+      sA = m.score.ft[0]; sB = m.score.ft[1]; status = 'finished';
+    } else if (m.score && m.score.ht) {
+      status = 'live';
+    }
+    realResults[String(gameId)] = { scoreA: sA, scoreB: sB, status };
+  });
+}
+
+function findGameId(teamA, teamB) {
+  const g = games.find(g =>
+    (g.teamA === teamA && g.teamB === teamB) ||
+    (g.teamA === teamB && g.teamB === teamA)
+  );
+  return g ? g.id : null;
+}
+
+// Smart refresh: 1 min if there's a live game, 3 min otherwise
+let refreshTimer = null;
+function scheduleNextRefresh() {
+  clearTimeout(refreshTimer);
+  const hasLive = Object.values(realResults).some(r => r.status === 'live');
+  const interval = hasLive ? 60000 : 180000;
+  refreshTimer = setTimeout(() => {
+    if (document.visibilityState === 'visible') {
+      fetchResults().then(() => renderCurrentPage());
+    } else {
+      scheduleNextRefresh(); // retry when tab is visible again
+    }
+  }, interval);
+}
+
+// ===== STATUS UI =====
+function setStatusLoading() {
+  document.getElementById('status-dot').className = 'status-dot live';
+  document.getElementById('status-text').textContent = 'Buscando…';
+}
+function setStatusOK(src) {
+  document.getElementById('status-dot').className = 'status-dot ok';
+  const t = lastUpdated ? lastUpdated.toLocaleTimeString('pt-BR', {hour:'2-digit',minute:'2-digit'}) : '';
+  document.getElementById('status-text').textContent = `Atualizado ${t}`;
+}
+function setStatusError() {
+  document.getElementById('status-dot').className = 'status-dot error';
+  document.getElementById('status-text').textContent = 'API indisponível';
+}
+
+// ===== TOAST =====
+let toastTimer;
+function showToast(msg, type='info') {
+  const el = document.getElementById('toast');
+  el.textContent = msg; el.className = `toast show ${type}`;
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => el.classList.remove('show'), 3500);
+}
+
+// ===== REFRESH =====
+async function refreshAPI() {
+  const btn = document.getElementById('refresh-btn');
+  const icon = document.getElementById('refresh-icon');
+  if (btn) btn.disabled = true;
+  if (icon) icon.classList.add('spinning');
+  const ok = await fetchResults();
+  if (btn) btn.disabled = false;
+  if (icon) icon.classList.remove('spinning');
+  if (ok) {
+    showToast('Resultados atualizados!', 'success');
+    renderCurrentPage();
+  } else {
+    showToast('Não foi possível obter os resultados. Tente novamente.', 'error');
+  }
+  scheduleNextRefresh();
+}
+
+// ===== NAV =====
+let currentPage = 'home';
+const pages = ['home','consultar','vencedores','pontuacao'];
+
+function nav(page) {
+  document.querySelectorAll('.page, .page-participants').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  if (page === 'participants') { showParticipants(); return; }
+  const el = document.getElementById('page-' + page);
+  if (el) el.classList.add('active');
+  document.querySelectorAll('.nav-btn')[pages.indexOf(page)]?.classList.add('active');
+  currentPage = page;
+  renderCurrentPage();
+}
+
+function renderCurrentPage() {
+  if (currentPage === 'home') renderHome();
+  else if (currentPage === 'consultar') renderConsultar();
+  else if (currentPage === 'vencedores') renderVencedores();
+  else if (currentPage === 'pontuacao') renderPontuacao();
+}
+
+// ===== COMPUTED =====
+function computeBreakdown(player) {
+  let exact=0, result=0, miss=0, pending=0;
+  let pts=0;
+  games.forEach(g => {
+    const r = realResults[String(g.id)];
+    const b = (bets[player]||{})[String(g.id)] || [null,null];
+    if (!r || r.scoreA == null) { pending++; return; }
+    if (b[0] == null) { pending++; return; }
+    if (r.scoreA === b[0] && r.scoreB === b[1]) { exact++; pts+=5; }
+    else if (getResult([r.scoreA,r.scoreB]) === getResult(b)) { result++; pts+=3; }
+    else miss++;
+  });
+  return { exact, result, miss, pending, pts };
+}
+
+function getRank(player) {
+  return [...players].sort((a,b) => computeBreakdown(b).pts - computeBreakdown(a).pts).indexOf(player)+1;
+}
+
+// Count finished games
+function finishedCount() {
+  return games.filter(g => { const r=realResults[String(g.id)]; return r && r.scoreA!=null; }).length;
+}
+
+// ===== HOME =====
+function renderHome() {
+  const finished = finishedCount();
+  const total = games.length;
+  document.getElementById('home-sub').textContent = `Fase de grupos · ${players.length} participantes · ${finished}/${total} jogos encerrados`;
+
+  let totalExact=0, totalResult=0;
+  players.forEach(p => { const bd=computeBreakdown(p); totalExact+=bd.exact; totalResult+=bd.result; });
+
+  const sorted = [...players].sort((a,b)=>computeBreakdown(b).pts-computeBreakdown(a).pts);
+  const top = sorted[0];
+  const topPts = top ? computeBreakdown(top).pts : 0;
+
+  document.getElementById('home-stats').innerHTML = `
+    <div class="participants-count-btn stat-card" onclick="showParticipants()" style="cursor:pointer">
+      <div class="stat-num">${players.length}</div>
+      <div class="stat-lbl">Participantes</div>
+      <div style="color:var(--gold);font-size:.75rem;margin-top:4px;font-family:'Barlow Condensed',sans-serif;letter-spacing:.05em">Ver lista →</div>
+    </div>
+    <div class="stat-card"><div class="stat-num">${total}</div><div class="stat-lbl">Jogos</div></div>
+    <div class="stat-card"><div class="stat-num">${finished}</div><div class="stat-lbl">Encerrados</div></div>
+    <div class="stat-card"><div class="stat-num" style="color:var(--green)">${totalExact}</div><div class="stat-lbl">Placares Exatos</div></div>
+    <div class="stat-card"><div class="stat-num" style="color:var(--amber)">${totalResult}</div><div class="stat-lbl">Resultados Certos</div></div>
+    ${topPts > 0 ? `<div class="stat-card"><div class="stat-num" style="color:var(--gold)">${topPts}</div><div class="stat-lbl">🥇 ${top}</div></div>` : ''}
+  `;
+}
+
+// ===== CONSULTAR =====
+function initConsultar() {
+  const sel = document.getElementById('cp-player');
+  if (sel.options.length > 1) return;
+  sel.innerHTML = '';
+  const sorted = [...players].sort((a,b)=>a.localeCompare(b,'pt-BR'));
+  const order = sorted.includes('ADRIANO') ? ['ADRIANO',...sorted.filter(p=>p!=='ADRIANO')] : sorted;
+  order.forEach(p => { const o=document.createElement('option'); o.value=p; o.textContent=p; sel.appendChild(o); });
+}
+
+function renderConsultar() {
+  initConsultar();
+  const player = document.getElementById('cp-player').value;
+  const filter = document.getElementById('cp-filter').value;
+  const search = (document.getElementById('cp-search').value||'').toLowerCase();
+  const playerBets = bets[player] || {};
+  const bd = computeBreakdown(player);
+
+  document.getElementById('cp-stats').innerHTML = `
+    <div class="pstat"><div class="pstat-val" style="color:var(--gold)">${bd.pts}</div><div class="pstat-lbl">Pontos</div></div>
+    <div class="pstat"><div class="pstat-val" style="color:var(--green)">${bd.exact}</div><div class="pstat-lbl">🎯 Na Mosca</div></div>
+    <div class="pstat"><div class="pstat-val" style="color:var(--amber)">${bd.result}</div><div class="pstat-lbl">✓ Resultado</div></div>
+    <div class="pstat"><div class="pstat-val" style="color:var(--muted)">${bd.miss}</div><div class="pstat-lbl">✗ Errou</div></div>
+    <div class="pstat"><div class="pstat-val" style="color:var(--blue)">${bd.pending}</div><div class="pstat-lbl">⏳ Pendente</div></div>
+    <div class="pstat"><div class="pstat-val" style="color:var(--text)">${getRank(player)}º</div><div class="pstat-lbl">Posição</div></div>
+  `;
+
+  const filtered = games.filter(g => {
+    const r = realResults[String(g.id)];
+    const b = playerBets[String(g.id)] || [null,null];
+    const finished = r && r.scoreA != null;
+    let pts = null;
+    if (finished && b[0] != null) {
+      if (r.scoreA===b[0]&&r.scoreB===b[1]) pts=5;
+      else if (getResult([r.scoreA,r.scoreB])===getResult(b)) pts=3;
+      else pts=0;
+    }
+    const matchSearch = !search || g.teamA.toLowerCase().includes(search)||g.teamB.toLowerCase().includes(search);
+    let matchF = true;
+    if (filter==='exact') matchF = pts===5;
+    else if (filter==='result') matchF = pts===3;
+    else if (filter==='miss') matchF = pts===0;
+    else if (filter==='pending') matchF = pts===null;
+    return matchSearch && matchF;
+  });
+
+  document.getElementById('cp-games').innerHTML = filtered.map(g => {
+    const r = realResults[String(g.id)];
+    const b = playerBets[String(g.id)] || [null,null];
+    const finished = r && r.scoreA != null;
+    const isLive = r && r.status === 'live';
+    let pts=null, cls='pending', badge='', betCls='pending-c';
+    if (finished && b[0]!=null) {
+      if (r.scoreA===b[0]&&r.scoreB===b[1]) { pts=5; cls='exact'; badge='<span class="gbadge exact">🎯 Na Mosca</span>'; betCls='exact-c'; }
+      else if (getResult([r.scoreA,r.scoreB])===getResult(b)) { pts=3; cls='result'; badge='<span class="gbadge result">✓ Resultado</span>'; betCls='result-c'; }
+      else { pts=0; cls='miss'; badge='<span class="gbadge miss">✗ Errou</span>'; betCls='miss-c'; }
+    } else if (isLive) {
+      badge='<span class="gbadge live">🔴 Ao Vivo</span>';
+    } else {
+      badge='<span class="gbadge pending">⏳ Aguardando</span>';
+    }
+    const realStr = finished ? `${r.scoreA} × ${r.scoreB}` : isLive ? '🔴 Ao vivo' : '— × —';
+    const betStr = b[0]!=null ? `${b[0]} × ${b[1]}` : '— × —';
+    return `
+      <div class="gcard ${cls}">
+        <div class="gcard-hdr"><span class="gnum">Jogo ${g.id}</span>${badge}</div>
+        <div class="match-row">
+          <span class="tname left">${flag(g.teamA)} ${g.teamA}</span>
+          <span class="score-real">${realStr}</span>
+          <span class="tname right">${g.teamB} ${flag(g.teamB)}</span>
+        </div>
+        <div class="bet-row">
+          <span class="bet-label">Palpite:</span>
+          <span class="bet-val ${betCls}">${betStr}</span>
+          ${pts!==null?`<span class="gpts" style="color:${pts>0?'var(--green)':'var(--muted)'}">+${pts} pts</span>`:''}
+        </div>
+        <div class="gmeta">📅 ${g.date} · ${g.time} · 🏟 ${g.stadium}</div>
+      </div>`;
+  }).join('') || '<div style="text-align:center;padding:40px;color:var(--muted)">Nenhum jogo encontrado.</div>';
+}
+
+// ===== VENCEDORES =====
+function setVF(f, btn) {
+  vFilter = f;
+  document.querySelectorAll('.fbtn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  renderVencedores();
+}
+
+function renderVencedores() {
+  const search = (document.getElementById('vw-search')?.value||'').toLowerCase();
+  let html = '';
+  games.forEach(g => {
+    const r = realResults[String(g.id)];
+    const finished = r && r.scoreA != null;
+    const isLive = r && r.status === 'live';
+
+    if (vFilter==='played' && !finished) return;
+    if (vFilter==='exact' || vFilter==='result') {
+      if (!finished) return;
+    }
+
+    const exact=[], result_w=[];
+    if (finished) {
+      players.forEach(p => {
+        const b=(bets[p]||{})[String(g.id)]||[null,null];
+        if (b[0]==null) return;
+        if (r.scoreA===b[0]&&r.scoreB===b[1]) exact.push({name:p,bet:b});
+        else if (getResult([r.scoreA,r.scoreB])===getResult(b)) result_w.push({name:p,bet:b});
+      });
+    }
+
+    if (vFilter==='exact' && exact.length===0) return;
+    if (vFilter==='result' && result_w.length===0) return;
+
+    const teamMatch = !search || g.teamA.toLowerCase().includes(search)||g.teamB.toLowerCase().includes(search);
+    const playerMatch = !search || [...exact,...result_w].some(w=>w.name.toLowerCase().includes(search));
+    if (!teamMatch && !playerMatch && search) return;
+
+    const showExact = vFilter !== 'result';
+    const showResult = vFilter !== 'exact';
+
+    const resultDisplay = finished 
+      ? `<span class="dc-result">${r.scoreA} × ${r.scoreB}</span>`
+      : isLive ? '<span class="live-tag">🔴 Ao Vivo</span>'
+      : '<span style="color:var(--muted);font-size:.8rem">Aguardando</span>';
+
+    const tableRows = [
+      ...(showExact ? exact.map(w=>`
+        <tr><td><strong>${w.name}</strong></td>
+        <td><span class="bs exact">${w.bet[0]} × ${w.bet[1]}</span></td>
+        <td><span class="gbadge exact">🎯 Na Mosca</span></td>
+        <td style="color:var(--green);font-weight:700">+5</td></tr>`) : []),
+      ...(showResult ? result_w.map(w=>`
+        <tr><td>${w.name}</td>
+        <td><span class="bs result">${w.bet[0]} × ${w.bet[1]}</span></td>
+        <td><span class="gbadge result">✓ Resultado</span></td>
+        <td style="color:var(--amber);font-weight:700">+3</td></tr>`) : []),
+    ].join('');
+
+    const noRows = finished && tableRows.trim()==='' 
+      ? '<tr><td colspan="4" class="no-hits">Nenhum participante acertou este jogo</td></tr>' : '';
+    const pendingRows = !finished 
+      ? '<tr><td colspan="4" class="no-hits">⏳ Resultado ainda não disponível</td></tr>' : '';
+
+    html += `
+      <div class="detail-card">
+        <div class="dc-hdr">
+          <span class="dc-title">Jogo ${g.id} · ${g.teamA} × ${g.teamB} · ${g.date} ${g.time}</span>
+          ${resultDisplay}
+        </div>
+        <div class="dc-teams">
+          <div class="tdisp"><span class="tflag">${flag(g.teamA)}</span><span class="tdn">${g.teamA}</span></div>
+          <div class="vs-box">
+            ${finished ? `<div class="vs-score">${r.scoreA}<span style="color:var(--muted);font-size:1rem"> × </span>${r.scoreB}</div>` : `<div class="vs-pending">${isLive?'🔴 Ao Vivo':'Aguardando'}</div>`}
+            <div class="vs-lbl">Resultado</div>
+          </div>
+          <div class="tdisp right"><span class="tflag">${flag(g.teamB)}</span><span class="tdn">${g.teamB}</span></div>
+        </div>
+        <table class="bets-tbl">
+          <thead><tr><th>Participante</th><th>Palpite</th><th>Tipo</th><th>Pts</th></tr></thead>
+          <tbody>${tableRows}${noRows}${pendingRows}</tbody>
+        </table>
+      </div>`;
+  });
+
+  document.getElementById('vw-games').innerHTML = html || '<div style="text-align:center;padding:40px;color:var(--muted)">Nenhum jogo encontrado.</div>';
+}
+
+// ===== PONTUAÇÃO =====
+function renderPontuacao() {
+  const finished = finishedCount();
+  const notice = document.getElementById('pts-notice');
+  if (notice) notice.style.display = 'none';
+
+  const wrap = document.getElementById('ranking-wrap');
+
+  // Sort by points DESC, then exact DESC, then name ASC — this defines rank
+  const byPoints = [...players].sort((a, b) => {
+    const da = computeBreakdown(a), db = computeBreakdown(b);
+    if (db.pts !== da.pts) return db.pts - da.pts;
+    if (db.exact !== da.exact) return db.exact - da.exact;
+    return a.localeCompare(b, 'pt-BR');
+  });
+
+  // Build rank map: handle ties (same points+exact = same rank)
+  const rankMap = {};
+  byPoints.forEach((p, i) => {
+    if (i === 0) { rankMap[p] = 1; return; }
+    const prev = byPoints[i - 1];
+    const dp = computeBreakdown(p), dprev = computeBreakdown(prev);
+    rankMap[p] = (dp.pts === dprev.pts && dp.exact === dprev.exact) ? rankMap[prev] : i + 1;
+  });
+
+  // Display in alphabetical order
+  const sorted = [...players].sort((a, b) => a.localeCompare(b, 'pt-BR'));
+  const maxPts = Math.max(...players.map(p => computeBreakdown(p).pts), 1);
+
+  wrap.innerHTML = `
+    <table class="rank-tbl">
+      <thead>
+        <tr>
+          <th style="width:56px;text-align:center">Pos.</th>
+          <th>Participante</th>
+          <th>Pontos</th>
+          <th>🎯 Exatos</th>
+          <th>✓ Result.</th>
+          <th>✗ Erros</th>
+          <th>⏳ Pend.</th>
+          <th class="rbar-cell">Progresso</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${sorted.map(p => {
+          const bd = computeBreakdown(p);
+          const rank = rankMap[p];
+          const pct = Math.round((bd.pts / maxPts) * 100);
+          const isMe = p === 'ADRIANO';
+          return `<tr class="${isMe ? 'hrow' : ''}">
+            <td class="rpos">${rank}°</td>
+            <td class="rname">${isMe ? '⭐ ' : ''}${p}</td>
+            <td class="rpts">${bd.pts > 0 ? bd.pts : '<span style="color:var(--muted);font-size:.9rem">—</span>'}</td>
+            <td class="rexact">${bd.exact}</td>
+            <td class="rresult">${bd.result}</td>
+            <td class="rmiss">${bd.miss}</td>
+            <td style="color:#93c5fd;font-size:.82rem">${bd.pending}</td>
+            <td class="rbar-cell">
+              <div class="rbar"><div class="rbar-fill" style="width:${pct}%"></div></div>
+            </td>
+          </tr>`;
+        }).join('')}
+      </tbody>
+    </table>`;
+}
+// ===== INIT =====
+async function init() {
+  const ok = await fetchResults();
+  document.getElementById('api-loading').style.display = 'none';
+  renderHome();
+  if (!ok) {
+    showToast('Não foi possível obter os resultados da Copa. Verifique a conexão.', 'error');
+  } else {
+    const f = finishedCount();
+    if (f === 0) showToast('API conectada. Aguardando início dos jogos.', 'info');
+    else showToast(`${f} jogos encerrados carregados!`, 'success');
+  }
+  // Auto-refresh is managed by scheduleNextRefresh() — adapts to 1min (live) or 3min (idle)
+}
+
+init();
+
+// ===== PARTICIPANTS PAGE =====
+function showParticipants() {
+  // Hide all pages
+  document.querySelectorAll('.page, .page-participants').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('page-participants').classList.add('active');
+  currentPage = 'participants';
+  renderParticipants();
+}
+
+function renderParticipants() {
+  const sorted = [...players].sort((a,b) => a.localeCompare(b, 'pt-BR'));
+  document.getElementById('ptotal').textContent = sorted.length + ' participantes';
+
+  // Build alphabet index
+  const letters = [...new Set(sorted.map(p => p[0].toUpperCase()))].sort();
+  const alphaEl = document.getElementById('alpha-index');
+  const allLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+  alphaEl.innerHTML = allLetters.map(l => {
+    const has = letters.includes(l);
+    return `<button class="alpha-btn ${has ? 'has-players' : ''}" onclick="${has ? `scrollToLetter('${l}')` : ''}" ${!has ? 'style="opacity:.3;cursor:default"' : ''}>${l}</button>`;
+  }).join('');
+
+  // Group by first letter
+  const groups = {};
+  sorted.forEach(p => {
+    const l = p[0].toUpperCase();
+    if (!groups[l]) groups[l] = [];
+    groups[l].push(p);
+  });
+
+  const listEl = document.getElementById('players-list');
+  listEl.innerHTML = Object.entries(groups).sort(([a],[b])=>a.localeCompare(b)).map(([letter, plist]) => {
+    const cards = plist.map(p => {
+      const bd = computeBreakdown(p);
+      const initials = p.split(' ').map(w=>w[0]).join('').slice(0,2).toUpperCase();
+      const isMe = p === 'ADRIANO';
+      return `<div class="player-card" onclick="showPlayerDetail('${p.replace(/'/g,"\'")}')">
+        <div class="player-avatar" style="${isMe?'background:rgba(245,200,66,.15);border-color:var(--gold);color:var(--gold)':''}">${initials}</div>
+        <div>
+          <div class="player-card-name">${isMe ? '⭐ ' : ''}${p}</div>
+          <div class="player-card-pts">${bd.pts > 0 ? bd.pts + ' pts · 🎯' + bd.exact + ' ✓' + bd.result : '⏳ Aguardando jogos'}</div>
+        </div>
+      </div>`;
+    }).join('');
+    return `<div class="alpha-section" id="letter-${letter}">
+      <div class="alpha-section-title">${letter}</div>
+      <div class="players-grid">${cards}</div>
+    </div>`;
+  }).join('');
+}
+
+function scrollToLetter(l) {
+  const el = document.getElementById('letter-' + l);
+  if (el) el.scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+// ===== PLAYER DETAIL PAGE =====
+function showPlayerDetail(player) {
+  document.querySelectorAll('.page, .page-participants').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-player').classList.add('active');
+  currentPage = 'player';
+  renderPlayerDetail(player);
+}
+
+function renderPlayerDetail(player) {
+  const bd = computeBreakdown(player);
+  const rank = getRank(player);
+  const isMe = player === 'ADRIANO';
+
+  document.getElementById('pd-name').textContent = (isMe ? '⭐ ' : '') + player;
+  document.getElementById('pd-rank').textContent = rank + 'º lugar no ranking';
+
+  document.getElementById('pd-stats').innerHTML = `
+    <div class="pds"><div class="pds-val" style="color:var(--gold)">${bd.pts}</div><div class="pds-lbl">Pontos</div></div>
+    <div class="pds"><div class="pds-val" style="color:var(--green)">${bd.exact}</div><div class="pds-lbl">🎯 Na Mosca</div></div>
+    <div class="pds"><div class="pds-val" style="color:var(--amber)">${bd.result}</div><div class="pds-lbl">✓ Resultado</div></div>
+    <div class="pds"><div class="pds-val" style="color:var(--muted)">${bd.miss}</div><div class="pds-lbl">✗ Errou</div></div>
+    <div class="pds"><div class="pds-val" style="color:#93c5fd">${bd.pending}</div><div class="pds-lbl">⏳ Aguard.</div></div>
+  `;
+
+  const playerBets = bets[player] || {};
+  document.getElementById('pd-games').innerHTML = games.map(g => {
+    const r = realResults[String(g.id)];
+    const b = playerBets[String(g.id)] || [null, null];
+    const finished = r && r.scoreA != null;
+    const isLive = r && r.status === 'live';
+    let pts = null, cls = 'pending', badge = '', betCls = 'pending-c';
+    if (finished && b[0] != null) {
+      if (r.scoreA === b[0] && r.scoreB === b[1]) { pts=5; cls='exact'; badge='<span class="gbadge exact">🎯 Na Mosca</span>'; betCls='exact-c'; }
+      else if (getResult([r.scoreA,r.scoreB]) === getResult(b)) { pts=3; cls='result'; badge='<span class="gbadge result">✓ Resultado</span>'; betCls='result-c'; }
+      else { pts=0; cls='miss'; badge='<span class="gbadge miss">✗ Errou</span>'; betCls='miss-c'; }
+    } else if (isLive) {
+      badge='<span class="gbadge live">🔴 Ao Vivo</span>';
+    } else {
+      badge='<span class="gbadge pending">⏳ Aguardando</span>';
+    }
+    const realStr = finished ? `${r.scoreA} × ${r.scoreB}` : isLive ? '🔴' : '— × —';
+    const betStr = b[0] != null ? `${b[0]} × ${b[1]}` : '— × —';
+    return `
+      <div class="gcard ${cls}">
+        <div class="gcard-hdr"><span class="gnum">Jogo ${g.id}</span>${badge}</div>
+        <div class="match-row">
+          <span class="tname left">${flag(g.teamA)} ${g.teamA}</span>
+          <span class="score-real">${realStr}</span>
+          <span class="tname right">${g.teamB} ${flag(g.teamB)}</span>
+        </div>
+        <div class="bet-row">
+          <span class="bet-label">Palpite:</span>
+          <span class="bet-val ${betCls}">${betStr}</span>
+          ${pts !== null ? `<span class="gpts" style="color:${pts>0?'var(--green)':'var(--muted)'}">+${pts} pts</span>` : ''}
+        </div>
+        <div class="gmeta">📅 ${g.date} · ${g.time} · 🏟 ${g.stadium}</div>
+      </div>`;
+  }).join('');
+}
+
+</script>
+
+<!-- PARTICIPANTES -->
+<div id="page-participants" class="page-participants">
+  <div style="max-width:1400px;margin:0 auto">
+    <button class="back-btn" onclick="nav('home')">← Voltar ao Início</button>
+    <div class="sec-hdr">
+      <div class="sec-title">👥 Participantes</div>
+      <span style="color:var(--muted);font-size:.85rem" id="ptotal"></span>
+    </div>
+    <div class="alpha-index" id="alpha-index"></div>
+    <div id="players-list"></div>
+  </div>
+</div>
+
+<!-- PLAYER DETAIL -->
+<div id="page-player" class="page-participants">
+  <div style="max-width:1400px;margin:0 auto">
+    <button class="back-btn" onclick="nav('participants')">← Voltar à Lista</button>
+    <div class="player-detail-hdr">
+      <div>
+        <div class="player-detail-name" id="pd-name"></div>
+        <div style="color:var(--muted);font-size:.85rem;margin-top:4px" id="pd-rank"></div>
+      </div>
+      <div class="player-detail-stats" id="pd-stats"></div>
+    </div>
+    <div class="games-grid" id="pd-games"></div>
+  </div>
+</div>
+</body>
+</html>
