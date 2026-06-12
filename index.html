@@ -888,8 +888,14 @@ function renderPontuacao() {
     rankMap[p] = (dp.pts === dprev.pts && dp.exact === dprev.exact) ? rankMap[prev] : i + 1;
   });
 
-  // Display in alphabetical order
-  const sorted = [...players].sort((a, b) => a.localeCompare(b, 'pt-BR'));
+  // Ordenação: 1º pontos DESC, 2º exatos DESC, 3º resultados DESC, 4º alfabético ASC
+  const sorted = [...players].sort((a, b) => {
+    const da = computeBreakdown(a), db = computeBreakdown(b);
+    if (db.pts !== da.pts) return db.pts - da.pts;
+    if (db.exact !== da.exact) return db.exact - da.exact;
+    if (db.result !== da.result) return db.result - da.result;
+    return a.localeCompare(b, 'pt-BR');
+  });
   const maxPts = Math.max(...players.map(p => computeBreakdown(p).pts), 1);
 
   wrap.innerHTML = `
