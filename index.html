@@ -242,9 +242,96 @@
   .spin-icon { display:inline-block; }
   .spin-icon.spinning { animation:spin .7s linear infinite; }
 
+  /* JOGOS DO DIA */
+  .jd-card { background:var(--surface); border:1px solid var(--border); border-radius:14px; margin-bottom:14px; overflow:hidden; }
+  .jd-header { padding:14px 20px; cursor:pointer; display:flex; align-items:center; justify-content:space-between; gap:10px; transition:background .15s; }
+  .jd-header:hover { background:rgba(255,255,255,.03); }
+  .jd-header-left { display:flex; align-items:center; gap:14px; }
+  .jd-num { font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:1rem; color:var(--gold); background:rgba(245,200,66,.12); border:1px solid rgba(245,200,66,.3); padding:4px 12px; border-radius:6px; white-space:nowrap; }
+  .jd-teams { font-weight:700; font-size:.95rem; color:var(--text); }
+  .jd-meta { color:var(--muted); font-size:.75rem; margin-top:2px; }
+  .jd-right { display:flex; align-items:center; gap:10px; }
+  .jd-result-badge { font-family:'Barlow Condensed',sans-serif; font-size:1.1rem; font-weight:800; color:var(--gold); white-space:nowrap; }
+  .jd-arrow { color:var(--muted); font-size:1rem; transition:transform .2s; }
+  .jd-body { display:none; padding:0 20px 20px; }
+  .jd-body.open { display:block; }
+
+  /* Teams header inside card */
+  .jd-teams-banner { display:flex; align-items:center; gap:0; margin-bottom:16px; border-radius:10px; overflow:hidden; }
+  .jd-team-side { flex:1; padding:14px 16px; display:flex; align-items:center; gap:10px; background:rgba(255,255,255,.04); }
+  .jd-team-side.right { justify-content:flex-end; flex-direction:row-reverse; }
+  .jd-team-flag { font-size:2rem; }
+  .jd-team-name { font-weight:700; font-size:.9rem; }
+  .jd-vs-center { background:var(--border); padding:14px 12px; font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:.85rem; color:var(--muted); white-space:nowrap; }
+
+  /* Result breakdown bars */
+  .jd-results-section { margin-bottom:16px; }
+  .jd-result-row { display:flex; align-items:center; gap:10px; margin-bottom:8px; }
+  .jd-result-label { font-size:.8rem; font-weight:700; padding:6px 12px; border-radius:6px; white-space:nowrap; min-width:120px; text-align:center; }
+  .jd-result-label.home { background:#166534; color:#86efac; }
+  .jd-result-label.draw { background:#374151; color:#d1d5db; }
+  .jd-result-label.away { background:#7f1d1d; color:#fca5a5; }
+  .jd-result-bar-wrap { flex:1; display:flex; align-items:center; gap:8px; }
+  .jd-result-count { font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:.95rem; color:var(--text); white-space:nowrap; min-width:80px; }
+  .jd-bar { flex:1; height:10px; background:var(--surface2); border-radius:5px; overflow:hidden; }
+  .jd-bar-fill { height:100%; border-radius:5px; transition:width .4s; }
+  .jd-bar-fill.home { background:linear-gradient(90deg,#15803d,#22c55e); }
+  .jd-bar-fill.draw { background:linear-gradient(90deg,#4b5563,#9ca3af); }
+  .jd-bar-fill.away { background:linear-gradient(90deg,#991b1b,#ef4444); }
+  .jd-pct { font-family:'Barlow Condensed',sans-serif; font-size:.85rem; font-weight:700; color:var(--muted); min-width:48px; text-align:right; }
+
+  /* Score grid */
+  .jd-scores-title { font-family:'Barlow Condensed',sans-serif; font-size:1rem; font-weight:700; color:var(--text); text-transform:uppercase; letter-spacing:.06em; margin-bottom:10px; padding-top:4px; border-top:1px solid var(--border); padding-top:12px; }
+  .jd-score-row { display:flex; align-items:center; gap:8px; margin-bottom:7px; }
+  .jd-score-count { font-family:'Barlow Condensed',sans-serif; font-weight:800; font-size:.95rem; background:var(--surface2); border:1px solid var(--border); border-radius:6px; padding:4px 10px; min-width:52px; text-align:center; color:var(--text); white-space:nowrap; }
+  .jd-score-val { font-family:'Barlow Condensed',sans-serif; font-size:1.3rem; font-weight:800; color:var(--text); min-width:70px; text-align:center; }
+  .jd-score-pct { font-family:'Barlow Condensed',sans-serif; font-size:.85rem; font-weight:700; background:var(--surface2); border:1px solid var(--border); border-radius:6px; padding:4px 10px; min-width:68px; text-align:center; color:var(--muted); }
+  .jd-score-arrow { color:var(--muted); font-size:.9rem; flex:1; text-align:center; }
+  .jd-today-empty { text-align:center; color:var(--muted); padding:40px 20px; font-size:.9rem; }
+
   /* VCARD EXPAND/COLLAPSE */
-  .vcard-body { display: block; }
+  .vcard-body { display: none; }
+  .vcard-body.open { display: block; }
   .dc-hdr:hover { background: rgba(255,255,255,.03); }
+
+  /* LIVE BANNER */
+  .live-banner {
+    background: linear-gradient(90deg, rgba(239,68,68,.15), rgba(239,68,68,.05));
+    border-bottom: 1px solid rgba(239,68,68,.3);
+    padding: 8px 24px;
+    display: none;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .live-banner.visible { display: flex; }
+  .live-banner-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: .9rem;
+    color: #fca5a5;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+  }
+  .live-game-chip {
+    background: rgba(239,68,68,.15);
+    border: 1px solid rgba(239,68,68,.3);
+    border-radius: 8px;
+    padding: 5px 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: background .15s;
+  }
+  .live-game-chip:hover { background: rgba(239,68,68,.25); }
+  .live-chip-teams { font-size: .85rem; font-weight: 600; color: var(--text); }
+  .live-chip-score { font-family: 'Barlow Condensed', sans-serif; font-size: 1.1rem; font-weight: 800; color: #fca5a5; }
+  .live-chip-time { font-size: .72rem; color: #fca5a5; background: rgba(239,68,68,.2); padding: 2px 6px; border-radius: 4px; font-weight: 700; animation: pulse 1.5s infinite; }
 
   /* LIVE TAG */
   .live-tag { background:rgba(239,68,68,.15); color:#fca5a5; border:1px solid rgba(239,68,68,.3); font-size:.65rem; font-weight:700; padding:2px 6px; border-radius:4px; text-transform:uppercase; letter-spacing:.06em; animation:pulse 1.5s infinite; }
@@ -292,6 +379,11 @@
 </head>
 <body>
 
+<div id="live-banner" class="live-banner">
+  <span class="live-banner-title">🔴 Ao Vivo</span>
+  <div id="live-banner-games" style="display:flex;gap:8px;flex-wrap:wrap"></div>
+</div>
+
 <div id="api-loading" class="api-loading">
   <div class="spinner"></div>
   <div class="loading-text">Carregando resultados da Copa 2026…</div>
@@ -308,6 +400,7 @@
   <nav class="nav">
     <button class="nav-btn active" onclick="nav('home')">Início</button>
     <button class="nav-btn" onclick="nav('consultar')">Consultar</button>
+    <button class="nav-btn" onclick="nav('jogosdia')">Jogos do Dia</button>
     <button class="nav-btn" onclick="nav('vencedores')">Vencedores</button>
     <button class="nav-btn" onclick="nav('pontuacao')">Pontuação</button>
   </nav>
@@ -393,6 +486,9 @@
   </div>
   <div class="pending-notice" id="pts-notice" style="display:none">
     ℹ️ A pontuação reflete apenas os jogos encerrados. Jogos sem resultado oficial ainda não somam pontos.
+  </div>
+  <div class="pending-notice" id="live-pts-notice" style="display:none;border-color:rgba(239,68,68,.3);background:rgba(239,68,68,.08);color:#fca5a5">
+    🔴 Há um jogo em andamento. A coluna <strong>Parcial</strong> mostra os pontos que cada participante ganharia se o placar atual fosse o resultado final. Esses pontos <strong>não contam</strong> até o jogo terminar.
   </div>
   <div class="ranking-wrap" id="ranking-wrap"></div>
 </div>
@@ -533,7 +629,9 @@ function parseWorldcup26(list) {
     realResults[String(gameId)] = {
       scoreA: (status === 'finished' || status === 'live') ? sA : null,
       scoreB: (status === 'finished' || status === 'live') ? sB : null,
-      status
+      status,
+      timeElapsed: m.time_elapsed || '',
+      minute: m.minute || m.elapsed || null
     };
   });
 }
@@ -624,7 +722,7 @@ async function refreshAPI() {
 
 // ===== NAV =====
 let currentPage = 'home';
-const pages = ['home','consultar','vencedores','pontuacao'];
+const pages = ['home','consultar','jogosdia','vencedores','pontuacao'];
 
 function nav(page) {
   document.querySelectorAll('.page, .page-participants').forEach(p => p.classList.remove('active'));
@@ -638,8 +736,10 @@ function nav(page) {
 }
 
 function renderCurrentPage() {
+  updateLiveBanner();
   if (currentPage === 'home') renderHome();
   else if (currentPage === 'consultar') renderConsultar();
+  else if (currentPage === 'jogosdia') renderJogosdia();
   else if (currentPage === 'vencedores') renderVencedores();
   else if (currentPage === 'pontuacao') renderPontuacao();
 }
@@ -647,17 +747,28 @@ function renderCurrentPage() {
 // ===== COMPUTED =====
 function computeBreakdown(player) {
   let exact=0, result=0, miss=0, pending=0;
-  let pts=0;
+  let pts=0, livePts=0;
   games.forEach(g => {
     const r = realResults[String(g.id)];
     const b = (bets[player]||{})[String(g.id)] || [null,null];
     if (!r || r.scoreA == null) { pending++; return; }
     if (b[0] == null) { pending++; return; }
-    if (r.scoreA === b[0] && r.scoreB === b[1]) { exact++; pts+=5; }
-    else if (getResult([r.scoreA,r.scoreB]) === getResult(b)) { result++; pts+=3; }
-    else miss++;
+
+    if (r.status === 'finished') {
+      // Confirmed points
+      if (r.scoreA === b[0] && r.scoreB === b[1]) { exact++; pts+=5; }
+      else if (getResult([r.scoreA,r.scoreB]) === getResult(b)) { result++; pts+=3; }
+      else miss++;
+    } else if (r.status === 'live') {
+      // Potential points based on current partial score
+      if (r.scoreA === b[0] && r.scoreB === b[1]) livePts+=5;
+      else if (getResult([r.scoreA,r.scoreB]) === getResult(b)) livePts+=3;
+      pending++;
+    } else {
+      pending++;
+    }
   });
-  return { exact, result, miss, pending, pts };
+  return { exact, result, miss, pending, pts, livePts };
 }
 
 function getRank(player) {
@@ -682,7 +793,8 @@ function renderHome() {
   // Top 3 from ranking
   const rankSorted = [...players].sort((a, b) => {
     const da = computeBreakdown(a), db = computeBreakdown(b);
-    if (db.pts !== da.pts) return db.pts - da.pts;
+    const totalA = da.pts + da.livePts, totalB = db.pts + db.livePts;
+    if (totalB !== totalA) return totalB - totalA;
     if (db.exact !== da.exact) return db.exact - da.exact;
     if (db.result !== da.result) return db.result - da.result;
     return a.localeCompare(b, 'pt-BR');
@@ -713,6 +825,7 @@ function renderHome() {
       <div style="font-family:'Barlow Condensed',sans-serif;font-size:${isFirst?'1.3rem':'1rem'};font-weight:800;color:${color};letter-spacing:.04em">${origIdx+1}°</div>
       <div style="font-weight:700;font-size:${isFirst?'1rem':'.85rem'};margin:6px 0;color:var(--text);line-height:1.2">${p}</div>
       <div style="font-family:'Barlow Condensed',sans-serif;font-size:${isFirst?'1.8rem':'1.4rem'};font-weight:800;color:${color};line-height:1">${bd.pts > 0 ? bd.pts + ' pts' : '—'}</div>
+      ${bd.livePts > 0 ? `<div style="font-size:.75rem;color:#fca5a5;margin-top:3px">🔴 +${bd.livePts} parcial</div>` : ''}
     </div>`;
   }).join('');
 
@@ -785,7 +898,15 @@ function renderConsultar() {
       else if (getResult([r.scoreA,r.scoreB])===getResult(b)) { pts=3; cls='result'; badge='<span class="gbadge result">✓ Resultado</span>'; betCls='result-c'; }
       else { pts=0; cls='miss'; badge='<span class="gbadge miss">✗ Errou</span>'; betCls='miss-c'; }
     } else if (isLive) {
-      badge='<span class="gbadge live">🔴 Ao Vivo</span>';
+      const teLabel = r ? (() => {
+        const te = String(r.timeElapsed||'').toLowerCase();
+        if(te==='ht'||te==='half time') return 'Intervalo';
+        if(te==='1h'||te==='first half') return '🔴 1º Tempo';
+        if(te==='2h'||te==='second half') return '🔴 2º Tempo';
+        if(r.minute) return '🔴 '+r.minute+"'";
+        return '🔴 Ao Vivo';
+      })() : '🔴 Ao Vivo';
+      badge=`<span class="gbadge live">${teLabel}</span>`;
     } else {
       badge='<span class="gbadge pending">⏳ Aguardando</span>';
     }
@@ -813,9 +934,9 @@ function renderConsultar() {
 function toggleVcard(id) {
   const body = document.getElementById(id);
   const arr = document.getElementById('arr-' + id);
-  const isOpen = body.style.display !== 'none';
-  body.style.display = isOpen ? 'none' : 'block';
-  arr.style.transform = isOpen ? 'rotate(-90deg)' : 'rotate(0deg)';
+  const isOpen = body.classList.contains('open');
+  body.classList.toggle('open', !isOpen);
+  arr.style.transform = isOpen ? '' : 'rotate(180deg)';
 }
 
 function setVF(f, btn) {
@@ -918,6 +1039,9 @@ function renderPontuacao() {
   const finished = finishedCount();
   const notice = document.getElementById('pts-notice');
   if (notice) notice.style.display = 'none';
+  const hasLive = Object.values(realResults).some(r => r.status === 'live');
+  const liveNotice = document.getElementById('live-pts-notice');
+  if (liveNotice) liveNotice.style.display = hasLive ? 'flex' : 'none';
 
   const wrap = document.getElementById('ranking-wrap');
 
@@ -938,10 +1062,11 @@ function renderPontuacao() {
     rankMap[p] = (dp.pts === dprev.pts && dp.exact === dprev.exact) ? rankMap[prev] : i + 1;
   });
 
-  // Ordenação: 1º pontos DESC, 2º exatos DESC, 3º resultados DESC, 4º alfabético ASC
+  // Ordenação: 1º pontos+livePts DESC, 2º exatos DESC, 3º resultados DESC, 4º alfabético ASC
   const sorted = [...players].sort((a, b) => {
     const da = computeBreakdown(a), db = computeBreakdown(b);
-    if (db.pts !== da.pts) return db.pts - da.pts;
+    const totalA = da.pts + da.livePts, totalB = db.pts + db.livePts;
+    if (totalB !== totalA) return totalB - totalA;
     if (db.exact !== da.exact) return db.exact - da.exact;
     if (db.result !== da.result) return db.result - da.result;
     return a.localeCompare(b, 'pt-BR');
@@ -955,6 +1080,7 @@ function renderPontuacao() {
           <th style="width:56px;text-align:center">Pos.</th>
           <th>Participante</th>
           <th>Pontos</th>
+          <th style="color:#fca5a5">🔴 Parcial</th>
           <th>🎯 Exatos</th>
           <th>✓ Result.</th>
           <th>✗ Erros</th>
@@ -967,10 +1093,17 @@ function renderPontuacao() {
           const rank = i + 1;
           const played = bd.exact + bd.result + bd.miss;
           const acertoPct = played > 0 ? Math.round(((bd.exact + bd.result) / played) * 100) : 0;
+          const hasLiveGame = Object.values(realResults).some(r => r.status === 'live');
+          const liveCell = hasLiveGame
+            ? (bd.livePts > 0
+                ? `<td style="color:#fca5a5;font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;font-weight:800">+${bd.livePts}</td>`
+                : `<td style="color:var(--muted);font-size:.85rem">—</td>`)
+            : `<td style="color:var(--muted);font-size:.75rem">—</td>`;
           return `<tr class="${p === 'ADRIANO' ? 'hrow' : ''}">
             <td class="rpos">${rank}°</td>
             <td class="rname">${p}</td>
             <td class="rpts">${bd.pts > 0 ? bd.pts : '<span style="color:var(--muted);font-size:.9rem">—</span>'}</td>
+            ${liveCell}
             <td class="rexact">${bd.exact}</td>
             <td class="rresult">${bd.result}</td>
             <td class="rmiss">${bd.miss}</td>
@@ -985,6 +1118,203 @@ function renderPontuacao() {
       </tbody>
     </table>`;
 }
+// ===== JOGOS DO DIA =====
+let jdSelectedDate = null;
+
+function renderJogosdia() {
+  // Get all unique dates from games
+  const dateMap = {};
+  games.forEach(g => {
+    if (!dateMap[g.date]) dateMap[g.date] = [];
+    dateMap[g.date].push(g);
+  });
+  const dates = Object.keys(dateMap).sort((a,b) => {
+    const [da,ma,ya] = a.split('/'); const [db,mb,yb] = b.split('/');
+    return new Date(`${ya}-${ma}-${da}`) - new Date(`${yb}-${mb}-${db}`);
+  });
+
+  // Default to today or first date with games
+  const todayStr = new Date().toLocaleDateString('pt-BR', {day:'2-digit',month:'2-digit',year:'numeric'});
+  if (!jdSelectedDate || !dateMap[jdSelectedDate]) {
+    jdSelectedDate = dates.includes(todayStr) ? todayStr : dates[0];
+  }
+
+  // Render date tabs
+  const tabsEl = document.getElementById('jd-date-tabs');
+  tabsEl.innerHTML = dates.map(d => {
+    const [day,mon] = d.split('/');
+    const isToday = d === todayStr;
+    const isSelected = d === jdSelectedDate;
+    return `<button class="fbtn ${isSelected?'active':''}" onclick="jdSelectDate('${d}')">
+      ${isToday?'Hoje · ':''}${day}/${mon}
+    </button>`;
+  }).join('');
+
+  // Render games for selected date
+  const dayGames = dateMap[jdSelectedDate] || [];
+  const listEl = document.getElementById('jd-games-list');
+
+  if (dayGames.length === 0) {
+    listEl.innerHTML = '<div class="jd-today-empty">Nenhum jogo nesta data.</div>';
+    return;
+  }
+
+  listEl.innerHTML = dayGames.map(g => renderJdCard(g)).join('');
+}
+
+function jdSelectDate(date) {
+  jdSelectedDate = date;
+  renderJogosdia();
+}
+
+function renderJdCard(g) {
+  const allBets = players.map(p => (bets[p]||{})[String(g.id)] || [null,null]).filter(b => b[0]!==null);
+  const total = allBets.length;
+
+  // Count results
+  let homeW=0, draw=0, awayW=0;
+  allBets.forEach(b => {
+    if (b[0] > b[1]) homeW++;
+    else if (b[0] === b[1]) draw++;
+    else awayW++;
+  });
+
+  // Count scores
+  const scoreMap = {};
+  allBets.forEach(b => {
+    const key = `${b[0]}x${b[1]}`;
+    scoreMap[key] = (scoreMap[key]||0)+1;
+  });
+  const topScores = Object.entries(scoreMap)
+    .sort((a,b) => b[1]-a[1])
+    .slice(0, 8);
+
+  const r = realResults[String(g.id)];
+  const finished = r && r.scoreA != null;
+  const isLive = r && r.status === 'live';
+  const liveTime = (() => {
+    if (!r) return '🔴 Ao Vivo';
+    const te = String(r.timeElapsed||'').toLowerCase();
+    if(te==='ht'||te==='half time') return 'Intervalo';
+    if(te==='1h'||te==='first half') return '1º Tempo';
+    if(te==='2h'||te==='second half') return '2º Tempo';
+    if(r.minute) return r.minute+"'";
+    return 'Ao Vivo';
+  })();
+  const resultBadge = finished
+    ? `<span class="jd-result-badge">${r.scoreA} × ${r.scoreB}</span>`
+    : isLive ? `<span class="jd-result-badge" style="color:#fca5a5">🔴 ${r.scoreA !== null ? r.scoreA+' – '+r.scoreB+' · ' : ''}${liveTime}</span>`
+    : '<span style="color:var(--muted);font-size:.8rem">Aguardando</span>';
+
+  const pct = n => total > 0 ? ((n/total)*100).toFixed(1)+'%' : '0%';
+  const pctNum = n => total > 0 ? Math.round((n/total)*100) : 0;
+
+  const resultRows = [
+    { cls:'home', label:`Vitória: ${g.teamA}`, count:homeW },
+    { cls:'draw', label:'Empate', count:draw },
+    { cls:'away', label:`Vitória: ${g.teamB}`, count:awayW },
+  ].map(row => `
+    <div class="jd-result-row">
+      <span class="jd-result-label ${row.cls}">${row.label}</span>
+      <div class="jd-result-bar-wrap">
+        <span class="jd-result-count">${row.count} Apostas</span>
+        <div class="jd-bar"><div class="jd-bar-fill ${row.cls}" style="width:${pctNum(row.count)}%"></div></div>
+        <span class="jd-pct">${pct(row.count)}</span>
+      </div>
+    </div>`).join('');
+
+  const scoreRows = topScores.map(([score, count]) => {
+    const [sA, sB] = score.split('x').map(Number);
+    const isExact = finished && r.scoreA === sA && r.scoreB === sB;
+    return `<div class="jd-score-row">
+      <span class="jd-score-count">${count} X</span>
+      <span class="jd-score-arrow">←</span>
+      <span class="jd-score-val" style="${isExact?'color:var(--green)':''}">${sA} x ${sB}</span>
+      <span class="jd-score-arrow">→</span>
+      <span class="jd-score-pct">${pct(count)}</span>
+    </div>`;
+  }).join('');
+
+  const cardId = `jd-${g.id}`;
+  return `
+    <div class="jd-card">
+      <div class="jd-header" onclick="toggleJd('${cardId}')">
+        <div class="jd-header-left">
+          <span class="jd-num">Jogo ${g.id}</span>
+          <div>
+            <div class="jd-teams">${flag(g.teamA)} ${g.teamA} × ${g.teamB} ${flag(g.teamB)}</div>
+            <div class="jd-meta">📅 ${g.date} · ${g.time} · 🏟 ${g.stadium}</div>
+          </div>
+        </div>
+        <div class="jd-right">
+          ${resultBadge}
+          <span class="jd-arrow" id="jdarr-${cardId}">▼</span>
+        </div>
+      </div>
+      <div class="jd-body" id="${cardId}">
+        <div class="jd-teams-banner">
+          <div class="jd-team-side">
+            <span class="jd-team-flag">${flag(g.teamA)}</span>
+            <span class="jd-team-name">${g.teamA}</span>
+          </div>
+          <div class="jd-vs-center">VS</div>
+          <div class="jd-team-side right">
+            <span class="jd-team-flag">${flag(g.teamB)}</span>
+            <span class="jd-team-name">${g.teamB}</span>
+          </div>
+        </div>
+        <div class="jd-results-section">${resultRows}</div>
+        <div class="jd-scores-title">Placares mais Apostados</div>
+        ${scoreRows || '<div style="color:var(--muted);font-size:.85rem;padding:8px 0">Nenhum palpite registrado.</div>'}
+      </div>
+    </div>`;
+}
+
+function toggleJd(id) {
+  const body = document.getElementById(id);
+  const arr = document.getElementById('jdarr-' + id);
+  const isOpen = body.classList.contains('open');
+  body.classList.toggle('open', !isOpen);
+  arr.style.transform = isOpen ? '' : 'rotate(180deg)';
+}
+
+// ===== LIVE BANNER =====
+function updateLiveBanner() {
+  const liveGames = games.filter(g => {
+    const r = realResults[String(g.id)];
+    return r && r.status === 'live';
+  });
+
+  const banner = document.getElementById('live-banner');
+  const container = document.getElementById('live-banner-games');
+
+  if (liveGames.length === 0) {
+    banner.classList.remove('visible');
+    return;
+  }
+
+  banner.classList.add('visible');
+  container.innerHTML = liveGames.map(g => {
+    const r = realResults[String(g.id)];
+    const sA = r.scoreA !== null ? r.scoreA : '—';
+    const sB = r.scoreB !== null ? r.scoreB : '—';
+    // Parse time_elapsed: '1H', '2H', 'HT', '45+2', '67' etc
+    const te = String(r.timeElapsed || '').toLowerCase();
+    let timeLabel = '🔴';
+    if (te === 'ht' || te === 'half time') timeLabel = 'INT';
+    else if (te === '1h' || te === 'first half') timeLabel = '1T';
+    else if (te === '2h' || te === 'second half') timeLabel = '2T';
+    else if (r.minute) timeLabel = r.minute + "'";
+    else if (te && te !== 'live' && te !== 'inprogress') timeLabel = te.toUpperCase();
+
+    return `<div class="live-game-chip" onclick="nav('jogosdia')">
+      <span class="live-chip-teams">${flag(g.teamA)} ${g.teamA} × ${g.teamB} ${flag(g.teamB)}</span>
+      <span class="live-chip-score">${sA} – ${sB}</span>
+      <span class="live-chip-time">${timeLabel}</span>
+    </div>`;
+  }).join('');
+}
+
 // ===== INIT =====
 async function init() {
   const ok = await fetchResults();
@@ -1095,11 +1425,21 @@ function renderPlayerDetail(player) {
       else if (getResult([r.scoreA,r.scoreB]) === getResult(b)) { pts=3; cls='result'; badge='<span class="gbadge result">✓ Resultado</span>'; betCls='result-c'; }
       else { pts=0; cls='miss'; badge='<span class="gbadge miss">✗ Errou</span>'; betCls='miss-c'; }
     } else if (isLive) {
-      badge='<span class="gbadge live">🔴 Ao Vivo</span>';
+      const teLabel = r ? (() => {
+        const te = String(r.timeElapsed||'').toLowerCase();
+        if(te==='ht'||te==='half time') return 'Intervalo';
+        if(te==='1h'||te==='first half') return '🔴 1º Tempo';
+        if(te==='2h'||te==='second half') return '🔴 2º Tempo';
+        if(r.minute) return '🔴 '+r.minute+"'";
+        return '🔴 Ao Vivo';
+      })() : '🔴 Ao Vivo';
+      badge=`<span class="gbadge live">${teLabel}</span>`;
     } else {
       badge='<span class="gbadge pending">⏳ Aguardando</span>';
     }
-    const realStr = finished ? `${r.scoreA} × ${r.scoreB}` : isLive ? '🔴' : '— × —';
+    const realStr = finished ? `${r.scoreA} × ${r.scoreB}` 
+        : isLive ? `🔴 ${r.scoreA !== null ? r.scoreA + ' – ' + r.scoreB : ''}` 
+        : '— × —';
     const betStr = b[0] != null ? `${b[0]} × ${b[1]}` : '— × —';
     return `
       <div class="gcard ${cls}">
@@ -1120,6 +1460,16 @@ function renderPlayerDetail(player) {
 }
 
 </script>
+
+<!-- JOGOS DO DIA -->
+<div id="page-jogosdia" class="page">
+  <div class="sec-hdr">
+    <div class="sec-title">📅 Jogos do Dia</div>
+    <button class="refresh-btn" onclick="refreshAPI()">↻ Atualizar</button>
+  </div>
+  <div id="jd-date-tabs" style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px"></div>
+  <div id="jd-games-list"></div>
+</div>
 
 <!-- PARTICIPANTES -->
 <div id="page-participants" class="page-participants">
