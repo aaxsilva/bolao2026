@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
 <title>Bolão Copa do Mundo 2026</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@400;500;600&display=swap');
@@ -201,7 +201,7 @@
   .vs-score { font-family:'Barlow Condensed',sans-serif; font-size:1.9rem; font-weight:800; color:var(--gold); line-height:1; }
   .vs-lbl { color:var(--muted); font-size:.68rem; text-transform:uppercase; margin-top:2px; }
   .vs-pending { font-size:.8rem; color:#93c5fd; margin-top:4px; }
-  .bets-tbl { width:100%; border-collapse:collapse; }
+  .bets-tbl { width:100%; border-collapse:collapse; min-width:400px; }
   .bets-tbl th { background:var(--surface2); color:var(--muted); font-size:.68rem; font-weight:600; text-transform:uppercase; letter-spacing:.07em; padding:7px 16px; text-align:left; }
   .bets-tbl td { padding:8px 16px; border-top:1px solid var(--border); font-size:.88rem; }
   .bets-tbl tr:hover td { background:rgba(255,255,255,.02); }
@@ -211,11 +211,11 @@
   .no-hits { text-align:center; color:var(--muted); padding:16px; font-size:.85rem; }
 
   /* PONTUAÇÃO */
-  .ranking-wrap { background:var(--surface); border:1px solid var(--border); border-radius:14px; overflow:hidden; }
+  .ranking-wrap { background:var(--surface); border:1px solid var(--border); border-radius:14px; overflow-x:auto; -webkit-overflow-scrolling:touch; }
   .ranking-zero { text-align:center; padding:60px 20px; color:var(--muted); }
   .ranking-zero .big-icon { font-size:3rem; margin-bottom:12px; }
   .ranking-zero p { font-size:.95rem; line-height:1.6; }
-  .rank-tbl { width:100%; border-collapse:collapse; }
+  .rank-tbl { width:100%; border-collapse:collapse; min-width:600px; }
   .rank-tbl thead th { background:var(--surface2); color:var(--muted); font-size:.72rem; font-weight:600; text-transform:uppercase; letter-spacing:.07em; padding:11px 14px; text-align:left; white-space:nowrap; position:sticky; top:0; }
   .rank-tbl tbody tr { border-top:1px solid var(--border); transition:background .1s; }
   .rank-tbl tbody tr:hover td { background:rgba(245,200,66,.04); }
@@ -241,6 +241,10 @@
   .refresh-btn:disabled { opacity:.5; cursor:not-allowed; }
   .spin-icon { display:inline-block; }
   .spin-icon.spinning { animation:spin .7s linear infinite; }
+
+  /* VCARD EXPAND/COLLAPSE */
+  .vcard-body { display: block; }
+  .dc-hdr:hover { background: rgba(255,255,255,.03); }
 
   /* LIVE TAG */
   .live-tag { background:rgba(239,68,68,.15); color:#fca5a5; border:1px solid rgba(239,68,68,.3); font-size:.65rem; font-weight:700; padding:2px 6px; border-radius:4px; text-transform:uppercase; letter-spacing:.06em; animation:pulse 1.5s infinite; }
@@ -283,8 +287,6 @@
     .page { padding:14px; }
     .brand span { display:none; }
     .games-grid { grid-template-columns:1fr; }
-    .rbar-cell, .rank-tbl th:nth-child(5), .rank-tbl td:nth-child(5), 
-    .rank-tbl th:nth-child(6), .rank-tbl td:nth-child(6) { display:none; }
   }
 </style>
 </head>
@@ -673,12 +675,46 @@ function renderHome() {
   const total = games.length;
   document.getElementById('home-sub').textContent = `Fase de grupos · ${players.length} participantes · ${finished}/${total} jogos encerrados`;
 
-  let totalExact=0, totalResult=0;
-  players.forEach(p => { const bd=computeBreakdown(p); totalExact+=bd.exact; totalResult+=bd.result; });
-
-  const sorted = [...players].sort((a,b)=>computeBreakdown(b).pts-computeBreakdown(a).pts);
-  const top = sorted[0];
+  const sorted_home = [...players].sort((a,b)=>computeBreakdown(b).pts-computeBreakdown(a).pts);
+  const top = sorted_home[0];
   const topPts = top ? computeBreakdown(top).pts : 0;
+
+  // Top 3 from ranking
+  const rankSorted = [...players].sort((a, b) => {
+    const da = computeBreakdown(a), db = computeBreakdown(b);
+    if (db.pts !== da.pts) return db.pts - da.pts;
+    if (db.exact !== da.exact) return db.exact - da.exact;
+    if (db.result !== da.result) return db.result - da.result;
+    return a.localeCompare(b, 'pt-BR');
+  });
+  const podiumColors = ['#f5c842','#c0c0c0','#cd7f32'];
+  const podiumMedals = ['🥇','🥈','🥉'];
+  const top3 = rankSorted.slice(0,3);
+  // Reorder for podium display: 2nd left, 1st center (tall), 3rd right
+  const podiumOrder = top3.length >= 3 ? [top3[1], top3[0], top3[2]] : top3;
+  const podiumIndexMap = top3.length >= 3 ? [1, 0, 2] : [0, 1, 2];
+  const podiumCards = podiumOrder.map((p, pos) => {
+    const origIdx = podiumIndexMap[pos];
+    const bd = computeBreakdown(p);
+    const isFirst = origIdx === 0;
+    const color = podiumColors[origIdx];
+    const rgba = origIdx===0?'245,200,66':origIdx===1?'192,192,192':'205,127,50';
+    return `<div style="
+      flex:1;min-width:0;
+      background:rgba(${rgba},.07);
+      border:1px solid ${color};
+      border-radius:14px;
+      padding:${isFirst?'24px 16px':'16px 12px'};
+      text-align:center;
+      display:flex;flex-direction:column;align-items:center;justify-content:center;
+      ${isFirst?'min-height:180px':'min-height:140px'}
+    ">
+      <div style="font-size:${isFirst?'2rem':'1.5rem'};margin-bottom:6px">${podiumMedals[origIdx]}</div>
+      <div style="font-family:'Barlow Condensed',sans-serif;font-size:${isFirst?'1.3rem':'1rem'};font-weight:800;color:${color};letter-spacing:.04em">${origIdx+1}°</div>
+      <div style="font-weight:700;font-size:${isFirst?'1rem':'.85rem'};margin:6px 0;color:var(--text);line-height:1.2">${p}</div>
+      <div style="font-family:'Barlow Condensed',sans-serif;font-size:${isFirst?'1.8rem':'1.4rem'};font-weight:800;color:${color};line-height:1">${bd.pts > 0 ? bd.pts + ' pts' : '—'}</div>
+    </div>`;
+  }).join('');
 
   document.getElementById('home-stats').innerHTML = `
     <div class="participants-count-btn stat-card" onclick="showParticipants()" style="cursor:pointer">
@@ -688,9 +724,7 @@ function renderHome() {
     </div>
     <div class="stat-card"><div class="stat-num">${total}</div><div class="stat-lbl">Jogos</div></div>
     <div class="stat-card"><div class="stat-num">${finished}</div><div class="stat-lbl">Encerrados</div></div>
-    <div class="stat-card"><div class="stat-num" style="color:var(--green)">${totalExact}</div><div class="stat-lbl">Placares Exatos</div></div>
-    <div class="stat-card"><div class="stat-num" style="color:var(--amber)">${totalResult}</div><div class="stat-lbl">Resultados Certos</div></div>
-    ${topPts > 0 ? `<div class="stat-card"><div class="stat-num" style="color:var(--gold)">${topPts}</div><div class="stat-lbl">🥇 ${top}</div></div>` : ''}
+    <div style="display:flex;gap:10px;align-items:flex-end;grid-column:1/-1">${podiumCards}</div>
   `;
 }
 
@@ -776,6 +810,14 @@ function renderConsultar() {
 }
 
 // ===== VENCEDORES =====
+function toggleVcard(id) {
+  const body = document.getElementById(id);
+  const arr = document.getElementById('arr-' + id);
+  const isOpen = body.style.display !== 'none';
+  body.style.display = isOpen ? 'none' : 'block';
+  arr.style.transform = isOpen ? 'rotate(-90deg)' : 'rotate(0deg)';
+}
+
 function setVF(f, btn) {
   vFilter = f;
   document.querySelectorAll('.fbtn').forEach(b=>b.classList.remove('active'));
@@ -839,24 +881,32 @@ function renderVencedores() {
     const pendingRows = !finished 
       ? '<tr><td colspan="4" class="no-hits">⏳ Resultado ainda não disponível</td></tr>' : '';
 
+    const cardId = `vcard-${g.id}`;
     html += `
       <div class="detail-card">
-        <div class="dc-hdr">
+        <div class="dc-hdr" onclick="toggleVcard('${cardId}')" style="cursor:pointer">
           <span class="dc-title">Jogo ${g.id} · ${g.teamA} × ${g.teamB} · ${g.date} ${g.time}</span>
-          ${resultDisplay}
-        </div>
-        <div class="dc-teams">
-          <div class="tdisp"><span class="tflag">${flag(g.teamA)}</span><span class="tdn">${g.teamA}</span></div>
-          <div class="vs-box">
-            ${finished ? `<div class="vs-score">${r.scoreA}<span style="color:var(--muted);font-size:1rem"> × </span>${r.scoreB}</div>` : `<div class="vs-pending">${isLive?'🔴 Ao Vivo':'Aguardando'}</div>`}
-            <div class="vs-lbl">Resultado</div>
+          <div style="display:flex;align-items:center;gap:10px">
+            ${resultDisplay}
+            <span class="vcard-arrow" id="arr-${cardId}" style="color:var(--muted);font-size:1rem;transition:transform .2s">▼</span>
           </div>
-          <div class="tdisp right"><span class="tflag">${flag(g.teamB)}</span><span class="tdn">${g.teamB}</span></div>
         </div>
-        <table class="bets-tbl">
-          <thead><tr><th>Participante</th><th>Palpite</th><th>Tipo</th><th>Pts</th></tr></thead>
-          <tbody>${tableRows}${noRows}${pendingRows}</tbody>
-        </table>
+        <div id="${cardId}" class="vcard-body">
+          <div class="dc-teams">
+            <div class="tdisp"><span class="tflag">${flag(g.teamA)}</span><span class="tdn">${g.teamA}</span></div>
+            <div class="vs-box">
+              ${finished ? `<div class="vs-score">${r.scoreA}<span style="color:var(--muted);font-size:1rem"> × </span>${r.scoreB}</div>` : `<div class="vs-pending">${isLive?'🔴 Ao Vivo':'Aguardando'}</div>`}
+              <div class="vs-lbl">Resultado</div>
+            </div>
+            <div class="tdisp right"><span class="tflag">${flag(g.teamB)}</span><span class="tdn">${g.teamB}</span></div>
+          </div>
+          <div style="overflow-x:auto;-webkit-overflow-scrolling:touch">
+          <table class="bets-tbl">
+            <thead><tr><th>Participante</th><th>Palpite</th><th>Tipo</th><th>Pts</th></tr></thead>
+            <tbody>${tableRows}${noRows}${pendingRows}</tbody>
+          </table>
+          </div>
+        </div>
       </div>`;
   });
 
@@ -908,26 +958,27 @@ function renderPontuacao() {
           <th>🎯 Exatos</th>
           <th>✓ Result.</th>
           <th>✗ Erros</th>
-          <th>⏳ Pend.</th>
-          <th class="rbar-cell">Progresso</th>
+          <th class="rbar-cell">% Acerto</th>
         </tr>
       </thead>
       <tbody>
-        ${sorted.map(p => {
+        ${sorted.map((p, i) => {
           const bd = computeBreakdown(p);
-          const rank = rankMap[p];
-          const pct = Math.round((bd.pts / maxPts) * 100);
-          const isMe = p === 'ADRIANO';
-          return `<tr class="${isMe ? 'hrow' : ''}">
+          const rank = i + 1;
+          const played = bd.exact + bd.result + bd.miss;
+          const acertoPct = played > 0 ? Math.round(((bd.exact + bd.result) / played) * 100) : 0;
+          return `<tr class="${p === 'ADRIANO' ? 'hrow' : ''}">
             <td class="rpos">${rank}°</td>
-            <td class="rname">${isMe ? '⭐ ' : ''}${p}</td>
+            <td class="rname">${p}</td>
             <td class="rpts">${bd.pts > 0 ? bd.pts : '<span style="color:var(--muted);font-size:.9rem">—</span>'}</td>
             <td class="rexact">${bd.exact}</td>
             <td class="rresult">${bd.result}</td>
             <td class="rmiss">${bd.miss}</td>
-            <td style="color:#93c5fd;font-size:.82rem">${bd.pending}</td>
             <td class="rbar-cell">
-              <div class="rbar"><div class="rbar-fill" style="width:${pct}%"></div></div>
+              <div style="display:flex;align-items:center;gap:6px">
+                <div class="rbar" style="flex:1"><div class="rbar-fill" style="width:${acertoPct}%"></div></div>
+                <span style="color:var(--muted);font-size:.75rem;white-space:nowrap">${acertoPct}%</span>
+              </div>
             </td>
           </tr>`;
         }).join('')}
