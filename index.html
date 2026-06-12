@@ -494,30 +494,39 @@ async function fetchResults() {
 }
 
 // Parse worldcup26.ir format
-// Fields: home_team, away_team, home_score, away_score, status, match_number, etc.
+// Exact fields from API: home_team_name_en, away_team_name_en, home_score, away_score, finished, time_elapsed
 function parseWorldcup26(list) {
   realResults = {};
-  list.forEach(m => {
-    // team names can be in English — map to PT
-    const t1En = m.home_team_en || m.home_team || m.homeTeam || m.team1 || '';
-    const t2En = m.away_team_en || m.away_team || m.awayTeam || m.team2 || '';
-    const t1Pt = enToPt[t1En] || enToPt[t1En.trim()] || t1En;
-    const t2Pt = enToPt[t2En] || enToPt[t2En.trim()] || t2En;
+  // Handle both {games:[...]} wrapper and flat array
+  const items = list.games || list.data || list.matches || list;
+  if (!Array.isArray(items)) return;
+
+  items.forEach(m => {
+    // worldcup26.ir uses home_team_name_en / away_team_name_en
+    const t1En = (m.home_team_name_en || m.home_team_en || m.home_team || m.homeTeam || m.team1 || '').trim();
+    const t2En = (m.away_team_name_en || m.away_team_en || m.away_team || m.awayTeam || m.team2 || '').trim();
+    const t1Pt = enToPt[t1En] || t1En;
+    const t2Pt = enToPt[t2En] || t2En;
 
     const gameId = findGameId(t1Pt, t2Pt);
     if (!gameId) return;
 
-    // score fields vary: home_score / away_score, score_home / score_away
-    const rawA = m.home_score ?? m.score_home ?? m.homeScore ?? m.home_goals ?? null;
-    const rawB = m.away_score ?? m.score_away ?? m.awayScore ?? m.away_goals ?? null;
+    // scores: numeric or string "2", "0", null
+    const rawA = m.home_score ?? m.score_home ?? m.homeScore ?? null;
+    const rawB = m.away_score ?? m.score_away ?? m.awayScore ?? null;
     const sA = (rawA !== null && rawA !== '' && rawA !== undefined) ? parseInt(rawA) : null;
     const sB = (rawB !== null && rawB !== '' && rawB !== undefined) ? parseInt(rawB) : null;
 
-    // status: 'finished'|'completed'|'FT' = done; 'inprogress'|'live'|'1H'|'2H'|'HT' = live
-    const st = (m.status || m.match_status || '').toLowerCase();
+    // worldcup26.ir uses: finished=TRUE/FALSE, time_elapsed='finished'/'notstarted'/'1H' etc.
+    const finishedFlag = String(m.finished || '').toUpperCase();
+    const timeElapsed = String(m.time_elapsed || m.status || m.match_status || '').toLowerCase();
+    
     let status = 'scheduled';
-    if (['ft','finished','completed','full time','fulltime','ended'].includes(st)) status = 'finished';
-    else if (['1h','2h','ht','live','inprogress','in_progress','in progress','ongoing'].includes(st)) status = 'live';
+    if (finishedFlag === 'TRUE' || ['finished','ft','completed','full time','fulltime','ended'].includes(timeElapsed)) {
+      status = 'finished';
+    } else if (['1h','2h','ht','live','inprogress','in_progress','in progress','ongoing'].includes(timeElapsed)) {
+      status = 'live';
+    }
 
     realResults[String(gameId)] = {
       scoreA: (status === 'finished' || status === 'live') ? sA : null,
