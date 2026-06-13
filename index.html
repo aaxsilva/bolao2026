@@ -853,8 +853,20 @@ function computeBreakdown(player) {
   return { exact, result, miss, pending, pts, livePts };
 }
 
+// Single source of truth for ranking — used in ALL pages
+function getOfficialRanking() {
+  return [...players].sort((a, b) => {
+    const da = computeBreakdown(a), db = computeBreakdown(b);
+    const totalA = da.pts + da.livePts, totalB = db.pts + db.livePts;
+    if (totalB !== totalA) return totalB - totalA;
+    if (db.exact !== da.exact) return db.exact - da.exact;
+    if (db.result !== da.result) return db.result - da.result;
+    return a.localeCompare(b, 'pt-BR');
+  });
+}
+
 function getRank(player) {
-  return [...players].sort((a,b) => computeBreakdown(b).pts - computeBreakdown(a).pts).indexOf(player)+1;
+  return getOfficialRanking().indexOf(player) + 1;
 }
 
 // Count finished games
@@ -868,19 +880,12 @@ function renderHome() {
   const total = games.length;
   document.getElementById('home-sub').textContent = `Fase de grupos · ${players.length} participantes · ${finished}/${total} jogos encerrados`;
 
-  const sorted_home = [...players].sort((a,b)=>computeBreakdown(b).pts-computeBreakdown(a).pts);
+  const sorted_home = getOfficialRanking();
   const top = sorted_home[0];
   const topPts = top ? computeBreakdown(top).pts : 0;
 
   // Top 3 from ranking
-  const rankSorted = [...players].sort((a, b) => {
-    const da = computeBreakdown(a), db = computeBreakdown(b);
-    const totalA = da.pts + da.livePts, totalB = db.pts + db.livePts;
-    if (totalB !== totalA) return totalB - totalA;
-    if (db.exact !== da.exact) return db.exact - da.exact;
-    if (db.result !== da.result) return db.result - da.result;
-    return a.localeCompare(b, 'pt-BR');
-  });
+  const rankSorted = getOfficialRanking();
   const podiumColors = ['#f5c842','#c0c0c0','#cd7f32'];
   const podiumMedals = ['🥇','🥈','🥉'];
   const top3 = rankSorted.slice(0,3);
@@ -1141,15 +1146,7 @@ function renderPontuacao() {
     rankMap[p] = (dp.pts === dprev.pts && dp.exact === dprev.exact) ? rankMap[prev] : i + 1;
   });
 
-  // Ordenação: 1º pontos+livePts DESC, 2º exatos DESC, 3º resultados DESC, 4º alfabético ASC
-  const sorted = [...players].sort((a, b) => {
-    const da = computeBreakdown(a), db = computeBreakdown(b);
-    const totalA = da.pts + da.livePts, totalB = db.pts + db.livePts;
-    if (totalB !== totalA) return totalB - totalA;
-    if (db.exact !== da.exact) return db.exact - da.exact;
-    if (db.result !== da.result) return db.result - da.result;
-    return a.localeCompare(b, 'pt-BR');
-  });
+  const sorted = getOfficialRanking();
   const maxPts = Math.max(...players.map(p => computeBreakdown(p).pts), 1);
 
   wrap.innerHTML = `
@@ -1452,7 +1449,7 @@ function renderParticipants() {
         <div class="player-avatar" style="${isMe?'background:rgba(245,200,66,.15);border-color:var(--gold);color:var(--gold)':''}">${initials}</div>
         <div>
           <div class="player-card-name">${p}</div>
-          <div class="player-card-pts">${bd.pts > 0 ? bd.pts + ' pts · 🎯' + bd.exact + ' ✓' + bd.result : '⏳ Aguardando jogos'}</div>
+          <div class="player-card-pts">${(computeBreakdown(p).pts + computeBreakdown(p).livePts) > 0 ? (getOfficialRanking().indexOf(p)+1) + '° · ' + computeBreakdown(p).pts + ' pts' + (computeBreakdown(p).livePts>0?' +'+computeBreakdown(p).livePts+'🔴':'') + ' · 🎯' + computeBreakdown(p).exact + ' ✓' + computeBreakdown(p).result : (getOfficialRanking().indexOf(p)+1) + '° · ⏳ Aguardando'}</div>
         </div>
       </div>`;
     }).join('');
