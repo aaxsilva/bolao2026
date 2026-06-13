@@ -241,6 +241,73 @@
   .spin-icon { display:inline-block; }
   .spin-icon.spinning { animation:spin .7s linear infinite; }
 
+  /* JOGO DO MOMENTO */
+  .jm-header {
+    background: linear-gradient(135deg, #1a1040 0%, #2d1b69 50%, #1a1040 100%);
+    border: 1px solid #7c3aed;
+    border-radius: 14px;
+    padding: 0;
+    margin-bottom: 20px;
+    overflow: hidden;
+  }
+  .jm-stadium {
+    background: rgba(124,58,237,.3);
+    padding: 8px 20px;
+    font-size: .78rem;
+    color: #c4b5fd;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(124,58,237,.3);
+  }
+  .jm-game-row {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    gap: 12px;
+  }
+  .jm-game-num {
+    background: rgba(124,58,237,.3);
+    border: 1px solid #7c3aed;
+    color: #c4b5fd;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    font-size: .85rem;
+    padding: 4px 10px;
+    border-radius: 6px;
+    white-space: nowrap;
+  }
+  .jm-team-block { flex: 1; display: flex; align-items: center; gap: 12px; }
+  .jm-team-block.right { justify-content: flex-end; flex-direction: row-reverse; }
+  .jm-team-flag { font-size: 2.2rem; }
+  .jm-team-name { font-family: 'Barlow Condensed', sans-serif; font-size: 1.4rem; font-weight: 700; color: var(--text); }
+  .jm-score-center { text-align: center; min-width: 100px; }
+  .jm-score-main { font-family: 'Barlow Condensed', sans-serif; font-size: 2.4rem; font-weight: 800; color: #a855f7; line-height: 1; }
+  .jm-score-date { color: #c4b5fd; font-size: .78rem; margin-top: 4px; }
+  .jm-score-time { color: var(--muted); font-size: .75rem; }
+  .jm-live-tag { background: rgba(239,68,68,.2); color: #fca5a5; border: 1px solid rgba(239,68,68,.4); font-size: .72rem; font-weight: 700; padding: 2px 8px; border-radius: 4px; animation: pulse 1.5s infinite; display: inline-block; margin-top: 4px; }
+
+  /* Momento table */
+  .jm-table-wrap { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+  .jm-table { width: 100%; border-collapse: collapse; min-width: 380px; }
+  .jm-table thead th { background: rgba(124,58,237,.15); color: #c4b5fd; font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; padding: 10px 14px; text-align: left; position: sticky; top: 0; border-bottom: 1px solid rgba(124,58,237,.3); }
+  .jm-table thead th.center { text-align: center; }
+  .jm-table tbody tr { border-top: 1px solid var(--border); transition: background .1s; }
+  .jm-table tbody tr:hover td { background: rgba(255,255,255,.02); }
+  .jm-table td { padding: 9px 14px; font-size: .88rem; }
+  .jm-pos { color: var(--muted); font-family: 'Barlow Condensed', sans-serif; font-size: .95rem; font-weight: 700; text-align: center; width: 40px; }
+  .jm-name { font-weight: 600; }
+  .jm-bet { font-family: 'Barlow Condensed', sans-serif; font-size: 1.1rem; font-weight: 800; text-align: center; }
+  .jm-bet.exact { color: var(--green); }
+  .jm-bet.result { color: var(--amber); }
+  .jm-bet.miss { color: var(--muted); }
+  .jm-bet.pending { color: #93c5fd; }
+  .jm-pts { font-family: 'Barlow Condensed', sans-serif; font-size: 1rem; font-weight: 800; text-align: center; width: 60px; }
+  .jm-pts.exact { color: var(--green); }
+  .jm-pts.result { color: var(--amber); }
+  .jm-pts.miss { color: var(--muted); }
+  .jm-pts.pending { color: #93c5fd; }
+  .jm-no-game { text-align: center; padding: 60px 20px; color: var(--muted); }
+
   /* JOGOS DO DIA */
   .jd-card { background:var(--surface); border:1px solid var(--border); border-radius:14px; margin-bottom:14px; overflow:hidden; }
   .jd-header { padding:14px 20px; cursor:pointer; display:flex; align-items:center; justify-content:space-between; gap:10px; transition:background .15s; }
@@ -402,6 +469,7 @@
     <button class="nav-btn" onclick="nav('jogosdia')">Jogos do Dia</button>
     <button class="nav-btn" onclick="nav('consultar')">Consultar</button>
     <button class="nav-btn" onclick="nav('vencedores')">Vencedores</button>
+    <button class="nav-btn" onclick="nav('momento')">Jogo do Momento</button>
   </nav>
 </header>
 
@@ -427,6 +495,11 @@
       <div class="mc-icon">🏆</div>
       <div class="mc-title">Vencedores</div>
       <p class="mc-desc">Quem acertou o placar exato ou o resultado de cada partida. Atualizado com os resultados oficiais.</p>
+    </div>
+    <div class="menu-card" onclick="nav('momento')" style="border-top:3px solid #a855f7">
+      <div class="mc-icon">⚽</div>
+      <div class="mc-title" style="color:#a855f7">Jogo do Momento</div>
+      <p class="mc-desc">Placar ao vivo e todos os palpites dos participantes para o jogo em andamento ou mais recente.</p>
     </div>
   </div>
   <div id="home-participants-btn" onclick="showParticipants()" style="
@@ -803,7 +876,7 @@ async function refreshAPI() {
 
 // ===== NAV =====
 let currentPage = 'home';
-const pages = ['home','pontuacao','jogosdia','consultar','vencedores'];
+const pages = ['home','pontuacao','jogosdia','consultar','vencedores','momento'];
 
 function nav(page) {
   document.querySelectorAll('.page, .page-participants').forEach(p => p.classList.remove('active'));
@@ -823,6 +896,7 @@ function renderCurrentPage() {
   else if (currentPage === 'jogosdia') renderJogosdia();
   else if (currentPage === 'vencedores') renderVencedores();
   else if (currentPage === 'pontuacao') renderPontuacao();
+  else if (currentPage === 'momento') renderMomento();
 }
 
 // ===== COMPUTED =====
@@ -1352,6 +1426,126 @@ function toggleJd(id) {
   arr.style.transform = isOpen ? '' : 'rotate(180deg)';
 }
 
+// ===== JOGO DO MOMENTO =====
+let momentoGameId = null;
+
+function renderMomento() {
+  // Find live game first, then most recent finished, then next scheduled
+  const liveGame = games.find(g => {
+    const r = realResults[String(g.id)];
+    return r && r.status === 'live';
+  });
+  const finishedGames = games.filter(g => {
+    const r = realResults[String(g.id)];
+    return r && r.status === 'finished';
+  });
+  const lastFinished = finishedGames.length > 0 ? finishedGames[finishedGames.length - 1] : null;
+
+  // Auto-select: live > last finished > first game
+  if (!momentoGameId) {
+    momentoGameId = liveGame ? liveGame.id
+      : lastFinished ? lastFinished.id
+      : games[0]?.id;
+  }
+
+  // Selector buttons — show live + last 3 finished + next scheduled
+  const showGames = [];
+  if (liveGame) showGames.push(liveGame);
+  finishedGames.slice(-5).reverse().forEach(g => { if (!showGames.find(x=>x.id===g.id)) showGames.push(g); });
+  const nextScheduled = games.find(g => {
+    const r = realResults[String(g.id)];
+    return !r || (r.scoreA === null && r.status !== 'live');
+  });
+  if (nextScheduled && !showGames.find(x=>x.id===nextScheduled.id)) showGames.push(nextScheduled);
+
+  document.getElementById('jm-selector').innerHTML = showGames.map(g => {
+    const r = realResults[String(g.id)];
+    const isLive = r && r.status === 'live';
+    const isSelected = g.id === momentoGameId;
+    const label = isLive ? `🔴 Jogo ${g.id}` : `Jogo ${g.id}`;
+    return `<button class="fbtn ${isSelected?'active':''}" onclick="setMomentoGame(${g.id})">${label}</button>`;
+  }).join('');
+
+  const g = games.find(x => x.id === momentoGameId);
+  if (!g) { document.getElementById('jm-header-area').innerHTML = '<div class="jm-no-game">Nenhum jogo encontrado.</div>'; return; }
+
+  const r = realResults[String(g.id)];
+  const finished = r && r.status === 'finished';
+  const isLive = r && r.status === 'live';
+
+  // Time label
+  const te = String((r && r.timeElapsed) || '').toLowerCase();
+  let timeLabel = '';
+  if (isLive) {
+    if (te==='ht'||te==='half time') timeLabel = 'Intervalo';
+    else if (te==='1h'||te==='first half') timeLabel = '1º Tempo';
+    else if (te==='2h'||te==='second half') timeLabel = '2º Tempo';
+    else if (r.minute) timeLabel = r.minute + "'";
+    else timeLabel = 'Ao Vivo';
+  }
+
+  const scoreDisplay = finished
+    ? `<div class="jm-score-main">${r.scoreA} × ${r.scoreB}</div>`
+    : isLive
+    ? `<div class="jm-score-main">${r.scoreA !== null ? r.scoreA+' × '+r.scoreB : '× '}</div><div class="jm-live-tag">🔴 ${timeLabel}</div>`
+    : `<div class="jm-score-main" style="color:var(--muted);font-size:1.4rem">Aguardando</div>`;
+
+  document.getElementById('jm-header-area').innerHTML = `
+    <div class="jm-header">
+      <div class="jm-stadium">🏟 ${g.stadium}</div>
+      <div class="jm-game-row">
+        <span class="jm-game-num">JOGO ${g.id}</span>
+        <div class="jm-team-block">
+          <span class="jm-team-flag">${flag(g.teamA)}</span>
+          <span class="jm-team-name">${g.teamA}</span>
+        </div>
+        <div class="jm-score-center">
+          ${scoreDisplay}
+          <div class="jm-score-date">${g.date}</div>
+          <div class="jm-score-time">${g.time}</div>
+        </div>
+        <div class="jm-team-block right">
+          <span class="jm-team-flag">${flag(g.teamB)}</span>
+          <span class="jm-team-name">${g.teamB}</span>
+        </div>
+      </div>
+    </div>`;
+
+  // Build table — all players sorted by rank
+  const ranking = getOfficialRanking();
+  const tbody = document.getElementById('jm-tbody');
+  tbody.innerHTML = ranking.map((p, i) => {
+    const b = (bets[p] || {})[String(g.id)] || [null, null];
+    const betStr = b[0] !== null ? `${b[0]} × ${b[1]}` : '—';
+    let betCls = 'pending', ptsCls = 'pending', ptsVal = '—';
+
+    if (b[0] !== null && (finished || isLive)) {
+      const sA = r.scoreA, sB = r.scoreB;
+      if (sA === b[0] && sB === b[1]) {
+        betCls = 'exact'; ptsCls = 'exact';
+        ptsVal = finished ? '+5' : '(+5)';
+      } else if (getResult([sA,sB]) === getResult(b)) {
+        betCls = 'result'; ptsCls = 'result';
+        ptsVal = finished ? '+3' : '(+3)';
+      } else {
+        betCls = 'miss'; ptsCls = 'miss'; ptsVal = '0';
+      }
+    }
+
+    return `<tr>
+      <td class="jm-pos">${i+1}°</td>
+      <td class="jm-name">${p}</td>
+      <td class="jm-bet ${betCls}">${betStr}</td>
+      <td class="jm-pts ${ptsCls}">${ptsVal}</td>
+    </tr>`;
+  }).join('');
+}
+
+function setMomentoGame(id) {
+  momentoGameId = id;
+  renderMomento();
+}
+
 // ===== LIVE BANNER =====
 function updateLiveBanner() {
   const liveGames = games.filter(g => {
@@ -1540,6 +1734,31 @@ function renderPlayerDetail(player) {
   </div>
   <div id="jd-date-tabs" style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px"></div>
   <div id="jd-games-list"></div>
+</div>
+
+<!-- JOGO DO MOMENTO -->
+<div id="page-momento" class="page">
+  <div class="sec-hdr">
+    <div class="sec-title">⚽ Jogo do Momento</div>
+    <button class="refresh-btn" onclick="refreshAPI()">↻ Atualizar</button>
+  </div>
+  <div id="jm-header-area"></div>
+  <div id="jm-selector" style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px"></div>
+  <div style="overflow-x:auto;-webkit-overflow-scrolling:touch">
+    <div class="jm-table-wrap">
+      <table class="jm-table">
+        <thead>
+          <tr>
+            <th class="center">Pos.</th>
+            <th>Nome</th>
+            <th class="center">Palpite</th>
+            <th class="center">Pontos</th>
+          </tr>
+        </thead>
+        <tbody id="jm-tbody"></tbody>
+      </table>
+    </div>
+  </div>
 </div>
 
 <!-- PARTICIPANTES -->
