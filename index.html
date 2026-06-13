@@ -232,7 +232,6 @@
   .rbar-cell { width:180px; }
   .rbar { height:5px; background:var(--surface2); border-radius:3px; overflow:hidden; }
   .rbar-fill { height:100%; background:linear-gradient(90deg,var(--gold-dim),var(--gold)); border-radius:3px; }
-  .hrow td { background:rgba(245,200,66,.06) !important; }
   .pending-notice { background:rgba(59,130,246,.08); border:1px solid rgba(59,130,246,.2); border-radius:8px; padding:10px 16px; margin-bottom:18px; font-size:.83rem; color:#93c5fd; display:flex; align-items:center; gap:8px; }
 
   /* REFRESH BUTTON */
@@ -931,8 +930,7 @@ function initConsultar() {
   if (sel.options.length > 1) return;
   sel.innerHTML = '';
   const sorted = [...players].sort((a,b)=>a.localeCompare(b,'pt-BR'));
-  const order = sorted.includes('ADRIANO') ? ['ADRIANO',...sorted.filter(p=>p!=='ADRIANO')] : sorted;
-  order.forEach(p => { const o=document.createElement('option'); o.value=p; o.textContent=p; sel.appendChild(o); });
+  sorted.forEach(p => { const o=document.createElement('option'); o.value=p; o.textContent=p; sel.appendChild(o); });
 }
 
 function renderConsultar() {
@@ -1175,7 +1173,7 @@ function renderPontuacao() {
                 ? `<td style="color:#fca5a5;font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;font-weight:800">+${bd.livePts}</td>`
                 : `<td style="color:var(--muted);font-size:.85rem">—</td>`)
             : `<td style="color:var(--muted);font-size:.75rem">—</td>`;
-          return `<tr class="${p === 'ADRIANO' ? 'hrow' : ''}">
+          return `<tr>
             <td class="rpos">${rank}°</td>
             <td class="rname">${p}</td>
             <td class="rpts">${bd.pts > 0 ? bd.pts : '<span style="color:var(--muted);font-size:.9rem">—</span>'}</td>
@@ -1444,9 +1442,8 @@ function renderParticipants() {
     const cards = plist.map(p => {
       const bd = computeBreakdown(p);
       const initials = p.split(' ').map(w=>w[0]).join('').slice(0,2).toUpperCase();
-      const isMe = p === 'ADRIANO';
-      return `<div class="player-card" onclick="showPlayerDetail('${p.replace(/'/g,"\'")}')">
-        <div class="player-avatar" style="${isMe?'background:rgba(245,200,66,.15);border-color:var(--gold);color:var(--gold)':''}">${initials}</div>
+      return `<div class="player-card" onclick="showPlayerDetail('${p.replace(/'/g,"\\'")}')">
+        <div class="player-avatar">${initials}</div>
         <div>
           <div class="player-card-name">${p}</div>
           <div class="player-card-pts">${(computeBreakdown(p).pts + computeBreakdown(p).livePts) > 0 ? (getOfficialRanking().indexOf(p)+1) + '° · ' + computeBreakdown(p).pts + ' pts' + (computeBreakdown(p).livePts>0?' +'+computeBreakdown(p).livePts+'🔴':'') + ' · 🎯' + computeBreakdown(p).exact + ' ✓' + computeBreakdown(p).result : (getOfficialRanking().indexOf(p)+1) + '° · ⏳ Aguardando'}</div>
@@ -1476,8 +1473,6 @@ function showPlayerDetail(player) {
 function renderPlayerDetail(player) {
   const bd = computeBreakdown(player);
   const rank = getRank(player);
-  const isMe = player === 'ADRIANO';
-
   document.getElementById('pd-name').textContent = player;
   document.getElementById('pd-rank').textContent = rank + 'º lugar no ranking';
 
