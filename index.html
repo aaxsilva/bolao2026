@@ -25,7 +25,7 @@
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
-  body { font-family: 'Barlow', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+  body { font-family: 'Barlow', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; overflow-x: hidden; width: 100%; }
 
   /* HEADER */
   .header {
@@ -35,11 +35,13 @@
     position: sticky; top: 0; z-index: 200;
     display: flex; align-items: center; justify-content: space-between;
     height: 60px; gap: 16px;
+    width: 100%;
+    box-sizing: border-box;
   }
   .brand {
     display: flex; align-items: center; gap: 10px;
     font-family: 'Barlow Condensed', sans-serif; font-weight: 800;
-    font-size: 1.3rem; color: var(--gold); white-space: nowrap;
+    font-size: 1.3rem; color: var(--gold); white-space: nowrap; flex-shrink: 0;
   }
   .brand span { color: var(--text); font-weight: 400; }
   .api-status {
@@ -56,7 +58,8 @@
   .status-dot.error { background: var(--red); }
   @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
 
-  .nav { display: flex; gap: 2px; }
+  .nav { display: flex; gap: 2px; overflow-x: auto; flex-shrink: 1; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+  .nav::-webkit-scrollbar { display: none; }
   .nav-btn {
     background: transparent; border: none;
     color: var(--muted); font-family: 'Barlow Condensed', sans-serif;
@@ -69,7 +72,7 @@
   .nav-btn.active { color: var(--gold); background: rgba(245,200,66,.1); }
 
   /* PAGES */
-  .page { display: none; padding: 24px; max-width: 1400px; margin: 0 auto; }
+  .page { display: none; padding: 16px; width: 100%; box-sizing: border-box; }
   .page.active { display: block; }
 
   /* LOADING OVERLAY */
@@ -188,12 +191,12 @@
   .fbtn { background:var(--surface); border:1px solid var(--border); color:var(--muted); font-family:'Barlow Condensed',sans-serif; font-size:.82rem; font-weight:600; letter-spacing:.05em; text-transform:uppercase; padding:5px 13px; border-radius:6px; cursor:pointer; transition:all .15s; }
   .fbtn:hover { color:var(--text); border-color:var(--text); }
   .fbtn.active { background:var(--gold); color:#080d1a; border-color:var(--gold); }
-  .detail-card { background:var(--surface); border:1px solid var(--border); border-radius:12px; margin-bottom:14px; overflow:hidden; }
+  .detail-card { background:var(--surface); border:1px solid var(--border); border-radius:12px; margin-bottom:14px; overflow:visible; }
   .dc-hdr { background:var(--surface2); padding:11px 18px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid var(--border); }
   .dc-title { font-family:'Barlow Condensed',sans-serif; font-weight:700; font-size:.95rem; letter-spacing:.04em; text-transform:uppercase; }
   .dc-result { font-family:'Barlow Condensed',sans-serif; font-size:1.3rem; font-weight:800; color:var(--gold); }
-  .dc-teams { display:flex; align-items:center; gap:10px; padding:14px 18px; border-bottom:1px solid var(--border); }
-  .tdisp { flex:1; display:flex; align-items:center; gap:8px; }
+  .dc-teams { display:flex; align-items:center; gap:8px; padding:14px 12px; border-bottom:1px solid var(--border); box-sizing:border-box; width:100%; }
+  .tdisp { flex:1; display:flex; align-items:center; gap:8px; min-width:0; overflow:hidden; }
   .tdisp.right { justify-content:flex-end; flex-direction:row-reverse; }
   .tflag { font-size:1.4rem; }
   .tdn { font-weight:600; font-size:.95rem; }
@@ -249,6 +252,8 @@
     padding: 0;
     margin-bottom: 20px;
     overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
   }
   .jm-stadium {
     background: rgba(124,58,237,.3);
@@ -262,8 +267,9 @@
   .jm-game-row {
     display: flex;
     align-items: center;
-    padding: 20px;
-    gap: 12px;
+    padding: 16px;
+    gap: 8px;
+    overflow: hidden;
   }
   .jm-game-num {
     background: rgba(124,58,237,.3);
@@ -276,11 +282,11 @@
     border-radius: 6px;
     white-space: nowrap;
   }
-  .jm-team-block { flex: 1; display: flex; align-items: center; gap: 12px; }
-  .jm-team-block.right { justify-content: flex-end; flex-direction: row-reverse; }
-  .jm-team-flag { font-size: 2.2rem; }
-  .jm-team-name { font-family: 'Barlow Condensed', sans-serif; font-size: 1.4rem; font-weight: 700; color: var(--text); }
-  .jm-score-center { text-align: center; min-width: 100px; }
+  .jm-team-block { flex: 1; display: flex; align-items: center; gap: 8px; min-width: 0; overflow: hidden; }
+  .jm-team-block.right { justify-content: flex-end; flex-direction: row-reverse; min-width: 0; overflow: hidden; }
+  .jm-team-flag { font-size: 1.8rem; flex-shrink: 0; line-height: 1; }
+  .jm-team-name { font-family: 'Barlow Condensed', sans-serif; font-size: 1.1rem; font-weight: 700; color: var(--text); word-break: break-word; min-width: 0; }
+  .jm-score-center { text-align: center; min-width: 90px; flex-shrink: 0; }
   .jm-score-main { font-family: 'Barlow Condensed', sans-serif; font-size: 2.4rem; font-weight: 800; color: #a855f7; line-height: 1; }
   .jm-score-date { color: #c4b5fd; font-size: .78rem; margin-top: 4px; }
   .jm-score-time { color: var(--muted); font-size: .75rem; }
@@ -309,7 +315,7 @@
   .jm-no-game { text-align: center; padding: 60px 20px; color: var(--muted); }
 
   /* JOGOS DO DIA */
-  .jd-card { background:var(--surface); border:1px solid var(--border); border-radius:14px; margin-bottom:14px; overflow:hidden; }
+  .jd-card { background:var(--surface); border:1px solid var(--border); border-radius:14px; margin-bottom:14px; }
   .jd-header { padding:14px 20px; cursor:pointer; display:flex; align-items:center; justify-content:space-between; gap:10px; transition:background .15s; }
   .jd-header:hover { background:rgba(255,255,255,.03); }
   .jd-header-left { display:flex; align-items:center; gap:14px; }
@@ -369,6 +375,8 @@
     align-items: center;
     gap: 16px;
     flex-wrap: wrap;
+    width: 100%;
+    box-sizing: border-box;
   }
   .live-banner.visible { display: flex; }
   .live-banner-title {
@@ -403,7 +411,7 @@
   .live-tag { background:rgba(239,68,68,.15); color:#fca5a5; border:1px solid rgba(239,68,68,.3); font-size:.65rem; font-weight:700; padding:2px 6px; border-radius:4px; text-transform:uppercase; letter-spacing:.06em; animation:pulse 1.5s infinite; }
 
   /* PARTICIPANTS PAGE */
-  .page-participants { display:none; padding:24px; max-width:1400px; margin:0 auto; }
+  .page-participants { display:none; padding:16px; width:100%; box-sizing:border-box; }
   .page-participants.active { display:block; }
   .back-btn { display:inline-flex; align-items:center; gap:6px; background:rgba(255,255,255,.06); border:1px solid var(--border); color:var(--muted); font-family:'Barlow Condensed',sans-serif; font-size:.85rem; font-weight:600; letter-spacing:.05em; text-transform:uppercase; padding:6px 14px; border-radius:6px; cursor:pointer; transition:all .15s; margin-bottom:20px; }
   .back-btn:hover { color:var(--text); border-color:var(--text); }
@@ -1280,6 +1288,7 @@ function renderJogosdia() {
     const [da,ma,ya] = a.split('/'); const [db,mb,yb] = b.split('/');
     return new Date(`${ya}-${ma}-${da}`) - new Date(`${yb}-${mb}-${db}`);
   });
+  // Keep date tabs chronological (ascending) so user can navigate forward in time
 
   // Default to today or first date with games
   const todayStr = new Date().toLocaleDateString('pt-BR', {day:'2-digit',month:'2-digit',year:'numeric'});
@@ -1299,7 +1308,7 @@ function renderJogosdia() {
   }).join('');
 
   // Render games for selected date
-  const dayGames = dateMap[jdSelectedDate] || [];
+  const dayGames = (dateMap[jdSelectedDate] || []).slice().sort((a,b) => b.id - a.id);
   const listEl = document.getElementById('jd-games-list');
 
   if (dayGames.length === 0) {
@@ -1448,15 +1457,17 @@ function renderMomento() {
       : games[0]?.id;
   }
 
-  // Selector buttons — show live + last 3 finished + next scheduled
+  // Selector buttons — show live + finished + next scheduled, all descending
   const showGames = [];
   if (liveGame) showGames.push(liveGame);
-  finishedGames.slice(-5).reverse().forEach(g => { if (!showGames.find(x=>x.id===g.id)) showGames.push(g); });
+  finishedGames.slice().reverse().forEach(g => { if (!showGames.find(x=>x.id===g.id)) showGames.push(g); });
   const nextScheduled = games.find(g => {
     const r = realResults[String(g.id)];
     return !r || (r.scoreA === null && r.status !== 'live');
   });
   if (nextScheduled && !showGames.find(x=>x.id===nextScheduled.id)) showGames.push(nextScheduled);
+  // Sort all descending by game id
+  showGames.sort((a,b) => b.id - a.id);
 
   document.getElementById('jm-selector').innerHTML = showGames.map(g => {
     const r = realResults[String(g.id)];
@@ -1494,7 +1505,6 @@ function renderMomento() {
     <div class="jm-header">
       <div class="jm-stadium">🏟 ${g.stadium}</div>
       <div class="jm-game-row">
-        <span class="jm-game-num">JOGO ${g.id}</span>
         <div class="jm-team-block">
           <span class="jm-team-flag">${flag(g.teamA)}</span>
           <span class="jm-team-name">${g.teamA}</span>
@@ -1763,7 +1773,7 @@ function renderPlayerDetail(player) {
 
 <!-- PARTICIPANTES -->
 <div id="page-participants" class="page-participants">
-  <div style="max-width:1400px;margin:0 auto">
+  <div style="width:100%;box-sizing:border-box">
     <button class="back-btn" onclick="nav('home')">← Voltar ao Início</button>
     <div class="sec-hdr">
       <div class="sec-title">👥 Participantes</div>
@@ -1776,7 +1786,7 @@ function renderPlayerDetail(player) {
 
 <!-- PLAYER DETAIL -->
 <div id="page-player" class="page-participants">
-  <div style="max-width:1400px;margin:0 auto">
+  <div style="width:100%;box-sizing:border-box">
     <button class="back-btn" onclick="nav('participants')">← Voltar à Lista</button>
     <div class="player-detail-hdr">
       <div>
