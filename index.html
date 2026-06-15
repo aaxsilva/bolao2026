@@ -244,6 +244,12 @@
   .spin-icon { display:inline-block; }
   .spin-icon.spinning { animation:spin .7s linear infinite; }
 
+  /* TREND INDICATORS */
+  .trend { font-size: .85rem; font-weight: 900; width: 18px; text-align: center; flex-shrink: 0; }
+  .trend.up { color: #22c55e; }
+  .trend.down { color: #ef4444; }
+  .trend.same { color: #f5c842; font-size: 1rem; }
+
   /* JOGO DO MOMENTO */
   .jm-header {
     background: linear-gradient(135deg, #1a1040 0%, #2d1b69 50%, #1a1040 100%);
@@ -466,7 +472,7 @@
 <div id="toast" class="toast"></div>
 
 <header class="header">
-  <div class="brand">⚽ Bolão <span>Copa 2026</span></div>
+  <div class="brand">⚽</div>
   <div class="api-status">
     <div id="status-dot" class="status-dot"></div>
     <span id="status-text">Conectando…</span>
@@ -484,7 +490,7 @@
 <!-- HOME -->
 <div id="page-home" class="page active">
   <div class="home-hero">
-    <h1 class="home-title">Bolão <span class="hl">Copa do Mundo 2026</span></h1>
+    <h1 class="home-title">⚽ Bolão <span class="hl">Copa do Mundo 2026</span></h1>
     <p class="home-sub" id="home-sub">Carregando dados…</p>
   </div>
   <div id="home-stats" style="margin:24px 0 0"></div>
@@ -1229,11 +1235,41 @@ function renderPontuacao() {
   const sorted = getOfficialRanking();
   const maxPts = Math.max(...players.map(p => computeBreakdown(p).pts), 1);
 
-  wrap.innerHTML = `
+      // Trend: compare ranking BEFORE last finished game vs NOW
+    // Find the last finished game id
+    const finishedIds = games
+      .map(g => g.id)
+      .filter(id => { const r = realResults[String(id)]; return r && r.status === 'finished'; })
+      .sort((a,b) => a - b);
+
+    // Compute ranking WITHOUT the last finished game
+    let prevRankMap = {};
+    if (finishedIds.length > 1) {
+      const lastId = finishedIds[finishedIds.length - 1];
+      // Temporarily remove last game from realResults
+      const lastResult = realResults[String(lastId)];
+      const savedResults = Object.assign({}, realResults);
+      delete realResults[String(lastId)];
+
+      const prevSorted = [...players].sort((a, b) => {
+        const da = computeBreakdown(a), db = computeBreakdown(b);
+        if (db.pts !== da.pts) return db.pts - da.pts;
+        if (db.exact !== da.exact) return db.exact - da.exact;
+        if (db.result !== da.result) return db.result - da.result;
+        return a.localeCompare(b, 'pt-BR');
+      });
+      prevSorted.forEach((p, i) => { prevRankMap[p] = i + 1; });
+
+      // Restore results
+      realResults[String(lastId)] = lastResult;
+    }
+
+    wrap.innerHTML = `
     <table class="rank-tbl">
       <thead>
         <tr>
           <th style="width:56px;text-align:center">Pos.</th>
+          <th style="width:24px"></th>
           <th>Participante</th>
           <th>Pontos</th>
           <th style="color:#fca5a5">🔴 Parcial</th>
@@ -1255,8 +1291,17 @@ function renderPontuacao() {
                 ? `<td style="color:#fca5a5;font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;font-weight:800">+${bd.livePts}</td>`
                 : `<td style="color:var(--muted);font-size:.85rem">—</td>`)
             : `<td style="color:var(--muted);font-size:.75rem">—</td>`;
+          // Trend: current rank vs rank before last game
+          const prevRank = prevRankMap[p];
+          let trendHtml = '<span class="trend same">—</span>';
+          if (prevRank !== undefined && prevRank !== rank) {
+            trendHtml = rank < prevRank
+              ? '<span class="trend up">▲</span>'
+              : '<span class="trend down">▼</span>';
+          }
           return `<tr>
             <td class="rpos">${rank}°</td>
+            <td style="text-align:center;width:24px">${trendHtml}</td>
             <td class="rname">${p}</td>
             <td class="rpts">${bd.pts > 0 ? bd.pts : '<span style="color:var(--muted);font-size:.9rem">—</span>'}</td>
             ${liveCell}
