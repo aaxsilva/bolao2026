@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bolao Copa 2026</title>
+<title>Bol&atilde;o Copa 2026</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
 :root{--am:#FFD700;--vd:#006633;--vc:#009940;--bg:#0e1628;--cd:#162035;--c2:#1a2740;--bd:rgba(255,255,255,.07);--sv:#7a8aaa;--ou:#D4AF37;--pr:#C0C0C0;--bz:#CD7F32;--va:#4cba7a;}
@@ -221,7 +221,7 @@ main{max-width:1100px;margin:0 auto;padding:24px 20px;}
     <div class="logo">
       <div class="logo-i">&#x26BD;</div>
       <div>
-        <h1>Bolao Copa 2026</h1>
+        <h1>Bol&atilde;o Copa 2026</h1>
         <span>USA &middot; Mexico &middot; Canada</span>
       </div>
     </div>
@@ -230,7 +230,7 @@ main{max-width:1100px;margin:0 auto;padding:24px 20px;}
       <span id="status-text">Carregando...</span>
     </div>
     <nav class="dn">
-      <button class="av" onclick="ir('inicio',this)">Inicio</button>
+      <button class="av" onclick="ir('inicio',this)">&Iacute;nicio</button>
       <button onclick="ir('ranking',this)">Ranking</button>
       <button onclick="ir('jogos',this)">Jogos</button>
       <button onclick="ir('dia',this)">Jogos do Dia</button>
@@ -248,9 +248,9 @@ main{max-width:1100px;margin:0 auto;padding:24px 20px;}
 <div id="pg-inicio" class="tc av">
   <div class="pt">
     <div class="pt-i" style="background:linear-gradient(135deg,#1565C0,#42A5F5)">&#x1F3E0;</div>
-    <h2>Bem-vindo ao Bolao</h2>
+    <h2>Eliminatórias do Bol&atilde;o</h2>
   </div>
-  <div class="av-box">O torneio esta em andamento. Veja abaixo o podio atual e navegue pelas abas para mais detalhes.</div>
+  <div class="av-box">O torneio est&aacute; em andamento. Veja abaixo o p&oacute;dio atual e navegue pelas abas para mais detalhes.</div>
   <div class="st">&#x1F3C6; Top 3 do Momento</div>
   <div class="pod-wrap" id="pod-wrap"></div>
   <div class="quickgrid">
@@ -262,11 +262,11 @@ main{max-width:1100px;margin:0 auto;padding:24px 20px;}
 </div>
 
 <div id="pg-ranking" class="tc">
-  <div class="av-box" id="aviso-fases">Carregando fases disponiveis...</div>
+  <div class="av-box" id="aviso-fases">Carregando fases dispon&iacute;veis...</div>
   <div class="fb" id="fase-atual-badge">Fase atual: carregando...</div>
   <div class="pt">
     <div class="pt-i" style="background:linear-gradient(135deg,#b8860b,#ffd700)">&#x1F4CA;</div>
-    <h2>Ranking &mdash; Pontuacao</h2>
+    <h2>Ranking &mdash; Pontua&ccedil;&atilde;o</h2>
     <button class="btn-atu" id="refresh-btn" onclick="atualizarBotao()">
       <span id="refresh-icon">&#x21BB;</span> Atualizar
     </button>
@@ -329,30 +329,30 @@ main{max-width:1100px;margin:0 auto;padding:24px 20px;}
     <h2>Regras</h2>
   </div>
   <div class="pcard">
-    <h3>&#x26BD; Pontuacao por Jogo</h3>
+    <h3>&#x26BD; Pontua&ccedil;&atilde;o por Jogo</h3>
     <div class="prow"><span>Placar exato</span><span class="pval">+5 pts</span></div>
-    <div class="prow"><span>Resultado certo (vencedor), placar diferente</span><span class="pval">+3 pts</span></div>
+    <div class="prow"><span>Resultado certo (vendedor), placar diferente</span><span class="pval">+3 pts</span></div>
     <div class="prow"><span>Resultado errado</span><span class="pval" style="color:var(--sv)">0 pts</span></div>
   </div>
   <div class="pcard" style="border-color:rgba(212,175,55,.35)">
-    <h3>&#x1F3C6; Bonus &mdash; Campeao da Copa</h3>
-    <div class="prow"><span>Acertar o campeao <small style="display:block;color:var(--sv);margin-top:2px">(a aposta do campeao deve ser feita somente na 16 avos)</small></span><span class="pval" style="color:var(--ou)">+10 pts</span></div>
+    <h3>&#x1F3C6; B&ocirc;nus &mdash; Campe&atilde;o da Copa</h3>
+    <div class="prow"><span>Acertar o campe&atilde;o <small style="display:block;color:var(--sv);margin-top:2px">(a aposta do campe&atilde;o deve ser feita somente na 16 avos)</small></span><span class="pval" style="color:var(--ou)">+10 pts</span></div>
     <div style="font-size:12.5px;color:var(--sv);line-height:1.5;margin-top:10px;padding-top:10px;border-top:1px solid var(--bd)">
-      A somatoria de 5 e 3 pontos vai ocorrer ao longo das fases. Na fase final, quem acertar o campeao vai ganhar 10 pontos.
+      A somat&oacute;ria de 5 e 3 pontos vai ocorrer ao longo das fases. Na fase final, quem acertar o campe&atilde;o vai ganhar 10 pontos.
     </div>
   </div>
   <div class="pcard">
     <h3>&#x2139;&#xfe0f; Como funciona</h3>
-    <div class="prow"><span>Cada fase e liberada conforme os jogos vao acontecendo</span><span>&#x1F4C5;</span></div>
-    <div class="prow"><span>A pontuacao de cada fase e somada ao total acumulado</span><span>&#x2795;</span></div>
-    <div class="prow"><span>O ranking e atualizado automaticamente a cada fase carregada</span><span>&#x1F504;</span></div>
+    <div class="prow"><span>Cada fase &eacute; liberada conforme os jogos v&atilde;o acontecendo</span><span>&#x1F4C5;</span></div>
+    <div class="prow"><span>A pontua&ccedil;&atilde;o de cada fase &eacute; somada ao total acumulado</span><span>&#x2795;</span></div>
+    <div class="prow"><span>O ranking &eacute; atualizado automaticamente a cada fase carregada</span><span>&#x1F504;</span></div>
   </div>
 </div>
 
 </main>
 
 <nav class="mn">
-  <button class="av" onclick="ir('inicio',this)"><span class="ic">&#x1F3E0;</span>Inicio</button>
+  <button class="av" onclick="ir('inicio',this)"><span class="ic">&#x1F3E0;</span>&Iacute;nicio</button>
   <button onclick="ir('ranking',this)"><span class="ic">&#x1F3C6;</span>Ranking</button>
   <button onclick="ir('jogos',this)"><span class="ic">&#x26BD;</span>Jogos</button>
   <button onclick="ir('dia',this)"><span class="ic">&#x1F4C5;</span>Dia</button>
