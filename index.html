@@ -506,6 +506,8 @@ function findGameIdLoose(teamA, teamB){
 function aplicarResultadosReais(){
   // Para cada jogo carregado, se houver resultado real correspondente, sobrescreve
   // golsA/golsB/status SOMENTE em memoria (nao altera os arquivos JSON originais)
+
+  // 1) Atualiza TODOS_JOGOS (usado pelo ranking)
   TODOS_JOGOS.forEach(function(g){
     var key = g.fase+"-"+g.jogo;
     var r = realResults[key];
@@ -516,6 +518,26 @@ function aplicarResultadosReais(){
       g.timeElapsed = r.timeElapsed;
       g.minute = r.minute;
     }
+  });
+
+  // 2) Atualiza FASES_CARREGADAS (usado pelo render de Jogos, Dia e Momento)
+  // Sem resultado da API: golsA/golsB ficam null (mostra 'vs' / 'Aguardando')
+  FASES.forEach(function(f){
+    var dados = FASES_CARREGADAS[f.k];
+    if(!dados) return;
+    dados.jogos.forEach(function(j){
+      var key = f.k+"-"+j.jogo;
+      var r = realResults[key];
+      if(r){
+        j.golsA = r.scoreA;
+        j.golsB = r.scoreB;
+        j.status = r.status;
+      } else {
+        j.golsA = null;
+        j.golsB = null;
+        j.status = j.status==="live" ? "live" : "scheduled";
+      }
+    });
   });
 }
 
@@ -928,8 +950,15 @@ function renderDiaSeletor(){
   }
   diaSelecionadoIdx = jogos.indexOf(alvo);
 
+  var jogosComResultado = jogos.filter(function(j){ return statusJogo(j)!=="scheduled"; });
+  if(jogosComResultado.length===0){
+    el.innerHTML="<div class='av-box'>Nenhum resultado disponivel ainda.</div>";
+    document.getElementById("dia-lista").innerHTML="";
+    return;
+  }
   var h = "";
-  jogos.forEach(function(j,i){
+  jogosComResultado.forEach(function(j){
+    var i = jogos.indexOf(j);
     var liveTag = statusJogo(j)==="live" ? " &#x1F534;" : "";
     h += "<button class='dia-btn"+(i===diaSelecionadoIdx?" av":"")+"' onclick='selecionarDia("+i+",this)'>Jogo "+j.jogo+liveTag+"</button>";
   });
@@ -1046,7 +1075,8 @@ function jogoDoMomento(){
   var finalizados = todosOsJogosDisponiveis.filter(function(j){ return statusJogo(j)==="finished"; });
   if(finalizados.length>0) return finalizados[finalizados.length-1];
 
-  return todosOsJogosDisponiveis[0];
+  // Nenhum jogo com resultado ainda — nao exibir nada
+  return null;
 }
 
 function renderJogoMomento(){
@@ -1058,13 +1088,20 @@ function renderJogoMomento(){
   var selecionado = jogoDoMomento();
 
   var gh="";
-  jogos.forEach(function(j,i){
+  var jogosComResultado = jogos.filter(function(j){ return statusJogo(j)!=="scheduled"; });
+  if(jogosComResultado.length===0){
+    grid.innerHTML="";
+    document.getElementById("jm-hero").innerHTML="<div class='av-box'>Nenhum resultado disponivel ainda.</div>";
+    return;
+  }
+  jogosComResultado.forEach(function(j){
+    var i = jogos.indexOf(j);
     var ativo = selecionado && j.jogo===selecionado.jogo;
     var liveTag = statusJogo(j)==="live" ? " &#x1F534;" : "";
     gh+="<button class='jm-btn"+(ativo?" av":"")+"' onclick='selecionarMomento("+i+",this)'>Jogo "+j.jogo+liveTag+"</button>";
   });
   grid.innerHTML=gh;
-  renderJogoMomentoHero(selecionado || jogos[jogos.length-1]);
+  renderJogoMomentoHero(selecionado || jogosComResultado[jogosComResultado.length-1]);
 }
 
 function selecionarMomento(idx, btn){
@@ -1169,6 +1206,18 @@ function ir(id,btn){
 
 // ---------- INIT ----------
 carregarFases(function(){
+  // Zera golsA/golsB de todos os jogos carregados do JSON antes de qualquer render.
+  // Os placares reais virao exclusivamente da API (aplicarResultadosReais).
+  FASES.forEach(function(f){
+    var dados = FASES_CARREGADAS[f.k];
+    if(!dados) return;
+    dados.jogos.forEach(function(j){
+      j.golsA = null;
+      j.golsB = null;
+      j.status = "scheduled";
+    });
+  });
+
   calcularRanking();
   renderLiveBanner();
   renderRanking();
