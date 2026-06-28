@@ -865,7 +865,7 @@ function renderFase(fk){
         var pts=0;
         if(temResultado(j)){
           if(pp.golsA===j.golsA && pp.golsB===j.golsB) pts=5;
-          else if((pp.golsA>pp.golsB)===(j.golsA>j.golsB) && j.golsA!==j.golsB) pts=3;
+          else if((pp.golsA>pp.golsB ? 1 : pp.golsA<pp.golsB ? -1 : 0)===(j.golsA>j.golsB ? 1 : j.golsA<j.golsB ? -1 : 0)) pts=3;
         }
         var tagClass = pts===5 ? "acerto" : (pts===3 ? "acerto3" : "");
         var tagTxt = temResultado(j) ? ("+"+pts+" pts") : "aguardando";
@@ -1040,7 +1040,7 @@ function renderJogoMomentoHero(j){
     function pts(pp){
       if(!temResultado(j)) return 0;
       if(pp.golsA===j.golsA&&pp.golsB===j.golsB) return 5;
-      if((pp.golsA>pp.golsB)===(j.golsA>j.golsB)&&j.golsA!==j.golsB) return 3;
+      if((pp.golsA>pp.golsB ? 1 : pp.golsA<pp.golsB ? -1 : 0)===(j.golsA>j.golsB ? 1 : j.golsA<j.golsB ? -1 : 0)) return 3;
       return 0;
     }
     return pts(b)-pts(a);
@@ -1050,7 +1050,7 @@ function renderJogoMomentoHero(j){
     var pts=0;
     if(temResultado(j)){
       if(pp.golsA===j.golsA&&pp.golsB===j.golsB) pts=5;
-      else if((pp.golsA>pp.golsB)===(j.golsA>j.golsB)&&j.golsA!==j.golsB) pts=3;
+      else if((pp.golsA>pp.golsB ? 1 : pp.golsA<pp.golsB ? -1 : 0)===(j.golsA>j.golsB ? 1 : j.golsA<j.golsB ? -1 : 0)) pts=3;
     }
     var ptsTxt = temResultado(j) ? ("+"+pts+" pts") : "aguardando";
     var palCls = pts===5?" acertou":(pts===3?" acertou3":"");
