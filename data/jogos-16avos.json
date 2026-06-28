@@ -4,22 +4,22 @@
   "participantes": [
     {
       "participante": "Adriano",
-      "arquivo": "Adriano",
+      "arquivo": "adriano",
       "campeao": "Brasil"
     },
     {
       "participante": "Bumblebee",
-      "arquivo": "Bumblebee",
+      "arquivo": "bumblebee",
       "campeao": "Argentina"
     },
     {
       "participante": "Gandalf",
-      "arquivo": "Gandalf",
+      "arquivo": "gandalf",
       "campeao": "França"
     },
     {
       "participante": "Adriano 2",
-      "arquivo": "Adriano_2",
+      "arquivo": "adriano_2",
       "campeao": "Espanha"
     },
     {
@@ -33,12 +33,12 @@
       "campeao": "Brasil"
     },
     {
-      "participante": "DUDINHA",
+      "participante": "Dudinha",
       "arquivo": "dudinha",
       "campeao": "Argentina"
     },
     {
-      "participante": "ELVIS",
+      "participante": "Elvis",
       "arquivo": "elvis",
       "campeao": "França"
     },
@@ -53,32 +53,32 @@
       "campeao": "França"
     },
     {
-      "participante": "emi",
+      "participante": "Emi",
       "arquivo": "emi",
       "campeao": "Alemanha"
     },
     {
-      "participante": "FERNANDA",
+      "participante": "Fernanda",
       "arquivo": "fernanda",
       "campeao": "Argentina"
     },
     {
-      "participante": "FRANCISCO",
+      "participante": "Francisco",
       "arquivo": "francisco",
       "campeao": "Brasil"
     },
     {
-      "participante": "FÁTIMA",
+      "participante": "Fátima",
       "arquivo": "fatima",
       "campeao": "Brasil"
     },
     {
-      "participante": "GARGAMEL",
+      "participante": "Gargamel",
       "arquivo": "gargamel",
       "campeao": "Colômbia"
     },
     {
-      "participante": "GU",
+      "participante": "Gu",
       "arquivo": "gu",
       "campeao": "França"
     },
@@ -88,67 +88,67 @@
       "campeao": "Argentina"
     },
     {
-      "participante": "JOSÉ 1",
+      "participante": "José 1",
       "arquivo": "jose_1",
       "campeao": "Argentina"
     },
     {
-      "participante": "JOSÉ 2",
+      "participante": "José 2",
       "arquivo": "jose_2",
       "campeao": "Holanda"
     },
     {
-      "participante": "JOSÉ 3",
+      "participante": "José 3",
       "arquivo": "jose_3",
       "campeao": "França"
     },
     {
-      "participante": "LOUISE GARCIA PORTO",
-      "arquivo": "louise_garcia_porto",
+      "participante": "Louise",
+      "arquivo": "louise",
       "campeao": "França"
     },
     {
-      "participante": "MANUELA",
+      "participante": "Manuela",
       "arquivo": "manuela",
       "campeao": "Argentina"
     },
     {
-      "participante": "MARIA 1",
+      "participante": "Maria 1",
       "arquivo": "maria_1",
       "campeao": "Argentina"
     },
     {
-      "participante": "MARIA 2",
+      "participante": "Maria 2",
       "arquivo": "maria_2",
       "campeao": "Argentina"
     },
     {
-      "participante": "MARIA 3",
+      "participante": "Maria 3",
       "arquivo": "maria_3",
       "campeao": "Argentina"
     },
     {
-      "participante": "MARTA 1",
+      "participante": "Marta 1",
       "arquivo": "marta_1",
       "campeao": "França"
     },
     {
-      "participante": "MARTA 2",
+      "participante": "Marta 2",
       "arquivo": "marta_2",
       "campeao": "França"
     },
     {
-      "participante": "MARTA 3",
+      "participante": "Marta 3",
       "arquivo": "marta_3",
       "campeao": "França"
     },
     {
-      "participante": "MARTA 4",
+      "participante": "Marta 4",
       "arquivo": "marta_4",
       "campeao": "França"
     },
     {
-      "participante": "MARTA 5",
+      "participante": "Marta 5",
       "arquivo": "marta_5",
       "campeao": "França"
     },
@@ -163,7 +163,7 @@
       "campeao": "Portugal"
     },
     {
-      "participante": "NINA",
+      "participante": "Nina",
       "arquivo": "nina",
       "campeao": "França"
     },
@@ -193,7 +193,7 @@
       "campeao": "Noruega"
     },
     {
-      "participante": "VAGNER PORTO",
+      "participante": "Vagner",
       "arquivo": "vagner_porto",
       "campeao": "Brasil"
     },
@@ -203,7 +203,7 @@
       "campeao": "Holanda"
     },
     {
-      "participante": "ROSANA",
+      "participante": "Rosana",
       "arquivo": "rosana",
       "campeao": "França"
     },
@@ -218,7 +218,7 @@
       "campeao": "França"
     },
     {
-      "participante": "CÉSAR",
+      "participante": "César",
       "arquivo": "cesar",
       "campeao": "França"
     },
@@ -263,12 +263,12 @@
       "campeao": "Brasil"
     },
     {
-      "participante": "RÉGIS",
+      "participante": "Régis",
       "arquivo": "regis",
       "campeao": "Argentina"
     },
     {
-      "participante": "RÉGIS-IA",
+      "participante": "Régis-ia",
       "arquivo": "regis-ia",
       "campeao": "França"
     },
@@ -288,7 +288,7 @@
       "campeao": "Brasil"
     },
     {
-      "participante": "LUCCA",
+      "participante": "Lucca",
       "arquivo": "lucca",
       "campeao": "França"
     }
@@ -356,7 +356,7 @@
           "golsB": 1
         },
         {
-          "participante": "DUDINHA",
+          "participante": "Dudinha",
           "arquivo": "dudinha",
           "campeao": "Argentina",
           "timeA": "África do Sul",
@@ -365,7 +365,7 @@
           "golsB": 2
         },
         {
-          "participante": "ELVIS",
+          "participante": "Elvis",
           "arquivo": "elvis",
           "campeao": "França",
           "timeA": "África do Sul",
@@ -392,7 +392,7 @@
           "golsB": 2
         },
         {
-          "participante": "emi",
+          "participante": "Emi",
           "arquivo": "emi",
           "campeao": "Alemanha",
           "timeA": "África do Sul",
@@ -401,7 +401,7 @@
           "golsB": 2
         },
         {
-          "participante": "FERNANDA",
+          "participante": "Fernanda",
           "arquivo": "fernanda",
           "campeao": "Argentina",
           "timeA": "África do Sul",
@@ -410,7 +410,7 @@
           "golsB": 0
         },
         {
-          "participante": "FRANCISCO",
+          "participante": "Francisco",
           "arquivo": "francisco",
           "campeao": "Brasil",
           "timeA": "África do Sul",
@@ -419,7 +419,7 @@
           "golsB": 1
         },
         {
-          "participante": "FÁTIMA",
+          "participante": "Fátima",
           "arquivo": "fatima",
           "campeao": "Brasil",
           "timeA": "África do Sul",
@@ -428,7 +428,7 @@
           "golsB": 0
         },
         {
-          "participante": "GARGAMEL",
+          "participante": "Gargamel",
           "arquivo": "gargamel",
           "campeao": "Colômbia",
           "timeA": "África do Sul",
@@ -437,7 +437,7 @@
           "golsB": 2
         },
         {
-          "participante": "GU",
+          "participante": "Gu",
           "arquivo": "gu",
           "campeao": "França",
           "timeA": "África do Sul",
@@ -455,7 +455,7 @@
           "golsB": 1
         },
         {
-          "participante": "JOSÉ 1",
+          "participante": "José 1",
           "arquivo": "jose_1",
           "campeao": "Argentina",
           "timeA": "África do Sul",
@@ -464,7 +464,7 @@
           "golsB": 2
         },
         {
-          "participante": "JOSÉ 2",
+          "participante": "José 2",
           "arquivo": "jose_2",
           "campeao": "Holanda",
           "timeA": "África do Sul",
@@ -473,7 +473,7 @@
           "golsB": 2
         },
         {
-          "participante": "JOSÉ 3",
+          "participante": "José 3",
           "arquivo": "jose_3",
           "campeao": "França",
           "timeA": "África do Sul",
@@ -482,8 +482,8 @@
           "golsB": 1
         },
         {
-          "participante": "LOUISE GARCIA PORTO",
-          "arquivo": "louise_garcia_porto",
+          "participante": "Louise",
+          "arquivo": "louise",
           "campeao": "França",
           "timeA": "África do Sul",
           "golsA": 1,
@@ -491,7 +491,7 @@
           "golsB": 2
         },
         {
-          "participante": "MANUELA",
+          "participante": "Manuela",
           "arquivo": "manuela",
           "campeao": "Argentina",
           "timeA": "África do Sul",
@@ -500,7 +500,7 @@
           "golsB": 1
         },
         {
-          "participante": "MARIA 1",
+          "participante": "Maria 1",
           "arquivo": "maria_1",
           "campeao": "Argentina",
           "timeA": "África do Sul",
@@ -509,7 +509,7 @@
           "golsB": 1
         },
         {
-          "participante": "MARIA 2",
+          "participante": "Maria 2",
           "arquivo": "maria_2",
           "campeao": "Argentina",
           "timeA": "África do Sul",
@@ -518,7 +518,7 @@
           "golsB": 1
         },
         {
-          "participante": "MARIA 3",
+          "participante": "Maria 3",
           "arquivo": "maria_3",
           "campeao": "Argentina",
           "timeA": "África do Sul",
@@ -527,7 +527,7 @@
           "golsB": 1
         },
         {
-          "participante": "MARTA 1",
+          "participante": "Marta 1",
           "arquivo": "marta_1",
           "campeao": "França",
           "timeA": "África do Sul",
@@ -536,7 +536,7 @@
           "golsB": 1
         },
         {
-          "participante": "MARTA 2",
+          "participante": "Marta 2",
           "arquivo": "marta_2",
           "campeao": "França",
           "timeA": "África do Sul",
@@ -545,7 +545,7 @@
           "golsB": 2
         },
         {
-          "participante": "MARTA 3",
+          "participante": "Marta 3",
           "arquivo": "marta_3",
           "campeao": "França",
           "timeA": "África do Sul",
@@ -554,7 +554,7 @@
           "golsB": 2
         },
         {
-          "participante": "MARTA 4",
+          "participante": "Marta 4",
           "arquivo": "marta_4",
           "campeao": "França",
           "timeA": "África do Sul",
@@ -563,7 +563,7 @@
           "golsB": 1
         },
         {
-          "participante": "MARTA 5",
+          "participante": "Marta 5",
           "arquivo": "marta_5",
           "campeao": "França",
           "timeA": "África do Sul",
@@ -590,7 +590,7 @@
           "golsB": 0
         },
         {
-          "participante": "NINA",
+          "participante": "Nina",
           "arquivo": "nina",
           "campeao": "França",
           "timeA": "África do Sul",
@@ -644,7 +644,7 @@
           "golsB": 3
         },
         {
-          "participante": "VAGNER PORTO",
+          "participante": "Vagner",
           "arquivo": "vagner_porto",
           "campeao": "Brasil",
           "timeA": "África do Sul",
@@ -662,7 +662,7 @@
           "golsB": 2
         },
         {
-          "participante": "ROSANA",
+          "participante": "Rosana",
           "arquivo": "rosana",
           "campeao": "França",
           "timeA": "África do Sul",
@@ -689,7 +689,7 @@
           "golsB": 2
         },
         {
-          "participante": "CÉSAR",
+          "participante": "César",
           "arquivo": "cesar",
           "campeao": "França",
           "timeA": "África do Sul",
@@ -770,7 +770,7 @@
           "golsB": 2
         },
         {
-          "participante": "RÉGIS",
+          "participante": "Régis",
           "arquivo": "regis",
           "campeao": "Argentina",
           "timeA": "África do Sul",
@@ -779,7 +779,7 @@
           "golsB": 1
         },
         {
-          "participante": "RÉGIS-IA",
+          "participante": "Régis-ia",
           "arquivo": "regis-ia",
           "campeao": "França",
           "timeA": "África do Sul",
@@ -815,7 +815,7 @@
           "golsB": 1
         },
         {
-          "participante": "LUCCA",
+          "participante": "Lucca",
           "arquivo": "lucca",
           "campeao": "França",
           "timeA": "África do Sul",
@@ -887,7 +887,7 @@
           "golsB": 1
         },
         {
-          "participante": "DUDINHA",
+          "participante": "Dudinha",
           "arquivo": "dudinha",
           "campeao": "Argentina",
           "timeA": "Brasil",
@@ -896,7 +896,7 @@
           "golsB": 1
         },
         {
-          "participante": "ELVIS",
+          "participante": "Elvis",
           "arquivo": "elvis",
           "campeao": "França",
           "timeA": "Brasil",
@@ -923,7 +923,7 @@
           "golsB": 1
         },
         {
-          "participante": "emi",
+          "participante": "Emi",
           "arquivo": "emi",
           "campeao": "Alemanha",
           "timeA": "Brasil",
@@ -932,7 +932,7 @@
           "golsB": 1
         },
         {
-          "participante": "FERNANDA",
+          "participante": "Fernanda",
           "arquivo": "fernanda",
           "campeao": "Argentina",
           "timeA": "Brasil",
@@ -941,7 +941,7 @@
           "golsB": 1
         },
         {
-          "participante": "FRANCISCO",
+          "participante": "Francisco",
           "arquivo": "francisco",
           "campeao": "Brasil",
           "timeA": "Brasil",
@@ -950,7 +950,7 @@
           "golsB": 1
         },
         {
-          "participante": "FÁTIMA",
+          "participante": "Fátima",
           "arquivo": "fatima",
           "campeao": "Brasil",
           "timeA": "Brasil",
@@ -959,7 +959,7 @@
           "golsB": 0
         },
         {
-          "participante": "GARGAMEL",
+          "participante": "Gargamel",
           "arquivo": "gargamel",
           "campeao": "Colômbia",
           "timeA": "Brasil",
@@ -968,7 +968,7 @@
           "golsB": 0
         },
         {
-          "participante": "GU",
+          "participante": "Gu",
           "arquivo": "gu",
           "campeao": "França",
           "timeA": "Brasil",
@@ -986,7 +986,7 @@
           "golsB": 1
         },
         {
-          "participante": "JOSÉ 1",
+          "participante": "José 1",
           "arquivo": "jose_1",
           "campeao": "Argentina",
           "timeA": "Brasil",
@@ -995,7 +995,7 @@
           "golsB": 1
         },
         {
-          "participante": "JOSÉ 2",
+          "participante": "José 2",
           "arquivo": "jose_2",
           "campeao": "Holanda",
           "timeA": "Brasil",
@@ -1004,7 +1004,7 @@
           "golsB": 0
         },
         {
-          "participante": "JOSÉ 3",
+          "participante": "José 3",
           "arquivo": "jose_3",
           "campeao": "França",
           "timeA": "Brasil",
@@ -1013,8 +1013,8 @@
           "golsB": 0
         },
         {
-          "participante": "LOUISE GARCIA PORTO",
-          "arquivo": "louise_garcia_porto",
+          "participante": "Louise",
+          "arquivo": "louise",
           "campeao": "França",
           "timeA": "Brasil",
           "golsA": 3,
@@ -1022,7 +1022,7 @@
           "golsB": 1
         },
         {
-          "participante": "MANUELA",
+          "participante": "Manuela",
           "arquivo": "manuela",
           "campeao": "Argentina",
           "timeA": "Brasil",
@@ -1031,7 +1031,7 @@
           "golsB": 1
         },
         {
-          "participante": "MARIA 1",
+          "participante": "Maria 1",
           "arquivo": "maria_1",
           "campeao": "Argentina",
           "timeA": "Brasil",
@@ -1040,7 +1040,7 @@
           "golsB": 1
         },
         {
-          "participante": "MARIA 2",
+          "participante": "Maria 2",
           "arquivo": "maria_2",
           "campeao": "Argentina",
           "timeA": "Brasil",
@@ -1049,7 +1049,7 @@
           "golsB": 0
         },
         {
-          "participante": "MARIA 3",
+          "participante": "Maria 3",
           "arquivo": "maria_3",
           "campeao": "Argentina",
           "timeA": "Brasil",
@@ -1058,7 +1058,7 @@
           "golsB": 2
         },
         {
-          "participante": "MARTA 1",
+          "participante": "Marta 1",
           "arquivo": "marta_1",
           "campeao": "França",
           "timeA": "Brasil",
@@ -1067,7 +1067,7 @@
           "golsB": 0
         },
         {
-          "participante": "MARTA 2",
+          "participante": "Marta 2",
           "arquivo": "marta_2",
           "campeao": "França",
           "timeA": "Brasil",
@@ -1076,7 +1076,7 @@
           "golsB": 1
         },
         {
-          "participante": "MARTA 3",
+          "participante": "Marta 3",
           "arquivo": "marta_3",
           "campeao": "França",
           "timeA": "Brasil",
@@ -1085,7 +1085,7 @@
           "golsB": 0
         },
         {
-          "participante": "MARTA 4",
+          "participante": "Marta 4",
           "arquivo": "marta_4",
           "campeao": "França",
           "timeA": "Brasil",
@@ -1094,7 +1094,7 @@
           "golsB": 0
         },
         {
-          "participante": "MARTA 5",
+          "participante": "Marta 5",
           "arquivo": "marta_5",
           "campeao": "França",
           "timeA": "Brasil",
@@ -1121,7 +1121,7 @@
           "golsB": 2
         },
         {
-          "participante": "NINA",
+          "participante": "Nina",
           "arquivo": "nina",
           "campeao": "França",
           "timeA": "Brasil",
@@ -1175,7 +1175,7 @@
           "golsB": 1
         },
         {
-          "participante": "VAGNER PORTO",
+          "participante": "Vagner",
           "arquivo": "vagner_porto",
           "campeao": "Brasil",
           "timeA": "Brasil",
@@ -1193,7 +1193,7 @@
           "golsB": 0
         },
         {
-          "participante": "ROSANA",
+          "participante": "Rosana",
           "arquivo": "rosana",
           "campeao": "França",
           "timeA": "Brasil",
@@ -1220,7 +1220,7 @@
           "golsB": 0
         },
         {
-          "participante": "CÉSAR",
+          "participante": "César",
           "arquivo": "cesar",
           "campeao": "França",
           "timeA": "Brasil",
@@ -1301,7 +1301,7 @@
           "golsB": 0
         },
         {
-          "participante": "RÉGIS",
+          "participante": "Régis",
           "arquivo": "regis",
           "campeao": "Argentina",
           "timeA": "Brasil",
@@ -1310,7 +1310,7 @@
           "golsB": 1
         },
         {
-          "participante": "RÉGIS-IA",
+          "participante": "Régis-ia",
           "arquivo": "regis-ia",
           "campeao": "França",
           "timeA": "Brasil",
@@ -1346,7 +1346,7 @@
           "golsB": 1
         },
         {
-          "participante": "LUCCA",
+          "participante": "Lucca",
           "arquivo": "lucca",
           "campeao": "França",
           "timeA": "Brasil",
@@ -1418,7 +1418,7 @@
           "golsB": 0
         },
         {
-          "participante": "DUDINHA",
+          "participante": "Dudinha",
           "arquivo": "dudinha",
           "campeao": "Argentina",
           "timeA": "Alemanha",
@@ -1427,7 +1427,7 @@
           "golsB": 1
         },
         {
-          "participante": "ELVIS",
+          "participante": "Elvis",
           "arquivo": "elvis",
           "campeao": "França",
           "timeA": "Alemanha",
@@ -1454,7 +1454,7 @@
           "golsB": 1
         },
         {
-          "participante": "emi",
+          "participante": "Emi",
           "arquivo": "emi",
           "campeao": "Alemanha",
           "timeA": "Alemanha",
@@ -1463,7 +1463,7 @@
           "golsB": 0
         },
         {
-          "participante": "FERNANDA",
+          "participante": "Fernanda",
           "arquivo": "fernanda",
           "campeao": "Argentina",
           "timeA": "Alemanha",
@@ -1472,7 +1472,7 @@
           "golsB": 1
         },
         {
-          "participante": "FRANCISCO",
+          "participante": "Francisco",
           "arquivo": "francisco",
           "campeao": "Brasil",
           "timeA": "Alemanha",
@@ -1481,7 +1481,7 @@
           "golsB": 0
         },
         {
-          "participante": "FÁTIMA",
+          "participante": "Fátima",
           "arquivo": "fatima",
           "campeao": "Brasil",
           "timeA": "Alemanha",
@@ -1490,7 +1490,7 @@
           "golsB": 1
         },
         {
-          "participante": "GARGAMEL",
+          "participante": "Gargamel",
           "arquivo": "gargamel",
           "campeao": "Colômbia",
           "timeA": "Alemanha",
@@ -1499,7 +1499,7 @@
           "golsB": 0
         },
         {
-          "participante": "GU",
+          "participante": "Gu",
           "arquivo": "gu",
           "campeao": "França",
           "timeA": "Alemanha",
@@ -1517,7 +1517,7 @@
           "golsB": 0
         },
         {
-          "participante": "JOSÉ 1",
+          "participante": "José 1",
           "arquivo": "jose_1",
           "campeao": "Argentina",
           "timeA": "Alemanha",
@@ -1526,7 +1526,7 @@
           "golsB": 0
         },
         {
-          "participante": "JOSÉ 2",
+          "participante": "José 2",
           "arquivo": "jose_2",
           "campeao": "Holanda",
           "timeA": "Alemanha",
@@ -1535,7 +1535,7 @@
           "golsB": 0
         },
         {
-          "participante": "JOSÉ 3",
+          "participante": "José 3",
           "arquivo": "jose_3",
           "campeao": "França",
           "timeA": "Alemanha",
@@ -1544,7 +1544,7 @@
           "golsB": 1
         },
         {
-          "participante": "LOUISE GARCIA PORTO",
+          "participante": "Louise",
           "arquivo": "louise_garcia_porto",
           "campeao": "França",
           "timeA": "Alemanha",
@@ -1553,7 +1553,7 @@
           "golsB": 0
         },
         {
-          "participante": "MANUELA",
+          "participante": "Manuela",
           "arquivo": "manuela",
           "campeao": "Argentina",
           "timeA": "Alemanha",
@@ -1562,7 +1562,7 @@
           "golsB": 0
         },
         {
-          "participante": "MARIA 1",
+          "participante": "Maria 1",
           "arquivo": "maria_1",
           "campeao": "Argentina",
           "timeA": "Alemanha",
@@ -1571,7 +1571,7 @@
           "golsB": 0
         },
         {
-          "participante": "MARIA 2",
+          "participante": "Maria 2",
           "arquivo": "maria_2",
           "campeao": "Argentina",
           "timeA": "Alemanha",
@@ -1580,7 +1580,7 @@
           "golsB": 1
         },
         {
-          "participante": "MARIA 3",
+          "participante": "Maria 3",
           "arquivo": "maria_3",
           "campeao": "Argentina",
           "timeA": "Alemanha",
@@ -1589,7 +1589,7 @@
           "golsB": 0
         },
         {
-          "participante": "MARTA 1",
+          "participante": "Marta 1",
           "arquivo": "marta_1",
           "campeao": "França",
           "timeA": "Alemanha",
@@ -1598,7 +1598,7 @@
           "golsB": 1
         },
         {
-          "participante": "MARTA 2",
+          "participante": "Marta 2",
           "arquivo": "marta_2",
           "campeao": "França",
           "timeA": "Alemanha",
@@ -1607,7 +1607,7 @@
           "golsB": 0
         },
         {
-          "participante": "MARTA 3",
+          "participante": "Marta 3",
           "arquivo": "marta_3",
           "campeao": "França",
           "timeA": "Alemanha",
@@ -1616,7 +1616,7 @@
           "golsB": 0
         },
         {
-          "participante": "MARTA 4",
+          "participante": "Marta 4",
           "arquivo": "marta_4",
           "campeao": "França",
           "timeA": "Alemanha",
@@ -1625,7 +1625,7 @@
           "golsB": 1
         },
         {
-          "participante": "MARTA 5",
+          "participante": "Marta 5",
           "arquivo": "marta_5",
           "campeao": "França",
           "timeA": "Alemanha",
@@ -1652,7 +1652,7 @@
           "golsB": 1
         },
         {
-          "participante": "NINA",
+          "participante": "Nina",
           "arquivo": "nina",
           "campeao": "França",
           "timeA": "Alemanha",
@@ -1706,7 +1706,7 @@
           "golsB": 2
         },
         {
-          "participante": "VAGNER PORTO",
+          "participante": "Vagner",
           "arquivo": "vagner_porto",
           "campeao": "Brasil",
           "timeA": "Alemanha",
@@ -1724,7 +1724,7 @@
           "golsB": 1
         },
         {
-          "participante": "ROSANA",
+          "participante": "Rosana",
           "arquivo": "rosana",
           "campeao": "França",
           "timeA": "Alemanha",
@@ -1751,7 +1751,7 @@
           "golsB": 0
         },
         {
-          "participante": "CÉSAR",
+          "participante": "César",
           "arquivo": "cesar",
           "campeao": "França",
           "timeA": "Alemanha",
@@ -1832,7 +1832,7 @@
           "golsB": 0
         },
         {
-          "participante": "RÉGIS",
+          "participante": "Régis",
           "arquivo": "regis",
           "campeao": "Argentina",
           "timeA": "Alemanha",
@@ -1841,7 +1841,7 @@
           "golsB": 0
         },
         {
-          "participante": "RÉGIS-IA",
+          "participante": "Régis-ia",
           "arquivo": "regis-ia",
           "campeao": "França",
           "timeA": "Alemanha",
@@ -1877,7 +1877,7 @@
           "golsB": 1
         },
         {
-          "participante": "LUCCA",
+          "participante": "Lucca",
           "arquivo": "lucca",
           "campeao": "França",
           "timeA": "Alemanha",
@@ -1949,7 +1949,7 @@
           "golsB": 0
         },
         {
-          "participante": "DUDINHA",
+          "participante": "Dudinha",
           "arquivo": "dudinha",
           "campeao": "Argentina",
           "timeA": "Holanda",
@@ -1958,7 +1958,7 @@
           "golsB": 0
         },
         {
-          "participante": "ELVIS",
+          "participante": "Elvis",
           "arquivo": "elvis",
           "campeao": "França",
           "timeA": "Holanda",
@@ -1985,7 +1985,7 @@
           "golsB": 1
         },
         {
-          "participante": "emi",
+          "participante": "Emi",
           "arquivo": "emi",
           "campeao": "Alemanha",
           "timeA": "Holanda",
@@ -1994,7 +1994,7 @@
           "golsB": 1
         },
         {
-          "participante": "FERNANDA",
+          "participante": "Fernanda",
           "arquivo": "fernanda",
           "campeao": "Argentina",
           "timeA": "Holanda",
@@ -2003,7 +2003,7 @@
           "golsB": 1
         },
         {
-          "participante": "FRANCISCO",
+          "participante": "Francisco",
           "arquivo": "francisco",
           "campeao": "Brasil",
           "timeA": "Holanda",
@@ -2012,7 +2012,7 @@
           "golsB": 1
         },
         {
-          "participante": "FÁTIMA",
+          "participante": "Fátima",
           "arquivo": "fatima",
           "campeao": "Brasil",
           "timeA": "Holanda",
@@ -2021,7 +2021,7 @@
           "golsB": 0
         },
         {
-          "participante": "GARGAMEL",
+          "participante": "Gargamel",
           "arquivo": "gargamel",
           "campeao": "Colômbia",
           "timeA": "Holanda",
@@ -2030,7 +2030,7 @@
           "golsB": 1
         },
         {
-          "participante": "GU",
+          "participante": "Gu",
           "arquivo": "gu",
           "campeao": "França",
           "timeA": "Holanda",
@@ -2048,7 +2048,7 @@
           "golsB": 0
         },
         {
-          "participante": "JOSÉ 1",
+          "participante": "José 1",
           "arquivo": "jose_1",
           "campeao": "Argentina",
           "timeA": "Holanda",
@@ -2057,7 +2057,7 @@
           "golsB": 0
         },
         {
-          "participante": "JOSÉ 2",
+          "participante": "José 2",
           "arquivo": "jose_2",
           "campeao": "Holanda",
           "timeA": "Holanda",
@@ -2066,7 +2066,7 @@
           "golsB": 0
         },
         {
-          "participante": "JOSÉ 3",
+          "participante": "José 3",
           "arquivo": "jose_3",
           "campeao": "França",
           "timeA": "Holanda",
@@ -2075,7 +2075,7 @@
           "golsB": 2
         },
         {
-          "participante": "LOUISE GARCIA PORTO",
+          "participante": "Louise",
           "arquivo": "louise_garcia_porto",
           "campeao": "França",
           "timeA": "Holanda",
@@ -2084,7 +2084,7 @@
           "golsB": 1
         },
         {
-          "participante": "MANUELA",
+          "participante": "Manuela",
           "arquivo": "manuela",
           "campeao": "Argentina",
           "timeA": "Holanda",
@@ -2093,7 +2093,7 @@
           "golsB": 0
         },
         {
-          "participante": "MARIA 1",
+          "participante": "Maria 1",
           "arquivo": "maria_1",
           "campeao": "Argentina",
           "timeA": "Holanda",
@@ -2102,7 +2102,7 @@
           "golsB": 3
         },
         {
-          "participante": "MARIA 2",
+          "participante": "Maria 2",
           "arquivo": "maria_2",
           "campeao": "Argentina",
           "timeA": "Holanda",
@@ -2111,7 +2111,7 @@
           "golsB": 0
         },
         {
-          "participante": "MARIA 3",
+          "participante": "Maria 3",
           "arquivo": "maria_3",
           "campeao": "Argentina",
           "timeA": "Holanda",
@@ -2120,7 +2120,7 @@
           "golsB": 1
         },
         {
-          "participante": "MARTA 1",
+          "participante": "Marta 1",
           "arquivo": "marta_1",
           "campeao": "França",
           "timeA": "Holanda",
@@ -2129,7 +2129,7 @@
           "golsB": 2
         },
         {
-          "participante": "MARTA 2",
+          "participante": "Marta 2",
           "arquivo": "marta_2",
           "campeao": "França",
           "timeA": "Holanda",
@@ -2138,7 +2138,7 @@
           "golsB": 1
         },
         {
-          "participante": "MARTA 3",
+          "participante": "Marta 3",
           "arquivo": "marta_3",
           "campeao": "França",
           "timeA": "Holanda",
@@ -2147,7 +2147,7 @@
           "golsB": 0
         },
         {
-          "participante": "MARTA 4",
+          "participante": "Marta 4",
           "arquivo": "marta_4",
           "campeao": "França",
           "timeA": "Holanda",
@@ -2156,7 +2156,7 @@
           "golsB": 1
         },
         {
-          "participante": "MARTA 5",
+          "participante": "Marta 5",
           "arquivo": "marta_5",
           "campeao": "França",
           "timeA": "Holanda",
@@ -2183,7 +2183,7 @@
           "golsB": 0
         },
         {
-          "participante": "NINA",
+          "participante": "Nina",
           "arquivo": "nina",
           "campeao": "França",
           "timeA": "Holanda",
@@ -2237,7 +2237,7 @@
           "golsB": 0
         },
         {
-          "participante": "VAGNER PORTO",
+          "participante": "Vagner",
           "arquivo": "vagner_porto",
           "campeao": "Brasil",
           "timeA": "Holanda",
@@ -2255,7 +2255,7 @@
           "golsB": 2
         },
         {
-          "participante": "ROSANA",
+          "participante": "Rosana",
           "arquivo": "rosana",
           "campeao": "França",
           "timeA": "Holanda",
@@ -2282,7 +2282,7 @@
           "golsB": 2
         },
         {
-          "participante": "CÉSAR",
+          "participante": "César",
           "arquivo": "cesar",
           "campeao": "França",
           "timeA": "Holanda",
@@ -2363,7 +2363,7 @@
           "golsB": 0
         },
         {
-          "participante": "RÉGIS",
+          "participante": "Régis",
           "arquivo": "regis",
           "campeao": "Argentina",
           "timeA": "Holanda",
@@ -2372,7 +2372,7 @@
           "golsB": 0
         },
         {
-          "participante": "RÉGIS-IA",
+          "participante": "Régis-ia",
           "arquivo": "regis-ia",
           "campeao": "França",
           "timeA": "Holanda",
@@ -2408,7 +2408,7 @@
           "golsB": 1
         },
         {
-          "participante": "LUCCA",
+          "participante": "Lucca",
           "arquivo": "lucca",
           "campeao": "França",
           "timeA": "Holanda",
@@ -2480,7 +2480,7 @@
           "golsB": 2
         },
         {
-          "participante": "DUDINHA",
+          "participante": "Dudinha",
           "arquivo": "dudinha",
           "campeao": "Argentina",
           "timeA": "Costa do Marfim",
@@ -2489,7 +2489,7 @@
           "golsB": 2
         },
         {
-          "participante": "ELVIS",
+          "participante": "Elvis",
           "arquivo": "elvis",
           "campeao": "França",
           "timeA": "Costa do Marfim",
@@ -2516,7 +2516,7 @@
           "golsB": 0
         },
         {
-          "participante": "emi",
+          "participante": "Emi",
           "arquivo": "emi",
           "campeao": "Alemanha",
           "timeA": "Costa do Marfim",
@@ -2525,7 +2525,7 @@
           "golsB": 2
         },
         {
-          "participante": "FERNANDA",
+          "participante": "Fernanda",
           "arquivo": "fernanda",
           "campeao": "Argentina",
           "timeA": "Costa do Marfim",
@@ -2534,7 +2534,7 @@
           "golsB": 1
         },
         {
-          "participante": "FRANCISCO",
+          "participante": "Francisco",
           "arquivo": "francisco",
           "campeao": "Brasil",
           "timeA": "Costa do Marfim",
@@ -2543,7 +2543,7 @@
           "golsB": 1
         },
         {
-          "participante": "FÁTIMA",
+          "participante": "Fátima",
           "arquivo": "fatima",
           "campeao": "Brasil",
           "timeA": "Costa do Marfim",
@@ -2552,7 +2552,7 @@
           "golsB": 0
         },
         {
-          "participante": "GARGAMEL",
+          "participante": "Gargamel",
           "arquivo": "gargamel",
           "campeao": "Colômbia",
           "timeA": "Costa do Marfim",
@@ -2561,7 +2561,7 @@
           "golsB": 1
         },
         {
-          "participante": "GU",
+          "participante": "Gu",
           "arquivo": "gu",
           "campeao": "França",
           "timeA": "Costa do Marfim",
@@ -2579,7 +2579,7 @@
           "golsB": 2
         },
         {
-          "participante": "JOSÉ 1",
+          "participante": "José 1",
           "arquivo": "jose_1",
           "campeao": "Argentina",
           "timeA": "Costa do Marfim",
@@ -2588,7 +2588,7 @@
           "golsB": 2
         },
         {
-          "participante": "JOSÉ 2",
+          "participante": "José 2",
           "arquivo": "jose_2",
           "campeao": "Holanda",
           "timeA": "Costa do Marfim",
@@ -2597,7 +2597,7 @@
           "golsB": 3
         },
         {
-          "participante": "JOSÉ 3",
+          "participante": "José 3",
           "arquivo": "jose_3",
           "campeao": "França",
           "timeA": "Costa do Marfim",
@@ -2606,7 +2606,7 @@
           "golsB": 3
         },
         {
-          "participante": "LOUISE GARCIA PORTO",
+          "participante": "Louise",
           "arquivo": "louise_garcia_porto",
           "campeao": "França",
           "timeA": "Costa do Marfim",
@@ -2615,7 +2615,7 @@
           "golsB": 2
         },
         {
-          "participante": "MANUELA",
+          "participante": "Manuela",
           "arquivo": "manuela",
           "campeao": "Argentina",
           "timeA": "Costa do Marfim",
@@ -2624,7 +2624,7 @@
           "golsB": 2
         },
         {
-          "participante": "MARIA 1",
+          "participante": "Maria 1",
           "arquivo": "maria_1",
           "campeao": "Argentina",
           "timeA": "Costa do Marfim",
@@ -2633,7 +2633,7 @@
           "golsB": 3
         },
         {
-          "participante": "MARIA 2",
+          "participante": "Maria 2",
           "arquivo": "maria_2",
           "campeao": "Argentina",
           "timeA": "Costa do Marfim",
@@ -2642,7 +2642,7 @@
           "golsB": 1
         },
         {
-          "participante": "MARIA 3",
+          "participante": "Maria 3",
           "arquivo": "maria_3",
           "campeao": "Argentina",
           "timeA": "Costa do Marfim",
@@ -2651,7 +2651,7 @@
           "golsB": 1
         },
         {
-          "participante": "MARTA 1",
+          "participante": "Marta 1",
           "arquivo": "marta_1",
           "campeao": "França",
           "timeA": "Costa do Marfim",
@@ -2660,7 +2660,7 @@
           "golsB": 1
         },
         {
-          "participante": "MARTA 2",
+          "participante": "Marta 2",
           "arquivo": "marta_2",
           "campeao": "França",
           "timeA": "Costa do Marfim",
@@ -2669,7 +2669,7 @@
           "golsB": 2
         },
         {
-          "participante": "MARTA 3",
+          "participante": "Marta 3",
           "arquivo": "marta_3",
           "campeao": "França",
           "timeA": "Costa do Marfim",
@@ -2678,7 +2678,7 @@
           "golsB": 0
         },
         {
-          "participante": "MARTA 4",
+          "participante": "Marta 4",
           "arquivo": "marta_4",
           "campeao": "França",
           "timeA": "Costa do Marfim",
@@ -2687,7 +2687,7 @@
           "golsB": 0
         },
         {
-          "participante": "MARTA 5",
+          "participante": "Marta 5",
           "arquivo": "marta_5",
           "campeao": "França",
           "timeA": "Costa do Marfim",
@@ -2714,7 +2714,7 @@
           "golsB": 4
         },
         {
-          "participante": "NINA",
+          "participante": "Nina",
           "arquivo": "nina",
           "campeao": "França",
           "timeA": "Costa do Marfim",
@@ -2768,7 +2768,7 @@
           "golsB": 2
         },
         {
-          "participante": "VAGNER PORTO",
+          "participante": "Vagner",
           "arquivo": "vagner_porto",
           "campeao": "Brasil",
           "timeA": "Costa do Marfim",
@@ -2786,7 +2786,7 @@
           "golsB": 3
         },
         {
-          "participante": "ROSANA",
+          "participante": "Rosana",
           "arquivo": "rosana",
           "campeao": "França",
           "timeA": "Costa do Marfim",
@@ -2813,7 +2813,7 @@
           "golsB": 1
         },
         {
-          "participante": "CÉSAR",
+          "participante": "César",
           "arquivo": "cesar",
           "campeao": "França",
           "timeA": "Costa do Marfim",
@@ -2894,7 +2894,7 @@
           "golsB": 0
         },
         {
-          "participante": "RÉGIS",
+          "participante": "Régis",
           "arquivo": "regis",
           "campeao": "Argentina",
           "timeA": "Costa do Marfim",
@@ -2903,7 +2903,7 @@
           "golsB": 1
         },
         {
-          "participante": "RÉGIS-IA",
+          "participante": "Régis-ia",
           "arquivo": "regis-ia",
           "campeao": "França",
           "timeA": "Costa do Marfim",
@@ -2939,7 +2939,7 @@
           "golsB": 2
         },
         {
-          "participante": "LUCCA",
+          "participante": "Lucca",
           "arquivo": "lucca",
           "campeao": "França",
           "timeA": "Costa do Marfim",
@@ -3011,7 +3011,7 @@
           "golsB": 1
         },
         {
-          "participante": "DUDINHA",
+          "participante": "Dudinha",
           "arquivo": "dudinha",
           "campeao": "Argentina",
           "timeA": "França",
@@ -3020,7 +3020,7 @@
           "golsB": 0
         },
         {
-          "participante": "ELVIS",
+          "participante": "Elvis",
           "arquivo": "elvis",
           "campeao": "França",
           "timeA": "França",
@@ -3047,7 +3047,7 @@
           "golsB": 0
         },
         {
-          "participante": "emi",
+          "participante": "Emi",
           "arquivo": "emi",
           "campeao": "Alemanha",
           "timeA": "França",
@@ -3056,7 +3056,7 @@
           "golsB": 0
         },
         {
-          "participante": "FERNANDA",
+          "participante": "Fernanda",
           "arquivo": "fernanda",
           "campeao": "Argentina",
           "timeA": "França",
@@ -3065,7 +3065,7 @@
           "golsB": 2
         },
         {
-          "participante": "FRANCISCO",
+          "participante": "Francisco",
           "arquivo": "francisco",
           "campeao": "Brasil",
           "timeA": "França",
@@ -3074,7 +3074,7 @@
           "golsB": 1
         },
         {
-          "participante": "FÁTIMA",
+          "participante": "Fátima",
           "arquivo": "fatima",
           "campeao": "Brasil",
           "timeA": "França",
@@ -3083,7 +3083,7 @@
           "golsB": 0
         },
         {
-          "participante": "GARGAMEL",
+          "participante": "Gargamel",
           "arquivo": "gargamel",
           "campeao": "Colômbia",
           "timeA": "França",
@@ -3092,7 +3092,7 @@
           "golsB": 1
         },
         {
-          "participante": "GU",
+          "participante": "Gu",
           "arquivo": "gu",
           "campeao": "França",
           "timeA": "França",
@@ -3110,7 +3110,7 @@
           "golsB": 0
         },
         {
-          "participante": "JOSÉ 1",
+          "participante": "José 1",
           "arquivo": "jose_1",
           "campeao": "Argentina",
           "timeA": "França",
@@ -3119,7 +3119,7 @@
           "golsB": 0
         },
         {
-          "participante": "JOSÉ 2",
+          "participante": "José 2",
           "arquivo": "jose_2",
           "campeao": "Holanda",
           "timeA": "França",
@@ -3128,7 +3128,7 @@
           "golsB": 1
         },
         {
-          "participante": "JOSÉ 3",
+          "participante": "José 3",
           "arquivo": "jose_3",
           "campeao": "França",
           "timeA": "França",
@@ -3137,7 +3137,7 @@
           "golsB": 1
         },
         {
-          "participante": "LOUISE GARCIA PORTO",
+          "participante": "Louise",
           "arquivo": "louise_garcia_porto",
           "campeao": "França",
           "timeA": "França",
@@ -3146,7 +3146,7 @@
           "golsB": 0
         },
         {
-          "participante": "MANUELA",
+          "participante": "Manuela",
           "arquivo": "manuela",
           "campeao": "Argentina",
           "timeA": "França",
@@ -3155,7 +3155,7 @@
           "golsB": 1
         },
         {
-          "participante": "MARIA 1",
+          "participante": "Maria 1",
           "arquivo": "maria_1",
           "campeao": "Argentina",
           "timeA": "França",
@@ -3164,7 +3164,7 @@
           "golsB": 1
         },
         {
-          "participante": "MARIA 2",
+          "participante": "Maria 2",
           "arquivo": "maria_2",
           "campeao": "Argentina",
           "timeA": "França",
@@ -3173,7 +3173,7 @@
           "golsB": 0
         },
         {
-          "participante": "MARIA 3",
+          "participante": "Maria 3",
           "arquivo": "maria_3",
           "campeao": "Argentina",
           "timeA": "França",
@@ -3182,7 +3182,7 @@
           "golsB": 1
         },
         {
-          "participante": "MARTA 1",
+          "participante": "Marta 1",
           "arquivo": "marta_1",
           "campeao": "França",
           "timeA": "França",
@@ -3191,7 +3191,7 @@
           "golsB": 0
         },
         {
-          "participante": "MARTA 2",
+          "participante": "Marta 2",
           "arquivo": "marta_2",
           "campeao": "França",
           "timeA": "França",
@@ -3200,7 +3200,7 @@
           "golsB": 1
         },
         {
-          "participante": "MARTA 3",
+          "participante": "Marta 3",
           "arquivo": "marta_3",
           "campeao": "França",
           "timeA": "França",
@@ -3209,7 +3209,7 @@
           "golsB": 0
         },
         {
-          "participante": "MARTA 4",
+          "participante": "Marta 4",
           "arquivo": "marta_4",
           "campeao": "França",
           "timeA": "França",
@@ -3218,7 +3218,7 @@
           "golsB": 1
         },
         {
-          "participante": "MARTA 5",
+          "participante": "Marta 5",
           "arquivo": "marta_5",
           "campeao": "França",
           "timeA": "França",
@@ -3245,7 +3245,7 @@
           "golsB": 3
         },
         {
-          "participante": "NINA",
+          "participante": "Nina",
           "arquivo": "nina",
           "campeao": "França",
           "timeA": "França",
@@ -3299,7 +3299,7 @@
           "golsB": 2
         },
         {
-          "participante": "VAGNER PORTO",
+          "participante": "Vagner",
           "arquivo": "vagner_porto",
           "campeao": "Brasil",
           "timeA": "França",
@@ -3317,7 +3317,7 @@
           "golsB": 1
         },
         {
-          "participante": "ROSANA",
+          "participante": "Rosana",
           "arquivo": "rosana",
           "campeao": "França",
           "timeA": "França",
@@ -3344,7 +3344,7 @@
           "golsB": 1
         },
         {
-          "participante": "CÉSAR",
+          "participante": "César",
           "arquivo": "cesar",
           "campeao": "França",
           "timeA": "França",
@@ -3425,7 +3425,7 @@
           "golsB": 0
         },
         {
-          "participante": "RÉGIS",
+          "participante": "Régis",
           "arquivo": "regis",
           "campeao": "Argentina",
           "timeA": "França",
@@ -3434,7 +3434,7 @@
           "golsB": 0
         },
         {
-          "participante": "RÉGIS-IA",
+          "participante": "Régis-ia",
           "arquivo": "regis-ia",
           "campeao": "França",
           "timeA": "França",
@@ -3470,7 +3470,7 @@
           "golsB": 0
         },
         {
-          "participante": "LUCCA",
+          "participante": "Lucca",
           "arquivo": "lucca",
           "campeao": "França",
           "timeA": "França",
@@ -3542,7 +3542,7 @@
           "golsB": 1
         },
         {
-          "participante": "DUDINHA",
+          "participante": "Dudinha",
           "arquivo": "dudinha",
           "campeao": "Argentina",
           "timeA": "México",
@@ -3551,7 +3551,7 @@
           "golsB": 1
         },
         {
-          "participante": "ELVIS",
+          "participante": "Elvis",
           "arquivo": "elvis",
           "campeao": "França",
           "timeA": "México",
@@ -3578,7 +3578,7 @@
           "golsB": 1
         },
         {
-          "participante": "emi",
+          "participante": "Emi",
           "arquivo": "emi",
           "campeao": "Alemanha",
           "timeA": "México",
@@ -3587,7 +3587,7 @@
           "golsB": 1
         },
         {
-          "participante": "FERNANDA",
+          "participante": "Fernanda",
           "arquivo": "fernanda",
           "campeao": "Argentina",
           "timeA": "México",
@@ -3596,7 +3596,7 @@
           "golsB": 1
         },
         {
-          "participante": "FRANCISCO",
+          "participante": "Francisco",
           "arquivo": "francisco",
           "campeao": "Brasil",
           "timeA": "México",
@@ -3605,7 +3605,7 @@
           "golsB": 0
         },
         {
-          "participante": "FÁTIMA",
+          "participante": "Fátima",
           "arquivo": "fatima",
           "campeao": "Brasil",
           "timeA": "México",
@@ -3614,7 +3614,7 @@
           "golsB": 0
         },
         {
-          "participante": "GARGAMEL",
+          "participante": "Gargamel",
           "arquivo": "gargamel",
           "campeao": "Colômbia",
           "timeA": "México",
@@ -3623,7 +3623,7 @@
           "golsB": 1
         },
         {
-          "participante": "GU",
+          "participante": "Gu",
           "arquivo": "gu",
           "campeao": "França",
           "timeA": "México",
@@ -3641,7 +3641,7 @@
           "golsB": 1
         },
         {
-          "participante": "JOSÉ 1",
+          "participante": "José 1",
           "arquivo": "jose_1",
           "campeao": "Argentina",
           "timeA": "México",
@@ -3650,7 +3650,7 @@
           "golsB": 1
         },
         {
-          "participante": "JOSÉ 2",
+          "participante": "José 2",
           "arquivo": "jose_2",
           "campeao": "Holanda",
           "timeA": "México",
@@ -3659,7 +3659,7 @@
           "golsB": 0
         },
         {
-          "participante": "JOSÉ 3",
+          "participante": "José 3",
           "arquivo": "jose_3",
           "campeao": "França",
           "timeA": "México",
@@ -3668,7 +3668,7 @@
           "golsB": 1
         },
         {
-          "participante": "LOUISE GARCIA PORTO",
+          "participante": "Louise",
           "arquivo": "louise_garcia_porto",
           "campeao": "França",
           "timeA": "México",
@@ -3677,7 +3677,7 @@
           "golsB": 1
         },
         {
-          "participante": "MANUELA",
+          "participante": "Manuela",
           "arquivo": "manuela",
           "campeao": "Argentina",
           "timeA": "México",
@@ -3686,7 +3686,7 @@
           "golsB": 0
         },
         {
-          "participante": "MARIA 1",
+          "participante": "Maria 1",
           "arquivo": "maria_1",
           "campeao": "Argentina",
           "timeA": "México",
@@ -3695,7 +3695,7 @@
           "golsB": 0
         },
         {
-          "participante": "MARIA 2",
+          "participante": "Maria 2",
           "arquivo": "maria_2",
           "campeao": "Argentina",
           "timeA": "México",
@@ -3704,7 +3704,7 @@
           "golsB": 2
         },
         {
-          "participante": "MARIA 3",
+          "participante": "Maria 3",
           "arquivo": "maria_3",
           "campeao": "Argentina",
           "timeA": "México",
@@ -3713,7 +3713,7 @@
           "golsB": 1
         },
         {
-          "participante": "MARTA 1",
+          "participante": "Marta 1",
           "arquivo": "marta_1",
           "campeao": "França",
           "timeA": "México",
@@ -3722,7 +3722,7 @@
           "golsB": 0
         },
         {
-          "participante": "MARTA 2",
+          "participante": "Marta 2",
           "arquivo": "marta_2",
           "campeao": "França",
           "timeA": "México",
@@ -3731,7 +3731,7 @@
           "golsB": 1
         },
         {
-          "participante": "MARTA 3",
+          "participante": "Marta 3",
           "arquivo": "marta_3",
           "campeao": "França",
           "timeA": "México",
@@ -3740,7 +3740,7 @@
           "golsB": 0
         },
         {
-          "participante": "MARTA 4",
+          "participante": "Marta 4",
           "arquivo": "marta_4",
           "campeao": "França",
           "timeA": "México",
@@ -3749,7 +3749,7 @@
           "golsB": 2
         },
         {
-          "participante": "MARTA 5",
+          "participante": "Marta 5",
           "arquivo": "marta_5",
           "campeao": "França",
           "timeA": "México",
@@ -3776,7 +3776,7 @@
           "golsB": 2
         },
         {
-          "participante": "NINA",
+          "participante": "Nina",
           "arquivo": "nina",
           "campeao": "França",
           "timeA": "México",
@@ -3830,7 +3830,7 @@
           "golsB": 2
         },
         {
-          "participante": "VAGNER PORTO",
+          "participante": "Vagner",
           "arquivo": "vagner_porto",
           "campeao": "Brasil",
           "timeA": "México",
@@ -3848,7 +3848,7 @@
           "golsB": 2
         },
         {
-          "participante": "ROSANA",
+          "participante": "Rosana",
           "arquivo": "rosana",
           "campeao": "França",
           "timeA": "México",
@@ -3875,7 +3875,7 @@
           "golsB": 1
         },
         {
-          "participante": "CÉSAR",
+          "participante": "César",
           "arquivo": "cesar",
           "campeao": "França",
           "timeA": "México",
@@ -3956,7 +3956,7 @@
           "golsB": 1
         },
         {
-          "participante": "RÉGIS",
+          "participante": "Régis",
           "arquivo": "regis",
           "campeao": "Argentina",
           "timeA": "México",
@@ -3965,7 +3965,7 @@
           "golsB": 1
         },
         {
-          "participante": "RÉGIS-IA",
+          "participante": "Régis-ia",
           "arquivo": "regis-ia",
           "campeao": "França",
           "timeA": "México",
@@ -4001,7 +4001,7 @@
           "golsB": 1
         },
         {
-          "participante": "LUCCA",
+          "participante": "Lucca",
           "arquivo": "lucca",
           "campeao": "França",
           "timeA": "México",
@@ -4073,7 +4073,7 @@
           "golsB": 0
         },
         {
-          "participante": "DUDINHA",
+          "participante": "Dudinha",
           "arquivo": "dudinha",
           "campeao": "Argentina",
           "timeA": "Inglaterra",
@@ -4082,7 +4082,7 @@
           "golsB": 0
         },
         {
-          "participante": "ELVIS",
+          "participante": "Elvis",
           "arquivo": "elvis",
           "campeao": "França",
           "timeA": "Inglaterra",
@@ -4109,7 +4109,7 @@
           "golsB": 0
         },
         {
-          "participante": "emi",
+          "participante": "Emi",
           "arquivo": "emi",
           "campeao": "Alemanha",
           "timeA": "Inglaterra",
@@ -4118,7 +4118,7 @@
           "golsB": 1
         },
         {
-          "participante": "FERNANDA",
+          "participante": "Fernanda",
           "arquivo": "fernanda",
           "campeao": "Argentina",
           "timeA": "Inglaterra",
@@ -4127,7 +4127,7 @@
           "golsB": 0
         },
         {
-          "participante": "FRANCISCO",
+          "participante": "Francisco",
           "arquivo": "francisco",
           "campeao": "Brasil",
           "timeA": "Inglaterra",
@@ -4136,7 +4136,7 @@
           "golsB": 1
         },
         {
-          "participante": "FÁTIMA",
+          "participante": "Fátima",
           "arquivo": "fatima",
           "campeao": "Brasil",
           "timeA": "Inglaterra",
@@ -4145,7 +4145,7 @@
           "golsB": 2
         },
         {
-          "participante": "GARGAMEL",
+          "participante": "Gargamel",
           "arquivo": "gargamel",
           "campeao": "Colômbia",
           "timeA": "Inglaterra",
@@ -4154,7 +4154,7 @@
           "golsB": 0
         },
         {
-          "participante": "GU",
+          "participante": "Gu",
           "arquivo": "gu",
           "campeao": "França",
           "timeA": "Inglaterra",
@@ -4172,7 +4172,7 @@
           "golsB": 0
         },
         {
-          "participante": "JOSÉ 1",
+          "participante": "José 1",
           "arquivo": "jose_1",
           "campeao": "Argentina",
           "timeA": "Inglaterra",
@@ -4181,7 +4181,7 @@
           "golsB": 0
         },
         {
-          "participante": "JOSÉ 2",
+          "participante": "José 2",
           "arquivo": "jose_2",
           "campeao": "Holanda",
           "timeA": "Inglaterra",
@@ -4190,7 +4190,7 @@
           "golsB": 0
         },
         {
-          "participante": "JOSÉ 3",
+          "participante": "José 3",
           "arquivo": "jose_3",
           "campeao": "França",
           "timeA": "Inglaterra",
@@ -4199,7 +4199,7 @@
           "golsB": 1
         },
         {
-          "participante": "LOUISE GARCIA PORTO",
+          "participante": "Louise",
           "arquivo": "louise_garcia_porto",
           "campeao": "França",
           "timeA": "Inglaterra",
@@ -4208,7 +4208,7 @@
           "golsB": 0
         },
         {
-          "participante": "MANUELA",
+          "participante": "Manuela",
           "arquivo": "manuela",
           "campeao": "Argentina",
           "timeA": "Inglaterra",
@@ -4217,7 +4217,7 @@
           "golsB": 0
         },
         {
-          "participante": "MARIA 1",
+          "participante": "Maria 1",
           "arquivo": "maria_1",
           "campeao": "Argentina",
           "timeA": "Inglaterra",
@@ -4226,7 +4226,7 @@
           "golsB": 1
         },
         {
-          "participante": "MARIA 2",
+          "participante": "Maria 2",
           "arquivo": "maria_2",
           "campeao": "Argentina",
           "timeA": "Inglaterra",
@@ -4235,7 +4235,7 @@
           "golsB": 0
         },
         {
-          "participante": "MARIA 3",
+          "participante": "Maria 3",
           "arquivo": "maria_3",
           "campeao": "Argentina",
           "timeA": "Inglaterra",
@@ -4244,7 +4244,7 @@
           "golsB": 2
         },
         {
-          "participante": "MARTA 1",
+          "participante": "Marta 1",
           "arquivo": "marta_1",
           "campeao": "França",
           "timeA": "Inglaterra",
@@ -4253,7 +4253,7 @@
           "golsB": 0
         },
         {
-          "participante": "MARTA 2",
+          "participante": "Marta 2",
           "arquivo": "marta_2",
           "campeao": "França",
           "timeA": "Inglaterra",
@@ -4262,7 +4262,7 @@
           "golsB": 0
         },
         {
-          "participante": "MARTA 3",
+          "participante": "Marta 3",
           "arquivo": "marta_3",
           "campeao": "França",
           "timeA": "Inglaterra",
@@ -4271,7 +4271,7 @@
           "golsB": 1
         },
         {
-          "participante": "MARTA 4",
+          "participante": "Marta 4",
           "arquivo": "marta_4",
           "campeao": "França",
           "timeA": "Inglaterra",
@@ -4280,7 +4280,7 @@
           "golsB": 0
         },
         {
-          "participante": "MARTA 5",
+          "participante": "Marta 5",
           "arquivo": "marta_5",
           "campeao": "França",
           "timeA": "Inglaterra",
@@ -4307,7 +4307,7 @@
           "golsB": 1
         },
         {
-          "participante": "NINA",
+          "participante": "Nina",
           "arquivo": "nina",
           "campeao": "França",
           "timeA": "Inglaterra",
@@ -4361,7 +4361,7 @@
           "golsB": 0
         },
         {
-          "participante": "VAGNER PORTO",
+          "participante": "Vagner",
           "arquivo": "vagner_porto",
           "campeao": "Brasil",
           "timeA": "Inglaterra",
@@ -4379,7 +4379,7 @@
           "golsB": 1
         },
         {
-          "participante": "ROSANA",
+          "participante": "Rosana",
           "arquivo": "rosana",
           "campeao": "França",
           "timeA": "Inglaterra",
@@ -4406,7 +4406,7 @@
           "golsB": 0
         },
         {
-          "participante": "CÉSAR",
+          "participante": "César",
           "arquivo": "cesar",
           "campeao": "França",
           "timeA": "Inglaterra",
@@ -4487,7 +4487,7 @@
           "golsB": 0
         },
         {
-          "participante": "RÉGIS",
+          "participante": "Régis",
           "arquivo": "regis",
           "campeao": "Argentina",
           "timeA": "Inglaterra",
@@ -4496,7 +4496,7 @@
           "golsB": 1
         },
         {
-          "participante": "RÉGIS-IA",
+          "participante": "Régis-ia",
           "arquivo": "regis-ia",
           "campeao": "França",
           "timeA": "Inglaterra",
@@ -4532,7 +4532,7 @@
           "golsB": 0
         },
         {
-          "participante": "LUCCA",
+          "participante": "Lucca",
           "arquivo": "lucca",
           "campeao": "França",
           "timeA": "Inglaterra",
@@ -4604,7 +4604,7 @@
           "golsB": 0
         },
         {
-          "participante": "DUDINHA",
+          "participante": "Dudinha",
           "arquivo": "dudinha",
           "campeao": "Argentina",
           "timeA": "Bélgica",
@@ -4613,7 +4613,7 @@
           "golsB": 1
         },
         {
-          "participante": "ELVIS",
+          "participante": "Elvis",
           "arquivo": "elvis",
           "campeao": "França",
           "timeA": "Bélgica",
@@ -4640,7 +4640,7 @@
           "golsB": 1
         },
         {
-          "participante": "emi",
+          "participante": "Emi",
           "arquivo": "emi",
           "campeao": "Alemanha",
           "timeA": "Bélgica",
@@ -4649,7 +4649,7 @@
           "golsB": 2
         },
         {
-          "participante": "FERNANDA",
+          "participante": "Fernanda",
           "arquivo": "fernanda",
           "campeao": "Argentina",
           "timeA": "Bélgica",
@@ -4658,7 +4658,7 @@
           "golsB": 0
         },
         {
-          "participante": "FRANCISCO",
+          "participante": "Francisco",
           "arquivo": "francisco",
           "campeao": "Brasil",
           "timeA": "Bélgica",
@@ -4667,7 +4667,7 @@
           "golsB": 3
         },
         {
-          "participante": "FÁTIMA",
+          "participante": "Fátima",
           "arquivo": "fatima",
           "campeao": "Brasil",
           "timeA": "Bélgica",
@@ -4676,7 +4676,7 @@
           "golsB": 2
         },
         {
-          "participante": "GARGAMEL",
+          "participante": "Gargamel",
           "arquivo": "gargamel",
           "campeao": "Colômbia",
           "timeA": "Bélgica",
@@ -4685,7 +4685,7 @@
           "golsB": 0
         },
         {
-          "participante": "GU",
+          "participante": "Gu",
           "arquivo": "gu",
           "campeao": "França",
           "timeA": "Bélgica",
@@ -4703,7 +4703,7 @@
           "golsB": 0
         },
         {
-          "participante": "JOSÉ 1",
+          "participante": "José 1",
           "arquivo": "jose_1",
           "campeao": "Argentina",
           "timeA": "Bélgica",
@@ -4712,7 +4712,7 @@
           "golsB": 1
         },
         {
-          "participante": "JOSÉ 2",
+          "participante": "José 2",
           "arquivo": "jose_2",
           "campeao": "Holanda",
           "timeA": "Bélgica",
@@ -4721,7 +4721,7 @@
           "golsB": 1
         },
         {
-          "participante": "JOSÉ 3",
+          "participante": "José 3",
           "arquivo": "jose_3",
           "campeao": "França",
           "timeA": "Bélgica",
@@ -4730,7 +4730,7 @@
           "golsB": 1
         },
         {
-          "participante": "LOUISE GARCIA PORTO",
+          "participante": "Louise",
           "arquivo": "louise_garcia_porto",
           "campeao": "França",
           "timeA": "Bélgica",
@@ -4739,7 +4739,7 @@
           "golsB": 1
         },
         {
-          "participante": "MANUELA",
+          "participante": "Manuela",
           "arquivo": "manuela",
           "campeao": "Argentina",
           "timeA": "Bélgica",
@@ -4748,7 +4748,7 @@
           "golsB": 0
         },
         {
-          "participante": "MARIA 1",
+          "participante": "Maria 1",
           "arquivo": "maria_1",
           "campeao": "Argentina",
           "timeA": "Bélgica",
@@ -4757,7 +4757,7 @@
           "golsB": 2
         },
         {
-          "participante": "MARIA 2",
+          "participante": "Maria 2",
           "arquivo": "maria_2",
           "campeao": "Argentina",
           "timeA": "Bélgica",
@@ -4766,7 +4766,7 @@
           "golsB": 1
         },
         {
-          "participante": "MARIA 3",
+          "participante": "Maria 3",
           "arquivo": "maria_3",
           "campeao": "Argentina",
           "timeA": "Bélgica",
@@ -4775,7 +4775,7 @@
           "golsB": 0
         },
         {
-          "participante": "MARTA 1",
+          "participante": "Marta 1",
           "arquivo": "marta_1",
           "campeao": "França",
           "timeA": "Bélgica",
@@ -4784,7 +4784,7 @@
           "golsB": 0
         },
         {
-          "participante": "MARTA 2",
+          "participante": "Marta 2",
           "arquivo": "marta_2",
           "campeao": "França",
           "timeA": "Bélgica",
@@ -4793,7 +4793,7 @@
           "golsB": 1
         },
         {
-          "participante": "MARTA 3",
+          "participante": "Marta 3",
           "arquivo": "marta_3",
           "campeao": "França",
           "timeA": "Bélgica",
@@ -4802,7 +4802,7 @@
           "golsB": 0
         },
         {
-          "participante": "MARTA 4",
+          "participante": "Marta 4",
           "arquivo": "marta_4",
           "campeao": "França",
           "timeA": "Bélgica",
@@ -4811,7 +4811,7 @@
           "golsB": 0
         },
         {
-          "participante": "MARTA 5",
+          "participante": "Marta 5",
           "arquivo": "marta_5",
           "campeao": "França",
           "timeA": "Bélgica",
@@ -4838,7 +4838,7 @@
           "golsB": 1
         },
         {
-          "participante": "NINA",
+          "participante": "Nina",
           "arquivo": "nina",
           "campeao": "França",
           "timeA": "Bélgica",
@@ -4892,7 +4892,7 @@
           "golsB": 1
         },
         {
-          "participante": "VAGNER PORTO",
+          "participante": "Vagner",
           "arquivo": "vagner_porto",
           "campeao": "Brasil",
           "timeA": "Bélgica",
@@ -4910,7 +4910,7 @@
           "golsB": 0
         },
         {
-          "participante": "ROSANA",
+          "participante": "Rosana",
           "arquivo": "rosana",
           "campeao": "França",
           "timeA": "Bélgica",
@@ -4937,7 +4937,7 @@
           "golsB": 1
         },
         {
-          "participante": "CÉSAR",
+          "participante": "César",
           "arquivo": "cesar",
           "campeao": "França",
           "timeA": "Bélgica",
@@ -5018,7 +5018,7 @@
           "golsB": 0
         },
         {
-          "participante": "RÉGIS",
+          "participante": "Régis",
           "arquivo": "regis",
           "campeao": "Argentina",
           "timeA": "Bélgica",
@@ -5027,7 +5027,7 @@
           "golsB": 1
         },
         {
-          "participante": "RÉGIS-IA",
+          "participante": "Régis-ia",
           "arquivo": "regis-ia",
           "campeao": "França",
           "timeA": "Bélgica",
@@ -5063,7 +5063,7 @@
           "golsB": 0
         },
         {
-          "participante": "LUCCA",
+          "participante": "Lucca",
           "arquivo": "lucca",
           "campeao": "França",
           "timeA": "Bélgica",
@@ -5135,7 +5135,7 @@
           "golsB": 0
         },
         {
-          "participante": "DUDINHA",
+          "participante": "Dudinha",
           "arquivo": "dudinha",
           "campeao": "Argentina",
           "timeA": "Estados Unidos",
@@ -5144,7 +5144,7 @@
           "golsB": 1
         },
         {
-          "participante": "ELVIS",
+          "participante": "Elvis",
           "arquivo": "elvis",
           "campeao": "França",
           "timeA": "Estados Unidos",
@@ -5171,7 +5171,7 @@
           "golsB": 0
         },
         {
-          "participante": "emi",
+          "participante": "Emi",
           "arquivo": "emi",
           "campeao": "Alemanha",
           "timeA": "Estados Unidos",
@@ -5180,7 +5180,7 @@
           "golsB": 1
         },
         {
-          "participante": "FERNANDA",
+          "participante": "Fernanda",
           "arquivo": "fernanda",
           "campeao": "Argentina",
           "timeA": "Estados Unidos",
@@ -5189,7 +5189,7 @@
           "golsB": 0
         },
         {
-          "participante": "FRANCISCO",
+          "participante": "Francisco",
           "arquivo": "francisco",
           "campeao": "Brasil",
           "timeA": "Estados Unidos",
@@ -5198,7 +5198,7 @@
           "golsB": 2
         },
         {
-          "participante": "FÁTIMA",
+          "participante": "Fátima",
           "arquivo": "fatima",
           "campeao": "Brasil",
           "timeA": "Estados Unidos",
@@ -5207,7 +5207,7 @@
           "golsB": 1
         },
         {
-          "participante": "GARGAMEL",
+          "participante": "Gargamel",
           "arquivo": "gargamel",
           "campeao": "Colômbia",
           "timeA": "Estados Unidos",
@@ -5216,7 +5216,7 @@
           "golsB": 0
         },
         {
-          "participante": "GU",
+          "participante": "Gu",
           "arquivo": "gu",
           "campeao": "França",
           "timeA": "Estados Unidos",
@@ -5234,7 +5234,7 @@
           "golsB": 0
         },
         {
-          "participante": "JOSÉ 1",
+          "participante": "José 1",
           "arquivo": "jose_1",
           "campeao": "Argentina",
           "timeA": "Estados Unidos",
@@ -5243,7 +5243,7 @@
           "golsB": 0
         },
         {
-          "participante": "JOSÉ 2",
+          "participante": "José 2",
           "arquivo": "jose_2",
           "campeao": "Holanda",
           "timeA": "Estados Unidos",
@@ -5252,7 +5252,7 @@
           "golsB": 1
         },
         {
-          "participante": "JOSÉ 3",
+          "participante": "José 3",
           "arquivo": "jose_3",
           "campeao": "França",
           "timeA": "Estados Unidos",
@@ -5261,7 +5261,7 @@
           "golsB": 0
         },
         {
-          "participante": "LOUISE GARCIA PORTO",
+          "participante": "Louise",
           "arquivo": "louise_garcia_porto",
           "campeao": "França",
           "timeA": "Estados Unidos",
@@ -5270,7 +5270,7 @@
           "golsB": 1
         },
         {
-          "participante": "MANUELA",
+          "participante": "Manuela",
           "arquivo": "manuela",
           "campeao": "Argentina",
           "timeA": "Estados Unidos",
@@ -5279,7 +5279,7 @@
           "golsB": 0
         },
         {
-          "participante": "MARIA 1",
+          "participante": "Maria 1",
           "arquivo": "maria_1",
           "campeao": "Argentina",
           "timeA": "Estados Unidos",
@@ -5288,7 +5288,7 @@
           "golsB": 1
         },
         {
-          "participante": "MARIA 2",
+          "participante": "Maria 2",
           "arquivo": "maria_2",
           "campeao": "Argentina",
           "timeA": "Estados Unidos",
@@ -5297,7 +5297,7 @@
           "golsB": 0
         },
         {
-          "participante": "MARIA 3",
+          "participante": "Maria 3",
           "arquivo": "maria_3",
           "campeao": "Argentina",
           "timeA": "Estados Unidos",
@@ -5306,7 +5306,7 @@
           "golsB": 0
         },
         {
-          "participante": "MARTA 1",
+          "participante": "Marta 1",
           "arquivo": "marta_1",
           "campeao": "França",
           "timeA": "Estados Unidos",
@@ -5315,7 +5315,7 @@
           "golsB": 1
         },
         {
-          "participante": "MARTA 2",
+          "participante": "Marta 2",
           "arquivo": "marta_2",
           "campeao": "França",
           "timeA": "Estados Unidos",
@@ -5324,7 +5324,7 @@
           "golsB": 1
         },
         {
-          "participante": "MARTA 3",
+          "participante": "Marta 3",
           "arquivo": "marta_3",
           "campeao": "França",
           "timeA": "Estados Unidos",
@@ -5333,7 +5333,7 @@
           "golsB": 0
         },
         {
-          "participante": "MARTA 4",
+          "participante": "Marta 4",
           "arquivo": "marta_4",
           "campeao": "França",
           "timeA": "Estados Unidos",
@@ -5342,7 +5342,7 @@
           "golsB": 0
         },
         {
-          "participante": "MARTA 5",
+          "participante": "Marta 5",
           "arquivo": "marta_5",
           "campeao": "França",
           "timeA": "Estados Unidos",
@@ -5369,7 +5369,7 @@
           "golsB": 2
         },
         {
-          "participante": "NINA",
+          "participante": "Nina",
           "arquivo": "nina",
           "campeao": "França",
           "timeA": "Estados Unidos",
@@ -5423,7 +5423,7 @@
           "golsB": 2
         },
         {
-          "participante": "VAGNER PORTO",
+          "participante": "Vagner",
           "arquivo": "vagner_porto",
           "campeao": "Brasil",
           "timeA": "Estados Unidos",
@@ -5441,7 +5441,7 @@
           "golsB": 1
         },
         {
-          "participante": "ROSANA",
+          "participante": "Rosana",
           "arquivo": "rosana",
           "campeao": "França",
           "timeA": "Estados Unidos",
@@ -5468,7 +5468,7 @@
           "golsB": 0
         },
         {
-          "participante": "CÉSAR",
+          "participante": "César",
           "arquivo": "cesar",
           "campeao": "França",
           "timeA": "Estados Unidos",
@@ -5549,7 +5549,7 @@
           "golsB": 0
         },
         {
-          "participante": "RÉGIS",
+          "participante": "Régis",
           "arquivo": "regis",
           "campeao": "Argentina",
           "timeA": "Estados Unidos",
@@ -5558,7 +5558,7 @@
           "golsB": 0
         },
         {
-          "participante": "RÉGIS-IA",
+          "participante": "Régis-ia",
           "arquivo": "regis-ia",
           "campeao": "França",
           "timeA": "Estados Unidos",
@@ -5594,7 +5594,7 @@
           "golsB": 0
         },
         {
-          "participante": "LUCCA",
+          "participante": "Lucca",
           "arquivo": "lucca",
           "campeao": "França",
           "timeA": "Estados Unidos",
@@ -5666,7 +5666,7 @@
           "golsB": 1
         },
         {
-          "participante": "DUDINHA",
+          "participante": "Dudinha",
           "arquivo": "dudinha",
           "campeao": "Argentina",
           "timeA": "Espanha",
@@ -5675,7 +5675,7 @@
           "golsB": 1
         },
         {
-          "participante": "ELVIS",
+          "participante": "Elvis",
           "arquivo": "elvis",
           "campeao": "França",
           "timeA": "Espanha",
@@ -5702,7 +5702,7 @@
           "golsB": 1
         },
         {
-          "participante": "emi",
+          "participante": "Emi",
           "arquivo": "emi",
           "campeao": "Alemanha",
           "timeA": "Espanha",
@@ -5711,7 +5711,7 @@
           "golsB": 1
         },
         {
-          "participante": "FERNANDA",
+          "participante": "Fernanda",
           "arquivo": "fernanda",
           "campeao": "Argentina",
           "timeA": "Espanha",
@@ -5720,7 +5720,7 @@
           "golsB": 0
         },
         {
-          "participante": "FRANCISCO",
+          "participante": "Francisco",
           "arquivo": "francisco",
           "campeao": "Brasil",
           "timeA": "Espanha",
@@ -5729,7 +5729,7 @@
           "golsB": 0
         },
         {
-          "participante": "FÁTIMA",
+          "participante": "Fátima",
           "arquivo": "fatima",
           "campeao": "Brasil",
           "timeA": "Espanha",
@@ -5738,7 +5738,7 @@
           "golsB": 1
         },
         {
-          "participante": "GARGAMEL",
+          "participante": "Gargamel",
           "arquivo": "gargamel",
           "campeao": "Colômbia",
           "timeA": "Espanha",
@@ -5747,7 +5747,7 @@
           "golsB": 1
         },
         {
-          "participante": "GU",
+          "participante": "Gu",
           "arquivo": "gu",
           "campeao": "França",
           "timeA": "Espanha",
@@ -5765,7 +5765,7 @@
           "golsB": 1
         },
         {
-          "participante": "JOSÉ 1",
+          "participante": "José 1",
           "arquivo": "jose_1",
           "campeao": "Argentina",
           "timeA": "Espanha",
@@ -5774,7 +5774,7 @@
           "golsB": 1
         },
         {
-          "participante": "JOSÉ 2",
+          "participante": "José 2",
           "arquivo": "jose_2",
           "campeao": "Holanda",
           "timeA": "Espanha",
@@ -5783,7 +5783,7 @@
           "golsB": 0
         },
         {
-          "participante": "JOSÉ 3",
+          "participante": "José 3",
           "arquivo": "jose_3",
           "campeao": "França",
           "timeA": "Espanha",
@@ -5792,7 +5792,7 @@
           "golsB": 1
         },
         {
-          "participante": "LOUISE GARCIA PORTO",
+          "participante": "Louise",
           "arquivo": "louise_garcia_porto",
           "campeao": "França",
           "timeA": "Espanha",
@@ -5801,7 +5801,7 @@
           "golsB": 0
         },
         {
-          "participante": "MANUELA",
+          "participante": "Manuela",
           "arquivo": "manuela",
           "campeao": "Argentina",
           "timeA": "Espanha",
@@ -5810,7 +5810,7 @@
           "golsB": 1
         },
         {
-          "participante": "MARIA 1",
+          "participante": "Maria 1",
           "arquivo": "maria_1",
           "campeao": "Argentina",
           "timeA": "Espanha",
@@ -5819,7 +5819,7 @@
           "golsB": 1
         },
         {
-          "participante": "MARIA 2",
+          "participante": "Maria 2",
           "arquivo": "maria_2",
           "campeao": "Argentina",
           "timeA": "Espanha",
@@ -5828,7 +5828,7 @@
           "golsB": 0
         },
         {
-          "participante": "MARIA 3",
+          "participante": "Maria 3",
           "arquivo": "maria_3",
           "campeao": "Argentina",
           "timeA": "Espanha",
@@ -5837,7 +5837,7 @@
           "golsB": 1
         },
         {
-          "participante": "MARTA 1",
+          "participante": "Marta 1",
           "arquivo": "marta_1",
           "campeao": "França",
           "timeA": "Espanha",
@@ -5846,7 +5846,7 @@
           "golsB": 1
         },
         {
-          "participante": "MARTA 2",
+          "participante": "Marta 2",
           "arquivo": "marta_2",
           "campeao": "França",
           "timeA": "Espanha",
@@ -5855,7 +5855,7 @@
           "golsB": 0
         },
         {
-          "participante": "MARTA 3",
+          "participante": "Marta 3",
           "arquivo": "marta_3",
           "campeao": "França",
           "timeA": "Espanha",
@@ -5864,7 +5864,7 @@
           "golsB": 0
         },
         {
-          "participante": "MARTA 4",
+          "participante": "Marta 4",
           "arquivo": "marta_4",
           "campeao": "França",
           "timeA": "Espanha",
@@ -5873,7 +5873,7 @@
           "golsB": 0
         },
         {
-          "participante": "MARTA 5",
+          "participante": "Marta 5",
           "arquivo": "marta_5",
           "campeao": "França",
           "timeA": "Espanha",
@@ -5900,7 +5900,7 @@
           "golsB": 1
         },
         {
-          "participante": "NINA",
+          "participante": "Nina",
           "arquivo": "nina",
           "campeao": "França",
           "timeA": "Espanha",
@@ -5954,7 +5954,7 @@
           "golsB": 1
         },
         {
-          "participante": "VAGNER PORTO",
+          "participante": "Vagner",
           "arquivo": "vagner_porto",
           "campeao": "Brasil",
           "timeA": "Espanha",
@@ -5972,7 +5972,7 @@
           "golsB": 2
         },
         {
-          "participante": "ROSANA",
+          "participante": "Rosana",
           "arquivo": "rosana",
           "campeao": "França",
           "timeA": "Espanha",
@@ -5999,7 +5999,7 @@
           "golsB": 1
         },
         {
-          "participante": "CÉSAR",
+          "participante": "César",
           "arquivo": "cesar",
           "campeao": "França",
           "timeA": "Espanha",
@@ -6080,7 +6080,7 @@
           "golsB": 0
         },
         {
-          "participante": "RÉGIS",
+          "participante": "Régis",
           "arquivo": "regis",
           "campeao": "Argentina",
           "timeA": "Espanha",
@@ -6089,7 +6089,7 @@
           "golsB": 1
         },
         {
-          "participante": "RÉGIS-IA",
+          "participante": "Régis-ia",
           "arquivo": "regis-ia",
           "campeao": "França",
           "timeA": "Espanha",
@@ -6125,7 +6125,7 @@
           "golsB": 0
         },
         {
-          "participante": "LUCCA",
+          "participante": "Lucca",
           "arquivo": "lucca",
           "campeao": "França",
           "timeA": "Espanha",
@@ -6197,7 +6197,7 @@
           "golsB": 1
         },
         {
-          "participante": "DUDINHA",
+          "participante": "Dudinha",
           "arquivo": "dudinha",
           "campeao": "Argentina",
           "timeA": "Portugal",
@@ -6206,7 +6206,7 @@
           "golsB": 0
         },
         {
-          "participante": "ELVIS",
+          "participante": "Elvis",
           "arquivo": "elvis",
           "campeao": "França",
           "timeA": "Portugal",
@@ -6233,7 +6233,7 @@
           "golsB": 2
         },
         {
-          "participante": "emi",
+          "participante": "Emi",
           "arquivo": "emi",
           "campeao": "Alemanha",
           "timeA": "Portugal",
@@ -6242,7 +6242,7 @@
           "golsB": 1
         },
         {
-          "participante": "FERNANDA",
+          "participante": "Fernanda",
           "arquivo": "fernanda",
           "campeao": "Argentina",
           "timeA": "Portugal",
@@ -6251,7 +6251,7 @@
           "golsB": 1
         },
         {
-          "participante": "FRANCISCO",
+          "participante": "Francisco",
           "arquivo": "francisco",
           "campeao": "Brasil",
           "timeA": "Portugal",
@@ -6260,7 +6260,7 @@
           "golsB": 0
         },
         {
-          "participante": "FÁTIMA",
+          "participante": "Fátima",
           "arquivo": "fatima",
           "campeao": "Brasil",
           "timeA": "Portugal",
@@ -6269,7 +6269,7 @@
           "golsB": 1
         },
         {
-          "participante": "GARGAMEL",
+          "participante": "Gargamel",
           "arquivo": "gargamel",
           "campeao": "Colômbia",
           "timeA": "Portugal",
@@ -6278,7 +6278,7 @@
           "golsB": 1
         },
         {
-          "participante": "GU",
+          "participante": "Gu",
           "arquivo": "gu",
           "campeao": "França",
           "timeA": "Portugal",
@@ -6296,7 +6296,7 @@
           "golsB": 2
         },
         {
-          "participante": "JOSÉ 1",
+          "participante": "José 1",
           "arquivo": "jose_1",
           "campeao": "Argentina",
           "timeA": "Portugal",
@@ -6305,7 +6305,7 @@
           "golsB": 1
         },
         {
-          "participante": "JOSÉ 2",
+          "participante": "José 2",
           "arquivo": "jose_2",
           "campeao": "Holanda",
           "timeA": "Portugal",
@@ -6314,7 +6314,7 @@
           "golsB": 0
         },
         {
-          "participante": "JOSÉ 3",
+          "participante": "José 3",
           "arquivo": "jose_3",
           "campeao": "França",
           "timeA": "Portugal",
@@ -6323,7 +6323,7 @@
           "golsB": 1
         },
         {
-          "participante": "LOUISE GARCIA PORTO",
+          "participante": "Louise",
           "arquivo": "louise_garcia_porto",
           "campeao": "França",
           "timeA": "Portugal",
@@ -6332,7 +6332,7 @@
           "golsB": 1
         },
         {
-          "participante": "MANUELA",
+          "participante": "Manuela",
           "arquivo": "manuela",
           "campeao": "Argentina",
           "timeA": "Portugal",
@@ -6341,7 +6341,7 @@
           "golsB": 1
         },
         {
-          "participante": "MARIA 1",
+          "participante": "Maria 1",
           "arquivo": "maria_1",
           "campeao": "Argentina",
           "timeA": "Portugal",
@@ -6350,7 +6350,7 @@
           "golsB": 1
         },
         {
-          "participante": "MARIA 2",
+          "participante": "Maria 2",
           "arquivo": "maria_2",
           "campeao": "Argentina",
           "timeA": "Portugal",
@@ -6359,7 +6359,7 @@
           "golsB": 0
         },
         {
-          "participante": "MARIA 3",
+          "participante": "Maria 3",
           "arquivo": "maria_3",
           "campeao": "Argentina",
           "timeA": "Portugal",
@@ -6368,7 +6368,7 @@
           "golsB": 1
         },
         {
-          "participante": "MARTA 1",
+          "participante": "Marta 1",
           "arquivo": "marta_1",
           "campeao": "França",
           "timeA": "Portugal",
@@ -6377,7 +6377,7 @@
           "golsB": 0
         },
         {
-          "participante": "MARTA 2",
+          "participante": "Marta 2",
           "arquivo": "marta_2",
           "campeao": "França",
           "timeA": "Portugal",
@@ -6386,7 +6386,7 @@
           "golsB": 2
         },
         {
-          "participante": "MARTA 3",
+          "participante": "Marta 3",
           "arquivo": "marta_3",
           "campeao": "França",
           "timeA": "Portugal",
@@ -6395,7 +6395,7 @@
           "golsB": 0
         },
         {
-          "participante": "MARTA 4",
+          "participante": "Marta 4",
           "arquivo": "marta_4",
           "campeao": "França",
           "timeA": "Portugal",
@@ -6404,7 +6404,7 @@
           "golsB": 0
         },
         {
-          "participante": "MARTA 5",
+          "participante": "Marta 5",
           "arquivo": "marta_5",
           "campeao": "França",
           "timeA": "Portugal",
@@ -6431,7 +6431,7 @@
           "golsB": 1
         },
         {
-          "participante": "NINA",
+          "participante": "Nina",
           "arquivo": "nina",
           "campeao": "França",
           "timeA": "Portugal",
@@ -6485,7 +6485,7 @@
           "golsB": 2
         },
         {
-          "participante": "VAGNER PORTO",
+          "participante": "Vagner",
           "arquivo": "vagner_porto",
           "campeao": "Brasil",
           "timeA": "Portugal",
@@ -6503,7 +6503,7 @@
           "golsB": 1
         },
         {
-          "participante": "ROSANA",
+          "participante": "Rosana",
           "arquivo": "rosana",
           "campeao": "França",
           "timeA": "Portugal",
@@ -6530,7 +6530,7 @@
           "golsB": 2
         },
         {
-          "participante": "CÉSAR",
+          "participante": "César",
           "arquivo": "cesar",
           "campeao": "França",
           "timeA": "Portugal",
@@ -6611,7 +6611,7 @@
           "golsB": 0
         },
         {
-          "participante": "RÉGIS",
+          "participante": "Régis",
           "arquivo": "regis",
           "campeao": "Argentina",
           "timeA": "Portugal",
@@ -6620,7 +6620,7 @@
           "golsB": 2
         },
         {
-          "participante": "RÉGIS-IA",
+          "participante": "Régis-ia",
           "arquivo": "regis-ia",
           "campeao": "França",
           "timeA": "Portugal",
@@ -6656,7 +6656,7 @@
           "golsB": 0
         },
         {
-          "participante": "LUCCA",
+          "participante": "Lucca",
           "arquivo": "lucca",
           "campeao": "França",
           "timeA": "Portugal",
@@ -6728,7 +6728,7 @@
           "golsB": 1
         },
         {
-          "participante": "DUDINHA",
+          "participante": "Dudinha",
           "arquivo": "dudinha",
           "campeao": "Argentina",
           "timeA": "Suíça",
@@ -6737,7 +6737,7 @@
           "golsB": 2
         },
         {
-          "participante": "ELVIS",
+          "participante": "Elvis",
           "arquivo": "elvis",
           "campeao": "França",
           "timeA": "Suíça",
@@ -6764,7 +6764,7 @@
           "golsB": 1
         },
         {
-          "participante": "emi",
+          "participante": "Emi",
           "arquivo": "emi",
           "campeao": "Alemanha",
           "timeA": "Suíça",
@@ -6773,7 +6773,7 @@
           "golsB": 0
         },
         {
-          "participante": "FERNANDA",
+          "participante": "Fernanda",
           "arquivo": "fernanda",
           "campeao": "Argentina",
           "timeA": "Suíça",
@@ -6782,7 +6782,7 @@
           "golsB": 2
         },
         {
-          "participante": "FRANCISCO",
+          "participante": "Francisco",
           "arquivo": "francisco",
           "campeao": "Brasil",
           "timeA": "Suíça",
@@ -6791,7 +6791,7 @@
           "golsB": 0
         },
         {
-          "participante": "FÁTIMA",
+          "participante": "Fátima",
           "arquivo": "fatima",
           "campeao": "Brasil",
           "timeA": "Suíça",
@@ -6800,7 +6800,7 @@
           "golsB": 1
         },
         {
-          "participante": "GARGAMEL",
+          "participante": "Gargamel",
           "arquivo": "gargamel",
           "campeao": "Colômbia",
           "timeA": "Suíça",
@@ -6809,7 +6809,7 @@
           "golsB": 0
         },
         {
-          "participante": "GU",
+          "participante": "Gu",
           "arquivo": "gu",
           "campeao": "França",
           "timeA": "Suíça",
@@ -6827,7 +6827,7 @@
           "golsB": 0
         },
         {
-          "participante": "JOSÉ 1",
+          "participante": "José 1",
           "arquivo": "jose_1",
           "campeao": "Argentina",
           "timeA": "Suíça",
@@ -6836,7 +6836,7 @@
           "golsB": 1
         },
         {
-          "participante": "JOSÉ 2",
+          "participante": "José 2",
           "arquivo": "jose_2",
           "campeao": "Holanda",
           "timeA": "Suíça",
@@ -6845,7 +6845,7 @@
           "golsB": 1
         },
         {
-          "participante": "JOSÉ 3",
+          "participante": "José 3",
           "arquivo": "jose_3",
           "campeao": "França",
           "timeA": "Suíça",
@@ -6854,7 +6854,7 @@
           "golsB": 0
         },
         {
-          "participante": "LOUISE GARCIA PORTO",
+          "participante": "Louise",
           "arquivo": "louise_garcia_porto",
           "campeao": "França",
           "timeA": "Suíça",
@@ -6863,7 +6863,7 @@
           "golsB": 0
         },
         {
-          "participante": "MANUELA",
+          "participante": "Manuela",
           "arquivo": "manuela",
           "campeao": "Argentina",
           "timeA": "Suíça",
@@ -6872,7 +6872,7 @@
           "golsB": 0
         },
         {
-          "participante": "MARIA 1",
+          "participante": "Maria 1",
           "arquivo": "maria_1",
           "campeao": "Argentina",
           "timeA": "Suíça",
@@ -6881,7 +6881,7 @@
           "golsB": 2
         },
         {
-          "participante": "MARIA 2",
+          "participante": "Maria 2",
           "arquivo": "maria_2",
           "campeao": "Argentina",
           "timeA": "Suíça",
@@ -6890,7 +6890,7 @@
           "golsB": 0
         },
         {
-          "participante": "MARIA 3",
+          "participante": "Maria 3",
           "arquivo": "maria_3",
           "campeao": "Argentina",
           "timeA": "Suíça",
@@ -6899,7 +6899,7 @@
           "golsB": 0
         },
         {
-          "participante": "MARTA 1",
+          "participante": "Marta 1",
           "arquivo": "marta_1",
           "campeao": "França",
           "timeA": "Suíça",
@@ -6908,7 +6908,7 @@
           "golsB": 2
         },
         {
-          "participante": "MARTA 2",
+          "participante": "Marta 2",
           "arquivo": "marta_2",
           "campeao": "França",
           "timeA": "Suíça",
@@ -6917,7 +6917,7 @@
           "golsB": 1
         },
         {
-          "participante": "MARTA 3",
+          "participante": "Marta 3",
           "arquivo": "marta_3",
           "campeao": "França",
           "timeA": "Suíça",
@@ -6926,7 +6926,7 @@
           "golsB": 0
         },
         {
-          "participante": "MARTA 4",
+          "participante": "Marta 4",
           "arquivo": "marta_4",
           "campeao": "França",
           "timeA": "Suíça",
@@ -6935,7 +6935,7 @@
           "golsB": 0
         },
         {
-          "participante": "MARTA 5",
+          "participante": "Marta 5",
           "arquivo": "marta_5",
           "campeao": "França",
           "timeA": "Suíça",
@@ -6962,7 +6962,7 @@
           "golsB": 1
         },
         {
-          "participante": "NINA",
+          "participante": "Nina",
           "arquivo": "nina",
           "campeao": "França",
           "timeA": "Suíça",
@@ -7016,7 +7016,7 @@
           "golsB": 1
         },
         {
-          "participante": "VAGNER PORTO",
+          "participante": "Vagner",
           "arquivo": "vagner_porto",
           "campeao": "Brasil",
           "timeA": "Suíça",
@@ -7034,7 +7034,7 @@
           "golsB": 0
         },
         {
-          "participante": "ROSANA",
+          "participante": "Rosana",
           "arquivo": "rosana",
           "campeao": "França",
           "timeA": "Suíça",
@@ -7061,7 +7061,7 @@
           "golsB": 0
         },
         {
-          "participante": "CÉSAR",
+          "participante": "César",
           "arquivo": "cesar",
           "campeao": "França",
           "timeA": "Suíça",
@@ -7142,7 +7142,7 @@
           "golsB": 1
         },
         {
-          "participante": "RÉGIS",
+          "participante": "Régis",
           "arquivo": "regis",
           "campeao": "Argentina",
           "timeA": "Suíça",
@@ -7151,7 +7151,7 @@
           "golsB": 0
         },
         {
-          "participante": "RÉGIS-IA",
+          "participante": "Régis-ia",
           "arquivo": "regis-ia",
           "campeao": "França",
           "timeA": "Suíça",
@@ -7187,7 +7187,7 @@
           "golsB": 1
         },
         {
-          "participante": "LUCCA",
+          "participante": "Lucca",
           "arquivo": "lucca",
           "campeao": "França",
           "timeA": "Suíça",
@@ -7259,7 +7259,7 @@
           "golsB": 2
         },
         {
-          "participante": "DUDINHA",
+          "participante": "Dudinha",
           "arquivo": "dudinha",
           "campeao": "Argentina",
           "timeA": "Austrália",
@@ -7268,7 +7268,7 @@
           "golsB": 2
         },
         {
-          "participante": "ELVIS",
+          "participante": "Elvis",
           "arquivo": "elvis",
           "campeao": "França",
           "timeA": "Austrália",
@@ -7295,7 +7295,7 @@
           "golsB": 1
         },
         {
-          "participante": "emi",
+          "participante": "Emi",
           "arquivo": "emi",
           "campeao": "Alemanha",
           "timeA": "Austrália",
@@ -7304,7 +7304,7 @@
           "golsB": 2
         },
         {
-          "participante": "FERNANDA",
+          "participante": "Fernanda",
           "arquivo": "fernanda",
           "campeao": "Argentina",
           "timeA": "Austrália",
@@ -7313,7 +7313,7 @@
           "golsB": 1
         },
         {
-          "participante": "FRANCISCO",
+          "participante": "Francisco",
           "arquivo": "francisco",
           "campeao": "Brasil",
           "timeA": "Austrália",
@@ -7322,7 +7322,7 @@
           "golsB": 2
         },
         {
-          "participante": "FÁTIMA",
+          "participante": "Fátima",
           "arquivo": "fatima",
           "campeao": "Brasil",
           "timeA": "Austrália",
@@ -7331,7 +7331,7 @@
           "golsB": 2
         },
         {
-          "participante": "GARGAMEL",
+          "participante": "Gargamel",
           "arquivo": "gargamel",
           "campeao": "Colômbia",
           "timeA": "Austrália",
@@ -7340,7 +7340,7 @@
           "golsB": 0
         },
         {
-          "participante": "GU",
+          "participante": "Gu",
           "arquivo": "gu",
           "campeao": "França",
           "timeA": "Austrália",
@@ -7358,7 +7358,7 @@
           "golsB": 0
         },
         {
-          "participante": "JOSÉ 1",
+          "participante": "José 1",
           "arquivo": "jose_1",
           "campeao": "Argentina",
           "timeA": "Austrália",
@@ -7367,7 +7367,7 @@
           "golsB": 0
         },
         {
-          "participante": "JOSÉ 2",
+          "participante": "José 2",
           "arquivo": "jose_2",
           "campeao": "Holanda",
           "timeA": "Austrália",
@@ -7376,7 +7376,7 @@
           "golsB": 0
         },
         {
-          "participante": "JOSÉ 3",
+          "participante": "José 3",
           "arquivo": "jose_3",
           "campeao": "França",
           "timeA": "Austrália",
@@ -7385,7 +7385,7 @@
           "golsB": 1
         },
         {
-          "participante": "LOUISE GARCIA PORTO",
+          "participante": "Louise",
           "arquivo": "louise_garcia_porto",
           "campeao": "França",
           "timeA": "Austrália",
@@ -7394,7 +7394,7 @@
           "golsB": 2
         },
         {
-          "participante": "MANUELA",
+          "participante": "Manuela",
           "arquivo": "manuela",
           "campeao": "Argentina",
           "timeA": "Austrália",
@@ -7403,7 +7403,7 @@
           "golsB": 2
         },
         {
-          "participante": "MARIA 1",
+          "participante": "Maria 1",
           "arquivo": "maria_1",
           "campeao": "Argentina",
           "timeA": "Austrália",
@@ -7412,7 +7412,7 @@
           "golsB": 3
         },
         {
-          "participante": "MARIA 2",
+          "participante": "Maria 2",
           "arquivo": "maria_2",
           "campeao": "Argentina",
           "timeA": "Austrália",
@@ -7421,7 +7421,7 @@
           "golsB": 2
         },
         {
-          "participante": "MARIA 3",
+          "participante": "Maria 3",
           "arquivo": "maria_3",
           "campeao": "Argentina",
           "timeA": "Austrália",
@@ -7430,7 +7430,7 @@
           "golsB": 4
         },
         {
-          "participante": "MARTA 1",
+          "participante": "Marta 1",
           "arquivo": "marta_1",
           "campeao": "França",
           "timeA": "Austrália",
@@ -7439,7 +7439,7 @@
           "golsB": 3
         },
         {
-          "participante": "MARTA 2",
+          "participante": "Marta 2",
           "arquivo": "marta_2",
           "campeao": "França",
           "timeA": "Austrália",
@@ -7448,7 +7448,7 @@
           "golsB": 1
         },
         {
-          "participante": "MARTA 3",
+          "participante": "Marta 3",
           "arquivo": "marta_3",
           "campeao": "França",
           "timeA": "Austrália",
@@ -7457,7 +7457,7 @@
           "golsB": 2
         },
         {
-          "participante": "MARTA 4",
+          "participante": "Marta 4",
           "arquivo": "marta_4",
           "campeao": "França",
           "timeA": "Austrália",
@@ -7466,7 +7466,7 @@
           "golsB": 2
         },
         {
-          "participante": "MARTA 5",
+          "participante": "Marta 5",
           "arquivo": "marta_5",
           "campeao": "França",
           "timeA": "Austrália",
@@ -7493,7 +7493,7 @@
           "golsB": 1
         },
         {
-          "participante": "NINA",
+          "participante": "Nina",
           "arquivo": "nina",
           "campeao": "França",
           "timeA": "Austrália",
@@ -7547,7 +7547,7 @@
           "golsB": 2
         },
         {
-          "participante": "VAGNER PORTO",
+          "participante": "Vagner",
           "arquivo": "vagner_porto",
           "campeao": "Brasil",
           "timeA": "Austrália",
@@ -7565,7 +7565,7 @@
           "golsB": 1
         },
         {
-          "participante": "ROSANA",
+          "participante": "Rosana",
           "arquivo": "rosana",
           "campeao": "França",
           "timeA": "Austrália",
@@ -7592,7 +7592,7 @@
           "golsB": 0
         },
         {
-          "participante": "CÉSAR",
+          "participante": "César",
           "arquivo": "cesar",
           "campeao": "França",
           "timeA": "Austrália",
@@ -7673,7 +7673,7 @@
           "golsB": 0
         },
         {
-          "participante": "RÉGIS",
+          "participante": "Régis",
           "arquivo": "regis",
           "campeao": "Argentina",
           "timeA": "Austrália",
@@ -7682,7 +7682,7 @@
           "golsB": 1
         },
         {
-          "participante": "RÉGIS-IA",
+          "participante": "Régis-ia",
           "arquivo": "regis-ia",
           "campeao": "França",
           "timeA": "Austrália",
@@ -7718,7 +7718,7 @@
           "golsB": 1
         },
         {
-          "participante": "LUCCA",
+          "participante": "Lucca",
           "arquivo": "lucca",
           "campeao": "França",
           "timeA": "Austrália",
@@ -7790,7 +7790,7 @@
           "golsB": 0
         },
         {
-          "participante": "DUDINHA",
+          "participante": "Dudinha",
           "arquivo": "dudinha",
           "campeao": "Argentina",
           "timeA": "Argentina",
@@ -7799,7 +7799,7 @@
           "golsB": 0
         },
         {
-          "participante": "ELVIS",
+          "participante": "Elvis",
           "arquivo": "elvis",
           "campeao": "França",
           "timeA": "Argentina",
@@ -7826,7 +7826,7 @@
           "golsB": 0
         },
         {
-          "participante": "emi",
+          "participante": "Emi",
           "arquivo": "emi",
           "campeao": "Alemanha",
           "timeA": "Argentina",
@@ -7835,7 +7835,7 @@
           "golsB": 1
         },
         {
-          "participante": "FERNANDA",
+          "participante": "Fernanda",
           "arquivo": "fernanda",
           "campeao": "Argentina",
           "timeA": "Argentina",
@@ -7844,7 +7844,7 @@
           "golsB": 0
         },
         {
-          "participante": "FRANCISCO",
+          "participante": "Francisco",
           "arquivo": "francisco",
           "campeao": "Brasil",
           "timeA": "Argentina",
@@ -7853,7 +7853,7 @@
           "golsB": 0
         },
         {
-          "participante": "FÁTIMA",
+          "participante": "Fátima",
           "arquivo": "fatima",
           "campeao": "Brasil",
           "timeA": "Argentina",
@@ -7862,7 +7862,7 @@
           "golsB": 1
         },
         {
-          "participante": "GARGAMEL",
+          "participante": "Gargamel",
           "arquivo": "gargamel",
           "campeao": "Colômbia",
           "timeA": "Argentina",
@@ -7871,7 +7871,7 @@
           "golsB": 1
         },
         {
-          "participante": "GU",
+          "participante": "Gu",
           "arquivo": "gu",
           "campeao": "França",
           "timeA": "Argentina",
@@ -7889,7 +7889,7 @@
           "golsB": 0
         },
         {
-          "participante": "JOSÉ 1",
+          "participante": "José 1",
           "arquivo": "jose_1",
           "campeao": "Argentina",
           "timeA": "Argentina",
@@ -7898,7 +7898,7 @@
           "golsB": 0
         },
         {
-          "participante": "JOSÉ 2",
+          "participante": "José 2",
           "arquivo": "jose_2",
           "campeao": "Holanda",
           "timeA": "Argentina",
@@ -7907,7 +7907,7 @@
           "golsB": 1
         },
         {
-          "participante": "JOSÉ 3",
+          "participante": "José 3",
           "arquivo": "jose_3",
           "campeao": "França",
           "timeA": "Argentina",
@@ -7916,7 +7916,7 @@
           "golsB": 0
         },
         {
-          "participante": "LOUISE GARCIA PORTO",
+          "participante": "Louise",
           "arquivo": "louise_garcia_porto",
           "campeao": "França",
           "timeA": "Argentina",
@@ -7925,7 +7925,7 @@
           "golsB": 0
         },
         {
-          "participante": "MANUELA",
+          "participante": "Manuela",
           "arquivo": "manuela",
           "campeao": "Argentina",
           "timeA": "Argentina",
@@ -7934,7 +7934,7 @@
           "golsB": 0
         },
         {
-          "participante": "MARIA 1",
+          "participante": "Maria 1",
           "arquivo": "maria_1",
           "campeao": "Argentina",
           "timeA": "Argentina",
@@ -7943,7 +7943,7 @@
           "golsB": 2
         },
         {
-          "participante": "MARIA 2",
+          "participante": "Maria 2",
           "arquivo": "maria_2",
           "campeao": "Argentina",
           "timeA": "Argentina",
@@ -7952,7 +7952,7 @@
           "golsB": 1
         },
         {
-          "participante": "MARIA 3",
+          "participante": "Maria 3",
           "arquivo": "maria_3",
           "campeao": "Argentina",
           "timeA": "Argentina",
@@ -7961,7 +7961,7 @@
           "golsB": 2
         },
         {
-          "participante": "MARTA 1",
+          "participante": "Marta 1",
           "arquivo": "marta_1",
           "campeao": "França",
           "timeA": "Argentina",
@@ -7970,7 +7970,7 @@
           "golsB": 0
         },
         {
-          "participante": "MARTA 2",
+          "participante": "Marta 2",
           "arquivo": "marta_2",
           "campeao": "França",
           "timeA": "Argentina",
@@ -7979,7 +7979,7 @@
           "golsB": 0
         },
         {
-          "participante": "MARTA 3",
+          "participante": "Marta 3",
           "arquivo": "marta_3",
           "campeao": "França",
           "timeA": "Argentina",
@@ -7988,7 +7988,7 @@
           "golsB": 0
         },
         {
-          "participante": "MARTA 4",
+          "participante": "Marta 4",
           "arquivo": "marta_4",
           "campeao": "França",
           "timeA": "Argentina",
@@ -7997,7 +7997,7 @@
           "golsB": 1
         },
         {
-          "participante": "MARTA 5",
+          "participante": "Marta 5",
           "arquivo": "marta_5",
           "campeao": "França",
           "timeA": "Argentina",
@@ -8024,7 +8024,7 @@
           "golsB": 1
         },
         {
-          "participante": "NINA",
+          "participante": "Nina",
           "arquivo": "nina",
           "campeao": "França",
           "timeA": "Argentina",
@@ -8078,7 +8078,7 @@
           "golsB": 0
         },
         {
-          "participante": "VAGNER PORTO",
+          "participante": "Vagner",
           "arquivo": "vagner_porto",
           "campeao": "Brasil",
           "timeA": "Argentina",
@@ -8096,7 +8096,7 @@
           "golsB": 0
         },
         {
-          "participante": "ROSANA",
+          "participante": "Rosana",
           "arquivo": "rosana",
           "campeao": "França",
           "timeA": "Argentina",
@@ -8123,7 +8123,7 @@
           "golsB": 0
         },
         {
-          "participante": "CÉSAR",
+          "participante": "César",
           "arquivo": "cesar",
           "campeao": "França",
           "timeA": "Argentina",
@@ -8204,7 +8204,7 @@
           "golsB": 0
         },
         {
-          "participante": "RÉGIS",
+          "participante": "Régis",
           "arquivo": "regis",
           "campeao": "Argentina",
           "timeA": "Argentina",
@@ -8213,7 +8213,7 @@
           "golsB": 0
         },
         {
-          "participante": "RÉGIS-IA",
+          "participante": "Régis-ia",
           "arquivo": "regis-ia",
           "campeao": "França",
           "timeA": "Argentina",
@@ -8249,7 +8249,7 @@
           "golsB": 0
         },
         {
-          "participante": "LUCCA",
+          "participante": "Lucca",
           "arquivo": "lucca",
           "campeao": "França",
           "timeA": "Argentina",
@@ -8321,7 +8321,7 @@
           "golsB": 0
         },
         {
-          "participante": "DUDINHA",
+          "participante": "Dudinha",
           "arquivo": "dudinha",
           "campeao": "Argentina",
           "timeA": "Colômbia",
@@ -8330,7 +8330,7 @@
           "golsB": 0
         },
         {
-          "participante": "ELVIS",
+          "participante": "Elvis",
           "arquivo": "elvis",
           "campeao": "França",
           "timeA": "Colômbia",
@@ -8357,7 +8357,7 @@
           "golsB": 0
         },
         {
-          "participante": "emi",
+          "participante": "Emi",
           "arquivo": "emi",
           "campeao": "Alemanha",
           "timeA": "Colômbia",
@@ -8366,7 +8366,7 @@
           "golsB": 1
         },
         {
-          "participante": "FERNANDA",
+          "participante": "Fernanda",
           "arquivo": "fernanda",
           "campeao": "Argentina",
           "timeA": "Colômbia",
@@ -8375,7 +8375,7 @@
           "golsB": 1
         },
         {
-          "participante": "FRANCISCO",
+          "participante": "Francisco",
           "arquivo": "francisco",
           "campeao": "Brasil",
           "timeA": "Colômbia",
@@ -8384,7 +8384,7 @@
           "golsB": 2
         },
         {
-          "participante": "FÁTIMA",
+          "participante": "Fátima",
           "arquivo": "fatima",
           "campeao": "Brasil",
           "timeA": "Colômbia",
@@ -8393,7 +8393,7 @@
           "golsB": 2
         },
         {
-          "participante": "GARGAMEL",
+          "participante": "Gargamel",
           "arquivo": "gargamel",
           "campeao": "Colômbia",
           "timeA": "Colômbia",
@@ -8402,7 +8402,7 @@
           "golsB": 0
         },
         {
-          "participante": "GU",
+          "participante": "Gu",
           "arquivo": "gu",
           "campeao": "França",
           "timeA": "Colômbia",
@@ -8420,7 +8420,7 @@
           "golsB": 0
         },
         {
-          "participante": "JOSÉ 1",
+          "participante": "José 1",
           "arquivo": "jose_1",
           "campeao": "Argentina",
           "timeA": "Colômbia",
@@ -8429,7 +8429,7 @@
           "golsB": 0
         },
         {
-          "participante": "JOSÉ 2",
+          "participante": "José 2",
           "arquivo": "jose_2",
           "campeao": "Holanda",
           "timeA": "Colômbia",
@@ -8438,7 +8438,7 @@
           "golsB": 0
         },
         {
-          "participante": "JOSÉ 3",
+          "participante": "José 3",
           "arquivo": "jose_3",
           "campeao": "França",
           "timeA": "Colômbia",
@@ -8447,7 +8447,7 @@
           "golsB": 0
         },
         {
-          "participante": "LOUISE GARCIA PORTO",
+          "participante": "Louise",
           "arquivo": "louise_garcia_porto",
           "campeao": "França",
           "timeA": "Colômbia",
@@ -8456,7 +8456,7 @@
           "golsB": 1
         },
         {
-          "participante": "MANUELA",
+          "participante": "Manuela",
           "arquivo": "manuela",
           "campeao": "Argentina",
           "timeA": "Colômbia",
@@ -8465,7 +8465,7 @@
           "golsB": 0
         },
         {
-          "participante": "MARIA 1",
+          "participante": "Maria 1",
           "arquivo": "maria_1",
           "campeao": "Argentina",
           "timeA": "Colômbia",
@@ -8474,7 +8474,7 @@
           "golsB": 1
         },
         {
-          "participante": "MARIA 2",
+          "participante": "Maria 2",
           "arquivo": "maria_2",
           "campeao": "Argentina",
           "timeA": "Colômbia",
@@ -8483,7 +8483,7 @@
           "golsB": 2
         },
         {
-          "participante": "MARIA 3",
+          "participante": "Maria 3",
           "arquivo": "maria_3",
           "campeao": "Argentina",
           "timeA": "Colômbia",
@@ -8492,7 +8492,7 @@
           "golsB": 1
         },
         {
-          "participante": "MARTA 1",
+          "participante": "Marta 1",
           "arquivo": "marta_1",
           "campeao": "França",
           "timeA": "Colômbia",
@@ -8501,7 +8501,7 @@
           "golsB": 0
         },
         {
-          "participante": "MARTA 2",
+          "participante": "Marta 2",
           "arquivo": "marta_2",
           "campeao": "França",
           "timeA": "Colômbia",
@@ -8510,7 +8510,7 @@
           "golsB": 1
         },
         {
-          "participante": "MARTA 3",
+          "participante": "Marta 3",
           "arquivo": "marta_3",
           "campeao": "França",
           "timeA": "Colômbia",
@@ -8519,7 +8519,7 @@
           "golsB": 0
         },
         {
-          "participante": "MARTA 4",
+          "participante": "Marta 4",
           "arquivo": "marta_4",
           "campeao": "França",
           "timeA": "Colômbia",
@@ -8528,7 +8528,7 @@
           "golsB": 0
         },
         {
-          "participante": "MARTA 5",
+          "participante": "Marta 5",
           "arquivo": "marta_5",
           "campeao": "França",
           "timeA": "Colômbia",
@@ -8555,7 +8555,7 @@
           "golsB": 0
         },
         {
-          "participante": "NINA",
+          "participante": "Nina",
           "arquivo": "nina",
           "campeao": "França",
           "timeA": "Colômbia",
@@ -8609,7 +8609,7 @@
           "golsB": 1
         },
         {
-          "participante": "VAGNER PORTO",
+          "participante": "Vagner",
           "arquivo": "vagner_porto",
           "campeao": "Brasil",
           "timeA": "Colômbia",
@@ -8627,7 +8627,7 @@
           "golsB": 0
         },
         {
-          "participante": "ROSANA",
+          "participante": "Rosana",
           "arquivo": "rosana",
           "campeao": "França",
           "timeA": "Colômbia",
@@ -8654,7 +8654,7 @@
           "golsB": 0
         },
         {
-          "participante": "CÉSAR",
+          "participante": "César",
           "arquivo": "cesar",
           "campeao": "França",
           "timeA": "Colômbia",
@@ -8735,7 +8735,7 @@
           "golsB": 1
         },
         {
-          "participante": "RÉGIS",
+          "participante": "Régis",
           "arquivo": "regis",
           "campeao": "Argentina",
           "timeA": "Colômbia",
@@ -8744,7 +8744,7 @@
           "golsB": 0
         },
         {
-          "participante": "RÉGIS-IA",
+          "participante": "Régis-ia",
           "arquivo": "regis-ia",
           "campeao": "França",
           "timeA": "Colômbia",
@@ -8780,7 +8780,7 @@
           "golsB": 0
         },
         {
-          "participante": "LUCCA",
+          "participante": "Lucca",
           "arquivo": "lucca",
           "campeao": "França",
           "timeA": "Colômbia",
