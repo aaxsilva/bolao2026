@@ -884,6 +884,7 @@ function renderPodium(){
   function cardHtml(p, classe, medalha, posicao){
     var h = "<div class='pod-card "+classe+"'>";
     h += "<div class='pod-medal'>"+medalha+"</div>";
+    h += imgTag(p.arquivo, p.nome, "pod-foto", "pod-foto-fb");
     h += "<div class='pod-nome'>"+p.nome+"</div>";
     h += "<div class='pod-pts'>"+p.total+"</div>";
     h += "<div class='pod-pts-lbl'>"+posicao+"\u00ba lugar</div>";
@@ -924,8 +925,15 @@ function renderDiaSeletor(){
   }
   diaSelecionadoIdx = jogos.indexOf(alvo);
 
+  var jogosComResultado = jogos.filter(function(j){ return statusJogo(j)!=="scheduled"; });
+  if(jogosComResultado.length===0){
+    el.innerHTML="<div class='av-box'>Nenhum resultado disponivel ainda.</div>";
+    document.getElementById("dia-lista").innerHTML="";
+    return;
+  }
   var h = "";
-  jogos.forEach(function(j,i){
+  jogosComResultado.forEach(function(j){
+    var i = jogos.indexOf(j);
     var liveTag = statusJogo(j)==="live" ? " &#x1F534;" : "";
     h += "<button class='dia-btn"+(i===diaSelecionadoIdx?" av":"")+"' onclick='selecionarDia("+i+",this)'>Jogo "+j.jogo+liveTag+"</button>";
   });
@@ -1040,7 +1048,8 @@ function jogoDoMomento(){
   var finalizados = todosOsJogosDisponiveis.filter(function(j){ return statusJogo(j)==="finished"; });
   if(finalizados.length>0) return finalizados[finalizados.length-1];
 
-  return todosOsJogosDisponiveis[0];
+  // Nenhum jogo com resultado ainda — nao exibir nada
+  return null;
 }
 
 function renderJogoMomento(){
@@ -1052,13 +1061,20 @@ function renderJogoMomento(){
   var selecionado = jogoDoMomento();
 
   var gh="";
-  jogos.forEach(function(j,i){
+  var jogosComResultado = jogos.filter(function(j){ return statusJogo(j)!=="scheduled"; });
+  if(jogosComResultado.length===0){
+    grid.innerHTML="";
+    document.getElementById("jm-hero").innerHTML="<div class='av-box'>Nenhum resultado disponivel ainda.</div>";
+    return;
+  }
+  jogosComResultado.forEach(function(j){
+    var i = jogos.indexOf(j);
     var ativo = selecionado && j.jogo===selecionado.jogo;
     var liveTag = statusJogo(j)==="live" ? " &#x1F534;" : "";
     gh+="<button class='jm-btn"+(ativo?" av":"")+"' onclick='selecionarMomento("+i+",this)'>Jogo "+j.jogo+liveTag+"</button>";
   });
   grid.innerHTML=gh;
-  renderJogoMomentoHero(selecionado || jogos[jogos.length-1]);
+  renderJogoMomentoHero(selecionado || jogosComResultado[jogosComResultado.length-1]);
 }
 
 function selecionarMomento(idx, btn){
