@@ -362,6 +362,13 @@ main{max-width:1100px;margin:0 auto;padding:24px 20px;}
 </nav>
 
 <script>
+// =====================================================
+// CAMPEAO DA COPA — preencha aqui quando definido.
+// Deixe vazio ("") enquanto a Copa nao terminou.
+// Exemplo: var CAMPEAO_OFICIAL = "Brasil";
+// =====================================================
+var CAMPEAO_OFICIAL = "";
+
 var FLAGS = {"BRASIL": "🇧🇷", "ARGENTINA": "🇦🇷", "FRANÇA": "🇫🇷", "ALEMANHA": "🇩🇪", "ESPANHA": "🇪🇸", "PORTUGAL": "🇵🇹", "INGLATERRA": "🏴󠁧󠁢󠁥󠁮󠁧󠁿", "HOLANDA": "🇳🇱", "ITÁLIA": "🇮🇹", "BÉLGICA": "🇧🇪", "URUGUAI": "🇺🇾", "CROÁCIA": "🇭🇷", "MARROCOS": "🇲🇦", "SENEGAL": "🇸🇳", "JAPÃO": "🇯🇵", "ESTADOS UNIDOS": "🇺🇸", "MÉXICO": "🇲🇽", "COLÔMBIA": "🇨🇴", "EQUADOR": "🇪🇨", "CHILE": "🇨🇱", "AUSTRÁLIA": "🇦🇺", "COREIA DO SUL": "🇰🇷", "POLÔNIA": "🇵🇱", "SUÍÇA": "🇨🇭", "DINAMARCA": "🇩🇰", "ÁUSTRIA": "🇦🇹", "TURQUIA": "🇹🇷", "COSTA RICA": "🇨🇷", "NIGÉRIA": "🇳🇬", "GANA": "🇬🇭", "CAMARÕES": "🇨🇲", "CANADÁ": "🇨🇦", "ÁFRICA DO SUL": "🇿🇦", "BÓSNIA E HERZEGOVINA": "🇧🇦", "REPÚBLICA TCHECA": "🇨🇿", "CATAR": "🇶🇦", "PARAGUAI": "🇵🇾", "HAITI": "🇭🇹", "ESCÓCIA": "🏴󠁧󠁢󠁳󠁣󠁴󠁿", "CURAÇÃO": "🇨🇼", "TUNÍSIA": "🇹🇳", "CABO VERDE": "🇨🇻", "EGITO": "🇪🇬", "IRÃ": "🇮🇷", "NOVA ZELÂNDIA": "🇳🇿", "ARÁBIA SAUDITA": "🇸🇦", "IRAQUE": "🇮🇶", "NORUEGA": "🇳🇴", "ARGÉLIA": "🇩🇿", "JORDÂNIA": "🇯🇴", "RD CONGO": "🇨🇩", "UZBEQUISTÃO": "🇺🇿", "PANAMÁ": "🇵🇦", "SUÉCIA": "🇸🇪", "COSTA DO MARFIM": "🇨🇮"};
 function flag(nome){ return FLAGS[(nome||"").toUpperCase()] || "\u26BD"; }
 
@@ -679,16 +686,9 @@ function montarRanking(excluirJogoKey){
   });
 
   // ---- BONUS DE CAMPEAO (+10 pts) ----
-  // So conta no jogo da FINAL, considerando apenas o placar do tempo regulamentar (golsA/golsB).
-  // Se o jogo da final ainda nao tiver status "finished", ou empatar, nenhum bonus e dado.
-  var jogoFinal = TODOS_JOGOS.filter(function(j){ return j.fase==="final"; })[0];
-  var campeaoOficial = null;
-  if(jogoFinal && jogoFinal.status==="finished"){
-    var res = getResultado(jogoFinal.golsA, jogoFinal.golsB);
-    if(res===1) campeaoOficial = jogoFinal.timeA;
-    else if(res===-1) campeaoOficial = jogoFinal.timeB;
-    // res===0 (empate no tempo regulamentar) -> campeaoOficial fica null, ninguem ganha o bonus
-  }
+  // Campeao definido manualmente via variavel CAMPEAO_OFICIAL no topo do script.
+  // Preencha o nome do campeao la e os +10 pts serao aplicados automaticamente.
+  var campeaoOficial = CAMPEAO_OFICIAL.trim() || null;
   if(campeaoOficial){
     Object.keys(campeoes).forEach(function(nome){
       if(!pontos[nome]) pontos[nome] = {porFase:{}, total:0, exatos:0, certos:0, erros:0, livePts:0, campeaoPts:0};
