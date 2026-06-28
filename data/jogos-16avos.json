@@ -3,23 +3,23 @@
   "label": "16 Avos de Final",
   "participantes": [
     {
-      "participante": "ADRIANO",
-      "arquivo": "adriano",
+      "participante": "Adriano",
+      "arquivo": "Adriano",
       "campeao": "Brasil"
     },
     {
-      "participante": "BUMBLEBEE",
-      "arquivo": "bumblebee",
+      "participante": "Bumblebee",
+      "arquivo": "Bumblebee",
       "campeao": "Argentina"
     },
     {
-      "participante": "GANDALF",
-      "arquivo": "gandalf",
+      "participante": "Gandalf",
+      "arquivo": "Gandalf",
       "campeao": "França"
     },
     {
-      "participante": "ADRIANO 2",
-      "arquivo": "adriano_2",
+      "participante": "Adriano 2",
+      "arquivo": "Adriano_2",
       "campeao": "Espanha"
     }
   ],
@@ -32,8 +32,8 @@
       "golsB": null,
       "palpites": [
         {
-          "participante": "ADRIANO",
-          "arquivo": "adriano",
+          "participante": "Adriano",
+          "arquivo": "Adriano",
           "campeao": "Brasil",
           "timeA": "África do Sul",
           "golsA": 0,
@@ -41,8 +41,8 @@
           "golsB": 1
         },
         {
-          "participante": "BUMBLEBEE",
-          "arquivo": "bumblebee",
+          "participante": "Bumblebee",
+          "arquivo": "Bumblebee",
           "campeao": "Argentina",
           "timeA": "África do Sul",
           "golsA": 1,
@@ -50,8 +50,8 @@
           "golsB": 2
         },
         {
-          "participante": "GANDALF",
-          "arquivo": "gandalf",
+          "participante": "Gandalf",
+          "arquivo": "Gandalf",
           "campeao": "França",
           "timeA": "África do Sul",
           "golsA": 2,
@@ -59,8 +59,8 @@
           "golsB": 1
         },
         {
-          "participante": "ADRIANO 2",
-          "arquivo": "adriano_2",
+          "participante": "Adriano 2",
+          "arquivo": "Adriano_2",
           "campeao": "Espanha",
           "timeA": "África do Sul",
           "golsA": 2,
@@ -77,8 +77,8 @@
       "golsB": null,
       "palpites": [
         {
-          "participante": "ADRIANO",
-          "arquivo": "adriano",
+          "participante": "Adriano",
+          "arquivo": "Adriano",
           "campeao": "Brasil",
           "timeA": "Brasil",
           "golsA": 2,
@@ -86,8 +86,8 @@
           "golsB": 0
         },
         {
-          "participante": "BUMBLEBEE",
-          "arquivo": "bumblebee",
+          "participante": "Bumblebee",
+          "arquivo": "Bumblebee",
           "campeao": "Argentina",
           "timeA": "Brasil",
           "golsA": 2,
@@ -95,8 +95,8 @@
           "golsB": 1
         },
         {
-          "participante": "GANDALF",
-          "arquivo": "gandalf",
+          "participante": "Gandalf",
+          "arquivo": "Gandalf",
           "campeao": "França",
           "timeA": "Brasil",
           "golsA": 1,
@@ -104,8 +104,8 @@
           "golsB": 1
         },
         {
-          "participante": "ADRIANO 2",
-          "arquivo": "adriano_2",
+          "participante": "Adriano 2",
+          "arquivo": "Adriano_2",
           "campeao": "Espanha",
           "timeA": "Brasil",
           "golsA": 4,
@@ -122,8 +122,8 @@
       "golsB": null,
       "palpites": [
         {
-          "participante": "ADRIANO",
-          "arquivo": "adriano",
+          "participante": "Adriano",
+          "arquivo": "Adriano",
           "campeao": "Brasil",
           "timeA": "Alemanha",
           "golsA": 3,
@@ -131,8 +131,8 @@
           "golsB": 0
         },
         {
-          "participante": "BUMBLEBEE",
-          "arquivo": "bumblebee",
+          "participante": "Bumblebee",
+          "arquivo": "Bumblebee",
           "campeao": "Argentina",
           "timeA": "Alemanha",
           "golsA": 3,
@@ -140,8 +140,8 @@
           "golsB": 0
         },
         {
-          "participante": "GANDALF",
-          "arquivo": "gandalf",
+          "participante": "Gandalf",
+          "arquivo": "Gandalf",
           "campeao": "França",
           "timeA": "Alemanha",
           "golsA": 1,
@@ -149,8 +149,8 @@
           "golsB": 2
         },
         {
-          "participante": "ADRIANO 2",
-          "arquivo": "adriano_2",
+          "participante": "Adriano 2",
+          "arquivo": "Adriano_2",
           "campeao": "Espanha",
           "timeA": "Alemanha",
           "golsA": 3,
@@ -167,8 +167,8 @@
       "golsB": null,
       "palpites": [
         {
-          "participante": "ADRIANO",
-          "arquivo": "adriano",
+          "participante": "Adriano",
+          "arquivo": "Adriano",
           "campeao": "Brasil",
           "timeA": "Holanda",
           "golsA": 2,
@@ -176,8 +176,8 @@
           "golsB": 0
         },
         {
-          "participante": "BUMBLEBEE",
-          "arquivo": "bumblebee",
+          "participante": "Bumblebee",
+          "arquivo": "Bumblebee",
           "campeao": "Argentina",
           "timeA": "Holanda",
           "golsA": 1,
@@ -185,8 +185,8 @@
           "golsB": 1
         },
         {
-          "participante": "GANDALF",
-          "arquivo": "gandalf",
+          "participante": "Gandalf",
+          "arquivo": "Gandalf",
           "campeao": "França",
           "timeA": "Holanda",
           "golsA": 0,
@@ -194,8 +194,8 @@
           "golsB": 0
         },
         {
-          "participante": "ADRIANO 2",
-          "arquivo": "adriano_2",
+          "participante": "Adriano 2",
+          "arquivo": "Adriano_2",
           "campeao": "Espanha",
           "timeA": "Holanda",
           "golsA": 0,
@@ -212,8 +212,8 @@
       "golsB": null,
       "palpites": [
         {
-          "participante": "ADRIANO",
-          "arquivo": "adriano",
+          "participante": "Adriano",
+          "arquivo": "Adriano",
           "campeao": "Brasil",
           "timeA": "Costa do Marfim",
           "golsA": 1,
@@ -221,8 +221,8 @@
           "golsB": 1
         },
         {
-          "participante": "BUMBLEBEE",
-          "arquivo": "bumblebee",
+          "participante": "Bumblebee",
+          "arquivo": "Bumblebee",
           "campeao": "Argentina",
           "timeA": "Costa do Marfim",
           "golsA": 1,
@@ -230,8 +230,8 @@
           "golsB": 2
         },
         {
-          "participante": "GANDALF",
-          "arquivo": "gandalf",
+          "participante": "Gandalf",
+          "arquivo": "Gandalf",
           "campeao": "França",
           "timeA": "Costa do Marfim",
           "golsA": 2,
@@ -239,8 +239,8 @@
           "golsB": 1
         },
         {
-          "participante": "ADRIANO 2",
-          "arquivo": "adriano_2",
+          "participante": "Adriano 2",
+          "arquivo": "Adriano_2",
           "campeao": "Espanha",
           "timeA": "Costa do Marfim",
           "golsA": 1,
@@ -257,8 +257,8 @@
       "golsB": null,
       "palpites": [
         {
-          "participante": "ADRIANO",
-          "arquivo": "adriano",
+          "participante": "Adriano",
+          "arquivo": "Adriano",
           "campeao": "Brasil",
           "timeA": "França",
           "golsA": 2,
@@ -266,8 +266,8 @@
           "golsB": 0
         },
         {
-          "participante": "BUMBLEBEE",
-          "arquivo": "bumblebee",
+          "participante": "Bumblebee",
+          "arquivo": "Bumblebee",
           "campeao": "Argentina",
           "timeA": "França",
           "golsA": 3,
@@ -275,8 +275,8 @@
           "golsB": 1
         },
         {
-          "participante": "GANDALF",
-          "arquivo": "gandalf",
+          "participante": "Gandalf",
+          "arquivo": "Gandalf",
           "campeao": "França",
           "timeA": "França",
           "golsA": 2,
@@ -284,8 +284,8 @@
           "golsB": 0
         },
         {
-          "participante": "ADRIANO 2",
-          "arquivo": "adriano_2",
+          "participante": "Adriano 2",
+          "arquivo": "Adriano_2",
           "campeao": "Espanha",
           "timeA": "França",
           "golsA": 1,
@@ -302,8 +302,8 @@
       "golsB": null,
       "palpites": [
         {
-          "participante": "ADRIANO",
-          "arquivo": "adriano",
+          "participante": "Adriano",
+          "arquivo": "Adriano",
           "campeao": "Brasil",
           "timeA": "México",
           "golsA": 2,
@@ -311,8 +311,8 @@
           "golsB": 1
         },
         {
-          "participante": "BUMBLEBEE",
-          "arquivo": "bumblebee",
+          "participante": "Bumblebee",
+          "arquivo": "Bumblebee",
           "campeao": "Argentina",
           "timeA": "México",
           "golsA": 2,
@@ -320,8 +320,8 @@
           "golsB": 0
         },
         {
-          "participante": "GANDALF",
-          "arquivo": "gandalf",
+          "participante": "Gandalf",
+          "arquivo": "Gandalf",
           "campeao": "França",
           "timeA": "México",
           "golsA": 1,
@@ -329,8 +329,8 @@
           "golsB": 2
         },
         {
-          "participante": "ADRIANO 2",
-          "arquivo": "adriano_2",
+          "participante": "Adriano 2",
+          "arquivo": "Adriano_2",
           "campeao": "Espanha",
           "timeA": "México",
           "golsA": 3,
@@ -347,8 +347,8 @@
       "golsB": null,
       "palpites": [
         {
-          "participante": "ADRIANO",
-          "arquivo": "adriano",
+          "participante": "Adriano",
+          "arquivo": "Adriano",
           "campeao": "Brasil",
           "timeA": "Inglaterra",
           "golsA": 3,
@@ -356,8 +356,8 @@
           "golsB": 0
         },
         {
-          "participante": "BUMBLEBEE",
-          "arquivo": "bumblebee",
+          "participante": "Bumblebee",
+          "arquivo": "Bumblebee",
           "campeao": "Argentina",
           "timeA": "Inglaterra",
           "golsA": 4,
@@ -365,8 +365,8 @@
           "golsB": 0
         },
         {
-          "participante": "GANDALF",
-          "arquivo": "gandalf",
+          "participante": "Gandalf",
+          "arquivo": "Gandalf",
           "campeao": "França",
           "timeA": "Inglaterra",
           "golsA": 3,
@@ -374,8 +374,8 @@
           "golsB": 0
         },
         {
-          "participante": "ADRIANO 2",
-          "arquivo": "adriano_2",
+          "participante": "Adriano 2",
+          "arquivo": "Adriano_2",
           "campeao": "Espanha",
           "timeA": "Inglaterra",
           "golsA": 1,
@@ -392,8 +392,8 @@
       "golsB": null,
       "palpites": [
         {
-          "participante": "ADRIANO",
-          "arquivo": "adriano",
+          "participante": "Adriano",
+          "arquivo": "Adriano",
           "campeao": "Brasil",
           "timeA": "Bélgica",
           "golsA": 2,
@@ -401,8 +401,8 @@
           "golsB": 0
         },
         {
-          "participante": "BUMBLEBEE",
-          "arquivo": "bumblebee",
+          "participante": "Bumblebee",
+          "arquivo": "Bumblebee",
           "campeao": "Argentina",
           "timeA": "Bélgica",
           "golsA": 2,
@@ -410,8 +410,8 @@
           "golsB": 1
         },
         {
-          "participante": "GANDALF",
-          "arquivo": "gandalf",
+          "participante": "Gandalf",
+          "arquivo": "Gandalf",
           "campeao": "França",
           "timeA": "Bélgica",
           "golsA": 1,
@@ -419,8 +419,8 @@
           "golsB": 1
         },
         {
-          "participante": "ADRIANO 2",
-          "arquivo": "adriano_2",
+          "participante": "Adriano 2",
+          "arquivo": "Adriano_2",
           "campeao": "Espanha",
           "timeA": "Bélgica",
           "golsA": 3,
@@ -437,8 +437,8 @@
       "golsB": null,
       "palpites": [
         {
-          "participante": "ADRIANO",
-          "arquivo": "adriano",
+          "participante": "Adriano",
+          "arquivo": "Adriano",
           "campeao": "Brasil",
           "timeA": "Estados Unidos",
           "golsA": 2,
@@ -446,8 +446,8 @@
           "golsB": 1
         },
         {
-          "participante": "BUMBLEBEE",
-          "arquivo": "bumblebee",
+          "participante": "Bumblebee",
+          "arquivo": "Bumblebee",
           "campeao": "Argentina",
           "timeA": "Estados Unidos",
           "golsA": 2,
@@ -455,8 +455,8 @@
           "golsB": 0
         },
         {
-          "participante": "GANDALF",
-          "arquivo": "gandalf",
+          "participante": "Gandalf",
+          "arquivo": "Gandalf",
           "campeao": "França",
           "timeA": "Estados Unidos",
           "golsA": 1,
@@ -464,8 +464,8 @@
           "golsB": 0
         },
         {
-          "participante": "ADRIANO 2",
-          "arquivo": "adriano_2",
+          "participante": "Adriano 2",
+          "arquivo": "Adriano_2",
           "campeao": "Espanha",
           "timeA": "Estados Unidos",
           "golsA": 0,
@@ -482,8 +482,8 @@
       "golsB": null,
       "palpites": [
         {
-          "participante": "ADRIANO",
-          "arquivo": "adriano",
+          "participante": "Adriano",
+          "arquivo": "Adriano",
           "campeao": "Brasil",
           "timeA": "Espanha",
           "golsA": 2,
@@ -491,8 +491,8 @@
           "golsB": 0
         },
         {
-          "participante": "BUMBLEBEE",
-          "arquivo": "bumblebee",
+          "participante": "Bumblebee",
+          "arquivo": "Bumblebee",
           "campeao": "Argentina",
           "timeA": "Espanha",
           "golsA": 3,
@@ -500,8 +500,8 @@
           "golsB": 0
         },
         {
-          "participante": "GANDALF",
-          "arquivo": "gandalf",
+          "participante": "Gandalf",
+          "arquivo": "Gandalf",
           "campeao": "França",
           "timeA": "Espanha",
           "golsA": 2,
@@ -509,8 +509,8 @@
           "golsB": 1
         },
         {
-          "participante": "ADRIANO 2",
-          "arquivo": "adriano_2",
+          "participante": "Adriano 2",
+          "arquivo": "Adriano_2",
           "campeao": "Espanha",
           "timeA": "Espanha",
           "golsA": 4,
@@ -527,8 +527,8 @@
       "golsB": null,
       "palpites": [
         {
-          "participante": "ADRIANO",
-          "arquivo": "adriano",
+          "participante": "Adriano",
+          "arquivo": "Adriano",
           "campeao": "Brasil",
           "timeA": "Portugal",
           "golsA": 2,
@@ -536,8 +536,8 @@
           "golsB": 1
         },
         {
-          "participante": "BUMBLEBEE",
-          "arquivo": "bumblebee",
+          "participante": "Bumblebee",
+          "arquivo": "Bumblebee",
           "campeao": "Argentina",
           "timeA": "Portugal",
           "golsA": 2,
@@ -545,8 +545,8 @@
           "golsB": 1
         },
         {
-          "participante": "GANDALF",
-          "arquivo": "gandalf",
+          "participante": "Gandalf",
+          "arquivo": "Gandalf",
           "campeao": "França",
           "timeA": "Portugal",
           "golsA": 0,
@@ -554,8 +554,8 @@
           "golsB": 1
         },
         {
-          "participante": "ADRIANO 2",
-          "arquivo": "adriano_2",
+          "participante": "Adriano 2",
+          "arquivo": "Adriano_2",
           "campeao": "Espanha",
           "timeA": "Portugal",
           "golsA": 3,
@@ -572,8 +572,8 @@
       "golsB": null,
       "palpites": [
         {
-          "participante": "ADRIANO",
-          "arquivo": "adriano",
+          "participante": "Adriano",
+          "arquivo": "Adriano",
           "campeao": "Brasil",
           "timeA": "Suíça",
           "golsA": 1,
@@ -581,8 +581,8 @@
           "golsB": 1
         },
         {
-          "participante": "BUMBLEBEE",
-          "arquivo": "bumblebee",
+          "participante": "Bumblebee",
+          "arquivo": "Bumblebee",
           "campeao": "Argentina",
           "timeA": "Suíça",
           "golsA": 1,
@@ -590,8 +590,8 @@
           "golsB": 0
         },
         {
-          "participante": "GANDALF",
-          "arquivo": "gandalf",
+          "participante": "Gandalf",
+          "arquivo": "Gandalf",
           "campeao": "França",
           "timeA": "Suíça",
           "golsA": 0,
@@ -599,8 +599,8 @@
           "golsB": 1
         },
         {
-          "participante": "ADRIANO 2",
-          "arquivo": "adriano_2",
+          "participante": "Adriano 2",
+          "arquivo": "Adriano_2",
           "campeao": "Espanha",
           "timeA": "Suíça",
           "golsA": 1,
@@ -617,8 +617,8 @@
       "golsB": null,
       "palpites": [
         {
-          "participante": "ADRIANO",
-          "arquivo": "adriano",
+          "participante": "Adriano",
+          "arquivo": "Adriano",
           "campeao": "Brasil",
           "timeA": "Austrália",
           "golsA": 1,
@@ -626,8 +626,8 @@
           "golsB": 0
         },
         {
-          "participante": "BUMBLEBEE",
-          "arquivo": "bumblebee",
+          "participante": "Bumblebee",
+          "arquivo": "Bumblebee",
           "campeao": "Argentina",
           "timeA": "Austrália",
           "golsA": 1,
@@ -635,8 +635,8 @@
           "golsB": 1
         },
         {
-          "participante": "GANDALF",
-          "arquivo": "gandalf",
+          "participante": "Gandalf",
+          "arquivo": "Gandalf",
           "campeao": "França",
           "timeA": "Austrália",
           "golsA": 2,
@@ -644,8 +644,8 @@
           "golsB": 3
         },
         {
-          "participante": "ADRIANO 2",
-          "arquivo": "adriano_2",
+          "participante": "Adriano 2",
+          "arquivo": "Adriano_2",
           "campeao": "Espanha",
           "timeA": "Austrália",
           "golsA": 0,
@@ -662,8 +662,8 @@
       "golsB": null,
       "palpites": [
         {
-          "participante": "ADRIANO",
-          "arquivo": "adriano",
+          "participante": "Adriano",
+          "arquivo": "Adriano",
           "campeao": "Brasil",
           "timeA": "Argentina",
           "golsA": 0,
@@ -671,8 +671,8 @@
           "golsB": 0
         },
         {
-          "participante": "BUMBLEBEE",
-          "arquivo": "bumblebee",
+          "participante": "Bumblebee",
+          "arquivo": "Bumblebee",
           "campeao": "Argentina",
           "timeA": "Argentina",
           "golsA": 2,
@@ -680,8 +680,8 @@
           "golsB": 0
         },
         {
-          "participante": "GANDALF",
-          "arquivo": "gandalf",
+          "participante": "Gandalf",
+          "arquivo": "Gandalf",
           "campeao": "França",
           "timeA": "Argentina",
           "golsA": 1,
@@ -689,8 +689,8 @@
           "golsB": 1
         },
         {
-          "participante": "ADRIANO 2",
-          "arquivo": "adriano_2",
+          "participante": "Adriano 2",
+          "arquivo": "Adriano_2",
           "campeao": "Espanha",
           "timeA": "Argentina",
           "golsA": 1,
@@ -707,8 +707,8 @@
       "golsB": null,
       "palpites": [
         {
-          "participante": "ADRIANO",
-          "arquivo": "adriano",
+          "participante": "Adriano",
+          "arquivo": "Adriano",
           "campeao": "Brasil",
           "timeA": "Colômbia",
           "golsA": 2,
@@ -716,8 +716,8 @@
           "golsB": 0
         },
         {
-          "participante": "BUMBLEBEE",
-          "arquivo": "bumblebee",
+          "participante": "Bumblebee",
+          "arquivo": "Bumblebee",
           "campeao": "Argentina",
           "timeA": "Colômbia",
           "golsA": 3,
@@ -725,8 +725,8 @@
           "golsB": 1
         },
         {
-          "participante": "GANDALF",
-          "arquivo": "gandalf",
+          "participante": "Gandalf",
+          "arquivo": "Gandalf",
           "campeao": "França",
           "timeA": "Colômbia",
           "golsA": 2,
@@ -734,8 +734,8 @@
           "golsB": 0
         },
         {
-          "participante": "ADRIANO 2",
-          "arquivo": "adriano_2",
+          "participante": "Adriano 2",
+          "arquivo": "Adriano_2",
           "campeao": "Espanha",
           "timeA": "Colômbia",
           "golsA": 0,
