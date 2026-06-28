@@ -77,6 +77,7 @@ main{max-width:1100px;margin:0 auto;padding:24px 20px;}
 .pp-tag2{font-size:10px;color:var(--sv);flex:1;}
 .pp-tag{font-size:10px;color:var(--sv);background:rgba(255,255,255,.05);padding:2px 8px;border-radius:4px;white-space:nowrap;}
 .pp-tag.acerto{background:rgba(0,153,64,.15);color:#66cc88;}
+.pp-tag.acerto3{background:rgba(255,193,7,.12);color:var(--am);}
 .pcard{background:var(--cd);border-radius:10px;padding:20px;margin-bottom:14px;border:1px solid var(--bd);}
 .pcard h3{font-family:'Oswald',sans-serif;font-size:15px;color:var(--am);margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid var(--bd);}
 .prow{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.04);font-size:14px;}
@@ -124,8 +125,10 @@ main{max-width:1100px;margin:0 auto;padding:24px 20px;}
 .jm-td-pos{color:var(--sv);font-family:'Oswald',sans-serif;width:30px;}
 .jm-td-palp{font-family:'Oswald',sans-serif;font-weight:600;}
 .jm-td-palp.acertou{color:var(--va);}
+.acertou3{color:var(--am);}
 .jm-td-pts{font-family:'Oswald',sans-serif;font-weight:700;color:var(--sv);}
-.jm-td-pts.ganhou{color:var(--am);}
+.jm-td-pts.ganhou5{color:var(--va);}
+.jm-td-pts.ganhou3{color:var(--am);}
 .dia-sel{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:18px;}
 .dia-btn{background:var(--cd);border:1px solid var(--bd);color:var(--sv);font-family:'Oswald',sans-serif;font-size:12px;padding:8px 16px;border-radius:8px;cursor:pointer;transition:all .2s;}
 .dia-btn:hover,.dia-btn.av{background:var(--am);color:#000;border-color:var(--am);font-weight:700;}
@@ -503,8 +506,6 @@ function findGameIdLoose(teamA, teamB){
 function aplicarResultadosReais(){
   // Para cada jogo carregado, se houver resultado real correspondente, sobrescreve
   // golsA/golsB/status SOMENTE em memoria (nao altera os arquivos JSON originais)
-
-  // 1) Atualiza TODOS_JOGOS (usado pelo ranking)
   TODOS_JOGOS.forEach(function(g){
     var key = g.fase+"-"+g.jogo;
     var r = realResults[key];
@@ -515,27 +516,6 @@ function aplicarResultadosReais(){
       g.timeElapsed = r.timeElapsed;
       g.minute = r.minute;
     }
-  });
-
-  // 2) Atualiza FASES_CARREGADAS (usado pelo render de Jogos, Dia e Momento)
-  // Sem resultado da API: golsA/golsB ficam null (mostra "vs" / "Aguardando")
-  FASES.forEach(function(f){
-    var dados = FASES_CARREGADAS[f.k];
-    if(!dados) return;
-    dados.jogos.forEach(function(j){
-      var key = f.k+"-"+j.jogo;
-      var r = realResults[key];
-      if(r){
-        j.golsA = r.scoreA;
-        j.golsB = r.scoreB;
-        j.status = r.status;
-      } else {
-        // Sem resultado confirmado pela API: zera para nao exibir palpite como resultado
-        j.golsA = null;
-        j.golsB = null;
-        j.status = j.status === "live" ? "live" : "scheduled";
-      }
-    });
   });
 }
 
@@ -865,7 +845,7 @@ function renderFase(fk){
           if(pp.golsA===j.golsA && pp.golsB===j.golsB) pts=5;
           else if((pp.golsA>pp.golsB)===(j.golsA>j.golsB) && j.golsA!==j.golsB) pts=3;
         }
-        var tagClass = pts>0 ? "acerto" : "";
+        var tagClass = pts===5 ? "acerto" : (pts===3 ? "acerto3" : "");
         var tagTxt = temResultado(j) ? ("+"+pts+" pts") : "aguardando";
         var arquivo = pp.arquivo || pp.participante.split(" ")[0].toLowerCase();
         plist += "<div class='prow-p'>";
@@ -1044,7 +1024,9 @@ function renderJogoMomentoHero(j){
       else if((pp.golsA>pp.golsB)===(j.golsA>j.golsB)&&j.golsA!==j.golsB) pts=3;
     }
     var ptsTxt = temResultado(j) ? ("+"+pts+" pts") : "aguardando";
-    th+="<tr><td class='jm-td-pos'>"+(i+1)+"\u00ba</td><td>"+pp.participante+"</td><td class='jm-td-palp"+(pts>0?" acertou":"")+"'>"+pp.golsA+" x "+pp.golsB+"</td><td class='jm-td-pts"+(pts>0?" ganhou":"")+"'>"+ptsTxt+"</td></tr>";
+    var palCls = pts===5?" acertou":(pts===3?" acertou3":"");
+    var ptsCls = pts===5?" ganhou5":(pts===3?" ganhou3":"");
+    th+="<tr><td class='jm-td-pos'>"+(i+1)+"\u00ba</td><td>"+pp.participante+"</td><td class='jm-td-palp"+palCls+"'>"+pp.golsA+" x "+pp.golsB+"</td><td class='jm-td-pts"+ptsCls+"'>"+ptsTxt+"</td></tr>";
   });
   document.getElementById("jm-tbody").innerHTML=th;
 }
@@ -1187,18 +1169,6 @@ function ir(id,btn){
 
 // ---------- INIT ----------
 carregarFases(function(){
-  // Zera golsA/golsB de todos os jogos carregados do JSON antes de qualquer render.
-  // Os placares reais virao exclusivamente da API (aplicarResultadosReais).
-  FASES.forEach(function(f){
-    var dados = FASES_CARREGADAS[f.k];
-    if(!dados) return;
-    dados.jogos.forEach(function(j){
-      j.golsA = null;
-      j.golsB = null;
-      j.status = "scheduled";
-    });
-  });
-
   calcularRanking();
   renderLiveBanner();
   renderRanking();
