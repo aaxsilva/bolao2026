@@ -291,6 +291,11 @@
       "participante": "Lucca",
       "arquivo": "lucca",
       "campeao": "França"
+    },
+    {
+      "participante": "Toninho",
+      "arquivo": "toninho",
+      "campeao": "Brasil"
     }
   ],
   "jogos": [
@@ -822,6 +827,15 @@
           "golsA": 1,
           "timeB": "Canadá",
           "golsB": 3
+        },
+        {
+          "participante": "Toninho",
+          "arquivo": "toninho",
+          "campeao": "Brasil",
+          "timeA": "África do Sul",
+          "golsA": 1,
+          "timeB": "Canadá",
+          "golsB": 1
         }
       ]
     },
@@ -1353,6 +1367,15 @@
           "golsA": 2,
           "timeB": "Japão",
           "golsB": 1
+        },
+        {
+          "participante": "Toninho",
+          "arquivo": "toninho",
+          "campeao": "Brasil",
+          "timeA": "Brasil",
+          "golsA": 2,
+          "timeB": "Japão",
+          "golsB": 0
         }
       ]
     },
@@ -1882,6 +1905,15 @@
           "campeao": "França",
           "timeA": "Alemanha",
           "golsA": 4,
+          "timeB": "Paraguai",
+          "golsB": 0
+        },
+        {
+          "participante": "Toninho",
+          "arquivo": "toninho",
+          "campeao": "Brasil",
+          "timeA": "Alemanha",
+          "golsA": 2,
           "timeB": "Paraguai",
           "golsB": 0
         }
@@ -2415,6 +2447,15 @@
           "golsA": 2,
           "timeB": "Marrocos",
           "golsB": 1
+        },
+        {
+          "participante": "Toninho",
+          "arquivo": "toninho",
+          "campeao": "Brasil",
+          "timeA": "Holanda",
+          "golsA": 3,
+          "timeB": "Marrocos",
+          "golsB": 1
         }
       ]
     },
@@ -2946,6 +2987,15 @@
           "golsA": 1,
           "timeB": "Noruega",
           "golsB": 2
+        },
+        {
+          "participante": "Toninho",
+          "arquivo": "toninho",
+          "campeao": "Brasil",
+          "timeA": "Costa do Marfim",
+          "golsA": 1,
+          "timeB": "Noruega",
+          "golsB": 1
         }
       ]
     },
@@ -3477,6 +3527,15 @@
           "golsA": 3,
           "timeB": "Suécia",
           "golsB": 0
+        },
+        {
+          "participante": "Toninho",
+          "arquivo": "toninho",
+          "campeao": "Brasil",
+          "timeA": "França",
+          "golsA": 1,
+          "timeB": "Suécia",
+          "golsB": 1
         }
       ]
     },
@@ -4006,6 +4065,15 @@
           "campeao": "França",
           "timeA": "México",
           "golsA": 2,
+          "timeB": "Equador",
+          "golsB": 0
+        },
+        {
+          "participante": "Toninho",
+          "arquivo": "toninho",
+          "campeao": "Brasil",
+          "timeA": "México",
+          "golsA": 3,
           "timeB": "Equador",
           "golsB": 0
         }
@@ -4539,6 +4607,15 @@
           "golsA": 3,
           "timeB": "RD Congo",
           "golsB": 1
+        },
+        {
+          "participante": "Toninho",
+          "arquivo": "toninho",
+          "campeao": "Brasil",
+          "timeA": "Inglaterra",
+          "golsA": 0,
+          "timeB": "RD Congo",
+          "golsB": 0
         }
       ]
     },
@@ -5070,6 +5147,15 @@
           "golsA": 2,
           "timeB": "Senegal",
           "golsB": 0
+        },
+        {
+          "participante": "Toninho",
+          "arquivo": "toninho",
+          "campeao": "Brasil",
+          "timeA": "Bélgica",
+          "golsA": 0,
+          "timeB": "Senegal",
+          "golsB": 1
         }
       ]
     },
@@ -5601,6 +5687,15 @@
           "golsA": 2,
           "timeB": "Bósnia e Herzegovina",
           "golsB": "O"
+        },
+        {
+          "participante": "Toninho",
+          "arquivo": "toninho",
+          "campeao": "Brasil",
+          "timeA": "Estados Unidos",
+          "golsA": 2,
+          "timeB": "Bósnia e Herzegovina",
+          "golsB": 1
         }
       ]
     },
@@ -6132,6 +6227,15 @@
           "golsA": 3,
           "timeB": "Áustria",
           "golsB": 0
+        },
+        {
+          "participante": "Toninho",
+          "arquivo": "toninho",
+          "campeao": "Brasil",
+          "timeA": "Espanha",
+          "golsA": 2,
+          "timeB": "Áustria",
+          "golsB": 1
         }
       ]
     },
@@ -6661,6 +6765,15 @@
           "campeao": "França",
           "timeA": "Portugal",
           "golsA": 1,
+          "timeB": "Croácia",
+          "golsB": 0
+        },
+        {
+          "participante": "Toninho",
+          "arquivo": "toninho",
+          "campeao": "Brasil",
+          "timeA": "Portugal",
+          "golsA": 4,
           "timeB": "Croácia",
           "golsB": 0
         }
@@ -7194,6 +7307,15 @@
           "golsA": 1,
           "timeB": "Argélia",
           "golsB": 0
+        },
+        {
+          "participante": "Toninho",
+          "arquivo": "toninho",
+          "campeao": "Brasil",
+          "timeA": "Suíça",
+          "golsA": 0,
+          "timeB": "Argélia",
+          "golsB": 3
         }
       ]
     },
@@ -7723,6 +7845,15 @@
           "campeao": "França",
           "timeA": "Austrália",
           "golsA": 0,
+          "timeB": "Egito",
+          "golsB": 1
+        },
+        {
+          "participante": "Toninho",
+          "arquivo": "toninho",
+          "campeao": "Brasil",
+          "timeA": "Austrália",
+          "golsA": 2,
           "timeB": "Egito",
           "golsB": 1
         }
@@ -8256,6 +8387,15 @@
           "golsA": 4,
           "timeB": "Cabo Verde",
           "golsB": 0
+        },
+        {
+          "participante": "Toninho",
+          "arquivo": "toninho",
+          "campeao": "Brasil",
+          "timeA": "Argentina",
+          "golsA": 0,
+          "timeB": "Cabo Verde",
+          "golsB": 1
         }
       ]
     },
@@ -8264,7 +8404,7 @@
       "timeA": "Colômbia",
       "golsA": 0,
       "timeB": "Gana",
-      "golsB": null,
+      "golsB": 0,
       "palpites": [
         {
           "participante": "Adriano",
@@ -8785,6 +8925,15 @@
           "campeao": "França",
           "timeA": "Colômbia",
           "golsA": 1,
+          "timeB": "Gana",
+          "golsB": 0
+        },
+        {
+          "participante": "Toninho",
+          "arquivo": "toninho",
+          "campeao": "Brasil",
+          "timeA": "Colômbia",
+          "golsA": 0,
           "timeB": "Gana",
           "golsB": 0
         }
