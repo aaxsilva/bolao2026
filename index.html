@@ -103,6 +103,7 @@ main{max-width:1100px;margin:0 auto;padding:24px 20px;}
 .pod-nome{font-family:'Oswald',sans-serif;font-size:13px;font-weight:600;margin-bottom:4px;}
 .pod-pts{font-family:'Oswald',sans-serif;font-size:20px;font-weight:700;color:var(--am);}
 .pod-pts-lbl{font-size:10px;color:var(--sv);text-transform:uppercase;letter-spacing:1px;}
+.pod-parcial{display:inline-flex;align-items:center;gap:4px;background:rgba(239,68,68,.15);border:1px solid rgba(239,68,68,.3);border-radius:10px;font-size:11px;font-weight:700;color:#fca5a5;padding:2px 8px;margin-top:4px;}.pod-parcial::before{content:'\25CF';font-size:7px;color:#ef4444;margin-right:2px;}
 .quickgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:20px;}
 .qcard{background:var(--cd);border:1px solid var(--bd);border-radius:10px;padding:16px;cursor:pointer;transition:all .2s;text-align:center;}
 .qcard:hover{border-color:var(--am);transform:translateY(-2px);}
@@ -925,12 +926,16 @@ function renderPodium(){
   if(!wrap) return;
   if(top3.length<3){ wrap.innerHTML="<div class='av-box'>Ranking ainda nao tem participantes suficientes.</div>"; return; }
 
+  var hasLivePod = TODOS_JOGOS.some(function(j){ return j.status==="live"; });
   function cardHtml(p, classe, medalha, posicao){
     var h = "<div class='pod-card "+classe+"'>";
     h += "<div class='pod-medal'>"+medalha+"</div>";
     h += imgTag(p.arquivo, p.nome, "pod-foto", "pod-foto-fb");
     h += "<div class='pod-nome'>"+p.nome+"</div>";
-    h += "<div class='pod-pts'>"+p.total+"</div>";
+    h += "<div class='pod-pts'>"+p.total+" pts</div>";
+    if(hasLivePod && p.livePts>0){
+      h += "<div class='pod-parcial'>+"+p.livePts+" parcial</div>";
+    }
     h += "<div class='pod-pts-lbl'>"+posicao+"\u00ba lugar</div>";
     h += "</div>";
     return h;
