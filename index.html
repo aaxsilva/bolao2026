@@ -728,9 +728,12 @@ function montarRanking(excluirJogoKey){
     var p = pontos[nome];
     return {nome:nome, arquivo:arquivos[nome], campeao:campeoes[nome]||null, total:p.total, exatos:p.exatos, certos:p.certos, erros:p.erros, livePts:p.livePts, campeaoPts:p.campeaoPts, campeaoOficial:campeaoOficial, porFase:p.porFase};
   });
-  // Ordenacao: pontos confirmados desc, depois exatos desc, depois nome asc
+  // Ordenacao: se ha jogo ao vivo, ordena por total+livePts para refletir posicao momentanea
+  var temLive = TODOS_JOGOS.some(function(j){ return j.status==="live"; });
   lista.sort(function(a,b){
-    if(b.total!==a.total) return b.total-a.total;
+    var totA = temLive ? a.total+a.livePts : a.total;
+    var totB = temLive ? b.total+b.livePts : b.total;
+    if(totB!==totA) return totB-totA;
     if(b.exatos!==a.exatos) return b.exatos-a.exatos;
     return a.nome.localeCompare(b.nome,'pt-BR');
   });
@@ -745,8 +748,24 @@ function calcularRanking(){
 
 // Ranking "anterior" = ranking sem considerar o ultimo jogo finalizado (mesma logica do bolao de referencia)
 function calcularRankingAnterior(){
+  var liveJogos = TODOS_JOGOS.filter(function(j){ return j.status==="live"; });
   var finalizados = TODOS_JOGOS.filter(function(j){ return j.status==="finished"; });
-  if(finalizados.length < 2) return null; // sem jogos suficientes para calcular tendencia
+
+  // Com jogo ao vivo: ranking anterior = ranking SEM livePts (so pontos finalizados)
+  // Isso mostra a variacao de posicao causada pelo jogo em andamento
+  if(liveJogos.length > 0){
+    var base = montarRanking(null); // inclui livePts no objeto mas nao na ordenacao ainda
+    // Recalcula ordenando por total SEM livePts para obter posicao anterior
+    var anterior = base.slice().sort(function(a,b){
+      if(b.total !== a.total) return b.total - a.total;
+      if(b.exatos !== a.exatos) return b.exatos - a.exatos;
+      return a.nome.localeCompare(b.nome,'pt-BR');
+    });
+    return anterior;
+  }
+
+  // Sem jogo ao vivo: logica original (exclui ultimo jogo finalizado)
+  if(finalizados.length < 2) return null;
   var ultimo = finalizados[finalizados.length-1];
   var key = ultimo.fase+"-"+ultimo.jogo;
   return montarRanking(key);
