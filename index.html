@@ -873,7 +873,7 @@ function renderFase(fk){
         plist += "<div class='prow-p'>";
         plist += imgTag(arquivo, pp.participante, "pp-foto", "pp-foto-fb");
         plist += "<div class='pp-nome'>"+pp.participante+"</div>";
-        plist += "<div class='pp-placar'>"+pp.golsA+" x "+pp.golsB+"</div>";
+        plist += "<div class='pp-placar'>"+placarHTML(pp.golsA,pp.golsB)+"</div>";
         plist += "<div class='pp-tag2'>"+flag(pp.timeA)+" "+cap(pp.timeA)+" x "+cap(pp.timeB)+" "+flag(pp.timeB)+"</div>";
         plist += "<div class='pp-tag "+tagClass+"'>"+tagTxt+"</div>";
         plist += "</div>";
@@ -932,95 +932,143 @@ function ultimaFaseDisponivel(){
   return disp.length ? disp[disp.length-1] : null;
 }
 
-var diaSelecionadoIdx = 0;
+function formatarDataBr(isoDate){
+  // "2026-06-28" -> "28/6"
+  if(!isoDate) return "";
+  var partes = isoDate.split("-");
+  if(partes.length!==3) return isoDate;
+  var dia = parseInt(partes[2],10);
+  var mes = parseInt(partes[1],10);
+  return dia+"/"+mes;
+}
+
+var dataSelecionada = null; // string ISO "2026-06-28"
+
+function todosOsJogosCarregados(){
+  var lista = [];
+  FASES.forEach(function(f){
+    var dados = FASES_CARREGADAS[f.k];
+    if(!dados) return;
+    dados.jogos.forEach(function(j){ lista.push(j); });
+  });
+  return lista;
+}
+
+function datasDisponiveis(){
+  var jogos = todosOsJogosCarregados().filter(function(j){ return !!j.data; });
+  var datasSet = {};
+  jogos.forEach(function(j){ datasSet[j.data] = true; });
+  var datas = Object.keys(datasSet);
+  datas.sort(); // ordem cronologica (string ISO ordena corretamente)
+  return datas;
+}
+
+function escolherDataPadrao(){
+  var datas = datasDisponiveis();
+  if(datas.length===0) return null;
+
+  var jogos = todosOsJogosCarregados();
+  // prioridade: data com jogo "live" > data do ultimo jogo "finished" > primeira data disponivel
+  var live = jogos.filter(function(j){ return statusJogo(j)==="live" && j.data; });
+  if(live.length>0) return live[live.length-1].data;
+
+  var finalizados = jogos.filter(function(j){ return statusJogo(j)==="finished" && j.data; });
+  if(finalizados.length>0) return finalizados[finalizados.length-1].data;
+
+  return datas[0];
+}
 
 function renderDiaSeletor(){
-  var f = ultimaFaseDisponivel();
   var el = document.getElementById("dia-sel");
   if(!el) return;
-  if(!f){ el.innerHTML = "<div class='av-box'>Nenhuma fase com resultado ainda.</div>"; return; }
 
-  var jogos = FASES_CARREGADAS[f.k].jogos;
-  // seleciona por padrao o jogo "do dia" (mesmo critério do Jogo do Momento: live > finished mais recente > primeiro)
-  var live = jogos.filter(function(j){ return statusJogo(j)==="live"; });
-  var alvo = live.length ? live[live.length-1] : null;
-  if(!alvo){
-    var finalizados = jogos.filter(function(j){ return statusJogo(j)==="finished"; });
-    alvo = finalizados.length ? finalizados[finalizados.length-1] : jogos[0];
-  }
-  diaSelecionadoIdx = jogos.indexOf(alvo);
-
-  var jogosComResultado = jogos.filter(function(j){ return statusJogo(j)!=="scheduled"; });
-  if(jogosComResultado.length===0){
-    el.innerHTML="<div class='av-box'>Nenhum resultado disponivel ainda.</div>";
-    document.getElementById("dia-lista").innerHTML="";
+  var datas = datasDisponiveis();
+  if(datas.length===0){
+    el.innerHTML = "<div class='av-box'>Nenhuma data disponivel ainda.</div>";
+    document.getElementById("dia-lista").innerHTML = "";
     return;
   }
+
+  if(!dataSelecionada || datas.indexOf(dataSelecionada)===-1){
+    dataSelecionada = escolherDataPadrao();
+  }
+
+  var jogos = todosOsJogosCarregados();
   var h = "";
-  jogosComResultado.forEach(function(j){
-    var i = jogos.indexOf(j);
-    var liveTag = statusJogo(j)==="live" ? " &#x1F534;" : "";
-    h += "<button class='dia-btn"+(i===diaSelecionadoIdx?" av":"")+"' onclick='selecionarDia("+i+",this)'>Jogo "+j.jogo+liveTag+"</button>";
+  datas.forEach(function(d){
+    var temLiveNessaData = jogos.some(function(j){ return j.data===d && statusJogo(j)==="live"; });
+    var liveTag = temLiveNessaData ? " &#x1F534;" : "";
+    h += "<button class='dia-btn"+(d===dataSelecionada?" av":"")+"' onclick=\"selecionarDia('"+d+"',this)\">"+formatarDataBr(d)+liveTag+"</button>";
   });
   el.innerHTML = h;
 }
 
-function selecionarDia(idx, btn){
+function selecionarDia(dataIso, btn){
   document.querySelectorAll(".dia-btn").forEach(function(b){b.classList.remove("av");});
   if(btn) btn.classList.add("av");
-  diaSelecionadoIdx = idx;
+  dataSelecionada = dataIso;
   renderDia();
 }
 
 function renderDia(){
   var cont = document.getElementById("dia-lista");
   if(!cont) return;
-  var f = ultimaFaseDisponivel();
-  if(!f){ cont.innerHTML=""; return; }
-  var dados = FASES_CARREGADAS[f.k];
-  var j = dados.jogos[diaSelecionadoIdx] || dados.jogos[0];
-  if(!j){ cont.innerHTML="<div class='av-box'>Nenhum jogo disponivel.</div>"; return; }
 
-  var id="dia-"+j.jogo;
-  var fa=flag(j.timeA), fb=flag(j.timeB);
-  var vA=0,vE=0,vB=0;
-  j.palpites.forEach(function(pp){
-    if(pp.golsA>pp.golsB) vA++; else if(pp.golsB>pp.golsA) vB++; else vE++;
-  });
-  var tot=j.palpites.length;
-  var pctA= tot?Math.round((vA/tot)*1000)/10:0;
-  var pctE= tot?Math.round((vE/tot)*1000)/10:0;
-  var pctB= tot?Math.round((vB/tot)*1000)/10:0;
+  if(!dataSelecionada){
+    cont.innerHTML = "<div class='av-box'>Selecione uma data para ver os jogos.</div>";
+    return;
+  }
 
-  var contagem={};
-  j.palpites.forEach(function(pp){
-    var key=pp.golsA+"x"+pp.golsB;
-    contagem[key]=(contagem[key]||0)+1;
-  });
-  var arr=Object.keys(contagem).map(function(k){return {res:k,n:contagem[k]};});
-  arr.sort(function(a,b){return b.n-a.n;});
-  arr=arr.slice(0,6);
-  var ph="";
-  arr.forEach(function(it){
-    var pc=Math.round((it.n/tot)*1000)/10;
-    ph+="<div class='plac-row'><div class='plac-qnt'>"+it.n+" X</div><span class='plac-seta'>\u2190</span><div class='plac-res'>"+it.res.replace('x',' x ')+"</div><span class='plac-seta'>\u2192</span><div class='plac-pct'>"+pc+"%</div></div>";
-  });
+  var jogosDessaData = todosOsJogosCarregados().filter(function(j){ return j.data===dataSelecionada; });
+  if(jogosDessaData.length===0){
+    cont.innerHTML = "<div class='av-box'>Nenhum jogo encontrado para essa data.</div>";
+    return;
+  }
 
-  var h="<div class='jc'>";
-  h+="<div class='jch'><span class='dt'>Jogo "+j.jogo+" &middot; "+f.l+"</span><span>"+(temResultado(j)?("Resultado: "+j.golsA+"x"+j.golsB):"Aguardando inicio")+"</span></div>";
-  h+="<div class='jcb' onclick=\"toggleJogo('"+id+"')\">";
-  h+="<div class='ti'><span class='fl'>"+fa+"</span><span class='tn'>"+cap(j.timeA)+"</span></div>";
-  h+="<div class='pc'><div class='pl'>"+placarHTML(j.golsA,j.golsB)+"</div>"+(temResultado(j)?"":"<div class='ps age'>Aguardando</div>")+"</div>";
-  h+="<div class='ti'><span class='fl'>"+fb+"</span><span class='tn'>"+cap(j.timeB)+"</span></div>";
-  h+="<div class='chev op' id='jv-"+id+"'>\u25BE</div>";
-  h+="</div>";
-  h+="<div class='jcorpo op' id='jc-"+id+"'>";
-  h+="<div style='padding:14px 14px 0'>";
-  h+="<div class='dist-row'><div class='dist-label vc'>Vitoria: "+cap(j.timeA)+"</div><div class='dist-ap'>"+vA+" apostas</div><div class='dist-bbg'><div class='dist-bfill gn' style='width:"+pctA+"%'></div></div><div class='dist-pct'>"+pctA+"%</div></div>";
-  h+="<div class='dist-row'><div class='dist-label em'>Empate</div><div class='dist-ap'>"+vE+" apostas</div><div class='dist-bbg'><div class='dist-bfill gz' style='width:"+pctE+"%'></div></div><div class='dist-pct'>"+pctE+"%</div></div>";
-  h+="<div class='dist-row'><div class='dist-label vf'>Vitoria: "+cap(j.timeB)+"</div><div class='dist-ap'>"+vB+" apostas</div><div class='dist-bbg'><div class='dist-bfill gv' style='width:"+pctB+"%'></div></div><div class='dist-pct'>"+pctB+"%</div></div>";
-  h+="<div class='plac-tt'>Placares Mais Apostados</div>"+ph;
-  h+="</div></div></div>";
+  var h = "";
+  jogosDessaData.forEach(function(j){
+    var id="dia-"+j.jogo;
+    var fa=flag(j.timeA), fb=flag(j.timeB);
+    var vA=0,vE=0,vB=0;
+    j.palpites.forEach(function(pp){
+      if(pp.golsA>pp.golsB) vA++; else if(pp.golsB>pp.golsA) vB++; else vE++;
+    });
+    var tot=j.palpites.length;
+    var pctA= tot?Math.round((vA/tot)*1000)/10:0;
+    var pctE= tot?Math.round((vE/tot)*1000)/10:0;
+    var pctB= tot?Math.round((vB/tot)*1000)/10:0;
+
+    var contagem={};
+    j.palpites.forEach(function(pp){
+      if(pp.golsA===null || pp.golsA===undefined || pp.golsB===null || pp.golsB===undefined) return;
+      var key=pp.golsA+"x"+pp.golsB;
+      contagem[key]=(contagem[key]||0)+1;
+    });
+    var arr=Object.keys(contagem).map(function(k){return {res:k,n:contagem[k]};});
+    arr.sort(function(a,b){return b.n-a.n;});
+    arr=arr.slice(0,6);
+    var ph="";
+    arr.forEach(function(it){
+      var pc=Math.round((it.n/tot)*1000)/10;
+      ph+="<div class='plac-row'><div class='plac-qnt'>"+it.n+" X</div><span class='plac-seta'>\u2190</span><div class='plac-res'>"+it.res.replace('x',' x ')+"</div><span class='plac-seta'>\u2192</span><div class='plac-pct'>"+pc+"%</div></div>";
+    });
+
+    h+="<div class='jc'>";
+    h+="<div class='jch'><span class='dt'>Jogo "+j.jogo+" &middot; "+formatarDataBr(j.data)+"</span><span>"+(temResultado(j)?("Resultado: "+j.golsA+"x"+j.golsB):"Aguardando inicio")+"</span></div>";
+    h+="<div class='jcb' onclick=\"toggleJogo('"+id+"')\">";
+    h+="<div class='ti'><span class='fl'>"+fa+"</span><span class='tn'>"+cap(j.timeA)+"</span></div>";
+    h+="<div class='pc'><div class='pl'>"+placarHTML(j.golsA,j.golsB)+"</div>"+(temResultado(j)?"":"<div class='ps age'>Aguardando</div>")+"</div>";
+    h+="<div class='ti'><span class='fl'>"+fb+"</span><span class='tn'>"+cap(j.timeB)+"</span></div>";
+    h+="<div class='chev op' id='jv-"+id+"'>\u25BE</div>";
+    h+="</div>";
+    h+="<div class='jcorpo' id='jc-"+id+"'>";
+    h+="<div style='padding:14px 14px 0'>";
+    h+="<div class='dist-row'><div class='dist-label vc'>Vitoria: "+cap(j.timeA)+"</div><div class='dist-ap'>"+vA+" apostas</div><div class='dist-bbg'><div class='dist-bfill gn' style='width:"+pctA+"%'></div></div><div class='dist-pct'>"+pctA+"%</div></div>";
+    h+="<div class='dist-row'><div class='dist-label em'>Empate</div><div class='dist-ap'>"+vE+" apostas</div><div class='dist-bbg'><div class='dist-bfill gz' style='width:"+pctE+"%'></div></div><div class='dist-pct'>"+pctE+"%</div></div>";
+    h+="<div class='dist-row'><div class='dist-label vf'>Vitoria: "+cap(j.timeB)+"</div><div class='dist-ap'>"+vB+" apostas</div><div class='dist-bbg'><div class='dist-bfill gv' style='width:"+pctB+"%'></div></div><div class='dist-pct'>"+pctB+"%</div></div>";
+    h+="<div class='plac-tt'>Placares Mais Apostados</div>"+ph;
+    h+="</div></div></div>";
+  });
 
   cont.innerHTML = h;
 }
@@ -1055,7 +1103,7 @@ function renderJogoMomentoHero(j){
     var ptsTxt = temResultado(j) ? ("+"+pts+" pts") : "aguardando";
     var palCls = pts===5?" acertou":(pts===3?" acertou3":"");
     var ptsCls = pts===5?" ganhou5":(pts===3?" ganhou3":"");
-    th+="<tr><td class='jm-td-pos'>"+(i+1)+"\u00ba</td><td>"+pp.participante+"</td><td class='jm-td-palp"+palCls+"'>"+pp.golsA+" x "+pp.golsB+"</td><td class='jm-td-pts"+ptsCls+"'>"+ptsTxt+"</td></tr>";
+    th+="<tr><td class='jm-td-pos'>"+(i+1)+"\u00ba</td><td>"+pp.participante+"</td><td class='jm-td-palp"+palCls+"'>"+placarHTML(pp.golsA,pp.golsB)+"</td><td class='jm-td-pts"+ptsCls+"'>"+ptsTxt+"</td></tr>";
   });
   document.getElementById("jm-tbody").innerHTML=th;
 }
