@@ -373,6 +373,26 @@ main{max-width:1100px;margin:0 auto;padding:24px 20px;}
 // =====================================================
 var CAMPEAO_OFICIAL = "";
 
+// =====================================================
+// PLACARES MANUAIS — use quando a API registrar o placar
+// final da prorrogacao/penaltis mas o bolao deve usar
+// o placar dos 90 minutos.
+// Informe o numero do jogo (exibido nos botoes 'Jogo 73',
+// 'Jogo 74'... nas abas Jogos e Momento) e o placar correto.
+// Este placar sobrescreve qualquer valor que a API retornar.
+//
+// Exemplo — Jogo 75 terminou 1x1 nos 90min mas a API
+// registrou 2x1 (placar da prorrogacao):
+//   var PLACARES_MANUAIS = { 75: [1, 1] };
+//
+// Multiplos jogos:
+//   var PLACARES_MANUAIS = { 75: [1, 1], 82: [0, 0] };
+//
+// Deixe vazio quando nao houver correcao necessaria:
+//   var PLACARES_MANUAIS = {};
+// =====================================================
+var PLACARES_MANUAIS = {};
+
 var FLAGS = {"BRASIL": "🇧🇷", "ARGENTINA": "🇦🇷", "FRANÇA": "🇫🇷", "ALEMANHA": "🇩🇪", "ESPANHA": "🇪🇸", "PORTUGAL": "🇵🇹", "INGLATERRA": "🏴󠁧󠁢󠁥󠁮󠁧󠁿", "HOLANDA": "🇳🇱", "ITÁLIA": "🇮🇹", "BÉLGICA": "🇧🇪", "URUGUAI": "🇺🇾", "CROÁCIA": "🇭🇷", "MARROCOS": "🇲🇦", "SENEGAL": "🇸🇳", "JAPÃO": "🇯🇵", "ESTADOS UNIDOS": "🇺🇸", "MÉXICO": "🇲🇽", "COLÔMBIA": "🇨🇴", "EQUADOR": "🇪🇨", "CHILE": "🇨🇱", "AUSTRÁLIA": "🇦🇺", "COREIA DO SUL": "🇰🇷", "POLÔNIA": "🇵🇱", "SUÍÇA": "🇨🇭", "DINAMARCA": "🇩🇰", "ÁUSTRIA": "🇦🇹", "TURQUIA": "🇹🇷", "COSTA RICA": "🇨🇷", "NIGÉRIA": "🇳🇬", "GANA": "🇬🇭", "CAMARÕES": "🇨🇲", "CANADÁ": "🇨🇦", "ÁFRICA DO SUL": "🇿🇦", "BÓSNIA E HERZEGOVINA": "🇧🇦", "REPÚBLICA TCHECA": "🇨🇿", "CATAR": "🇶🇦", "PARAGUAI": "🇵🇾", "HAITI": "🇭🇹", "ESCÓCIA": "🏴󠁧󠁢󠁳󠁣󠁴󠁿", "CURAÇÃO": "🇨🇼", "TUNÍSIA": "🇹🇳", "CABO VERDE": "🇨🇻", "EGITO": "🇪🇬", "IRÃ": "🇮🇷", "NOVA ZELÂNDIA": "🇳🇿", "ARÁBIA SAUDITA": "🇸🇦", "IRAQUE": "🇮🇶", "NORUEGA": "🇳🇴", "ARGÉLIA": "🇩🇿", "JORDÂNIA": "🇯🇴", "RD CONGO": "🇨🇩", "UZBEQUISTÃO": "🇺🇿", "PANAMÁ": "🇵🇦", "SUÉCIA": "🇸🇪", "COSTA DO MARFIM": "🇨🇮"};
 function flag(nome){ return FLAGS[(nome||"").toUpperCase()] || "\u26BD"; }
 
@@ -507,6 +527,7 @@ function findGameIdLoose(teamA, teamB){
 function aplicarResultadosReais(){
   // Para cada jogo carregado, se houver resultado real correspondente, sobrescreve
   // golsA/golsB/status SOMENTE em memoria (nao altera os arquivos JSON originais)
+  // PLACARES_MANUAIS sobrescreve tudo — tem prioridade maxima sobre a API
 
   // 1) Atualiza TODOS_JOGOS (usado pelo ranking)
   TODOS_JOGOS.forEach(function(g){
@@ -518,6 +539,12 @@ function aplicarResultadosReais(){
       g.status = r.status;
       g.timeElapsed = r.timeElapsed;
       g.minute = r.minute;
+    }
+    // Placar manual tem prioridade maxima
+    if(PLACARES_MANUAIS[g.jogo] !== undefined){
+      g.golsA = PLACARES_MANUAIS[g.jogo][0];
+      g.golsB = PLACARES_MANUAIS[g.jogo][1];
+      g.status = "finished";
     }
   });
 
@@ -537,6 +564,12 @@ function aplicarResultadosReais(){
         j.golsA = null;
         j.golsB = null;
         j.status = j.status==="live" ? "live" : "scheduled";
+      }
+      // Placar manual tem prioridade maxima sobre API
+      if(PLACARES_MANUAIS[j.jogo] !== undefined){
+        j.golsA = PLACARES_MANUAIS[j.jogo][0];
+        j.golsB = PLACARES_MANUAIS[j.jogo][1];
+        j.status = "finished";
       }
     });
   });
