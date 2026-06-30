@@ -93,13 +93,13 @@ main{max-width:1100px;margin:0 auto;padding:24px 20px;}
 .pod-wrap{display:flex;flex-direction:column;align-items:center;gap:14px;margin-bottom:24px;}
 .pod-top{display:flex;justify-content:center;}
 .pod-bottom{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
-.pod-card{background:var(--cd);border-radius:12px;padding:18px 16px;text-align:center;border:1px solid var(--bd);width:140px;}
+.pod-card{background:var(--cd);border-radius:12px;padding:18px 16px;text-align:center;border:1px solid var(--bd);width:180px;}
 .pod-card.p1{border-color:var(--ou);transform:translateY(-10px);}
 .pod-card.p2{border-color:var(--pr);}
 .pod-card.p3{border-color:var(--bz);}
 .pod-medal{font-size:28px;margin-bottom:6px;}
-.pod-foto{width:54px;height:54px;border-radius:50%;object-fit:cover;margin:0 auto 8px;display:block;background:var(--c2);}
-.pod-foto-fb{width:54px;height:54px;border-radius:50%;background:var(--c2);display:flex;align-items:center;justify-content:center;font-family:'Oswald',sans-serif;font-size:20px;font-weight:700;color:var(--am);margin:0 auto 8px;}
+.pod-foto{width:108px;height:108px;border-radius:50%;object-fit:cover;margin:0 auto 8px;display:block;background:var(--c2);}
+.pod-foto-fb{width:108px;height:108px;border-radius:50%;background:var(--c2);display:flex;align-items:center;justify-content:center;font-family:'Oswald',sans-serif;font-size:40px;font-weight:700;color:var(--am);margin:0 auto 8px;}
 .pod-nome{font-family:'Oswald',sans-serif;font-size:13px;font-weight:600;margin-bottom:4px;}
 .pod-pts{font-family:'Oswald',sans-serif;font-size:20px;font-weight:700;color:var(--am);}
 .pod-pts-lbl{font-size:10px;color:var(--sv);text-transform:uppercase;letter-spacing:1px;}
@@ -152,8 +152,8 @@ main{max-width:1100px;margin:0 auto;padding:24px 20px;}
 .ap-card{background:var(--cd);border-radius:10px;overflow:hidden;border:1px solid var(--bd);margin-bottom:10px;}
 .ap-head{display:flex;align-items:center;gap:10px;padding:14px 16px;cursor:pointer;user-select:none;transition:background .2s;}
 .ap-head:hover{background:rgba(255,255,255,.02);}
-.ap-foto{width:36px;height:36px;border-radius:50%;object-fit:cover;flex-shrink:0;background:var(--c2);}
-.ap-foto-fb{width:36px;height:36px;border-radius:50%;background:var(--c2);display:flex;align-items:center;justify-content:center;font-family:'Oswald',sans-serif;font-size:14px;font-weight:700;color:var(--am);flex-shrink:0;}
+.ap-foto{width:72px;height:72px;border-radius:50%;object-fit:cover;flex-shrink:0;background:var(--c2);}
+.ap-foto-fb{width:72px;height:72px;border-radius:50%;background:var(--c2);display:flex;align-items:center;justify-content:center;font-family:'Oswald',sans-serif;font-size:28px;font-weight:700;color:var(--am);flex-shrink:0;}
 .ap-meta{flex:1;min-width:0;}
 .ap-nome{font-family:'Oswald',sans-serif;font-size:15px;font-weight:600;letter-spacing:.5px;}
 .ap-sub{font-size:11px;color:var(--sv);margin-top:2px;}
@@ -664,6 +664,13 @@ var FASES_CARREGADAS = {}; // chave -> dados do json (so as que existirem)
 var PARTICIPANTES = {};    // nome -> {arquivo foto}
 var RANKING = [];
 
+function normalizaArquivo(nome){
+  // Remove acentos, pega só a primeira palavra, tudo minúsculo
+  var s = nome.split(" ")[0];
+  s = s.normalize("NFD").replace(/[\u0300-\u036f]/g,""); // remove acentos
+  return s.toLowerCase();
+}
+
 function imgTag(arquivo, nome, cls, clsfb){
   return "<img src='images/"+arquivo+".jpg' class='"+cls+"' onerror=\"this.outerHTML='<div class\\'"+clsfb+"\\'>&#x1F464;</div>'\" alt='"+nome+"'>";
 }
@@ -717,7 +724,7 @@ function montarRanking(excluirJogoKey){
     if(!dados || !dados.participantes) return;
     dados.participantes.forEach(function(pm){
       if(pm.campeao) campeoes[pm.participante] = pm.campeao;
-      if(pm.arquivo) arquivos[pm.participante] = pm.arquivo;
+      if(!arquivos[pm.participante]) arquivos[pm.participante] = normalizaArquivo(pm.participante);
     });
   });
 
@@ -729,7 +736,7 @@ function montarRanking(excluirJogoKey){
       var nome = pp.participante;
       if(!pontos[nome]) pontos[nome] = {porFase:{}, total:0, exatos:0, certos:0, erros:0, livePts:0, campeaoPts:0};
       if(!pontos[nome].porFase[j.fase]) pontos[nome].porFase[j.fase]=0;
-      if(!arquivos[nome]) arquivos[nome] = pp.arquivo || nome.split(" ")[0].toLowerCase();
+      if(!arquivos[nome]) arquivos[nome] = normalizaArquivo(nome);
       if(!campeoes[nome] && pp.campeao) campeoes[nome] = pp.campeao;
 
       if(j.status==="finished"){
@@ -922,7 +929,7 @@ function renderFase(fk){
         }
         var tagClass = pts===5 ? "acerto" : (pts===3 ? "acerto3" : "");
         var tagTxt = temResultado(j) ? ("+"+pts+" pts") : "aguardando";
-        var arquivo = pp.arquivo || pp.participante.split(" ")[0].toLowerCase();
+        var arquivo = normalizaArquivo(pp.participante);
         plist += "<div class='prow-p'>";
         plist += imgTag(arquivo, pp.participante, "pp-foto", "pp-foto-fb");
         plist += "<div class='pp-nome'>"+pp.participante+"</div>";
