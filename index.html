@@ -51,6 +51,7 @@ main{max-width:1100px;margin:0 auto;padding:24px 20px;}
 .st::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,rgba(255,215,0,.25),transparent);}
 .jc{background:var(--cd);border-radius:10px;overflow:hidden;border:1px solid var(--bd);margin-bottom:10px;}
 .jch{padding:9px 14px;display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--sv);background:rgba(0,0,0,.25);}
+.jch-hora{font-family:'Oswald',sans-serif;font-size:13px;font-weight:700;color:var(--am);letter-spacing:1px;}
 .jch .dt{color:var(--am);font-weight:500;}
 .jcb{padding:16px 14px;display:flex;align-items:center;gap:10px;cursor:pointer;user-select:none;transition:background .2s;}
 .jcb:hover{background:rgba(255,255,255,.02);}
@@ -927,6 +928,15 @@ function renderFase(fk){
           if(pp.golsA===j.golsA && pp.golsB===j.golsB) pts=5;
           else if((pp.golsA>pp.golsB ? 1 : pp.golsA<pp.golsB ? -1 : 0)===(j.golsA>j.golsB ? 1 : j.golsA<j.golsB ? -1 : 0)) pts=3;
         }
+        pp._pts = pts;
+      });
+      // Ordena: quem pontua primeiro (desc), depois alfabético
+      var palpitesOrdenados = j.palpites.slice().sort(function(a,b){
+        if(b._pts !== a._pts) return b._pts - a._pts;
+        return a.participante.localeCompare(b.participante, "pt-BR");
+      });
+      palpitesOrdenados.forEach(function(pp){
+        var pts = pp._pts;
         var tagClass = pts===5 ? "acerto" : (pts===3 ? "acerto3" : "");
         var tagTxt = temResultado(j) ? ("+"+pts+" pts") : "aguardando";
         var arquivo = normalizaArquivo(pp.participante);
@@ -1118,7 +1128,11 @@ function renderDia(){
     });
 
     h+="<div class='jc'>";
-    h+="<div class='jch'><span class='dt'>Jogo "+j.jogo+" &middot; "+formatarDataBr(j.data)+"</span><span>"+(temResultado(j)?("Resultado: "+j.golsA+"x"+j.golsB):"Aguardando inicio")+"</span></div>";
+    h+="<div class='jch'>";
+    h+="<span class='dt'>Jogo "+j.jogo+" &middot; "+formatarDataBr(j.data)+"</span>";
+    h+="<span class='jch-hora'>"+(j.hora||"--:--")+"</span>";
+    h+="<span>"+(temResultado(j)?("Resultado: "+j.golsA+"x"+j.golsB):"Aguardando inicio")+"</span>";
+    h+="</div>";
     h+="<div class='jcb' onclick=\"toggleJogo('"+id+"')\">";
     h+="<div class='ti'><span class='fl'>"+fa+"</span><span class='tn'>"+cap(j.timeA)+"</span></div>";
     h+="<div class='pc'><div class='pl'>"+placarHTML(j.golsA,j.golsB)+"</div>"+(temResultado(j)?"":"<div class='ps age'>Aguardando</div>")+"</div>";
