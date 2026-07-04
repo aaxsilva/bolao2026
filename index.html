@@ -606,8 +606,11 @@ function atualizarTudoComAPI(){
     renderRanking();
     renderPodium();
     var faseAtiva = document.querySelector(".fb2.av");
-    var fk = null;
-    FASES.forEach(function(f){ if(FASES_CARREGADAS[f.k]) fk = fk || f.k; });
+    var fk = faseAtiva ? faseAtiva.getAttribute("data-fase") : null;
+    if(!fk || !FASES_CARREGADAS[fk]){
+      fk = FASES_CARREGADAS[FASE_PADRAO] ? FASE_PADRAO : null;
+      FASES.forEach(function(f){ if(!fk && FASES_CARREGADAS[f.k]) fk = f.k; });
+    }
     if(fk) renderFase(fk);
     renderDiaSeletor();
     renderDia();
@@ -910,7 +913,7 @@ function renderFasesNav(){
   FASES.forEach(function(f, idx){
     var disponivel = !!FASES_CARREGADAS[f.k];
     var ativo = disponivel && (padraoDisponivel ? f.k===FASE_PADRAO : idx===0);
-    h += "<button class='fb2"+(ativo?" av":"")+"' "+(disponivel?"onclick=\"mudarFase('"+f.k+"',this)\"":"disabled")+">"+f.l.split(" ")[0]+(f.l.split(" ")[1]?(" "+f.l.split(" ")[1]):"")+"<small>"+f.n+" jogo"+(f.n>1?"s":"")+(disponivel?"":" - em breve")+"</small></button>";
+    h += "<button class='fb2"+(ativo?" av":"")+"' data-fase='"+f.k+"' "+(disponivel?"onclick=\"mudarFase('"+f.k+"',this)\"":"disabled")+">"+f.l.split(" ")[0]+(f.l.split(" ")[1]?(" "+f.l.split(" ")[1]):"")+"<small>"+f.n+" jogo"+(f.n>1?"s":"")+(disponivel?"":" - em breve")+"</small></button>";
   });
   document.getElementById("fases-nav").innerHTML = h;
 }
