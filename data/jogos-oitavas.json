@@ -694,6 +694,14 @@
           "golsA": 1,
           "timeB": "França",
           "golsB": 3
+        },
+        {
+          "participante": "Toninho",
+          "arquivo": "toninho",
+          "timeA": "Paraguai",
+          "golsA": 2,
+          "timeB": "França",
+          "golsB": 0
         }
       ],
       "data": "2026-07-04",
@@ -1154,6 +1162,14 @@
           "golsA": 0,
           "timeB": "Marrocos",
           "golsB": 1
+        },
+        {
+          "participante": "Toninho",
+          "arquivo": "toninho",
+          "timeA": "Canadá",
+          "golsA": 0,
+          "timeB": "Marrocos",
+          "golsB": 0
         }
       ],
       "data": "2026-07-04",
@@ -1614,6 +1630,14 @@
           "golsA": 2,
           "timeB": "Noruega",
           "golsB": 1
+        },
+        {
+          "participante": "Toninho",
+          "arquivo": "toninho",
+          "timeA": "Brasil",
+          "golsA": 2,
+          "timeB": "Noruega",
+          "golsB": 2
         }
       ],
       "data": "2026-07-05",
@@ -2074,6 +2098,14 @@
           "golsA": 0,
           "timeB": "Inglaterra",
           "golsB": 2
+        },
+        {
+          "participante": "Toninho",
+          "arquivo": "toninho",
+          "timeA": "México",
+          "golsA": 1,
+          "timeB": "Inglaterra",
+          "golsB": 1
         }
       ],
       "data": "2026-07-05",
@@ -2534,6 +2566,14 @@
           "golsA": 2,
           "timeB": "Espanha",
           "golsB": 2
+        },
+        {
+          "participante": "Toninho",
+          "arquivo": "toninho",
+          "timeA": "Portugal",
+          "golsA": 1,
+          "timeB": "Espanha",
+          "golsB": 0
         }
       ],
       "data": "2026-07-06",
@@ -2994,6 +3034,14 @@
           "golsA": 0,
           "timeB": "Bélgica",
           "golsB": 2
+        },
+        {
+          "participante": "Toninho",
+          "arquivo": "toninho",
+          "timeA": "Estados Unidos",
+          "golsA": 0,
+          "timeB": "Bélgica",
+          "golsB": 1
         }
       ],
       "data": "2026-07-06",
@@ -3454,6 +3502,14 @@
           "golsA": 2,
           "timeB": "Egito",
           "golsB": 1
+        },
+        {
+          "participante": "Toninho",
+          "arquivo": "toninho",
+          "timeA": "Argentina",
+          "golsA": 0,
+          "timeB": "Egito",
+          "golsB": 0
         }
       ],
       "data": "2026-07-07",
@@ -3914,6 +3970,14 @@
           "golsA": 1,
           "timeB": "Colômbia",
           "golsB": 1
+        },
+        {
+          "participante": "Toninho",
+          "arquivo": "toninho",
+          "timeA": "Suíça",
+          "golsA": 2,
+          "timeB": "Colômbia",
+          "golsB": 0
         }
       ],
       "data": "2026-07-07",
