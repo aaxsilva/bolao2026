@@ -660,6 +660,9 @@ var FASES = [
   {k:"final",    l:"Final",            n:1,  arquivo:"data/jogos-final.json"}
 ];
 
+// Fase que deve aparecer selecionada por padrao ao abrir o site (se disponivel)
+var FASE_PADRAO = "oitavas";
+
 var FASES_CARREGADAS = {}; // chave -> dados do json (so as que existirem)
 var PARTICIPANTES = {};    // nome -> {arquivo foto}
 var RANKING = [];
@@ -903,9 +906,11 @@ function toggleJogo(id){
 
 function renderFasesNav(){
   var h="";
+  var padraoDisponivel = !!FASES_CARREGADAS[FASE_PADRAO];
   FASES.forEach(function(f, idx){
     var disponivel = !!FASES_CARREGADAS[f.k];
-    h += "<button class='fb2"+(idx===0&&disponivel?" av":"")+"' "+(disponivel?"onclick=\"mudarFase('"+f.k+"',this)\"":"disabled")+">"+f.l.split(" ")[0]+(f.l.split(" ")[1]?(" "+f.l.split(" ")[1]):"")+"<small>"+f.n+" jogo"+(f.n>1?"s":"")+(disponivel?"":" - em breve")+"</small></button>";
+    var ativo = disponivel && (padraoDisponivel ? f.k===FASE_PADRAO : idx===0);
+    h += "<button class='fb2"+(ativo?" av":"")+"' "+(disponivel?"onclick=\"mudarFase('"+f.k+"',this)\"":"disabled")+">"+f.l.split(" ")[0]+(f.l.split(" ")[1]?(" "+f.l.split(" ")[1]):"")+"<small>"+f.n+" jogo"+(f.n>1?"s":"")+(disponivel?"":" - em breve")+"</small></button>";
   });
   document.getElementById("fases-nav").innerHTML = h;
 }
@@ -1348,7 +1353,9 @@ carregarFases(function(){
   renderLiveBanner();
   renderRanking();
   renderFasesNav();
-  var primeira = FASES.filter(function(f){return FASES_CARREGADAS[f.k];})[0];
+  var primeira = FASES_CARREGADAS[FASE_PADRAO]
+    ? FASES.filter(function(f){return f.k===FASE_PADRAO;})[0]
+    : FASES.filter(function(f){return FASES_CARREGADAS[f.k];})[0];
   if(primeira) renderFase(primeira.k);
   else document.getElementById("fase-lista").innerHTML = "<div class='av-box'>Nenhuma fase disponivel ainda.</div>";
   renderPodium();
