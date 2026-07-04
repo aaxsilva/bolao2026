@@ -241,465 +241,7 @@
   ],
   "jogos": [
     {
-      "jogo": 17,
-      "timeA": "Canadá",
-      "golsA": 0,
-      "timeB": "Marrocos",
-      "golsB": 0,
-      "palpites": [
-        {
-          "participante": "Adriano",
-          "arquivo": "Adriano",
-          "timeA": "Canadá",
-          "golsA": 0,
-          "timeB": "Marrocos",
-          "golsB": 2
-        },
-        {
-          "participante": "Bumblebee",
-          "arquivo": "Bumblebee",
-          "timeA": "Canadá",
-          "golsA": 1,
-          "timeB": "Marrocos",
-          "golsB": 1
-        },
-        {
-          "participante": "Gandalf",
-          "arquivo": "Gandalf",
-          "timeA": "Canadá",
-          "golsA": 1,
-          "timeB": "Marrocos",
-          "golsB": 1
-        },
-        {
-          "participante": "Adriano 2",
-          "arquivo": "Adriano_2",
-          "timeA": "Canadá",
-          "golsA": 0,
-          "timeB": "Marrocos",
-          "golsB": 1
-        },
-        {
-          "participante": "Amiguinho",
-          "arquivo": "amiguinho",
-          "timeA": "Canadá",
-          "golsA": 1,
-          "timeB": "Marrocos",
-          "golsB": 2
-        },
-        {
-          "participante": "Buqui",
-          "arquivo": "buqui",
-          "timeA": "Canadá",
-          "golsA": 1,
-          "timeB": "Marrocos",
-          "golsB": 2
-        },
-        {
-          "participante": "Dudinha",
-          "arquivo": "dudinha",
-          "timeA": "Canadá",
-          "golsA": 0,
-          "timeB": "Marrocos",
-          "golsB": 0
-        },
-        {
-          "participante": "Elvis",
-          "arquivo": "elvis",
-          "timeA": "Canadá",
-          "golsA": 2,
-          "timeB": "Marrocos",
-          "golsB": 2
-        },
-        {
-          "participante": "Edilaine 1",
-          "arquivo": "edilaine_1",
-          "timeA": "Canadá",
-          "golsA": 1,
-          "timeB": "Marrocos",
-          "golsB": 2
-        },
-        {
-          "participante": "Edilaine 2",
-          "arquivo": "edilaine_2",
-          "timeA": "Canadá",
-          "golsA": 2,
-          "timeB": "Marrocos",
-          "golsB": 1
-        },
-        {
-          "participante": "Emi",
-          "arquivo": "emi",
-          "timeA": "Canadá",
-          "golsA": 1,
-          "timeB": "Marrocos",
-          "golsB": 2
-        },
-        {
-          "participante": "Fernanda",
-          "arquivo": "fernanda",
-          "timeA": "Canadá",
-          "golsA": 0,
-          "timeB": "Marrocos",
-          "golsB": 1
-        },
-        {
-          "participante": "Francisco",
-          "arquivo": "francisco",
-          "timeA": "Canadá",
-          "golsA": 0,
-          "timeB": "Marrocos",
-          "golsB": 2
-        },
-        {
-          "participante": "Fátima",
-          "arquivo": "fatima",
-          "timeA": "Canadá",
-          "golsA": 2,
-          "timeB": "Marrocos",
-          "golsB": 2
-        },
-        {
-          "participante": "Gargamel",
-          "arquivo": "gargamel",
-          "timeA": "Canadá",
-          "golsA": 1,
-          "timeB": "Marrocos",
-          "golsB": 2
-        },
-        {
-          "participante": "GU",
-          "arquivo": "gu",
-          "timeA": "Canadá",
-          "golsA": 0,
-          "timeB": "Marrocos",
-          "golsB": 1
-        },
-        {
-          "participante": "Gabriel",
-          "arquivo": "gabriel",
-          "timeA": "Canadá",
-          "golsA": 1,
-          "timeB": "Marrocos",
-          "golsB": 2
-        },
-        {
-          "participante": "José 1",
-          "arquivo": "jose_1",
-          "timeA": "Canadá",
-          "golsA": 0,
-          "timeB": "Marrocos",
-          "golsB": 1
-        },
-        {
-          "participante": "José 2",
-          "arquivo": "jose_2",
-          "timeA": "Canadá",
-          "golsA": 1,
-          "timeB": "Marrocos",
-          "golsB": 0
-        },
-        {
-          "participante": "José 3",
-          "arquivo": "jose_3",
-          "timeA": "Canadá",
-          "golsA": 1,
-          "timeB": "Marrocos",
-          "golsB": 2
-        },
-        {
-          "participante": "Manuela",
-          "arquivo": "manuela",
-          "timeA": "Canadá",
-          "golsA": 2,
-          "timeB": "Marrocos",
-          "golsB": 0
-        },
-        {
-          "participante": "Maria 1",
-          "arquivo": "maria_1",
-          "timeA": "Canadá",
-          "golsA": 1,
-          "timeB": "Marrocos",
-          "golsB": 1
-        },
-        {
-          "participante": "Maria 2",
-          "arquivo": "maria_2",
-          "timeA": "Canadá",
-          "golsA": 2,
-          "timeB": "Marrocos",
-          "golsB": 1
-        },
-        {
-          "participante": "Maria 3",
-          "arquivo": "maria_3",
-          "timeA": "Canadá",
-          "golsA": 0,
-          "timeB": "Marrocos",
-          "golsB": 1
-        },
-        {
-          "participante": "Marta 1",
-          "arquivo": "marta_1",
-          "timeA": "Canadá",
-          "golsA": 1,
-          "timeB": "Marrocos",
-          "golsB": 0
-        },
-        {
-          "participante": "Marta 2",
-          "arquivo": "marta_2",
-          "timeA": "Canadá",
-          "golsA": 2,
-          "timeB": "Marrocos",
-          "golsB": 0
-        },
-        {
-          "participante": "Marta 3",
-          "arquivo": "marta_3",
-          "timeA": "Canadá",
-          "golsA": 1,
-          "timeB": "Marrocos",
-          "golsB": 3
-        },
-        {
-          "participante": "Marta 4",
-          "arquivo": "marta_4",
-          "timeA": "Canadá",
-          "golsA": 1,
-          "timeB": "Marrocos",
-          "golsB": 1
-        },
-        {
-          "participante": "Marta 5",
-          "arquivo": "marta_5",
-          "timeA": "Canadá",
-          "golsA": 0,
-          "timeB": "Marrocos",
-          "golsB": 0
-        },
-        {
-          "participante": "Mateo",
-          "arquivo": "mateo",
-          "timeA": "Canadá",
-          "golsA": 3,
-          "timeB": "Marrocos",
-          "golsB": 2
-        },
-        {
-          "participante": "Micha",
-          "arquivo": "micha",
-          "timeA": "Canadá",
-          "golsA": 2,
-          "timeB": "Marrocos",
-          "golsB": 3
-        },
-        {
-          "participante": "Nina",
-          "arquivo": "nina",
-          "timeA": "Canadá",
-          "golsA": 2,
-          "timeB": "Marrocos",
-          "golsB": 1
-        },
-        {
-          "participante": "Nacho",
-          "arquivo": "nacho",
-          "timeA": "Canadá",
-          "golsA": 1,
-          "timeB": "Marrocos",
-          "golsB": 1
-        },
-        {
-          "participante": "Pablo 1",
-          "arquivo": "pablo_1",
-          "timeA": "Canadá",
-          "golsA": 1,
-          "timeB": "Marrocos",
-          "golsB": 2
-        },
-        {
-          "participante": "Pablo 2",
-          "arquivo": "pablo_2",
-          "timeA": "Canadá",
-          "golsA": 1,
-          "timeB": "Marrocos",
-          "golsB": 1
-        },
-        {
-          "participante": "Papuchito",
-          "arquivo": "papuchito",
-          "timeA": "Canadá",
-          "golsA": 2,
-          "timeB": "Marrocos",
-          "golsB": 1
-        },
-        {
-          "participante": "Pipica",
-          "arquivo": "pipica",
-          "timeA": "Canadá",
-          "golsA": 1,
-          "timeB": "Marrocos",
-          "golsB": 2
-        },
-        {
-          "participante": "Edney",
-          "arquivo": "edney",
-          "timeA": "Canadá",
-          "golsA": 2,
-          "timeB": "Marrocos",
-          "golsB": 2
-        },
-        {
-          "participante": "Rosana",
-          "arquivo": "rosana",
-          "timeA": "Canadá",
-          "golsA": 2,
-          "timeB": "Marrocos",
-          "golsB": 1
-        },
-        {
-          "participante": "Danilo",
-          "arquivo": "danilo",
-          "timeA": "Canadá",
-          "golsA": 0,
-          "timeB": "Marrocos",
-          "golsB": 2
-        },
-        {
-          "participante": "Victor",
-          "arquivo": "victor",
-          "timeA": "Canadá",
-          "golsA": 0,
-          "timeB": "Marrocos",
-          "golsB": 1
-        },
-        {
-          "participante": "César",
-          "arquivo": "cesar",
-          "timeA": "Canadá",
-          "golsA": 1,
-          "timeB": "Marrocos",
-          "golsB": 2
-        },
-        {
-          "participante": "Firulais",
-          "arquivo": "firulais",
-          "timeA": "Canadá",
-          "golsA": 0,
-          "timeB": "Marrocos",
-          "golsB": 1
-        },
-        {
-          "participante": "Gregorio",
-          "arquivo": "gregorio",
-          "timeA": "Canadá",
-          "golsA": 0,
-          "timeB": "Marrocos",
-          "golsB": 0
-        },
-        {
-          "participante": "Ligia",
-          "arquivo": "ligia",
-          "timeA": "Canadá",
-          "golsA": 1,
-          "timeB": "Marrocos",
-          "golsB": 0
-        },
-        {
-          "participante": "Lucas",
-          "arquivo": "lucas",
-          "timeA": "Canadá",
-          "golsA": 1,
-          "timeB": "Marrocos",
-          "golsB": 1
-        },
-        {
-          "participante": "Luciano",
-          "arquivo": "luciano",
-          "timeA": "Canadá",
-          "golsA": 1,
-          "timeB": "Marrocos",
-          "golsB": 1
-        },
-        {
-          "participante": "Nono 1",
-          "arquivo": "nono_1",
-          "timeA": "Canadá",
-          "golsA": 0,
-          "timeB": "Marrocos",
-          "golsB": 1
-        },
-        {
-          "participante": "Nono 2",
-          "arquivo": "nono_2",
-          "timeA": "Canadá",
-          "golsA": 0,
-          "timeB": "Marrocos",
-          "golsB": 1
-        },
-        {
-          "participante": "Nono 3",
-          "arquivo": "nono_3",
-          "timeA": "Canadá",
-          "golsA": 0,
-          "timeB": "Marrocos",
-          "golsB": 2
-        },
-        {
-          "participante": "Régis",
-          "arquivo": "regis",
-          "timeA": "Canadá",
-          "golsA": 1,
-          "timeB": "Marrocos",
-          "golsB": 1
-        },
-        {
-          "participante": "Régis-IA",
-          "arquivo": "regis-ia",
-          "timeA": "Canadá",
-          "golsA": 1,
-          "timeB": "Marrocos",
-          "golsB": 2
-        },
-        {
-          "participante": "Sofia",
-          "arquivo": "sofia",
-          "timeA": "Canadá",
-          "golsA": 1,
-          "timeB": "Marrocos",
-          "golsB": 1
-        },
-        {
-          "participante": "Zilda 1",
-          "arquivo": "zilda_1",
-          "timeA": "Canadá",
-          "golsA": 0,
-          "timeB": "Marrocos",
-          "golsB": 1
-        },
-        {
-          "participante": "Zilda 2",
-          "arquivo": "zilda_2",
-          "timeA": "Canadá",
-          "golsA": 0,
-          "timeB": "Marrocos",
-          "golsB": 1
-        },
-        {
-          "participante": "Lucca",
-          "arquivo": "lucca",
-          "timeA": "Canadá",
-          "golsA": 0,
-          "timeB": "Marrocos",
-          "golsB": 1
-        }
-      ],
-      "data": "2026-07-04"
-    },
-    {
-      "jogo": 18,
+      "jogo": 89,
       "timeA": "Paraguai",
       "golsA": 0,
       "timeB": "França",
@@ -1154,10 +696,472 @@
           "golsB": 3
         }
       ],
-      "data": "2026-07-04"
+      "data": "2026-07-04",
+      "hora": "17:00",
+      "local": "Lincoln Financial Field - Filadélfia"
     },
     {
-      "jogo": 19,
+      "jogo": 90,
+      "timeA": "Canadá",
+      "golsA": 0,
+      "timeB": "Marrocos",
+      "golsB": 0,
+      "palpites": [
+        {
+          "participante": "Adriano",
+          "arquivo": "Adriano",
+          "timeA": "Canadá",
+          "golsA": 0,
+          "timeB": "Marrocos",
+          "golsB": 2
+        },
+        {
+          "participante": "Bumblebee",
+          "arquivo": "Bumblebee",
+          "timeA": "Canadá",
+          "golsA": 1,
+          "timeB": "Marrocos",
+          "golsB": 1
+        },
+        {
+          "participante": "Gandalf",
+          "arquivo": "Gandalf",
+          "timeA": "Canadá",
+          "golsA": 1,
+          "timeB": "Marrocos",
+          "golsB": 1
+        },
+        {
+          "participante": "Adriano 2",
+          "arquivo": "Adriano_2",
+          "timeA": "Canadá",
+          "golsA": 0,
+          "timeB": "Marrocos",
+          "golsB": 1
+        },
+        {
+          "participante": "Amiguinho",
+          "arquivo": "amiguinho",
+          "timeA": "Canadá",
+          "golsA": 1,
+          "timeB": "Marrocos",
+          "golsB": 2
+        },
+        {
+          "participante": "Buqui",
+          "arquivo": "buqui",
+          "timeA": "Canadá",
+          "golsA": 1,
+          "timeB": "Marrocos",
+          "golsB": 2
+        },
+        {
+          "participante": "Dudinha",
+          "arquivo": "dudinha",
+          "timeA": "Canadá",
+          "golsA": 0,
+          "timeB": "Marrocos",
+          "golsB": 0
+        },
+        {
+          "participante": "Elvis",
+          "arquivo": "elvis",
+          "timeA": "Canadá",
+          "golsA": 2,
+          "timeB": "Marrocos",
+          "golsB": 2
+        },
+        {
+          "participante": "Edilaine 1",
+          "arquivo": "edilaine_1",
+          "timeA": "Canadá",
+          "golsA": 1,
+          "timeB": "Marrocos",
+          "golsB": 2
+        },
+        {
+          "participante": "Edilaine 2",
+          "arquivo": "edilaine_2",
+          "timeA": "Canadá",
+          "golsA": 2,
+          "timeB": "Marrocos",
+          "golsB": 1
+        },
+        {
+          "participante": "Emi",
+          "arquivo": "emi",
+          "timeA": "Canadá",
+          "golsA": 1,
+          "timeB": "Marrocos",
+          "golsB": 2
+        },
+        {
+          "participante": "Fernanda",
+          "arquivo": "fernanda",
+          "timeA": "Canadá",
+          "golsA": 0,
+          "timeB": "Marrocos",
+          "golsB": 1
+        },
+        {
+          "participante": "Francisco",
+          "arquivo": "francisco",
+          "timeA": "Canadá",
+          "golsA": 0,
+          "timeB": "Marrocos",
+          "golsB": 2
+        },
+        {
+          "participante": "Fátima",
+          "arquivo": "fatima",
+          "timeA": "Canadá",
+          "golsA": 2,
+          "timeB": "Marrocos",
+          "golsB": 2
+        },
+        {
+          "participante": "Gargamel",
+          "arquivo": "gargamel",
+          "timeA": "Canadá",
+          "golsA": 1,
+          "timeB": "Marrocos",
+          "golsB": 2
+        },
+        {
+          "participante": "GU",
+          "arquivo": "gu",
+          "timeA": "Canadá",
+          "golsA": 0,
+          "timeB": "Marrocos",
+          "golsB": 1
+        },
+        {
+          "participante": "Gabriel",
+          "arquivo": "gabriel",
+          "timeA": "Canadá",
+          "golsA": 1,
+          "timeB": "Marrocos",
+          "golsB": 2
+        },
+        {
+          "participante": "José 1",
+          "arquivo": "jose_1",
+          "timeA": "Canadá",
+          "golsA": 0,
+          "timeB": "Marrocos",
+          "golsB": 1
+        },
+        {
+          "participante": "José 2",
+          "arquivo": "jose_2",
+          "timeA": "Canadá",
+          "golsA": 1,
+          "timeB": "Marrocos",
+          "golsB": 0
+        },
+        {
+          "participante": "José 3",
+          "arquivo": "jose_3",
+          "timeA": "Canadá",
+          "golsA": 1,
+          "timeB": "Marrocos",
+          "golsB": 2
+        },
+        {
+          "participante": "Manuela",
+          "arquivo": "manuela",
+          "timeA": "Canadá",
+          "golsA": 2,
+          "timeB": "Marrocos",
+          "golsB": 0
+        },
+        {
+          "participante": "Maria 1",
+          "arquivo": "maria_1",
+          "timeA": "Canadá",
+          "golsA": 1,
+          "timeB": "Marrocos",
+          "golsB": 1
+        },
+        {
+          "participante": "Maria 2",
+          "arquivo": "maria_2",
+          "timeA": "Canadá",
+          "golsA": 2,
+          "timeB": "Marrocos",
+          "golsB": 1
+        },
+        {
+          "participante": "Maria 3",
+          "arquivo": "maria_3",
+          "timeA": "Canadá",
+          "golsA": 0,
+          "timeB": "Marrocos",
+          "golsB": 1
+        },
+        {
+          "participante": "Marta 1",
+          "arquivo": "marta_1",
+          "timeA": "Canadá",
+          "golsA": 1,
+          "timeB": "Marrocos",
+          "golsB": 0
+        },
+        {
+          "participante": "Marta 2",
+          "arquivo": "marta_2",
+          "timeA": "Canadá",
+          "golsA": 2,
+          "timeB": "Marrocos",
+          "golsB": 0
+        },
+        {
+          "participante": "Marta 3",
+          "arquivo": "marta_3",
+          "timeA": "Canadá",
+          "golsA": 1,
+          "timeB": "Marrocos",
+          "golsB": 3
+        },
+        {
+          "participante": "Marta 4",
+          "arquivo": "marta_4",
+          "timeA": "Canadá",
+          "golsA": 1,
+          "timeB": "Marrocos",
+          "golsB": 1
+        },
+        {
+          "participante": "Marta 5",
+          "arquivo": "marta_5",
+          "timeA": "Canadá",
+          "golsA": 0,
+          "timeB": "Marrocos",
+          "golsB": 0
+        },
+        {
+          "participante": "Mateo",
+          "arquivo": "mateo",
+          "timeA": "Canadá",
+          "golsA": 3,
+          "timeB": "Marrocos",
+          "golsB": 2
+        },
+        {
+          "participante": "Micha",
+          "arquivo": "micha",
+          "timeA": "Canadá",
+          "golsA": 2,
+          "timeB": "Marrocos",
+          "golsB": 3
+        },
+        {
+          "participante": "Nina",
+          "arquivo": "nina",
+          "timeA": "Canadá",
+          "golsA": 2,
+          "timeB": "Marrocos",
+          "golsB": 1
+        },
+        {
+          "participante": "Nacho",
+          "arquivo": "nacho",
+          "timeA": "Canadá",
+          "golsA": 1,
+          "timeB": "Marrocos",
+          "golsB": 1
+        },
+        {
+          "participante": "Pablo 1",
+          "arquivo": "pablo_1",
+          "timeA": "Canadá",
+          "golsA": 1,
+          "timeB": "Marrocos",
+          "golsB": 2
+        },
+        {
+          "participante": "Pablo 2",
+          "arquivo": "pablo_2",
+          "timeA": "Canadá",
+          "golsA": 1,
+          "timeB": "Marrocos",
+          "golsB": 1
+        },
+        {
+          "participante": "Papuchito",
+          "arquivo": "papuchito",
+          "timeA": "Canadá",
+          "golsA": 2,
+          "timeB": "Marrocos",
+          "golsB": 1
+        },
+        {
+          "participante": "Pipica",
+          "arquivo": "pipica",
+          "timeA": "Canadá",
+          "golsA": 1,
+          "timeB": "Marrocos",
+          "golsB": 2
+        },
+        {
+          "participante": "Edney",
+          "arquivo": "edney",
+          "timeA": "Canadá",
+          "golsA": 2,
+          "timeB": "Marrocos",
+          "golsB": 2
+        },
+        {
+          "participante": "Rosana",
+          "arquivo": "rosana",
+          "timeA": "Canadá",
+          "golsA": 2,
+          "timeB": "Marrocos",
+          "golsB": 1
+        },
+        {
+          "participante": "Danilo",
+          "arquivo": "danilo",
+          "timeA": "Canadá",
+          "golsA": 0,
+          "timeB": "Marrocos",
+          "golsB": 2
+        },
+        {
+          "participante": "Victor",
+          "arquivo": "victor",
+          "timeA": "Canadá",
+          "golsA": 0,
+          "timeB": "Marrocos",
+          "golsB": 1
+        },
+        {
+          "participante": "César",
+          "arquivo": "cesar",
+          "timeA": "Canadá",
+          "golsA": 1,
+          "timeB": "Marrocos",
+          "golsB": 2
+        },
+        {
+          "participante": "Firulais",
+          "arquivo": "firulais",
+          "timeA": "Canadá",
+          "golsA": 0,
+          "timeB": "Marrocos",
+          "golsB": 1
+        },
+        {
+          "participante": "Gregorio",
+          "arquivo": "gregorio",
+          "timeA": "Canadá",
+          "golsA": 0,
+          "timeB": "Marrocos",
+          "golsB": 0
+        },
+        {
+          "participante": "Ligia",
+          "arquivo": "ligia",
+          "timeA": "Canadá",
+          "golsA": 1,
+          "timeB": "Marrocos",
+          "golsB": 0
+        },
+        {
+          "participante": "Lucas",
+          "arquivo": "lucas",
+          "timeA": "Canadá",
+          "golsA": 1,
+          "timeB": "Marrocos",
+          "golsB": 1
+        },
+        {
+          "participante": "Luciano",
+          "arquivo": "luciano",
+          "timeA": "Canadá",
+          "golsA": 1,
+          "timeB": "Marrocos",
+          "golsB": 1
+        },
+        {
+          "participante": "Nono 1",
+          "arquivo": "nono_1",
+          "timeA": "Canadá",
+          "golsA": 0,
+          "timeB": "Marrocos",
+          "golsB": 1
+        },
+        {
+          "participante": "Nono 2",
+          "arquivo": "nono_2",
+          "timeA": "Canadá",
+          "golsA": 0,
+          "timeB": "Marrocos",
+          "golsB": 1
+        },
+        {
+          "participante": "Nono 3",
+          "arquivo": "nono_3",
+          "timeA": "Canadá",
+          "golsA": 0,
+          "timeB": "Marrocos",
+          "golsB": 2
+        },
+        {
+          "participante": "Régis",
+          "arquivo": "regis",
+          "timeA": "Canadá",
+          "golsA": 1,
+          "timeB": "Marrocos",
+          "golsB": 1
+        },
+        {
+          "participante": "Régis-IA",
+          "arquivo": "regis-ia",
+          "timeA": "Canadá",
+          "golsA": 1,
+          "timeB": "Marrocos",
+          "golsB": 2
+        },
+        {
+          "participante": "Sofia",
+          "arquivo": "sofia",
+          "timeA": "Canadá",
+          "golsA": 1,
+          "timeB": "Marrocos",
+          "golsB": 1
+        },
+        {
+          "participante": "Zilda 1",
+          "arquivo": "zilda_1",
+          "timeA": "Canadá",
+          "golsA": 0,
+          "timeB": "Marrocos",
+          "golsB": 1
+        },
+        {
+          "participante": "Zilda 2",
+          "arquivo": "zilda_2",
+          "timeA": "Canadá",
+          "golsA": 0,
+          "timeB": "Marrocos",
+          "golsB": 1
+        },
+        {
+          "participante": "Lucca",
+          "arquivo": "lucca",
+          "timeA": "Canadá",
+          "golsA": 0,
+          "timeB": "Marrocos",
+          "golsB": 1
+        }
+      ],
+      "data": "2026-07-04",
+      "hora": "12:00",
+      "local": "NRG Stadium - Houston"
+    },
+    {
+      "jogo": 91,
       "timeA": "Brasil",
       "golsA": 0,
       "timeB": "Noruega",
@@ -1612,10 +1616,12 @@
           "golsB": 1
         }
       ],
-      "data": "2026-07-05"
+      "data": "2026-07-05",
+      "hora": "16:00",
+      "local": "MetLife Stadium - Nova Jérsei"
     },
     {
-      "jogo": 20,
+      "jogo": 92,
       "timeA": "México",
       "golsA": 0,
       "timeB": "Inglaterra",
@@ -2070,10 +2076,12 @@
           "golsB": 2
         }
       ],
-      "data": "2026-07-05"
+      "data": "2026-07-05",
+      "hora": "18:00",
+      "local": "Estádio Azteca - Cidade do México"
     },
     {
-      "jogo": 21,
+      "jogo": 93,
       "timeA": "Portugal",
       "golsA": 0,
       "timeB": "Espanha",
@@ -2528,10 +2536,12 @@
           "golsB": 2
         }
       ],
-      "data": "2026-07-06"
+      "data": "2026-07-06",
+      "hora": "14:00",
+      "local": "AT&T Stadium - Arlington/Dallas"
     },
     {
-      "jogo": 22,
+      "jogo": 94,
       "timeA": "Estados Unidos",
       "golsA": 0,
       "timeB": "Bélgica",
@@ -2986,10 +2996,12 @@
           "golsB": 2
         }
       ],
-      "data": "2026-07-06"
+      "data": "2026-07-06",
+      "hora": "17:00",
+      "local": "Lumen Field - Seattle"
     },
     {
-      "jogo": 23,
+      "jogo": 95,
       "timeA": "Argentina",
       "golsA": 0,
       "timeB": "Egito",
@@ -3444,10 +3456,12 @@
           "golsB": 1
         }
       ],
-      "data": "2026-07-07"
+      "data": "2026-07-07",
+      "hora": "12:00",
+      "local": "Mercedes-Benz Stadium - Atlanta"
     },
     {
-      "jogo": 24,
+      "jogo": 96,
       "timeA": "Suíça",
       "golsA": 0,
       "timeB": "Colômbia",
@@ -3902,7 +3916,9 @@
           "golsB": 1
         }
       ],
-      "data": "2026-07-07"
+      "data": "2026-07-07",
+      "hora": "13:00",
+      "local": "BC Place - Vancouver"
     }
   ]
 }
