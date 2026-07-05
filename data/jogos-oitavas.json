@@ -1638,6 +1638,22 @@
           "golsA": 2,
           "timeB": "Noruega",
           "golsB": 2
+        },
+        {
+          "participante": "Louise",
+          "arquivo": "louise",
+          "timeA": "Brasil",
+          "golsA": 2,
+          "timeB": "Noruega",
+          "golsB": 1
+        },
+        {
+          "participante": "Vagner",
+          "arquivo": "vagner",
+          "timeA": "Brasil",
+          "golsA": 3,
+          "timeB": "Noruega",
+          "golsB": 1
         }
       ],
       "data": "2026-07-05",
@@ -2106,6 +2122,22 @@
           "golsA": 1,
           "timeB": "Inglaterra",
           "golsB": 1
+        },
+        {
+          "participante": "Louise",
+          "arquivo": "louise",
+          "timeA": "México",
+          "golsA": 1,
+          "timeB": "Inglaterra",
+          "golsB": 2
+        },
+        {
+          "participante": "Vagner",
+          "arquivo": "vagner",
+          "timeA": "México",
+          "golsA": 1,
+          "timeB": "Inglaterra",
+          "golsB": 2
         }
       ],
       "data": "2026-07-05",
@@ -2574,6 +2606,22 @@
           "golsA": 1,
           "timeB": "Espanha",
           "golsB": 0
+        },
+        {
+          "participante": "Louise",
+          "arquivo": "louise",
+          "timeA": "Portugal",
+          "golsA": 2,
+          "timeB": "Espanha",
+          "golsB": 1
+        },
+        {
+          "participante": "Vagner",
+          "arquivo": "vagner",
+          "timeA": "Portugal",
+          "golsA": 2,
+          "timeB": "Espanha",
+          "golsB": 1
         }
       ],
       "data": "2026-07-06",
@@ -3042,6 +3090,22 @@
           "golsA": 0,
           "timeB": "Bélgica",
           "golsB": 1
+        },
+        {
+          "participante": "Louise",
+          "arquivo": "louise",
+          "timeA": "Estados Unidos",
+          "golsA": 1,
+          "timeB": "Bélgica",
+          "golsB": 1
+        },
+        {
+          "participante": "Vagner",
+          "arquivo": "vagner",
+          "timeA": "Estados Unidos",
+          "golsA": 1,
+          "timeB": "Bélgica",
+          "golsB": 0
         }
       ],
       "data": "2026-07-06",
@@ -3510,6 +3574,22 @@
           "golsA": 0,
           "timeB": "Egito",
           "golsB": 0
+        },
+        {
+          "participante": "Louise",
+          "arquivo": "louise",
+          "timeA": "Argentina",
+          "golsA": 3,
+          "timeB": "Egito",
+          "golsB": 0
+        },
+        {
+          "participante": "Vagner",
+          "arquivo": "vagner",
+          "timeA": "Argentina",
+          "golsA": 3,
+          "timeB": "Egito",
+          "golsB": 1
         }
       ],
       "data": "2026-07-07",
@@ -3978,6 +4058,22 @@
           "golsA": 2,
           "timeB": "Colômbia",
           "golsB": 0
+        },
+        {
+          "participante": "Louise",
+          "arquivo": "louise",
+          "timeA": "Suíça",
+          "golsA": 1,
+          "timeB": "Colômbia",
+          "golsB": 2
+        },
+        {
+          "participante": "Vagner",
+          "arquivo": "vagner",
+          "timeA": "Suíça",
+          "golsA": 0,
+          "timeB": "Colômbia",
+          "golsB": 1
         }
       ],
       "data": "2026-07-07",
