@@ -1,0 +1,1748 @@
+{
+  "fase": "quartas",
+  "label": "Quartas de Final",
+  "participantes": [
+    {
+      "participante": "Adriano",
+      "arquivo": "Adriano"
+    },
+    {
+      "participante": "Bumblebee",
+      "arquivo": "Bumblebee"
+    },
+    {
+      "participante": "Gandalf",
+      "arquivo": "Gandalf"
+    },
+    {
+      "participante": "Adriano 2",
+      "arquivo": "Adriano_2"
+    },
+    {
+      "participante": "Amiguinho",
+      "arquivo": "amiguinho"
+    },
+    {
+      "participante": "Dudinha",
+      "arquivo": "dudinha"
+    },
+    {
+      "participante": "Elvis",
+      "arquivo": "elvis"
+    },
+    {
+      "participante": "Fernanda",
+      "arquivo": "fernanda"
+    },
+    {
+      "participante": "Francisco",
+      "arquivo": "francisco"
+    },
+    {
+      "participante": "Fátima",
+      "arquivo": "fatima"
+    },
+    {
+      "participante": "Gargamel",
+      "arquivo": "gargamel"
+    },
+    {
+      "participante": "GU",
+      "arquivo": "gu"
+    },
+    {
+      "participante": "José 1",
+      "arquivo": "jose_1"
+    },
+    {
+      "participante": "José 2",
+      "arquivo": "jose_2"
+    },
+    {
+      "participante": "José 3",
+      "arquivo": "jose_3"
+    },
+    {
+      "participante": "Manuela",
+      "arquivo": "manuela"
+    },
+    {
+      "participante": "Maria 1",
+      "arquivo": "maria_1"
+    },
+    {
+      "participante": "Maria 2",
+      "arquivo": "maria_2"
+    },
+    {
+      "participante": "Maria 3",
+      "arquivo": "maria_3"
+    },
+    {
+      "participante": "Marta 1",
+      "arquivo": "marta_1"
+    },
+    {
+      "participante": "Marta 2",
+      "arquivo": "marta_2"
+    },
+    {
+      "participante": "Marta 3",
+      "arquivo": "marta_3"
+    },
+    {
+      "participante": "Marta 4",
+      "arquivo": "marta_4"
+    },
+    {
+      "participante": "Marta 5",
+      "arquivo": "marta_5"
+    },
+    {
+      "participante": "Nina",
+      "arquivo": "nina"
+    },
+    {
+      "participante": "Edney",
+      "arquivo": "edney"
+    },
+    {
+      "participante": "Rosana",
+      "arquivo": "rosana"
+    },
+    {
+      "participante": "Danilo",
+      "arquivo": "danilo"
+    },
+    {
+      "participante": "Victor",
+      "arquivo": "victor"
+    },
+    {
+      "participante": "César",
+      "arquivo": "cesar"
+    },
+    {
+      "participante": "Firulais",
+      "arquivo": "firulais"
+    },
+    {
+      "participante": "Gregorio",
+      "arquivo": "gregorio"
+    },
+    {
+      "participante": "Ligia",
+      "arquivo": "ligia"
+    },
+    {
+      "participante": "Lucas",
+      "arquivo": "lucas"
+    },
+    {
+      "participante": "Luciano",
+      "arquivo": "luciano"
+    },
+    {
+      "participante": "Nono 1",
+      "arquivo": "nono_1"
+    },
+    {
+      "participante": "Nono 2",
+      "arquivo": "nono_2"
+    },
+    {
+      "participante": "Nono 3",
+      "arquivo": "nono_3"
+    },
+    {
+      "participante": "Régis",
+      "arquivo": "regis"
+    },
+    {
+      "participante": "Régis-IA",
+      "arquivo": "regis-ia"
+    },
+    {
+      "participante": "Sofia",
+      "arquivo": "sofia"
+    },
+    {
+      "participante": "Zilda 1",
+      "arquivo": "zilda_1"
+    },
+    {
+      "participante": "Zilda 2",
+      "arquivo": "zilda_2"
+    },
+    {
+      "participante": "Lucca",
+      "arquivo": "lucca"
+    },
+    {
+      "participante": "Louise",
+      "arquivo": "louise"
+    },
+    {
+      "participante": "Vagner",
+      "arquivo": "vagner"
+    },
+    {
+      "participante": "Toninho",
+      "arquivo": "toninho"
+    }
+  ],
+  "jogos": [
+    {
+      "jogo": 97,
+      "timeA": "França",
+      "golsA": 0,
+      "timeB": "Marrocos",
+      "golsB": 0,
+      "palpites": [
+        {
+          "participante": "Adriano",
+          "arquivo": "Adriano",
+          "timeA": "França",
+          "golsA": 1,
+          "timeB": "Marrocos",
+          "golsB": 0
+        },
+        {
+          "participante": "Bumblebee",
+          "arquivo": "Bumblebee",
+          "timeA": "França",
+          "golsA": 1,
+          "timeB": "Marrocos",
+          "golsB": 1
+        },
+        {
+          "participante": "Gandalf",
+          "arquivo": "Gandalf",
+          "timeA": "França",
+          "golsA": 2,
+          "timeB": "Marrocos",
+          "golsB": 0
+        },
+        {
+          "participante": "Adriano 2",
+          "arquivo": "Adriano_2",
+          "timeA": "França",
+          "golsA": 1,
+          "timeB": "Marrocos",
+          "golsB": 0
+        },
+        {
+          "participante": "Amiguinho",
+          "arquivo": "amiguinho",
+          "timeA": "França",
+          "golsA": 2,
+          "timeB": "Marrocos",
+          "golsB": 0
+        },
+        {
+          "participante": "Dudinha",
+          "arquivo": "dudinha",
+          "timeA": "França",
+          "golsA": 2,
+          "timeB": "Marrocos",
+          "golsB": 0
+        },
+        {
+          "participante": "Elvis",
+          "arquivo": "elvis",
+          "timeA": "França",
+          "golsA": 0,
+          "timeB": "Marrocos",
+          "golsB": 1
+        },
+        {
+          "participante": "Fernanda",
+          "arquivo": "fernanda",
+          "timeA": "França",
+          "golsA": 1,
+          "timeB": "Marrocos",
+          "golsB": 0
+        },
+        {
+          "participante": "Francisco",
+          "arquivo": "francisco",
+          "timeA": "França",
+          "golsA": 1,
+          "timeB": "Marrocos",
+          "golsB": 0
+        },
+        {
+          "participante": "Fátima",
+          "arquivo": "fatima",
+          "timeA": "França",
+          "golsA": 0,
+          "timeB": "Marrocos",
+          "golsB": 1
+        },
+        {
+          "participante": "Gargamel",
+          "arquivo": "gargamel",
+          "timeA": "França",
+          "golsA": 0,
+          "timeB": "Marrocos",
+          "golsB": 0
+        },
+        {
+          "participante": "GU",
+          "arquivo": "gu",
+          "timeA": "França",
+          "golsA": 0,
+          "timeB": "Marrocos",
+          "golsB": 0
+        },
+        {
+          "participante": "José 1",
+          "arquivo": "jose_1",
+          "timeA": "França",
+          "golsA": 2,
+          "timeB": "Marrocos",
+          "golsB": 1
+        },
+        {
+          "participante": "José 2",
+          "arquivo": "jose_2",
+          "timeA": "França",
+          "golsA": 1,
+          "timeB": "Marrocos",
+          "golsB": 0
+        },
+        {
+          "participante": "José 3",
+          "arquivo": "jose_3",
+          "timeA": "França",
+          "golsA": 2,
+          "timeB": "Marrocos",
+          "golsB": 0
+        },
+        {
+          "participante": "Manuela",
+          "arquivo": "manuela",
+          "timeA": "França",
+          "golsA": 1,
+          "timeB": "Marrocos",
+          "golsB": 1
+        },
+        {
+          "participante": "Maria 1",
+          "arquivo": "maria_1",
+          "timeA": "França",
+          "golsA": 2,
+          "timeB": "Marrocos",
+          "golsB": 1
+        },
+        {
+          "participante": "Maria 2",
+          "arquivo": "maria_2",
+          "timeA": "França",
+          "golsA": 2,
+          "timeB": "Marrocos",
+          "golsB": 0
+        },
+        {
+          "participante": "Maria 3",
+          "arquivo": "maria_3",
+          "timeA": "França",
+          "golsA": 3,
+          "timeB": "Marrocos",
+          "golsB": 1
+        },
+        {
+          "participante": "Marta 1",
+          "arquivo": "marta_1",
+          "timeA": "França",
+          "golsA": 0,
+          "timeB": "Marrocos",
+          "golsB": 1
+        },
+        {
+          "participante": "Marta 2",
+          "arquivo": "marta_2",
+          "timeA": "França",
+          "golsA": 1,
+          "timeB": "Marrocos",
+          "golsB": 0
+        },
+        {
+          "participante": "Marta 3",
+          "arquivo": "marta_3",
+          "timeA": "França",
+          "golsA": 1,
+          "timeB": "Marrocos",
+          "golsB": 1
+        },
+        {
+          "participante": "Marta 4",
+          "arquivo": "marta_4",
+          "timeA": "França",
+          "golsA": 2,
+          "timeB": "Marrocos",
+          "golsB": 1
+        },
+        {
+          "participante": "Marta 5",
+          "arquivo": "marta_5",
+          "timeA": "França",
+          "golsA": 2,
+          "timeB": "Marrocos",
+          "golsB": 0
+        },
+        {
+          "participante": "Nina",
+          "arquivo": "nina",
+          "timeA": "França",
+          "golsA": 3,
+          "timeB": "Marrocos",
+          "golsB": 1
+        },
+        {
+          "participante": "Edney",
+          "arquivo": "edney",
+          "timeA": "França",
+          "golsA": 2,
+          "timeB": "Marrocos",
+          "golsB": 2
+        },
+        {
+          "participante": "Rosana",
+          "arquivo": "rosana",
+          "timeA": "França",
+          "golsA": 3,
+          "timeB": "Marrocos",
+          "golsB": 1
+        },
+        {
+          "participante": "Danilo",
+          "arquivo": "danilo",
+          "timeA": "França",
+          "golsA": 2,
+          "timeB": "Marrocos",
+          "golsB": 0
+        },
+        {
+          "participante": "Victor",
+          "arquivo": "victor",
+          "timeA": "França",
+          "golsA": 2,
+          "timeB": "Marrocos",
+          "golsB": 0
+        },
+        {
+          "participante": "César",
+          "arquivo": "cesar",
+          "timeA": "França",
+          "golsA": 3,
+          "timeB": "Marrocos",
+          "golsB": 0
+        },
+        {
+          "participante": "Firulais",
+          "arquivo": "firulais",
+          "timeA": "França",
+          "golsA": 1,
+          "timeB": "Marrocos",
+          "golsB": 0
+        },
+        {
+          "participante": "Gregorio",
+          "arquivo": "gregorio",
+          "timeA": "França",
+          "golsA": 1,
+          "timeB": "Marrocos",
+          "golsB": 1
+        },
+        {
+          "participante": "Ligia",
+          "arquivo": "ligia",
+          "timeA": "França",
+          "golsA": 3,
+          "timeB": "Marrocos",
+          "golsB": 1
+        },
+        {
+          "participante": "Lucas",
+          "arquivo": "lucas",
+          "timeA": "França",
+          "golsA": 2,
+          "timeB": "Marrocos",
+          "golsB": 0
+        },
+        {
+          "participante": "Luciano",
+          "arquivo": "luciano",
+          "timeA": "França",
+          "golsA": 2,
+          "timeB": "Marrocos",
+          "golsB": 1
+        },
+        {
+          "participante": "Nono 1",
+          "arquivo": "nono_1",
+          "timeA": "França",
+          "golsA": 1,
+          "timeB": "Marrocos",
+          "golsB": 0
+        },
+        {
+          "participante": "Nono 2",
+          "arquivo": "nono_2",
+          "timeA": "França",
+          "golsA": 1,
+          "timeB": "Marrocos",
+          "golsB": 0
+        },
+        {
+          "participante": "Nono 3",
+          "arquivo": "nono_3",
+          "timeA": "França",
+          "golsA": 2,
+          "timeB": "Marrocos",
+          "golsB": 0
+        },
+        {
+          "participante": "Régis",
+          "arquivo": "regis",
+          "timeA": "França",
+          "golsA": 2,
+          "timeB": "Marrocos",
+          "golsB": 0
+        },
+        {
+          "participante": "Régis-IA",
+          "arquivo": "regis-ia",
+          "timeA": "França",
+          "golsA": 2,
+          "timeB": "Marrocos",
+          "golsB": 1
+        },
+        {
+          "participante": "Sofia",
+          "arquivo": "sofia",
+          "timeA": "França",
+          "golsA": 2,
+          "timeB": "Marrocos",
+          "golsB": 1
+        },
+        {
+          "participante": "Zilda 1",
+          "arquivo": "zilda_1",
+          "timeA": "França",
+          "golsA": 2,
+          "timeB": "Marrocos",
+          "golsB": 0
+        },
+        {
+          "participante": "Zilda 2",
+          "arquivo": "zilda_2",
+          "timeA": "França",
+          "golsA": 2,
+          "timeB": "Marrocos",
+          "golsB": 0
+        },
+        {
+          "participante": "Lucca",
+          "arquivo": "lucca",
+          "timeA": "França",
+          "golsA": 2,
+          "timeB": "Marrocos",
+          "golsB": 1
+        },
+        {
+          "participante": "Louise",
+          "arquivo": "louise",
+          "timeA": "França",
+          "golsA": 2,
+          "timeB": "Marrocos",
+          "golsB": 1
+        },
+        {
+          "participante": "Vagner",
+          "arquivo": "vagner",
+          "timeA": "França",
+          "golsA": 3,
+          "timeB": "Marrocos",
+          "golsB": 1
+        },
+        {
+          "participante": "Toninho",
+          "arquivo": "toninho",
+          "timeA": "França",
+          "golsA": 1,
+          "timeB": "Marrocos",
+          "golsB": 0
+        }
+      ],
+      "data": "2026-07-09",
+      "hora": "17:00",
+      "local": "Estádio Gillette - Boston"
+    },
+    {
+      "jogo": 98,
+      "timeA": "Espanha",
+      "golsA": 0,
+      "timeB": "Bélgica",
+      "golsB": 0,
+      "palpites": [
+        {
+          "participante": "Adriano",
+          "arquivo": "Adriano",
+          "timeA": "Espanha",
+          "golsA": 1,
+          "timeB": "Bélgica",
+          "golsB": 0
+        },
+        {
+          "participante": "Bumblebee",
+          "arquivo": "Bumblebee",
+          "timeA": "Espanha",
+          "golsA": 0,
+          "timeB": "Bélgica",
+          "golsB": 0
+        },
+        {
+          "participante": "Gandalf",
+          "arquivo": "Gandalf",
+          "timeA": "Espanha",
+          "golsA": 2,
+          "timeB": "Bélgica",
+          "golsB": 1
+        },
+        {
+          "participante": "Adriano 2",
+          "arquivo": "Adriano_2",
+          "timeA": "Espanha",
+          "golsA": 1,
+          "timeB": "Bélgica",
+          "golsB": 0
+        },
+        {
+          "participante": "Amiguinho",
+          "arquivo": "amiguinho",
+          "timeA": "Espanha",
+          "golsA": 2,
+          "timeB": "Bélgica",
+          "golsB": 1
+        },
+        {
+          "participante": "Dudinha",
+          "arquivo": "dudinha",
+          "timeA": "Espanha",
+          "golsA": 3,
+          "timeB": "Bélgica",
+          "golsB": 2
+        },
+        {
+          "participante": "Elvis",
+          "arquivo": "elvis",
+          "timeA": "Espanha",
+          "golsA": 0,
+          "timeB": "Bélgica",
+          "golsB": 1
+        },
+        {
+          "participante": "Fernanda",
+          "arquivo": "fernanda",
+          "timeA": "Espanha",
+          "golsA": 0,
+          "timeB": "Bélgica",
+          "golsB": 1
+        },
+        {
+          "participante": "Francisco",
+          "arquivo": "francisco",
+          "timeA": "Espanha",
+          "golsA": 2,
+          "timeB": "Bélgica",
+          "golsB": 1
+        },
+        {
+          "participante": "Fátima",
+          "arquivo": "fatima",
+          "timeA": "Espanha",
+          "golsA": 1,
+          "timeB": "Bélgica",
+          "golsB": 2
+        },
+        {
+          "participante": "Gargamel",
+          "arquivo": "gargamel",
+          "timeA": "Espanha",
+          "golsA": 2,
+          "timeB": "Bélgica",
+          "golsB": 1
+        },
+        {
+          "participante": "GU",
+          "arquivo": "gu",
+          "timeA": "Espanha",
+          "golsA": 0,
+          "timeB": "Bélgica",
+          "golsB": 0
+        },
+        {
+          "participante": "José 1",
+          "arquivo": "jose_1",
+          "timeA": "Espanha",
+          "golsA": 1,
+          "timeB": "Bélgica",
+          "golsB": 1
+        },
+        {
+          "participante": "José 2",
+          "arquivo": "jose_2",
+          "timeA": "Espanha",
+          "golsA": 2,
+          "timeB": "Bélgica",
+          "golsB": 0
+        },
+        {
+          "participante": "José 3",
+          "arquivo": "jose_3",
+          "timeA": "Espanha",
+          "golsA": 2,
+          "timeB": "Bélgica",
+          "golsB": 1
+        },
+        {
+          "participante": "Manuela",
+          "arquivo": "manuela",
+          "timeA": "Espanha",
+          "golsA": 1,
+          "timeB": "Bélgica",
+          "golsB": 0
+        },
+        {
+          "participante": "Maria 1",
+          "arquivo": "maria_1",
+          "timeA": "Espanha",
+          "golsA": 1,
+          "timeB": "Bélgica",
+          "golsB": 0
+        },
+        {
+          "participante": "Maria 2",
+          "arquivo": "maria_2",
+          "timeA": "Espanha",
+          "golsA": 1,
+          "timeB": "Bélgica",
+          "golsB": 1
+        },
+        {
+          "participante": "Maria 3",
+          "arquivo": "maria_3",
+          "timeA": "Espanha",
+          "golsA": 2,
+          "timeB": "Bélgica",
+          "golsB": 1
+        },
+        {
+          "participante": "Marta 1",
+          "arquivo": "marta_1",
+          "timeA": "Espanha",
+          "golsA": 1,
+          "timeB": "Bélgica",
+          "golsB": 0
+        },
+        {
+          "participante": "Marta 2",
+          "arquivo": "marta_2",
+          "timeA": "Espanha",
+          "golsA": 1,
+          "timeB": "Bélgica",
+          "golsB": 1
+        },
+        {
+          "participante": "Marta 3",
+          "arquivo": "marta_3",
+          "timeA": "Espanha",
+          "golsA": 2,
+          "timeB": "Bélgica",
+          "golsB": 1
+        },
+        {
+          "participante": "Marta 4",
+          "arquivo": "marta_4",
+          "timeA": "Espanha",
+          "golsA": 0,
+          "timeB": "Bélgica",
+          "golsB": 2
+        },
+        {
+          "participante": "Marta 5",
+          "arquivo": "marta_5",
+          "timeA": "Espanha",
+          "golsA": 0,
+          "timeB": "Bélgica",
+          "golsB": 1
+        },
+        {
+          "participante": "Nina",
+          "arquivo": "nina",
+          "timeA": "Espanha",
+          "golsA": 0,
+          "timeB": "Bélgica",
+          "golsB": 2
+        },
+        {
+          "participante": "Edney",
+          "arquivo": "edney",
+          "timeA": "Espanha",
+          "golsA": 2,
+          "timeB": "Bélgica",
+          "golsB": 2
+        },
+        {
+          "participante": "Rosana",
+          "arquivo": "rosana",
+          "timeA": "Espanha",
+          "golsA": 3,
+          "timeB": "Bélgica",
+          "golsB": 2
+        },
+        {
+          "participante": "Danilo",
+          "arquivo": "danilo",
+          "timeA": "Espanha",
+          "golsA": 2,
+          "timeB": "Bélgica",
+          "golsB": 1
+        },
+        {
+          "participante": "Victor",
+          "arquivo": "victor",
+          "timeA": "Espanha",
+          "golsA": 2,
+          "timeB": "Bélgica",
+          "golsB": 1
+        },
+        {
+          "participante": "César",
+          "arquivo": "cesar",
+          "timeA": "Espanha",
+          "golsA": 3,
+          "timeB": "Bélgica",
+          "golsB": 1
+        },
+        {
+          "participante": "Firulais",
+          "arquivo": "firulais",
+          "timeA": "Espanha",
+          "golsA": 2,
+          "timeB": "Bélgica",
+          "golsB": 0
+        },
+        {
+          "participante": "Gregorio",
+          "arquivo": "gregorio",
+          "timeA": "Espanha",
+          "golsA": 0,
+          "timeB": "Bélgica",
+          "golsB": 0
+        },
+        {
+          "participante": "Ligia",
+          "arquivo": "ligia",
+          "timeA": "Espanha",
+          "golsA": 0,
+          "timeB": "Bélgica",
+          "golsB": 0
+        },
+        {
+          "participante": "Lucas",
+          "arquivo": "lucas",
+          "timeA": "Espanha",
+          "golsA": 1,
+          "timeB": "Bélgica",
+          "golsB": 0
+        },
+        {
+          "participante": "Luciano",
+          "arquivo": "luciano",
+          "timeA": "Espanha",
+          "golsA": 2,
+          "timeB": "Bélgica",
+          "golsB": 0
+        },
+        {
+          "participante": "Nono 1",
+          "arquivo": "nono_1",
+          "timeA": "Espanha",
+          "golsA": 2,
+          "timeB": "Bélgica",
+          "golsB": 0
+        },
+        {
+          "participante": "Nono 2",
+          "arquivo": "nono_2",
+          "timeA": "Espanha",
+          "golsA": 1,
+          "timeB": "Bélgica",
+          "golsB": 0
+        },
+        {
+          "participante": "Nono 3",
+          "arquivo": "nono_3",
+          "timeA": "Espanha",
+          "golsA": 2,
+          "timeB": "Bélgica",
+          "golsB": 0
+        },
+        {
+          "participante": "Régis",
+          "arquivo": "regis",
+          "timeA": "Espanha",
+          "golsA": 2,
+          "timeB": "Bélgica",
+          "golsB": 1
+        },
+        {
+          "participante": "Régis-IA",
+          "arquivo": "regis-ia",
+          "timeA": "Espanha",
+          "golsA": 1,
+          "timeB": "Bélgica",
+          "golsB": 0
+        },
+        {
+          "participante": "Sofia",
+          "arquivo": "sofia",
+          "timeA": "Espanha",
+          "golsA": 1,
+          "timeB": "Bélgica",
+          "golsB": 0
+        },
+        {
+          "participante": "Zilda 1",
+          "arquivo": "zilda_1",
+          "timeA": "Espanha",
+          "golsA": 2,
+          "timeB": "Bélgica",
+          "golsB": 1
+        },
+        {
+          "participante": "Zilda 2",
+          "arquivo": "zilda_2",
+          "timeA": "Espanha",
+          "golsA": 2,
+          "timeB": "Bélgica",
+          "golsB": 0
+        },
+        {
+          "participante": "Lucca",
+          "arquivo": "lucca",
+          "timeA": "Espanha",
+          "golsA": 2,
+          "timeB": "Bélgica",
+          "golsB": 2
+        },
+        {
+          "participante": "Louise",
+          "arquivo": "louise",
+          "timeA": "Espanha",
+          "golsA": 1,
+          "timeB": "Bélgica",
+          "golsB": 2
+        },
+        {
+          "participante": "Vagner",
+          "arquivo": "vagner",
+          "timeA": "Espanha",
+          "golsA": 2,
+          "timeB": "Bélgica",
+          "golsB": 0
+        },
+        {
+          "participante": "Toninho",
+          "arquivo": "toninho",
+          "timeA": "Espanha",
+          "golsA": 0,
+          "timeB": "Bélgica",
+          "golsB": 2
+        }
+      ],
+      "data": "2026-07-10",
+      "hora": "16:00",
+      "local": "Sofi Stadium - Los Angeles"
+    },
+    {
+      "jogo": 99,
+      "timeA": "Noruega",
+      "golsA": 0,
+      "timeB": "Inglaterra",
+      "golsB": 0,
+      "palpites": [
+        {
+          "participante": "Adriano",
+          "arquivo": "Adriano",
+          "timeA": "Noruega",
+          "golsA": 0,
+          "timeB": "Inglaterra",
+          "golsB": 1
+        },
+        {
+          "participante": "Bumblebee",
+          "arquivo": "Bumblebee",
+          "timeA": "Noruega",
+          "golsA": 0,
+          "timeB": "Inglaterra",
+          "golsB": 0
+        },
+        {
+          "participante": "Gandalf",
+          "arquivo": "Gandalf",
+          "timeA": "Noruega",
+          "golsA": 0,
+          "timeB": "Inglaterra",
+          "golsB": 1
+        },
+        {
+          "participante": "Adriano 2",
+          "arquivo": "Adriano_2",
+          "timeA": "Noruega",
+          "golsA": 0,
+          "timeB": "Inglaterra",
+          "golsB": 0
+        },
+        {
+          "participante": "Amiguinho",
+          "arquivo": "amiguinho",
+          "timeA": "Noruega",
+          "golsA": 0,
+          "timeB": "Inglaterra",
+          "golsB": 1
+        },
+        {
+          "participante": "Dudinha",
+          "arquivo": "dudinha",
+          "timeA": "Noruega",
+          "golsA": 2,
+          "timeB": "Inglaterra",
+          "golsB": 1
+        },
+        {
+          "participante": "Elvis",
+          "arquivo": "elvis",
+          "timeA": "Noruega",
+          "golsA": 0,
+          "timeB": "Inglaterra",
+          "golsB": 1
+        },
+        {
+          "participante": "Fernanda",
+          "arquivo": "fernanda",
+          "timeA": "Noruega",
+          "golsA": 2,
+          "timeB": "Inglaterra",
+          "golsB": 0
+        },
+        {
+          "participante": "Francisco",
+          "arquivo": "francisco",
+          "timeA": "Noruega",
+          "golsA": 1,
+          "timeB": "Inglaterra",
+          "golsB": 2
+        },
+        {
+          "participante": "Fátima",
+          "arquivo": "fatima",
+          "timeA": "Noruega",
+          "golsA": 2,
+          "timeB": "Inglaterra",
+          "golsB": 1
+        },
+        {
+          "participante": "Gargamel",
+          "arquivo": "gargamel",
+          "timeA": "Noruega",
+          "golsA": 1,
+          "timeB": "Inglaterra",
+          "golsB": 2
+        },
+        {
+          "participante": "GU",
+          "arquivo": "gu",
+          "timeA": "Noruega",
+          "golsA": 1,
+          "timeB": "Inglaterra",
+          "golsB": 1
+        },
+        {
+          "participante": "José 1",
+          "arquivo": "jose_1",
+          "timeA": "Noruega",
+          "golsA": 0,
+          "timeB": "Inglaterra",
+          "golsB": 2
+        },
+        {
+          "participante": "José 2",
+          "arquivo": "jose_2",
+          "timeA": "Noruega",
+          "golsA": 1,
+          "timeB": "Inglaterra",
+          "golsB": 2
+        },
+        {
+          "participante": "José 3",
+          "arquivo": "jose_3",
+          "timeA": "Noruega",
+          "golsA": 1,
+          "timeB": "Inglaterra",
+          "golsB": 1
+        },
+        {
+          "participante": "Manuela",
+          "arquivo": "manuela",
+          "timeA": "Noruega",
+          "golsA": 0,
+          "timeB": "Inglaterra",
+          "golsB": 2
+        },
+        {
+          "participante": "Maria 1",
+          "arquivo": "maria_1",
+          "timeA": "Noruega",
+          "golsA": 1,
+          "timeB": "Inglaterra",
+          "golsB": 1
+        },
+        {
+          "participante": "Maria 2",
+          "arquivo": "maria_2",
+          "timeA": "Noruega",
+          "golsA": 2,
+          "timeB": "Inglaterra",
+          "golsB": 1
+        },
+        {
+          "participante": "Maria 3",
+          "arquivo": "maria_3",
+          "timeA": "Noruega",
+          "golsA": 1,
+          "timeB": "Inglaterra",
+          "golsB": 3
+        },
+        {
+          "participante": "Marta 1",
+          "arquivo": "marta_1",
+          "timeA": "Noruega",
+          "golsA": 1,
+          "timeB": "Inglaterra",
+          "golsB": 2
+        },
+        {
+          "participante": "Marta 2",
+          "arquivo": "marta_2",
+          "timeA": "Noruega",
+          "golsA": 0,
+          "timeB": "Inglaterra",
+          "golsB": 2
+        },
+        {
+          "participante": "Marta 3",
+          "arquivo": "marta_3",
+          "timeA": "Noruega",
+          "golsA": 0,
+          "timeB": "Inglaterra",
+          "golsB": 0
+        },
+        {
+          "participante": "Marta 4",
+          "arquivo": "marta_4",
+          "timeA": "Noruega",
+          "golsA": 1,
+          "timeB": "Inglaterra",
+          "golsB": 0
+        },
+        {
+          "participante": "Marta 5",
+          "arquivo": "marta_5",
+          "timeA": "Noruega",
+          "golsA": 1,
+          "timeB": "Inglaterra",
+          "golsB": 1
+        },
+        {
+          "participante": "Nina",
+          "arquivo": "nina",
+          "timeA": "Noruega",
+          "golsA": 1,
+          "timeB": "Inglaterra",
+          "golsB": 3
+        },
+        {
+          "participante": "Edney",
+          "arquivo": "edney",
+          "timeA": "Noruega",
+          "golsA": 1,
+          "timeB": "Inglaterra",
+          "golsB": 1
+        },
+        {
+          "participante": "Rosana",
+          "arquivo": "rosana",
+          "timeA": "Noruega",
+          "golsA": 3,
+          "timeB": "Inglaterra",
+          "golsB": 1
+        },
+        {
+          "participante": "Danilo",
+          "arquivo": "danilo",
+          "timeA": "Noruega",
+          "golsA": 1,
+          "timeB": "Inglaterra",
+          "golsB": 2
+        },
+        {
+          "participante": "Victor",
+          "arquivo": "victor",
+          "timeA": "Noruega",
+          "golsA": 1,
+          "timeB": "Inglaterra",
+          "golsB": 1
+        },
+        {
+          "participante": "César",
+          "arquivo": "cesar",
+          "timeA": "Noruega",
+          "golsA": 1,
+          "timeB": "Inglaterra",
+          "golsB": 2
+        },
+        {
+          "participante": "Firulais",
+          "arquivo": "firulais",
+          "timeA": "Noruega",
+          "golsA": 1,
+          "timeB": "Inglaterra",
+          "golsB": 2
+        },
+        {
+          "participante": "Gregorio",
+          "arquivo": "gregorio",
+          "timeA": "Noruega",
+          "golsA": 1,
+          "timeB": "Inglaterra",
+          "golsB": 0
+        },
+        {
+          "participante": "Ligia",
+          "arquivo": "ligia",
+          "timeA": "Noruega",
+          "golsA": 1,
+          "timeB": "Inglaterra",
+          "golsB": 0
+        },
+        {
+          "participante": "Lucas",
+          "arquivo": "lucas",
+          "timeA": "Noruega",
+          "golsA": 1,
+          "timeB": "Inglaterra",
+          "golsB": 2
+        },
+        {
+          "participante": "Luciano",
+          "arquivo": "luciano",
+          "timeA": "Noruega",
+          "golsA": 1,
+          "timeB": "Inglaterra",
+          "golsB": 2
+        },
+        {
+          "participante": "Nono 1",
+          "arquivo": "nono_1",
+          "timeA": "Noruega",
+          "golsA": 0,
+          "timeB": "Inglaterra",
+          "golsB": 0
+        },
+        {
+          "participante": "Nono 2",
+          "arquivo": "nono_2",
+          "timeA": "Noruega",
+          "golsA": 0,
+          "timeB": "Inglaterra",
+          "golsB": 1
+        },
+        {
+          "participante": "Nono 3",
+          "arquivo": "nono_3",
+          "timeA": "Noruega",
+          "golsA": 1,
+          "timeB": "Inglaterra",
+          "golsB": 1
+        },
+        {
+          "participante": "Régis",
+          "arquivo": "regis",
+          "timeA": "Noruega",
+          "golsA": 1,
+          "timeB": "Inglaterra",
+          "golsB": 1
+        },
+        {
+          "participante": "Régis-IA",
+          "arquivo": "regis-ia",
+          "timeA": "Noruega",
+          "golsA": 1,
+          "timeB": "Inglaterra",
+          "golsB": 2
+        },
+        {
+          "participante": "Sofia",
+          "arquivo": "sofia",
+          "timeA": "Noruega",
+          "golsA": 1,
+          "timeB": "Inglaterra",
+          "golsB": 1
+        },
+        {
+          "participante": "Zilda 1",
+          "arquivo": "zilda_1",
+          "timeA": "Noruega",
+          "golsA": 0,
+          "timeB": "Inglaterra",
+          "golsB": 1
+        },
+        {
+          "participante": "Zilda 2",
+          "arquivo": "zilda_2",
+          "timeA": "Noruega",
+          "golsA": 0,
+          "timeB": "Inglaterra",
+          "golsB": 0
+        },
+        {
+          "participante": "Lucca",
+          "arquivo": "lucca",
+          "timeA": "Noruega",
+          "golsA": 2,
+          "timeB": "Inglaterra",
+          "golsB": 1
+        },
+        {
+          "participante": "Louise",
+          "arquivo": "louise",
+          "timeA": "Noruega",
+          "golsA": 2,
+          "timeB": "Inglaterra",
+          "golsB": 1
+        },
+        {
+          "participante": "Vagner",
+          "arquivo": "vagner",
+          "timeA": "Noruega",
+          "golsA": 1,
+          "timeB": "Inglaterra",
+          "golsB": 3
+        },
+        {
+          "participante": "Toninho",
+          "arquivo": "toninho",
+          "timeA": "Noruega",
+          "golsA": 2,
+          "timeB": "Inglaterra",
+          "golsB": 1
+        }
+      ],
+      "data": "2026-07-11",
+      "hora": "18:00",
+      "local": "Hard Rock Stadium - Miami"
+    },
+    {
+      "jogo": 100,
+      "timeA": "Argentina",
+      "golsA": 0,
+      "timeB": "Suíça",
+      "golsB": 0,
+      "palpites": [
+        {
+          "participante": "Adriano",
+          "arquivo": "Adriano",
+          "timeA": "Argentina",
+          "golsA": 1,
+          "timeB": "Suíça",
+          "golsB": 0
+        },
+        {
+          "participante": "Bumblebee",
+          "arquivo": "Bumblebee",
+          "timeA": "Argentina",
+          "golsA": 1,
+          "timeB": "Suíça",
+          "golsB": 1
+        },
+        {
+          "participante": "Gandalf",
+          "arquivo": "Gandalf",
+          "timeA": "Argentina",
+          "golsA": 2,
+          "timeB": "Suíça",
+          "golsB": 0
+        },
+        {
+          "participante": "Adriano 2",
+          "arquivo": "Adriano_2",
+          "timeA": "Argentina",
+          "golsA": 1,
+          "timeB": "Suíça",
+          "golsB": 0
+        },
+        {
+          "participante": "Amiguinho",
+          "arquivo": "amiguinho",
+          "timeA": "Argentina",
+          "golsA": 2,
+          "timeB": "Suíça",
+          "golsB": 0
+        },
+        {
+          "participante": "Dudinha",
+          "arquivo": "dudinha",
+          "timeA": "Argentina",
+          "golsA": 2,
+          "timeB": "Suíça",
+          "golsB": 0
+        },
+        {
+          "participante": "Elvis",
+          "arquivo": "elvis",
+          "timeA": "Argentina",
+          "golsA": 1,
+          "timeB": "Suíça",
+          "golsB": 1
+        },
+        {
+          "participante": "Fernanda",
+          "arquivo": "fernanda",
+          "timeA": "Argentina",
+          "golsA": 3,
+          "timeB": "Suíça",
+          "golsB": 1
+        },
+        {
+          "participante": "Francisco",
+          "arquivo": "francisco",
+          "timeA": "Argentina",
+          "golsA": 2,
+          "timeB": "Suíça",
+          "golsB": 1
+        },
+        {
+          "participante": "Fátima",
+          "arquivo": "fatima",
+          "timeA": "Argentina",
+          "golsA": 0,
+          "timeB": "Suíça",
+          "golsB": 1
+        },
+        {
+          "participante": "Gargamel",
+          "arquivo": "gargamel",
+          "timeA": "Argentina",
+          "golsA": 2,
+          "timeB": "Suíça",
+          "golsB": 0
+        },
+        {
+          "participante": "GU",
+          "arquivo": "gu",
+          "timeA": "Argentina",
+          "golsA": 1,
+          "timeB": "Suíça",
+          "golsB": 1
+        },
+        {
+          "participante": "José 1",
+          "arquivo": "jose_1",
+          "timeA": "Argentina",
+          "golsA": 1,
+          "timeB": "Suíça",
+          "golsB": 0
+        },
+        {
+          "participante": "José 2",
+          "arquivo": "jose_2",
+          "timeA": "Argentina",
+          "golsA": 2,
+          "timeB": "Suíça",
+          "golsB": 1
+        },
+        {
+          "participante": "José 3",
+          "arquivo": "jose_3",
+          "timeA": "Argentina",
+          "golsA": 2,
+          "timeB": "Suíça",
+          "golsB": 0
+        },
+        {
+          "participante": "Manuela",
+          "arquivo": "manuela",
+          "timeA": "Argentina",
+          "golsA": 1,
+          "timeB": "Suíça",
+          "golsB": 0
+        },
+        {
+          "participante": "Maria 1",
+          "arquivo": "maria_1",
+          "timeA": "Argentina",
+          "golsA": 3,
+          "timeB": "Suíça",
+          "golsB": 1
+        },
+        {
+          "participante": "Maria 2",
+          "arquivo": "maria_2",
+          "timeA": "Argentina",
+          "golsA": 2,
+          "timeB": "Suíça",
+          "golsB": 1
+        },
+        {
+          "participante": "Maria 3",
+          "arquivo": "maria_3",
+          "timeA": "Argentina",
+          "golsA": 1,
+          "timeB": "Suíça",
+          "golsB": 1
+        },
+        {
+          "participante": "Marta 1",
+          "arquivo": "marta_1",
+          "timeA": "Argentina",
+          "golsA": 2,
+          "timeB": "Suíça",
+          "golsB": 1
+        },
+        {
+          "participante": "Marta 2",
+          "arquivo": "marta_2",
+          "timeA": "Argentina",
+          "golsA": 2,
+          "timeB": "Suíça",
+          "golsB": 0
+        },
+        {
+          "participante": "Marta 3",
+          "arquivo": "marta_3",
+          "timeA": "Argentina",
+          "golsA": 1,
+          "timeB": "Suíça",
+          "golsB": 0
+        },
+        {
+          "participante": "Marta 4",
+          "arquivo": "marta_4",
+          "timeA": "Argentina",
+          "golsA": 2,
+          "timeB": "Suíça",
+          "golsB": 2
+        },
+        {
+          "participante": "Marta 5",
+          "arquivo": "marta_5",
+          "timeA": "Argentina",
+          "golsA": 0,
+          "timeB": "Suíça",
+          "golsB": 0
+        },
+        {
+          "participante": "Nina",
+          "arquivo": "nina",
+          "timeA": "Argentina",
+          "golsA": 0,
+          "timeB": "Suíça",
+          "golsB": 0
+        },
+        {
+          "participante": "Edney",
+          "arquivo": "edney",
+          "timeA": "Argentina",
+          "golsA": 1,
+          "timeB": "Suíça",
+          "golsB": 0
+        },
+        {
+          "participante": "Rosana",
+          "arquivo": "rosana",
+          "timeA": "Argentina",
+          "golsA": 2,
+          "timeB": "Suíça",
+          "golsB": 1
+        },
+        {
+          "participante": "Danilo",
+          "arquivo": "danilo",
+          "timeA": "Argentina",
+          "golsA": 2,
+          "timeB": "Suíça",
+          "golsB": 0
+        },
+        {
+          "participante": "Victor",
+          "arquivo": "victor",
+          "timeA": "Argentina",
+          "golsA": 2,
+          "timeB": "Suíça",
+          "golsB": 0
+        },
+        {
+          "participante": "César",
+          "arquivo": "cesar",
+          "timeA": "Argentina",
+          "golsA": 2,
+          "timeB": "Suíça",
+          "golsB": 0
+        },
+        {
+          "participante": "Firulais",
+          "arquivo": "firulais",
+          "timeA": "Argentina",
+          "golsA": 1,
+          "timeB": "Suíça",
+          "golsB": 0
+        },
+        {
+          "participante": "Gregorio",
+          "arquivo": "gregorio",
+          "timeA": "Argentina",
+          "golsA": 1,
+          "timeB": "Suíça",
+          "golsB": 0
+        },
+        {
+          "participante": "Ligia",
+          "arquivo": "ligia",
+          "timeA": "Argentina",
+          "golsA": 2,
+          "timeB": "Suíça",
+          "golsB": 1
+        },
+        {
+          "participante": "Lucas",
+          "arquivo": "lucas",
+          "timeA": "Argentina",
+          "golsA": 2,
+          "timeB": "Suíça",
+          "golsB": 1
+        },
+        {
+          "participante": "Luciano",
+          "arquivo": "luciano",
+          "timeA": "Argentina",
+          "golsA": 2,
+          "timeB": "Suíça",
+          "golsB": 1
+        },
+        {
+          "participante": "Nono 1",
+          "arquivo": "nono_1",
+          "timeA": "Argentina",
+          "golsA": 1,
+          "timeB": "Suíça",
+          "golsB": 0
+        },
+        {
+          "participante": "Nono 2",
+          "arquivo": "nono_2",
+          "timeA": "Argentina",
+          "golsA": 1,
+          "timeB": "Suíça",
+          "golsB": 0
+        },
+        {
+          "participante": "Nono 3",
+          "arquivo": "nono_3",
+          "timeA": "Argentina",
+          "golsA": 1,
+          "timeB": "Suíça",
+          "golsB": 1
+        },
+        {
+          "participante": "Régis",
+          "arquivo": "regis",
+          "timeA": "Argentina",
+          "golsA": 2,
+          "timeB": "Suíça",
+          "golsB": 0
+        },
+        {
+          "participante": "Régis-IA",
+          "arquivo": "regis-ia",
+          "timeA": "Argentina",
+          "golsA": 3,
+          "timeB": "Suíça",
+          "golsB": 1
+        },
+        {
+          "participante": "Sofia",
+          "arquivo": "sofia",
+          "timeA": "Argentina",
+          "golsA": 1,
+          "timeB": "Suíça",
+          "golsB": 0
+        },
+        {
+          "participante": "Zilda 1",
+          "arquivo": "zilda_1",
+          "timeA": "Argentina",
+          "golsA": 1,
+          "timeB": "Suíça",
+          "golsB": 1
+        },
+        {
+          "participante": "Zilda 2",
+          "arquivo": "zilda_2",
+          "timeA": "Argentina",
+          "golsA": 1,
+          "timeB": "Suíça",
+          "golsB": 0
+        },
+        {
+          "participante": "Lucca",
+          "arquivo": "lucca",
+          "timeA": "Argentina",
+          "golsA": 2,
+          "timeB": "Suíça",
+          "golsB": 1
+        },
+        {
+          "participante": "Louise",
+          "arquivo": "louise",
+          "timeA": "Argentina",
+          "golsA": 1,
+          "timeB": "Suíça",
+          "golsB": 1
+        },
+        {
+          "participante": "Vagner",
+          "arquivo": "vagner",
+          "timeA": "Argentina",
+          "golsA": 1,
+          "timeB": "Suíça",
+          "golsB": 1
+        },
+        {
+          "participante": "Toninho",
+          "arquivo": "toninho",
+          "timeA": "Argentina",
+          "golsA": 2,
+          "timeB": "Suíça",
+          "golsB": 1
+        }
+      ],
+      "data": "2026-07-11",
+      "hora": "22:00",
+      "local": "GEHA Field - Kansas City"
+    }
+  ]
+}
