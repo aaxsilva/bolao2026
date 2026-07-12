@@ -393,6 +393,29 @@ var CAMPEAO_OFICIAL = "";
 // =====================================================
 var PLACARES_MANUAIS = { 81: [2, 2], 86: [1, 1], 87: [1, 1], 96: [0, 0], 99: [1, 1] };
 
+// =====================================================
+// AO VIVO MANUAL (fallback) — use SOMENTE quando a API externa
+// estiver com falha/atraso e nao reportar um jogo como "ao vivo"
+// mesmo ele ja tendo comecado de verdade.
+//
+// Diferente do PLACARES_MANUAIS (que marca o jogo como ENCERRADO
+// e tem prioridade maxima), este aqui marca o jogo como AO VIVO
+// e o ranking/parciais continuam calculando normalmente com esse
+// placar. Assim que a API voltar a reportar o jogo corretamente
+// (ao vivo ou encerrado), o valor daqui e ignorado automaticamente
+// — nao precisa remover na mao.
+//
+// Informe o numero do jogo e o placar atual (parcial):
+//   var AO_VIVO_MANUAL = { 100: [1, 0] };
+//
+// Multiplos jogos:
+//   var AO_VIVO_MANUAL = { 100: [1, 0], 101: [0, 0] };
+//
+// Deixe vazio quando nao houver falha da API:
+//   var AO_VIVO_MANUAL = {};
+// =====================================================
+var AO_VIVO_MANUAL = { 100: [1, 0] };
+
 var FLAGS = {"BRASIL": "🇧🇷", "ARGENTINA": "🇦🇷", "FRANÇA": "🇫🇷", "ALEMANHA": "🇩🇪", "ESPANHA": "🇪🇸", "PORTUGAL": "🇵🇹", "INGLATERRA": "🏴󠁧󠁢󠁥󠁮󠁧󠁿", "HOLANDA": "🇳🇱", "ITÁLIA": "🇮🇹", "BÉLGICA": "🇧🇪", "URUGUAI": "🇺🇾", "CROÁCIA": "🇭🇷", "MARROCOS": "🇲🇦", "SENEGAL": "🇸🇳", "JAPÃO": "🇯🇵", "ESTADOS UNIDOS": "🇺🇸", "MÉXICO": "🇲🇽", "COLÔMBIA": "🇨🇴", "EQUADOR": "🇪🇨", "CHILE": "🇨🇱", "AUSTRÁLIA": "🇦🇺", "COREIA DO SUL": "🇰🇷", "POLÔNIA": "🇵🇱", "SUÍÇA": "🇨🇭", "DINAMARCA": "🇩🇰", "ÁUSTRIA": "🇦🇹", "TURQUIA": "🇹🇷", "COSTA RICA": "🇨🇷", "NIGÉRIA": "🇳🇬", "GANA": "🇬🇭", "CAMARÕES": "🇨🇲", "CANADÁ": "🇨🇦", "ÁFRICA DO SUL": "🇿🇦", "BÓSNIA E HERZEGOVINA": "🇧🇦", "REPÚBLICA TCHECA": "🇨🇿", "CATAR": "🇶🇦", "PARAGUAI": "🇵🇾", "HAITI": "🇭🇹", "ESCÓCIA": "🏴󠁧󠁢󠁳󠁣󠁴󠁿", "CURAÇÃO": "🇨🇼", "TUNÍSIA": "🇹🇳", "CABO VERDE": "🇨🇻", "EGITO": "🇪🇬", "IRÃ": "🇮🇷", "NOVA ZELÂNDIA": "🇳🇿", "ARÁBIA SAUDITA": "🇸🇦", "IRAQUE": "🇮🇶", "NORUEGA": "🇳🇴", "ARGÉLIA": "🇩🇿", "JORDÂNIA": "🇯🇴", "RD CONGO": "🇨🇩", "UZBEQUISTÃO": "🇺🇿", "PANAMÁ": "🇵🇦", "SUÉCIA": "🇸🇪", "COSTA DO MARFIM": "🇨🇮"};
 function flag(nome){ return FLAGS[(nome||"").toUpperCase()] || "\u26BD"; }
 
@@ -540,6 +563,13 @@ function aplicarResultadosReais(){
       g.timeElapsed = r.timeElapsed;
       g.minute = r.minute;
     }
+    // Fallback manual "ao vivo": so entra em acao se a API NAO reportou
+    // esse jogo como ao vivo/encerrado (ou seja, esta falhando/atrasada)
+    if(AO_VIVO_MANUAL[g.jogo] !== undefined && g.status!=="live" && g.status!=="finished"){
+      g.golsA = AO_VIVO_MANUAL[g.jogo][0];
+      g.golsB = AO_VIVO_MANUAL[g.jogo][1];
+      g.status = "live";
+    }
     // Placar manual tem prioridade maxima
     if(PLACARES_MANUAIS[g.jogo] !== undefined){
       g.golsA = PLACARES_MANUAIS[g.jogo][0];
@@ -564,6 +594,13 @@ function aplicarResultadosReais(){
         j.golsA = null;
         j.golsB = null;
         j.status = j.status==="live" ? "live" : "scheduled";
+      }
+      // Fallback manual "ao vivo": so entra em acao se a API NAO reportou
+      // esse jogo como ao vivo/encerrado (ou seja, esta falhando/atrasada)
+      if(AO_VIVO_MANUAL[j.jogo] !== undefined && j.status!=="live" && j.status!=="finished"){
+        j.golsA = AO_VIVO_MANUAL[j.jogo][0];
+        j.golsB = AO_VIVO_MANUAL[j.jogo][1];
+        j.status = "live";
       }
       // Placar manual tem prioridade maxima sobre API
       if(PLACARES_MANUAIS[j.jogo] !== undefined){
