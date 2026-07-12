@@ -562,6 +562,13 @@ function aplicarResultadosReais(){
       g.status = r.status;
       g.timeElapsed = r.timeElapsed;
       g.minute = r.minute;
+    } else if(PLACARES_MANUAIS[g.jogo]===undefined && AO_VIVO_MANUAL[g.jogo]===undefined){
+      // API nao reportou esse jogo e nao ha override manual: NUNCA presumir "finished"
+      // so porque o JSON usa 0-0 como placar-placeholder. Volta para 'scheduled'
+      // (a nao ser que ja estivesse 'live' por um ciclo anterior de fallback).
+      g.golsA = null;
+      g.golsB = null;
+      g.status = g.status==="live" ? "live" : "scheduled";
     }
     // Fallback manual "ao vivo": so entra em acao se a API NAO reportou
     // esse jogo como ao vivo/encerrado (ou seja, esta falhando/atrasada)
@@ -904,7 +911,7 @@ function renderRanking(){
     h+="<td class='td-trend'>"+trendHtml+"</td>";
     h+="<td class='td-foto'>"+imgTag(p.arquivo, p.nome, "pp-foto", "pp-foto-fb")+"</td>";
     h+="<td class='td-n'>"+p.nome+"</td>";
-    h+="<td class='td-pts'>"+(p.total>0?p.total:"<span style='color:var(--sv)'>&mdash;</span>")+"</td>";
+    h+="<td class='td-pts'>"+(p.total>0?p.total:"<span style='color:var(--sv)'>&mdash;</span>")+(p.campeaoPts>0?" &#x1F3C6;":"")+"</td>";
     h+=parcialCell;
     h+="<td class='td-ex'>"+p.exatos+"</td>";
     h+="<td class='td-re'>"+p.certos+"</td>";
