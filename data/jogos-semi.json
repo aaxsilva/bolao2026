@@ -678,6 +678,38 @@
           "golsA": 2,
           "timeB": "Espanha",
           "golsB": 1
+        },
+        {
+          "participante": "Régis-IA",
+          "arquivo": "regis-ia",
+          "timeA": "França",
+          "golsA": 1,
+          "timeB": "Espanha",
+          "golsB": 2
+        },
+        {
+          "participante": "Régis",
+          "arquivo": "regis",
+          "timeA": "França",
+          "golsA": 1,
+          "timeB": "Espanha",
+          "golsB": 0
+        },
+        {
+          "participante": "Louise",
+          "arquivo": "louise",
+          "timeA": "França",
+          "golsA": 2,
+          "timeB": "Espanha",
+          "golsB": 1
+        },
+        {
+          "participante": "Vagner",
+          "arquivo": "vagner",
+          "timeA": "França",
+          "golsA": 1,
+          "timeB": "Espanha",
+          "golsB": 2
         }
       ],
       "data": "2026-07-14",
@@ -1122,6 +1154,38 @@
           "golsA": 0,
           "timeB": "Argentina",
           "golsB": 2
+        },
+        {
+          "participante": "Régis-IA",
+          "arquivo": "regis-ia",
+          "timeA": "Inglaterra",
+          "golsA": 1,
+          "timeB": "Argentina",
+          "golsB": 1
+        },
+        {
+          "participante": "Régis",
+          "arquivo": "regis",
+          "timeA": "Inglaterra",
+          "golsA": 1,
+          "timeB": "Argentina",
+          "golsB": 2
+        },
+        {
+          "participante": "Louise",
+          "arquivo": "louise",
+          "timeA": "Inglaterra",
+          "golsA": 1,
+          "timeB": "Argentina",
+          "golsB": 2
+        },
+        {
+          "participante": "Vagner",
+          "arquivo": "vagner",
+          "timeA": "Inglaterra",
+          "golsA": 2,
+          "timeB": "Argentina",
+          "golsB": 0
         }
       ],
       "data": "2026-07-15",
