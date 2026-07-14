@@ -710,6 +710,14 @@
           "golsA": 1,
           "timeB": "Espanha",
           "golsB": 2
+        },
+        {
+          "participante": "Toninho",
+          "arquivo": "toninho",
+          "timeA": "França",
+          "golsA": 3,
+          "timeB": "Espanha",
+          "golsB": 2
         }
       ],
       "data": "2026-07-14",
@@ -1186,6 +1194,14 @@
           "golsA": 2,
           "timeB": "Argentina",
           "golsB": 0
+        },
+        {
+          "participante": "Toninho",
+          "arquivo": "toninho",
+          "timeA": "Inglaterra",
+          "golsA": 2,
+          "timeB": "Argentina",
+          "golsB": 2
         }
       ],
       "data": "2026-07-15",
