@@ -296,6 +296,22 @@
           "golsB": 1
         },
         {
+          "participante": "Dudinha",
+          "arquivo": "dudinha",
+          "timeA": "França",
+          "golsA": 2,
+          "timeB": "Inglaterra",
+          "golsB": 1
+        },
+        {
+          "participante": "Elvis",
+          "arquivo": "elvis",
+          "timeA": "França",
+          "golsA": 1,
+          "timeB": "Inglaterra",
+          "golsB": 1
+        },
+        {
           "participante": "Edilaine 1",
           "arquivo": "edilaine_1",
           "timeA": "França",
@@ -318,6 +334,46 @@
           "golsA": 0,
           "timeB": "Inglaterra",
           "golsB": 1
+        },
+        {
+          "participante": "Fernanda",
+          "arquivo": "fernanda",
+          "timeA": "França",
+          "golsA": 1,
+          "timeB": "Inglaterra",
+          "golsB": 1
+        },
+        {
+          "participante": "Francisco",
+          "arquivo": "francisco",
+          "timeA": "França",
+          "golsA": 0,
+          "timeB": "Inglaterra",
+          "golsB": 2
+        },
+        {
+          "participante": "Fátima",
+          "arquivo": "fatima",
+          "timeA": "França",
+          "golsA": 1,
+          "timeB": "Inglaterra",
+          "golsB": 2
+        },
+        {
+          "participante": "Gargamel",
+          "arquivo": "gargamel",
+          "timeA": "França",
+          "golsA": 3,
+          "timeB": "Inglaterra",
+          "golsB": 1
+        },
+        {
+          "participante": "GU",
+          "arquivo": "gu",
+          "timeA": "França",
+          "golsA": 0,
+          "timeB": "Inglaterra",
+          "golsB": 0
         },
         {
           "participante": "Gabriel",
@@ -352,6 +408,78 @@
           "golsB": 0
         },
         {
+          "participante": "Manuela",
+          "arquivo": "manuela",
+          "timeA": "França",
+          "golsA": 2,
+          "timeB": "Inglaterra",
+          "golsB": 0
+        },
+        {
+          "participante": "Maria 1",
+          "arquivo": "maria_1",
+          "timeA": "França",
+          "golsA": 1,
+          "timeB": "Inglaterra",
+          "golsB": 1
+        },
+        {
+          "participante": "Maria 2",
+          "arquivo": "maria_2",
+          "timeA": "França",
+          "golsA": 1,
+          "timeB": "Inglaterra",
+          "golsB": 2
+        },
+        {
+          "participante": "Maria 3",
+          "arquivo": "maria_3",
+          "timeA": "França",
+          "golsA": 2,
+          "timeB": "Inglaterra",
+          "golsB": 3
+        },
+        {
+          "participante": "Marta 1",
+          "arquivo": "marta_1",
+          "timeA": "França",
+          "golsA": 1,
+          "timeB": "Inglaterra",
+          "golsB": 1
+        },
+        {
+          "participante": "Marta 2",
+          "arquivo": "marta_2",
+          "timeA": "França",
+          "golsA": 1,
+          "timeB": "Inglaterra",
+          "golsB": 2
+        },
+        {
+          "participante": "Marta 3",
+          "arquivo": "marta_3",
+          "timeA": "França",
+          "golsA": 2,
+          "timeB": "Inglaterra",
+          "golsB": 1
+        },
+        {
+          "participante": "Marta 4",
+          "arquivo": "marta_4",
+          "timeA": "França",
+          "golsA": 0,
+          "timeB": "Inglaterra",
+          "golsB": 0
+        },
+        {
+          "participante": "Marta 5",
+          "arquivo": "marta_5",
+          "timeA": "França",
+          "golsA": 2,
+          "timeB": "Inglaterra",
+          "golsB": 1
+        },
+        {
           "participante": "Mateo",
           "arquivo": "mateo",
           "timeA": "França",
@@ -362,6 +490,14 @@
         {
           "participante": "Micha",
           "arquivo": "micha",
+          "timeA": "França",
+          "golsA": 1,
+          "timeB": "Inglaterra",
+          "golsB": 1
+        },
+        {
+          "participante": "Nina",
+          "arquivo": "nina",
           "timeA": "França",
           "golsA": 1,
           "timeB": "Inglaterra",
@@ -494,6 +630,22 @@
           "golsA": 2,
           "timeB": "Inglaterra",
           "golsB": 1
+        },
+	{
+          "participante": "Régis",
+          "arquivo": "regis",
+          "timeA": "França",
+          "golsA": 2,
+          "timeB": "Inglaterra",
+          "golsB": 1
+        },
+	{
+          "participante": "Régis-IA",
+          "arquivo": "regis-ia",
+          "timeA": "França",
+          "golsA": 2,
+          "timeB": "Inglaterra",
+          "golsB": 3
         },
         {
           "participante": "Zilda 1",
@@ -579,6 +731,22 @@
           "golsB": 2
         },
         {
+          "participante": "Dudinha",
+          "arquivo": "dudinha",
+          "timeA": "Espanha",
+          "golsA": 0,
+          "timeB": "Argentina",
+          "golsB": 1
+        },
+        {
+          "participante": "Elvis",
+          "arquivo": "elvis",
+          "timeA": "Espanha",
+          "golsA": 0,
+          "timeB": "Argentina",
+          "golsB": 0
+        },
+        {
           "participante": "Edilaine 1",
           "arquivo": "edilaine_1",
           "timeA": "Espanha",
@@ -601,6 +769,46 @@
           "golsA": 0,
           "timeB": "Argentina",
           "golsB": 2
+        },
+        {
+          "participante": "Fernanda",
+          "arquivo": "fernanda",
+          "timeA": "Espanha",
+          "golsA": 1,
+          "timeB": "Argentina",
+          "golsB": 2
+        },
+        {
+          "participante": "Francisco",
+          "arquivo": "francisco",
+          "timeA": "Espanha",
+          "golsA": 2,
+          "timeB": "Argentina",
+          "golsB": 1
+        },
+        {
+          "participante": "Fátima",
+          "arquivo": "fatima",
+          "timeA": "Espanha",
+          "golsA": 2,
+          "timeB": "Argentina",
+          "golsB": 1
+        },
+        {
+          "participante": "Gargamel",
+          "arquivo": "gargamel",
+          "timeA": "Espanha",
+          "golsA": 0,
+          "timeB": "Argentina",
+          "golsB": 3
+        },
+        {
+          "participante": "GU",
+          "arquivo": "gu",
+          "timeA": "Espanha",
+          "golsA": 0,
+          "timeB": "Argentina",
+          "golsB": 0
         },
         {
           "participante": "Gabriel",
@@ -635,6 +843,78 @@
           "golsB": 0
         },
         {
+          "participante": "Manuela",
+          "arquivo": "manuela",
+          "timeA": "Espanha",
+          "golsA": 1,
+          "timeB": "Argentina",
+          "golsB": 1
+        },
+        {
+          "participante": "Maria 1",
+          "arquivo": "maria_1",
+          "timeA": "Espanha",
+          "golsA": 2,
+          "timeB": "Argentina",
+          "golsB": 2
+        },
+        {
+          "participante": "Maria 2",
+          "arquivo": "maria_2",
+          "timeA": "Espanha",
+          "golsA": 1,
+          "timeB": "Argentina",
+          "golsB": 2
+        },
+        {
+          "participante": "Maria 3",
+          "arquivo": "maria_3",
+          "timeA": "Espanha",
+          "golsA": 0,
+          "timeB": "Argentina",
+          "golsB": 1
+        },
+        {
+          "participante": "Marta 1",
+          "arquivo": "marta_1",
+          "timeA": "Espanha",
+          "golsA": 1,
+          "timeB": "Argentina",
+          "golsB": 1
+        },
+        {
+          "participante": "Marta 2",
+          "arquivo": "marta_2",
+          "timeA": "Espanha",
+          "golsA": 2,
+          "timeB": "Argentina",
+          "golsB": 0
+        },
+        {
+          "participante": "Marta 3",
+          "arquivo": "marta_3",
+          "timeA": "Espanha",
+          "golsA": 2,
+          "timeB": "Argentina",
+          "golsB": 3
+        },
+        {
+          "participante": "Marta 4",
+          "arquivo": "marta_4",
+          "timeA": "Espanha",
+          "golsA": 2,
+          "timeB": "Argentina",
+          "golsB": 1
+        },
+        {
+          "participante": "Marta 5",
+          "arquivo": "marta_5",
+          "timeA": "Espanha",
+          "golsA": 1,
+          "timeB": "Argentina",
+          "golsB": 0
+        },
+        {
           "participante": "Mateo",
           "arquivo": "mateo",
           "timeA": "Espanha",
@@ -647,6 +927,14 @@
           "arquivo": "micha",
           "timeA": "Espanha",
           "golsA": 1,
+          "timeB": "Argentina",
+          "golsB": 1
+        },
+        {
+          "participante": "Nina",
+          "arquivo": "nina",
+          "timeA": "Espanha",
+          "golsA": 2,
           "timeB": "Argentina",
           "golsB": 1
         },
@@ -773,6 +1061,22 @@
         {
           "participante": "Sofia",
           "arquivo": "sofia",
+          "timeA": "Espanha",
+          "golsA": 1,
+          "timeB": "Argentina",
+          "golsB": 2
+        },
+	{
+          "participante": "Régis",
+          "arquivo": "regis",
+          "timeA": "Espanha",
+          "golsA": 1,
+          "timeB": "Argentina",
+          "golsB": 1
+        },
+ 	{
+          "participante": "Régis-IA",
+          "arquivo": "regis-ia",
           "timeA": "Espanha",
           "golsA": 1,
           "timeB": "Argentina",
